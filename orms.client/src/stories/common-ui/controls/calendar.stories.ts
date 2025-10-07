@@ -3,7 +3,7 @@ import { fn } from 'storybook/test';
 import { CalendarComponent } from '../../../app/common-ui/controls/calendar/calendar.component';
 
 const meta: Meta<CalendarComponent> = {
-  title: 'Common-UI/calendar',
+  title: 'Common-UI/Calendar',
   component: CalendarComponent,
   tags: ['autodocs'],
   parameters: {
@@ -15,4 +15,4 @@ const meta: Meta<CalendarComponent> = {
 export default meta;
 type Story = StoryObj<CalendarComponent>;
 
-export const calendar: Story = {};
+export const Calendar: Story = {};
