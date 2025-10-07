@@ -46,6 +46,11 @@
   border-color: #3b82f6; 
 }
 
+.file-upload-field:hover .choose-btn {
+  --btn-bg: #e1f0ff;
+  --btn-border: #b4d3f7;
+}
+
 .icon { 
   color: #af9c9c; 
   display: flex; 
