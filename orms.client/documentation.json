@@ -204,7 +204,7 @@
         },
         {
             "name": "BadgeComponent",
-            "id": "component-BadgeComponent-a7698a9f3cf44e04adcad826bf3542e4bdecd18bd30f89ce5dcbac3447cad85a3da3221ea4b76b4d5bc29c93c97a8f180ebe410444e96b9a994dd3b80c63673a",
+            "id": "component-BadgeComponent-a82de5411d9a600f8b48a6b86bf683e9ce6aa29609ac8610a7be0564eb2672fbc596d2eb8503fe5318884fe7f8a4b63fc1a9f9f00245aaa3961b40eb2ffa029a",
             "file": "src/app/common-ui/controls/badge/badge.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -219,26 +219,84 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "activeBGColor",
+                    "defaultValue": "'#7c3aedff'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "activeColor",
+                    "defaultValue": "'white'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "bgColor",
+                    "defaultValue": "'white'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'gray'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isHovered",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-badge',\r\n  templateUrl: './badge.component.html',\r\n  styleUrl: './badge.component.css'\r\n})\r\nexport class BadgeComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-badge',\r\n  standalone:true,\r\n  templateUrl: './badge.component.html',\r\n  styleUrl: './badge.component.css'\r\n})\r\nexport class BadgeComponent {\r\n@Input() text: string = 'text';\r\n@Input() bgColor: string = 'white';\r\n@Input() color: string = 'gray';\r\n@Input() activeBGColor: string = '#7c3aedff';\r\n@Input() activeColor: string = 'white';\r\n\r\n  isHovered: boolean = false; // track hover state\r\n\r\n}\r\n",
             "styleUrl": "./badge.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"inline-flex items-center px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-800\">\r\n  <div>Sick Leave</div>\r\n  <div class=\"ml-2 bg-gray-300 text-gray-900 rounded-full px-2 py-0.5 text-xs font-semibold\">1</div>\r\n</div>\r\n"
+            "templateData": "<div\r\n  class=\"inline-flex items-center px-10 py-[6px] rounded-full border border-gray-200 shadow-sm cursor-pointer transition-all duration-300 ease-in-out select-none m-[10px]\"\r\n  [style.backgroundColor]=\"isHovered ? activeBGColor : bgColor\"\r\n  [style.color]=\"isHovered ? activeColor : color\"\r\n  (mouseenter)=\"isHovered = true\"\r\n  (mouseleave)=\"isHovered = false\"\r\n>\r\n  {{ text }}\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -448,7 +506,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>drop-down works!</p>\r\n"
+            "templateData": "<div class=\"form-down\">\r\n  <label class=\"form-label\">Gender<span class=\"required\">*</span></label>\r\n  <select\r\n  class=\"form-select form-select-lg mb-3 custom-select-focus\"\r\n  aria-label=\".form-select-lg example\">\r\n  <option value=\"1\" selected>Male</option>\r\n  <option value=\"2\">Female</option>\r\n  <option value=\"3\">Others</option>\r\n</select>\r\n</div>\r\n\r\n<!-- <div class=\"dropdown-wrapper\">\r\n  <label>Gender <span class=\"required\">*</span></label>\r\n\r\n  <div class=\"custom-dropdown\">\r\n    <input type=\"checkbox\" id=\"toggle\" class=\"dropdown-toggle\" hidden>\r\n    <label for=\"toggle\" class=\"custom-dropdown-selected\">Select gender <i class=\"fa-light fa-angle-down\"></i></label>\r\n\r\n    <ul class=\"custom-dropdown-list\">\r\n      <li><label for=\"toggle\">Male</label></li>\r\n      <li><label for=\"toggle\">Female</label></li>\r\n      <li><label for=\"toggle\">Other</label></li>\r\n    </ul>\r\n  </div>\r\n</div> -->"
         },
         {
             "name": "FileUploadComponent",
@@ -667,18 +725,94 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "TextareaComponent",
+            "id": "component-TextareaComponent-a45e5cb1fbe7d320bc8974031f8cf1bc26fabcffa783a511513dd155d014fdad2353f8a602dc3369ec5c8e7dc9c6b704f5eed53234d6299b4b91ae02a5dab2f9",
+            "file": "src/app/common-ui/controls/textarea/textarea.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-textarea",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./textarea.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrl: './textarea.component.css'\r\n})\r\nexport class TextareaComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./textarea.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"form-group\">\r\n  <label for=\"address\">Address *</label>\r\n  <textarea id=\"address\" name=\"address\" placeholder=\"Enter your address\"></textarea>\r\n</div>\r\n"
+        },
+        {
+            "name": "TextBoxComponent",
+            "id": "component-TextBoxComponent-30f853880c5ea2071f341504cfcf431d4aac5a13fdc738c8d9f28419ac7b769c7943de5cf1c0227ec5adb9a05b6195b5eb25dab598e9ec3a8a20f3c50f2d8832",
+            "file": "src/app/common-ui/controls/text-box/text-box.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-text-box",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./text-box.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-text-box',\r\n  templateUrl: './text-box.component.html',\r\n  styleUrl: './text-box.component.css'\r\n})\r\nexport class TextBoxComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./text-box.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>Styled Input Field</title>\r\n \r\n</head>\r\n<body>\r\n  <div class=\"form-group\">\r\n    <label for=\"fullname\">Full Name <span>*</span></label>\r\n    <input type=\"text\" id=\"fullname\" name=\"fullname\" placeholder=\"Enter full name\" required>\r\n  </div>\r\n</body>\r\n</html>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-f29f19e81f22a47454c6a216ea29f6711e5e6aa2be6f07c1f58c635dc317f047bc22dca0aebf1451a51c61a2bce70b9ba812d6a11879fa8c28001dcd2aaf9f93",
+            "id": "module-AppModule-9c30153b9e249cf53aa1be2cc2791ba0e41aa99eeee59eea70091c6e5b36807af16a23713ad74c24bc523d32e459a7915eb76a2e29446f78a212ea2b03dca7d5",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { DropDownComponent } from './common-ui/controls/drop-down/drop-down.component';\r\nimport { FileUploadComponent } from './common-ui/controls/file-upload/file-upload.component';\r\nimport { BadgeComponent } from './common-ui/controls/./badge/badge.component';\r\n\r\n@NgModule({\r\n    declarations: [AppComponent, BadgeComponent],\r\n    imports: [\r\n        BrowserModule, HttpClientModule,\r\n        AppRoutingModule,\r\n        DropDownComponent,\r\n        FileUploadComponent,\r\n        BadgeComponent\r\n    ],\r\n    providers: [],\r\n    bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { DropDownComponent } from './common-ui/controls/drop-down/drop-down.component';\r\nimport { FileUploadComponent } from './common-ui/controls/file-upload/file-upload.component';\r\n\r\n@NgModule({\r\n    declarations: [AppComponent],\r\n    imports: [\r\n        BrowserModule, HttpClientModule,\r\n        AppRoutingModule,\r\n        DropDownComponent,\r\n        FileUploadComponent\r\n    ],\r\n    providers: [],\r\n    bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -689,9 +823,6 @@
                     "elements": [
                         {
                             "name": "AppComponent"
-                        },
-                        {
-                            "name": "BadgeComponent"
                         }
                     ]
                 },
@@ -700,9 +831,6 @@
                     "elements": [
                         {
                             "name": "AppRoutingModule"
-                        },
-                        {
-                            "name": "BadgeComponent"
                         },
                         {
                             "name": "DropDownComponent"
@@ -781,7 +909,7 @@
         ]
     },
     "coverage": {
-        "count": 8,
+        "count": 6,
         "status": "low",
         "files": [
             {
@@ -808,7 +936,7 @@
                 "linktype": "component",
                 "name": "BadgeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -834,6 +962,24 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "FileUploadComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/common-ui/controls/text-box/text-box.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextBoxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/common-ui/controls/textarea/textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextareaComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
