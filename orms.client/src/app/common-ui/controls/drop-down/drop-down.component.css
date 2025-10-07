@@ -1,0 +1,198 @@
+/* 
+*{
+margin-left: 20px;
+}
+select:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+}
+
+select option:hover {
+  background-color: #f0f0f0; 
+  
+}
+.required{
+  color: red;
+}
+.form-down{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label{
+  font-weight:600;
+}
+option:hover {
+  background-color: yellow;
+}
+
+.form-select
+{
+
+   margin-top: 8px;
+      padding: 10px 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      width: 30%;
+      font-size: 16px;
+      outline: none;
+      background: #fff;
+      color: #444;
+}
+
+.form-select:focus{
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49,130,206,0.15);
+}
+
+
+
+option:hover {
+  background: linear-gradient(red, blue); 
+  position: relative;
+}
+
+
+
+.form-select option {
+  padding: 80px;
+  margin: 4px;
+  border-radius: 6px;
+}
+
+.form-select option:hover {
+background: red;
+} */
+
+/* option:hover,
+ option:focus {
+  background-color: #d3d3d3; 
+  color: #000;
+}  */
+
+         
+
+
+
+
+
+
+
+/*------------------------*/
+
+/* select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 6px; 
+} */
+
+/* option{
+  color: blue;
+  background-color: red;
+} */
+
+
+
+/*---------------------------------------------------*/
+
+.dropdown-wrapper {
+  font-family: Arial, sans-serif;
+  width: 300px;
+  margin: 20px;
+}
+
+label {
+
+  color: #1f2937;
+  display: block;
+   margin-bottom: 20px; 
+
+}
+
+.required {
+  color: red;
+}
+
+.custom-dropdown {
+  position: relative;
+  user-select: none;
+}
+
+.custom-dropdown-selected {
+  display: block;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.custom-dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 6px 0 0 0;
+  padding: 1px;
+  list-style: none;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+  display: none;
+  z-index: 1000;
+  box-shadow: 3px 3px 3px 3px rgba(145, 144, 144, 0.1);
+}
+
+.custom-dropdown-list li {
+  padding: 3px;
+  margin: 3px;
+  border-radius: 6px;
+  cursor: pointer;
+line-height: 0.7;
+
+  
+}
+
+.custom-dropdown-list li:hover {
+  background-color: #757678;
+}
+
+.dropdown-toggle:checked ~ .custom-dropdown-list {
+  display: block;
+}
+
+
+
+.custom-dropdown:focus ,
+.custom-dropdown:hover{
+  border-color: #0a0a0a;
+  
+} 
+.form-select{
+     width: 300px;
+    border-radius: 7px;
+}
+
+ 
+
+
+.custom-select-focus {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  width: 300px;
+ 
+}
+ 
+.custom-select-focus:focus {
+  border-color: blue;      
+  outline: none;          
+  box-shadow: 0 0 2px blue;
+ 
+}
