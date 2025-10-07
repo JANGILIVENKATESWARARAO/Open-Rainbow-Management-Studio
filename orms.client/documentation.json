@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "id": "interface-User-23c11020a2831beb3fa02ee911a75b64009c31bb46f73a01145c2560cb13b7f7e641105b678bd8fb01a5a199117001f3da4a78351d29d85d213ed7b82982091f",
             "file": "src/stories/user.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "sourceCode": "export interface User {\r\n  name: string;\r\n}\r\n",
             "properties": [
                 {
                     "name": "name",
@@ -28,12 +28,12 @@
         },
         {
             "name": "WeatherForecast",
-            "id": "interface-WeatherForecast-3b44445ec680c306f809b90aee33dc708df889fb47930ca00ce22f9de57833774b88283739154001fa2b11774dec6abe0e223fbb4ba8a73034ba09493d7131fa",
+            "id": "interface-WeatherForecast-9533aa51ac3ced825361cafe7c3c82f8df3b000f01d515a5afcfefe505d951307bc637ab19d6e12244a182dcc937dfe07a6725631d2fd4bac5f421fc220ac063",
             "file": "src/app/app.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Component, OnInit } from '@angular/core';\r\n\r\ninterface WeatherForecast {\r\n  date: string;\r\n  temperatureC: number;\r\n  temperatureF: number;\r\n  summary: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.css'\r\n})\r\nexport class AppComponent implements OnInit {\r\n  public forecasts: WeatherForecast[] = [];\r\n\r\n  constructor(private http: HttpClient) {}\r\n\r\n  ngOnInit() {\r\n    this.getForecasts();\r\n  }\r\n\r\n  getForecasts() {\r\n    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(\r\n      (result) => {\r\n        this.forecasts = result;\r\n      },\r\n      (error) => {\r\n        console.error(error);\r\n      }\r\n    );\r\n  }\r\n\r\n  title = 'orms.client';\r\n}\r\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\ninterface WeatherForecast {\r\n  date: string;\r\n  temperatureC: number;\r\n  temperatureF: number;\r\n  summary: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.css'\r\n})\r\nexport class AppComponent implements OnInit {\r\n  public forecasts: WeatherForecast[] = [];\r\n\r\n  constructor(private http: HttpClient) {}\r\n\r\n  ngOnInit() {\r\n    this.getForecasts();\r\n  }\r\n\r\n  getForecasts() {\r\n    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(\r\n      (result) => {\r\n        this.forecasts = result;\r\n      },\r\n      (error) => {\r\n        console.error(error);\r\n      }\r\n    );\r\n  }\r\n\r\n  title = 'orms.client';\r\n}\r\n",
             "properties": [
                 {
                     "name": "date",
@@ -90,7 +90,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-3b44445ec680c306f809b90aee33dc708df889fb47930ca00ce22f9de57833774b88283739154001fa2b11774dec6abe0e223fbb4ba8a73034ba09493d7131fa",
+            "id": "component-AppComponent-9533aa51ac3ced825361cafe7c3c82f8df3b000f01d515a5afcfefe505d951307bc637ab19d6e12244a182dcc937dfe07a6725631d2fd4bac5f421fc220ac063",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -165,7 +165,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Component, OnInit } from '@angular/core';\r\n\r\ninterface WeatherForecast {\r\n  date: string;\r\n  temperatureC: number;\r\n  temperatureF: number;\r\n  summary: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.css'\r\n})\r\nexport class AppComponent implements OnInit {\r\n  public forecasts: WeatherForecast[] = [];\r\n\r\n  constructor(private http: HttpClient) {}\r\n\r\n  ngOnInit() {\r\n    this.getForecasts();\r\n  }\r\n\r\n  getForecasts() {\r\n    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(\r\n      (result) => {\r\n        this.forecasts = result;\r\n      },\r\n      (error) => {\r\n        console.error(error);\r\n      }\r\n    );\r\n  }\r\n\r\n  title = 'orms.client';\r\n}\r\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\ninterface WeatherForecast {\r\n  date: string;\r\n  temperatureC: number;\r\n  temperatureF: number;\r\n  summary: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.css'\r\n})\r\nexport class AppComponent implements OnInit {\r\n  public forecasts: WeatherForecast[] = [];\r\n\r\n  constructor(private http: HttpClient) {}\r\n\r\n  ngOnInit() {\r\n    this.getForecasts();\r\n  }\r\n\r\n  getForecasts() {\r\n    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(\r\n      (result) => {\r\n        this.forecasts = result;\r\n      },\r\n      (error) => {\r\n        console.error(error);\r\n      }\r\n    );\r\n  }\r\n\r\n  title = 'orms.client';\r\n}\r\n",
             "styleUrl": "./app.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -203,8 +203,46 @@
             "templateData": "﻿<h1 id=\"tableLabel\">Weather forecast</h1>\r\n\r\n<p>This component demonstrates fetching data from the server.</p>\r\n\r\n<p *ngIf=\"!forecasts\"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href=\"https://aka.ms/jspsintegrationangular\">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>\r\n\r\n<table *ngIf=\"forecasts\">\r\n    <thead>\r\n        <tr>\r\n            <th>Date</th>\r\n            <th>Temp. (C)</th>\r\n            <th>Temp. (F)</th>\r\n            <th>Summary</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let forecast of forecasts\">\r\n            <td>{{ forecast.date }}</td>\r\n            <td>{{ forecast.temperatureC }}</td>\r\n            <td>{{ forecast.temperatureF }}</td>\r\n            <td>{{ forecast.summary }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n"
         },
         {
+            "name": "BadgeComponent",
+            "id": "component-BadgeComponent-a7698a9f3cf44e04adcad826bf3542e4bdecd18bd30f89ce5dcbac3447cad85a3da3221ea4b76b4d5bc29c93c97a8f180ebe410444e96b9a994dd3b80c63673a",
+            "file": "src/app/common-ui/controls/badge/badge.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-badge",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./badge.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-badge',\r\n  templateUrl: './badge.component.html',\r\n  styleUrl: './badge.component.css'\r\n})\r\nexport class BadgeComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./badge.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"inline-flex items-center px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-800\">\r\n  <div>Sick Leave</div>\r\n  <div class=\"ml-2 bg-gray-300 text-gray-900 rounded-full px-2 py-0.5 text-xs font-semibold\">1</div>\r\n</div>\r\n"
+        },
+        {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
+            "id": "component-ButtonComponent-5747b2121bdc472b32e41e4e47db44dbd7601fe73e9c7b3d0f82e7d1aaf97be0d13d4880fee19b0e4d511178aa52a24a5a9ea3ee0034d204ffd659c0aae43e41",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -238,16 +276,16 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 760,
-                            "end": 773,
+                            "pos": 793,
+                            "end": 807,
                             "kind": 328,
                             "id": 0,
                             "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "tagName": {
-                                "pos": 761,
-                                "end": 769,
+                                "pos": 794,
+                                "end": 802,
                                 "kind": 80,
                                 "id": 0,
                                 "flags": 16842752,
@@ -314,11 +352,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: ` <button\r\n  type=\"button\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n>\r\n  {{ label }}\r\n</button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport class ButtonComponent {\r\n  /** Is this the principal call to action on the page? */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /** What background color to use */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /** How large should the button be? */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /** Optional click handler */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #555ab9;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
+                    "data": ".storybook-button {\r\n  display: inline-block;\r\n  cursor: pointer;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  font-weight: 700;\r\n  line-height: 1;\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n}\r\n.storybook-button--primary {\r\n  background-color: #555ab9;\r\n  color: white;\r\n}\r\n.storybook-button--secondary {\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n  background-color: transparent;\r\n  color: #333;\r\n}\r\n.storybook-button--small {\r\n  padding: 10px 16px;\r\n  font-size: 12px;\r\n}\r\n.storybook-button--medium {\r\n  padding: 11px 20px;\r\n  font-size: 14px;\r\n}\r\n.storybook-button--large {\r\n  padding: 12px 24px;\r\n  font-size: 16px;\r\n}\r\n",
                     "styleUrl": "./button.css"
                 }
             ],
@@ -337,8 +375,46 @@
             }
         },
         {
+            "name": "CalendarComponent",
+            "id": "component-CalendarComponent-79537972dc5c64d81c5f43b34bb1c840b41861b592dd8d17c79b0e22f219879650dd8167708f6a5d326c6c49c8deb84beedb1a2eee5a91fa5f86910f8cab77a7",
+            "file": "src/app/common-ui/controls/calendar/calendar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-calendar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./calendar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-calendar',\r\n   standalone: true,\r\n  templateUrl: './calendar.component.html',\r\n  styleUrl: './calendar.component.css'\r\n})\r\nexport class CalendarComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./calendar.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<label class=\"dob-label\">Date of Birth <span class=\"required\">*</span></label><br>\r\n<input type=\"date\" class=\"dob-input\" placeholder=\"dd-mm-yyyy\" required/>"
+        },
+        {
             "name": "DropDownComponent",
-            "id": "component-DropDownComponent-fe1979c7a5a735a9601abb2f6ddbb5ef6321cae4da268c60071497002cc35339ca11587958b5d1f72625db15b451be451c2b0bc2b186609a321f0717446c675c",
+            "id": "component-DropDownComponent-29d89a374352e9132394de628a0b1829234bb320c076f94ac236fc08e3be9431ad99db42ced23b93a9ca3fb4ae9ea22fc14cccc7251d383719d3676cf1cfe175",
             "file": "src/app/common-ui/controls/drop-down/drop-down.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -366,7 +442,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\n    selector: 'app-drop-down',\n    templateUrl: './drop-down.component.html',\n    styleUrl: './drop-down.component.css',\n    standalone: true\n})\r\nexport class DropDownComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-drop-down',\r\n    templateUrl: './drop-down.component.html',\r\n    styleUrl: './drop-down.component.css',\r\n    standalone: true\r\n})\r\nexport class DropDownComponent {\r\n\r\n}\r\n",
             "styleUrl": "./drop-down.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -375,8 +451,46 @@
             "templateData": "<p>drop-down works!</p>\r\n"
         },
         {
+            "name": "FileUploadComponent",
+            "id": "component-FileUploadComponent-a7f87dba6992d9fda1940fe24d2031db3931560c0f0bbd2c326561a34dba3fbe47ce0486c98f4ee506cfa7d6c54dc6562f31109d6bcb7d639df012c9c65c882b",
+            "file": "src/app/common-ui/controls/file-upload/file-upload.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-file-upload",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./file-upload.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-file-upload',\r\n  standalone: true,\r\n  templateUrl: './file-upload.component.html',\r\n  styleUrl: './file-upload.component.css'\r\n})\r\nexport class FileUploadComponent {}\r\n",
+            "styleUrl": "./file-upload.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"single-upload\">\r\n  <label class=\"upload-label\" for=\"fileInput\">Government ID</label>\r\n  <div class=\"file-upload-field\">\r\n    <div class=\"icon\" aria-hidden=\"true\">\r\n      <!-- <img src=\"assets/file-upload.png\" alt=\"\" class=\"icon-img\" width=\"20\" height=\"20\" /> -->\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-upload h-4 w-4 text-gray-400\" aria-hidden=\"true\"><path d=\"M12 3v12\"></path><path d=\"m17 8-5-5-5 5\"></path><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path></svg>\r\n    </div>\r\n      <label class=\"choose-btn choose-btn-inline\">\r\n        <input id=\"fileInput\" type=\"file\" />\r\n        <span>Choose file</span>\r\n      </label>\r\n      <span class=\"file-status\">No file chosen</span>\r\n  </div>\r\n</div>"
+        },
+        {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-48b9abe37706bc42f20cfa97ed9f943678344ea7d254c0c82183c657750c2191b43486fe730c778627b2ea6aa0e2f33a7abcf3ce08b68ad18b062ad99ea97acb",
+            "id": "component-HeaderComponent-35575735b3444c6f049822f5234963ce3b046795ea9cdf6a15e8c7d72acd8ededb78ca25c4e1fbb5f0416c5855203a87ae0483f5d065c2dfa68d5329e347a84b",
             "file": "src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -449,11 +563,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { ButtonComponent } from './button.component';\r\nimport type { User } from './user';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  standalone: true,\r\n  imports: [CommonModule, ButtonComponent],\r\n  template: `<header>\r\n  <div class=\"storybook-header\">\r\n    <div>\r\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n        <g fill=\"none\" fillRule=\"evenodd\">\r\n          <path\r\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n            fill=\"#FFF\"\r\n          />\r\n          <path\r\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n            fill=\"#555AB9\"\r\n          />\r\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\r\n        </g>\r\n      </svg>\r\n      <h1>Acme</h1>\r\n    </div>\r\n    <div>\r\n      <div *ngIf=\"user\">\r\n        <span class=\"welcome\">\r\n          Welcome, <b>{{ user.name }}</b\r\n          >!\r\n        </span>\r\n        <storybook-button\r\n          *ngIf=\"user\"\r\n          size=\"small\"\r\n          (onClick)=\"onLogout.emit($event)\"\r\n          label=\"Log out\"\r\n        ></storybook-button>\r\n      </div>\r\n      <div *ngIf=\"!user\">\r\n        <storybook-button\r\n          *ngIf=\"!user\"\r\n          size=\"small\"\r\n          class=\"margin-left\"\r\n          (onClick)=\"onLogin.emit($event)\"\r\n          label=\"Log in\"\r\n        ></storybook-button>\r\n        <storybook-button\r\n          *ngIf=\"!user\"\r\n          size=\"small\"\r\n          [primary]=\"true\"\r\n          class=\"margin-left\"\r\n          (onClick)=\"onCreateAccount.emit($event)\"\r\n          label=\"Sign up\"\r\n        ></storybook-button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</header>`,\r\n  styleUrls: ['./header.css'],\r\n})\r\nexport class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 6px 0 6px 10px;\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  margin-right: 10px;\n  color: #333;\n  font-size: 14px;\n}\n",
+                    "data": ".storybook-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n}\r\n\r\n.storybook-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header h1 {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  margin: 6px 0 6px 10px;\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n}\r\n\r\n.storybook-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.storybook-header .welcome {\r\n  margin-right: 10px;\r\n  color: #333;\r\n  font-size: 14px;\r\n}\r\n",
                     "styleUrl": "./header.css"
                 }
             ],
@@ -462,7 +576,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-21dd6eb370b4983b5c21c84d40e6f54d266a9d9af9889e6e76b35c43058bd53b3e451bad089d5adf4bea46647ba10265a2fa8cb15630398e75636307d4817fc6",
+            "id": "component-PageComponent-79bfb042a722f49579739dfd01d8f1b67681d0272a72a283c14edeb22f0462775c80ba4f7c1eb0fa4bd5fa1844083da0140980e75b5500cd98cc26421ec6d569",
             "file": "src/stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -543,11 +657,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { HeaderComponent } from './header.component';\r\nimport type { User } from './user';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  standalone: true,\r\n  imports: [CommonModule, HeaderComponent],\r\n  template: `<article>\r\n  <storybook-header\r\n    [user]=\"user\"\r\n    (onLogout)=\"doLogout()\"\r\n    (onLogin)=\"doLogin()\"\r\n    (onCreateAccount)=\"doCreateAccount()\"\r\n  ></storybook-header>\r\n  <section class=\"storybook-page\">\r\n    <h2>Pages in Storybook</h2>\r\n    <p>\r\n      We recommend building UIs with a\r\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n        <strong>component-driven</strong>\r\n      </a>\r\n      process starting with atomic components and ending with pages.\r\n    </p>\r\n    <p>\r\n      Render pages with mock data. This makes it easy to build and review page states without\r\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n      in Storybook:\r\n    </p>\r\n    <ul>\r\n      <li>\r\n        Use a higher-level connected component. Storybook helps you compose such data from the\r\n        \"args\" of child component stories\r\n      </li>\r\n      <li>\r\n        Assemble data in the page component from your services. You can mock these services out\r\n        using Storybook.\r\n      </li>\r\n    </ul>\r\n    <p>\r\n      Get a guided tutorial on component-driven development at\r\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n        Storybook tutorials\r\n      </a>\r\n      . Read more in the\r\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\r\n      .\r\n    </p>\r\n    <div class=\"tip-wrapper\">\r\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n        <g fill=\"none\" fillRule=\"evenodd\">\r\n          <path\r\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n            id=\"a\"\r\n            fill=\"#999\"\r\n          />\r\n        </g>\r\n      </svg>\r\n      Viewports addon in the toolbar\r\n    </div>\r\n  </section>\r\n</article>`,\r\n  styleUrls: ['./page.css'],\r\n})\r\nexport class PageComponent {\r\n  user: User | null = null;\r\n\r\n  doLogout() {\r\n    this.user = null;\r\n  }\r\n\r\n  doLogin() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n\r\n  doCreateAccount() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-page {\n  margin: 0 auto;\n  padding: 48px 20px;\n  max-width: 600px;\n  color: #333;\n  font-size: 14px;\n  line-height: 24px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-page h2 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 0 4px;\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  color: inherit;\n}\n\n.storybook-page ul {\n  margin: 1em 0;\n  padding-left: 30px;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 10px;\n  border-radius: 1em;\n  background: #e7fdd8;\n  padding: 4px 12px;\n  color: #357a14;\n  font-weight: 700;\n  font-size: 11px;\n  line-height: 12px;\n}\n\n.storybook-page .tip-wrapper {\n  margin-top: 40px;\n  margin-bottom: 40px;\n  font-size: 13px;\n  line-height: 20px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  vertical-align: top;\n  margin-top: 3px;\n  margin-right: 4px;\n  width: 12px;\n  height: 12px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "data": ".storybook-page {\r\n  margin: 0 auto;\r\n  padding: 48px 20px;\r\n  max-width: 600px;\r\n  color: #333;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n}\r\n\r\n.storybook-page h2 {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  margin: 0 0 4px;\r\n  font-weight: 700;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n}\r\n\r\n.storybook-page p {\r\n  margin: 1em 0;\r\n}\r\n\r\n.storybook-page a {\r\n  color: inherit;\r\n}\r\n\r\n.storybook-page ul {\r\n  margin: 1em 0;\r\n  padding-left: 30px;\r\n}\r\n\r\n.storybook-page li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.storybook-page .tip {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  margin-right: 10px;\r\n  border-radius: 1em;\r\n  background: #e7fdd8;\r\n  padding: 4px 12px;\r\n  color: #357a14;\r\n  font-weight: 700;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n}\r\n\r\n.storybook-page .tip-wrapper {\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n}\r\n\r\n.storybook-page .tip-wrapper svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n  margin-right: 4px;\r\n  width: 12px;\r\n  height: 12px;\r\n}\r\n\r\n.storybook-page .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
                     "styleUrl": "./page.css"
                 }
             ],
@@ -558,13 +672,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-81e7f5197b07694395d67f7eb8cffc8e264f74684732e2b09fed121254588979c467ad97b04ea3ab4765d6c9d593f065cc73bc4a1448c1ec7176939bf5111326",
+            "id": "module-AppModule-f29f19e81f22a47454c6a216ea29f6711e5e6aa2be6f07c1f58c635dc317f047bc22dca0aebf1451a51c61a2bce70b9ba812d6a11879fa8c28001dcd2aaf9f93",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { DropDownComponent } from './common-ui/controls/drop-down/drop-down.component';\r\n\r\n@NgModule({\n    declarations: [AppComponent],\n    imports: [\n        BrowserModule, HttpClientModule,\n        AppRoutingModule,\n        DropDownComponent\n    ],\n    providers: [],\n    bootstrap: [AppComponent]\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { DropDownComponent } from './common-ui/controls/drop-down/drop-down.component';\r\nimport { FileUploadComponent } from './common-ui/controls/file-upload/file-upload.component';\r\nimport { BadgeComponent } from './common-ui/controls/./badge/badge.component';\r\n\r\n@NgModule({\r\n    declarations: [AppComponent, BadgeComponent],\r\n    imports: [\r\n        BrowserModule, HttpClientModule,\r\n        AppRoutingModule,\r\n        DropDownComponent,\r\n        FileUploadComponent,\r\n        BadgeComponent\r\n    ],\r\n    providers: [],\r\n    bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -575,6 +689,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "BadgeComponent"
                         }
                     ]
                 },
@@ -585,7 +702,13 @@
                             "name": "AppRoutingModule"
                         },
                         {
+                            "name": "BadgeComponent"
+                        },
+                        {
                             "name": "DropDownComponent"
+                        },
+                        {
+                            "name": "FileUploadComponent"
                         }
                     ]
                 },
@@ -658,7 +781,7 @@
         ]
     },
     "coverage": {
-        "count": 11,
+        "count": 8,
         "status": "low",
         "files": [
             {
@@ -680,10 +803,37 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/common-ui/controls/badge/badge.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BadgeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/common-ui/controls/calendar/calendar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CalendarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/common-ui/controls/drop-down/drop-down.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "DropDownComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/common-ui/controls/file-upload/file-upload.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FileUploadComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
