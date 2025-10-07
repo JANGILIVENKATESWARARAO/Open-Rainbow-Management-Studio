@@ -1,0 +1,125 @@
+.single-upload { 
+  max-width: 640px; 
+  font-family: inherit; 
+}
+
+.upload-label { 
+  display: block; 
+  text-align: left;
+  font-weight: 600; 
+  font-size: 1rem; 
+  margin: 0 0 0.75rem; 
+  color: #111827; 
+}
+
+.file-upload-field { 
+  border: 1px dashed #d1d5db; 
+  background: #ffffff; 
+  border-radius: 8px; 
+  padding: 1.25rem 1.5rem; 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; 
+  min-height: 64px; 
+  transition: 0.2s background, 0.2s border-color; 
+  position: relative; 
+}
+  .file-upload-field { 
+    border: 1px dashed #d1d5db; 
+    background: #ffffff; 
+    border-radius: 8px; 
+    padding: 1rem 1.25rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 0.75rem; 
+    min-height: 64px; 
+    transition: 0.2s background, 0.2s border-color; 
+    position: relative; 
+  }
+
+  .file-upload-field:hover{
+    border: 1px dashed #3b82f6;
+  }
+
+.file-upload-field.dragging { 
+  background: #f0f9ff; 
+  border-color: #3b82f6; 
+}
+
+.icon { 
+  color: #af9c9c; 
+  display: flex; 
+  align-items: center;
+  flex-shrink: 0;
+}
+  
+  .icon-img { width:20px; height:20px; display:block; object-fit:contain; }
+
+.choose-btn {
+  --btn-bg: #eef6ff;
+  --btn-border: #c6ddfa;
+  --btn-text: #1d4ed8;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--btn-text);
+  padding: 0.55rem 1.05rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  user-select: none;
+  transition: background .18s, border-color .18s, box-shadow .18s;
+  position: relative;
+}
+
+.choose-btn:hover { 
+  --btn-bg: #e1f0ff;
+  --btn-border: #b4d3f7;
+}
+
+.choose-btn:active {
+  --btn-bg: #d4e9ff;
+  --btn-border: #a3caF5;
+  transform: translateY(1px);
+}
+
+.choose-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px #dbeafe, 0 0 0 5px #3b82f6;
+}
+
+.choose-btn input { 
+  display: none; 
+}
+
+.separator {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  display: none;
+}
+  
+.choose-btn-inline { position: relative; overflow: hidden; }
+.choose-btn-inline input[type=file] { position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:pointer; }
+
+
+input[type=file] { font-size:0; }
+
+.file-status { font-size:0.9rem; color:#4b5563; line-height:1; }
+
+
+.hint { 
+  margin: 0.5rem 0 0; 
+  font-size: 0.75rem; 
+  color: #6b7280; 
+}
+
+.error { 
+  margin: 0.5rem 0 0; 
+  font-size: 0.75rem; 
+  color: #dc2626; 
+}
