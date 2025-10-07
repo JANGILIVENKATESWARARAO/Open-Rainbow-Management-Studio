@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-badge',
@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './badge.component.css'
 })
 export class BadgeComponent {
+@Input() text: string = 'text';
+@Input() bgColor: string = 'white';
+@Input() color: string = 'gray';
+@Input() activeBGColor: string = '#7c3aedff';
+@Input() activeColor: string = 'white';
+
+  isHovered: boolean = false; // track hover state
 
 }
