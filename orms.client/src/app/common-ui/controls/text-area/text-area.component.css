@@ -1,8 +1,10 @@
 .form-group { 
   display: flex;
   flex-direction: column;
-  width: 300px;
-  margin: 20px;
+  /* width: 300px;
+  margin: 20px; */
+  height: 100%;
+  width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 label {
@@ -19,11 +21,27 @@ textarea {
   font-size: 14px;
   transition: all 0.25s ease;
   background-color: #fafafa;
+  resize: none;
+  width: 100%;
+  height: 100%;
+}
+.required-star {
+  color: #dc2626; 
+  /* font-size: 1rem; */
+  font-weight: 600;
+  margin-top: -12px;
 }
 
-textarea:hover {
+/* textarea:hover {
   border-color: #80bdff;
   background-color: #f9fcff;
+} */
+textarea:hover {
+  outline: none;
+  border-color: #007BFF; 
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); 
+  background-color: #f0f8ff; 
+  transition: all 0.3s ease;
 }
 textarea:focus {
   outline: none;

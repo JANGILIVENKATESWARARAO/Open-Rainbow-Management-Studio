@@ -1,4 +1,4 @@
 <div class="form-group">
-  <label for="address">Address <span>*</span></label>
-  <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+  <label for="address">{{label}} <span *ngIf="isRequired" class="required-star">*</span></label>
+  <textarea id="address" name="address" [placeholder]="Placeholder" ></textarea>
 </div>

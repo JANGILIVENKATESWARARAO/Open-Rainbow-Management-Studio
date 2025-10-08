@@ -1,0 +1,15 @@
+<div class="toggle-container">
+  <input
+    type="checkbox"
+    id="toggle"
+    class="toggle-input"
+    [checked]="checked"
+    (change)="onToggle($event)"
+  />
+  <label
+    for="toggle"
+    class="toggle-label"
+    [ngStyle]="{ 'background-color': checked ? color : '#ccc' }"
+  ></label>
+</div>
+

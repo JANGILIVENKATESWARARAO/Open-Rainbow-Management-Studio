@@ -36,7 +36,8 @@
       color: #9ca3af;
     }
 
-    input[type="text"]:focus {
-      border-color: #3b82f6;
-      box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
-    }
+        input[type="text"]:focus {
+  border-color: #2563eb; 
+  box-shadow:  0 0 0 3px rgba(146, 176, 244);
+  outline: none;
+}

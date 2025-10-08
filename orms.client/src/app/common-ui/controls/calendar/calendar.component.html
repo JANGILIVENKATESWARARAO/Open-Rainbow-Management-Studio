@@ -1,2 +1,5 @@
-<label class="dob-label">Date of Birth <span class="required">*</span></label><br>
-<input type="date" class="dob-input" placeholder="dd-mm-yyyy" required/>
+<label class="dob-label">
+    {{ label}} 
+    <span *ngIf="isRequired" class="required-star">*</span>
+</label><br>
+<input type="date" class="dob-input" (click)="openDatePicker($event)" placeholder="dd-mm-yyyy" required/>
