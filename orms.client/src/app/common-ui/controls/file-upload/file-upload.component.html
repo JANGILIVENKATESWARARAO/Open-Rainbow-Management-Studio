@@ -1,14 +1,31 @@
-<div class="single-upload">
-  <label class="upload-label" for="fileInput">Government ID</label>
-  <div class="file-upload-field">
-    <div class="icon" aria-hidden="true">
-      <!-- <img src="assets/file-upload.png" alt="" class="icon-img" width="20" height="20" /> -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload h-4 w-4 text-gray-400" aria-hidden="true"><path d="M12 3v12"></path><path d="m17 8-5-5-5 5"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg>
+<div class="parent">
+  <div class="single-upload">
+    <!-- Wrap label and * inside a wrapper -->
+    <div class="upload-label-wrapper">
+      <label class="upload-label" for="fileInput">{{ label }}</label>
+      <ng-container *ngIf="isRequired">
+        <span class="required-star">*</span>
+      </ng-container>
     </div>
-      <label class="choose-btn choose-btn-inline">
-        <input id="fileInput" type="file" />
+
+    <div class="file-upload-field" (click)="onAreaClick($event)">
+      <div class="icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-upload h-4 w-4 text-gray-400" aria-hidden="true">
+          <path d="M12 3v12"></path>
+          <path d="m17 8-5-5-5 5"></path>
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        </svg>
+      </div>
+
+      <label class="choose-btn choose-btn-inline" (click)="$event.stopPropagation()">
+        <input #fileInput id="fileInput" type="file" (change)="onFileSelected($event)" />
         <span>Choose file</span>
       </label>
+
       <span class="file-status">No file chosen</span>
+    </div>
   </div>
 </div>
