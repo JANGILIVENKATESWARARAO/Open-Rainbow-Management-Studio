@@ -22,7 +22,7 @@
 
       <label class="choose-btn choose-btn-inline" (click)="$event.stopPropagation()">
         <input #fileInput id="fileInput" type="file" (change)="onFileSelected($event)" />
-        <span>Choose file</span>
+        <span>{{ buttonLabel }}</span>
       </label>
 
       <span class="file-status">No file chosen</span>

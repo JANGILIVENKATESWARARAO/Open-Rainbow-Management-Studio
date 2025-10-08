@@ -12,6 +12,8 @@ export class FileUploadComponent {
   @Input() label: string = 'Government ID';
   @Input() isRequired: boolean = true;
 
+  @Input() buttonLabel: string = 'Choose file';
+
   @ViewChild('fileInput', { static: false }) fileInputRef!: ElementRef<HTMLInputElement>;
 
   onAreaClick(event: MouseEvent) {
