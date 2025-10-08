@@ -296,7 +296,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div\r\n  class=\"inline-flex items-center px-10 py-[6px] rounded-full border border-gray-200 shadow-sm cursor-pointer transition-all duration-300 ease-in-out select-none m-[10px]\"\r\n  [style.backgroundColor]=\"isHovered ? activeBGColor : bgColor\"\r\n  [style.color]=\"isHovered ? activeColor : color\"\r\n  (mouseenter)=\"isHovered = true\"\r\n  (mouseleave)=\"isHovered = false\"\r\n>\r\n  {{ text }}\r\n</div>\r\n"
+            "templateData": "<div\r\n  class=\"inline-flex items-center px-6 py-[4px] rounded-full border border-gray-200 shadow-sm cursor-pointer transition-all duration-300 ease-in-out select-none m-[10px]\"\r\n  [style.backgroundColor]=\"isHovered ? activeBGColor : bgColor\"\r\n  [style.color]=\"isHovered ? activeColor : color\"\r\n  (mouseenter)=\"isHovered = true\"\r\n  (mouseleave)=\"isHovered = false\"\r\n>\r\n  {{ text }}\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -727,19 +727,19 @@
             "extends": []
         },
         {
-            "name": "TextareaComponent",
-            "id": "component-TextareaComponent-a45e5cb1fbe7d320bc8974031f8cf1bc26fabcffa783a511513dd155d014fdad2353f8a602dc3369ec5c8e7dc9c6b704f5eed53234d6299b4b91ae02a5dab2f9",
-            "file": "src/app/common-ui/controls/textarea/textarea.component.ts",
+            "name": "TextAreaComponent",
+            "id": "component-TextAreaComponent-b777493dcf505506b978aac0ee71bb7a6e53098cb72651f592944699cc16f029a6a84cbdfac9d298d00d9e92b64a28a7edb0f51e9061815c9691a9e281031ced",
+            "file": "src/app/common-ui/controls/text-area/text-area.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-textarea",
+            "selector": "app-text-area",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./textarea.component.html"
+                "./text-area.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -751,22 +751,22 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrl: './textarea.component.css'\r\n})\r\nexport class TextareaComponent {\r\n\r\n}\r\n",
-            "styleUrl": "./textarea.component.css",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-text-area',\r\n  standalone: true,\r\n  templateUrl: './text-area.component.html',\r\n  styleUrl: './text-area.component.css'\r\n})\r\nexport class TextAreaComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./text-area.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"form-group\">\r\n  <label for=\"address\">Address *</label>\r\n  <textarea id=\"address\" name=\"address\" placeholder=\"Enter your address\"></textarea>\r\n</div>\r\n"
+            "templateData": "<div class=\"form-group\">\r\n  <label for=\"address\">Address <span>*</span></label>\r\n  <textarea id=\"address\" name=\"address\" placeholder=\"Enter your address\"></textarea>\r\n</div>\r\n"
         },
         {
             "name": "TextBoxComponent",
-            "id": "component-TextBoxComponent-30f853880c5ea2071f341504cfcf431d4aac5a13fdc738c8d9f28419ac7b769c7943de5cf1c0227ec5adb9a05b6195b5eb25dab598e9ec3a8a20f3c50f2d8832",
+            "id": "component-TextBoxComponent-1be6614f4054119aa0f091a5dd24cf631ba6c3d988a2930f419417be3b79c3367caf06d4e4838da049a02b874d5b266dc5c094722f90cd05e0f37cabadd95cc8",
             "file": "src/app/common-ui/controls/text-box/text-box.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -789,12 +789,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-text-box',\r\n  templateUrl: './text-box.component.html',\r\n  styleUrl: './text-box.component.css'\r\n})\r\nexport class TextBoxComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-text-box',\r\n  standalone: true,\r\n  templateUrl: './text-box.component.html',\r\n  styleUrl: './text-box.component.css'\r\n})\r\nexport class TextBoxComponent {\r\n\r\n}\r\n",
             "styleUrl": "./text-box.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -806,13 +806,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-9c30153b9e249cf53aa1be2cc2791ba0e41aa99eeee59eea70091c6e5b36807af16a23713ad74c24bc523d32e459a7915eb76a2e29446f78a212ea2b03dca7d5",
+            "id": "module-AppModule-d6c14943ef985536fa957e5d79cc960fe3865c22ba8cde727daae38c098d97506aa57fca1d7d33dcd5e5255aaaf17a5cdd1c2987527d015996ba92fac46af749",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { DropDownComponent } from './common-ui/controls/drop-down/drop-down.component';\r\nimport { FileUploadComponent } from './common-ui/controls/file-upload/file-upload.component';\r\n\r\n@NgModule({\r\n    declarations: [AppComponent],\r\n    imports: [\r\n        BrowserModule, HttpClientModule,\r\n        AppRoutingModule,\r\n        DropDownComponent,\r\n        FileUploadComponent\r\n    ],\r\n    providers: [],\r\n    bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\n\r\n\r\n@NgModule({\r\n    declarations: [AppComponent],\r\n    imports: [\r\n        BrowserModule, HttpClientModule,\r\n        AppRoutingModule\r\n    ],\r\n    providers: [],\r\n    bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -831,12 +831,6 @@
                     "elements": [
                         {
                             "name": "AppRoutingModule"
-                        },
-                        {
-                            "name": "DropDownComponent"
-                        },
-                        {
-                            "name": "FileUploadComponent"
                         }
                     ]
                 },
@@ -967,19 +961,19 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/common-ui/controls/text-box/text-box.component.ts",
+                "filePath": "src/app/common-ui/controls/text-area/text-area.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TextBoxComponent",
+                "name": "TextAreaComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/common-ui/controls/textarea/textarea.component.ts",
+                "filePath": "src/app/common-ui/controls/text-box/text-box.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TextareaComponent",
+                "name": "TextBoxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

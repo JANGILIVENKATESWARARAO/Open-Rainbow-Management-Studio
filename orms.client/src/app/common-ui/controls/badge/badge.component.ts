@@ -12,6 +12,7 @@ export class BadgeComponent {
 @Input() color: string = 'gray';
 @Input() activeBGColor: string = '#7c3aedff';
 @Input() activeColor: string = 'white';
+@Input() borderRadius: string = '9999px'; 
 
   isHovered: boolean = false; // track hover state
 
