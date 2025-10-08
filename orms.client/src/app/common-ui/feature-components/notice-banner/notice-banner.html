@@ -1,0 +1,17 @@
+<div class="flex items-start bg-blue-100 border-l-4 border-blue-400 p-4 rounded-md">
+  <svg
+    class="w-6 h-6 text-blue-400 mt-0.5 flex-shrink-0"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+    <line x1="12" y1="16" x2="12" y2="12" stroke="currentColor" stroke-width="2" />
+    <circle cx="12" cy="9" r="1" fill="currentColor" />
+  </svg>
+
+  <div class="ml-3">
+    <span class="font-semibold" [style.color]="headingColor">{{ heading }}: </span>
+    <span [style.color]="contentColor">{{ content }}</span>
+  </div>
+</div>
