@@ -8,8 +8,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class TextBoxComponent {
-  @Input() label: string = 'fullName';
+  @Input() label: string = 'Full Name';
     @Input() placeHolder: string = 'Enter full name';
-    @Input() isRequired: boolean = false;
+    @Input() isRequired: boolean = true;
 
 }
