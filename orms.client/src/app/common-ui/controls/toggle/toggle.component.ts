@@ -4,20 +4,25 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-toggle',
   standalone: true,
-  imports: [CommonModule],               // <- needed for ngStyle, etc.
+  imports: [CommonModule],               
   templateUrl: './toggle.component.html',
-  styleUrls: ['./toggle.component.css'] // <- correct property name
+  styleUrls: ['./toggle.component.css'] 
 })
 export class ToggleComponent {
   @Input() checked = false;
-  @Input() color = '#4CAF50';            // color from Storybook
-  @Output() checkedChange = new EventEmitter<boolean>(); // for two-way pattern
+  @Input() color = '#4CAF50';            
+  @Output() checkedChange = new EventEmitter<boolean>(); 
   @Output() toggleChange = new EventEmitter<boolean>();
+  @Input() label: string = '';
+  @Input() labelPosition: 'left' | 'right' = 'right';
+  @Input() labelColor: string = '#333';   
+
+  
 
   onToggle(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.checked = input.checked;                // update internal state
-    this.checkedChange.emit(this.checked);       // emit two-way event
-    this.toggleChange.emit(this.checked);        // additional output if needed
+    this.checked = input.checked;                
+    this.checkedChange.emit(this.checked);      
+    this.toggleChange.emit(this.checked);       
   }
 }

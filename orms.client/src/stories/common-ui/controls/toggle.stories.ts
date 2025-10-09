@@ -5,10 +5,10 @@ import { ToggleComponent } from '../../../app/common-ui/controls/toggle/toggle.c
 const meta: Meta<ToggleComponent> = {
   title: 'Common-UI/Toggle',
   component: ToggleComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [ToggleComponent], 
+      imports: [ToggleComponent],
     }),
   ],
   parameters: {
@@ -16,13 +16,22 @@ const meta: Meta<ToggleComponent> = {
   },
   argTypes: {
     checked: { control: 'boolean' },
-    color: { control: 'color' },      
+    color: { control: 'color' },
+    label: { control: 'text' },
+    labelPosition: {
+      control: { type: 'radio' },
+      options: ['left', 'right'], 
+    },
+    labelColor: { control: 'color', description: 'Label text color' },
     checkedChange: { action: 'checkedChange' },
     toggleChange: { action: 'toggleChange' },
   },
   args: {
     checked: false,
     color: '#4CAF50',
+    label: 'Enable Sync',
+    labelColor: '#333',
+    labelPosition: 'right', 
   },
 };
 
@@ -33,13 +42,11 @@ export const Toggle: Story = {
   render: (args) => ({
     props: {
       ...args,
-      
       checkedChange: (val: boolean) => {
-        args.checked = val; 
+        args.checked = val;
       },
       toggleChange: (val: boolean) => {
         args.checked = val;
-        
       },
     },
   }),
