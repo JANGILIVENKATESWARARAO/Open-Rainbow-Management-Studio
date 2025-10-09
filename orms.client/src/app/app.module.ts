@@ -4,15 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BasicInfoComponent } from "./modules/add-employee/basic-info/basic-info.component";
+import { PasswordBoxComponent } from './common-ui/controls/password-box/password-box.component';
 
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, PasswordBoxComponent],
     imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule,
-    BasicInfoComponent
+    AppRoutingModule
+        
 ],
     providers: [],
     bootstrap: [AppComponent]

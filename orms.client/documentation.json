@@ -204,7 +204,7 @@
         },
         {
             "name": "BadgeComponent",
-            "id": "component-BadgeComponent-a82de5411d9a600f8b48a6b86bf683e9ce6aa29609ac8610a7be0564eb2672fbc596d2eb8503fe5318884fe7f8a4b63fc1a9f9f00245aaa3961b40eb2ffa029a",
+            "id": "component-BadgeComponent-d60e86c60853043604e6783640d7bfd94ffb8b47396caaf41e81e70eda471cdb7c1e0573d948da711eef1cc11b5bdfb87c0dfc3f88112b29a3c21e5ab095dce6",
             "file": "src/app/common-ui/controls/badge/badge.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -248,6 +248,15 @@
                     "decorators": []
                 },
                 {
+                    "name": "borderRadius",
+                    "defaultValue": "'9999px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "color",
                     "defaultValue": "'gray'",
                     "deprecated": false,
@@ -277,7 +286,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 17
                 }
             ],
             "methodsClass": [],
@@ -290,13 +299,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-badge',\r\n  standalone:true,\r\n  templateUrl: './badge.component.html',\r\n  styleUrl: './badge.component.css'\r\n})\r\nexport class BadgeComponent {\r\n@Input() text: string = 'text';\r\n@Input() bgColor: string = 'white';\r\n@Input() color: string = 'gray';\r\n@Input() activeBGColor: string = '#7c3aedff';\r\n@Input() activeColor: string = 'white';\r\n\r\n  isHovered: boolean = false; // track hover state\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-badge',\r\n  standalone:true,\r\n  templateUrl: './badge.component.html',\r\n  styleUrl: './badge.component.css'\r\n})\r\nexport class BadgeComponent {\r\n@Input() text: string = 'text';\r\n@Input() bgColor: string = 'white';\r\n@Input() color: string = 'gray';\r\n@Input() activeBGColor: string = '#7c3aedff';\r\n@Input() activeColor: string = 'white';\r\n@Input() borderRadius: string = '9999px'; \r\n\r\n  isHovered: boolean = false; // track hover state\r\n\r\n}\r\n",
             "styleUrl": "./badge.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div\r\n  class=\"inline-flex items-center px-6 py-[4px] rounded-full border border-gray-200 shadow-sm cursor-pointer transition-all duration-300 ease-in-out select-none m-[10px]\"\r\n  [style.backgroundColor]=\"isHovered ? activeBGColor : bgColor\"\r\n  [style.color]=\"isHovered ? activeColor : color\"\r\n  (mouseenter)=\"isHovered = true\"\r\n  (mouseleave)=\"isHovered = false\"\r\n>\r\n  {{ text }}\r\n</div>\r\n"
+            "templateData": "<div\r\n  class=\"inline-flex items-center justify-center px-6 py-[4px] border border-gray-200 shadow-sm cursor-pointer pb-2 m-[10px]\"\r\n  [style.backgroundColor]=\"isHovered ? activeBGColor : bgColor\"\r\n  [style.color]=\"isHovered ? activeColor : color\"\r\n  [style.borderRadius]=\"borderRadius\"\r\n  (mouseenter)=\"isHovered = true\"\r\n  (mouseleave)=\"isHovered = false\"\r\n>\r\n  {{ text }}\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -434,7 +443,7 @@
         },
         {
             "name": "CalendarComponent",
-            "id": "component-CalendarComponent-79537972dc5c64d81c5f43b34bb1c840b41861b592dd8d17c79b0e22f219879650dd8167708f6a5d326c6c49c8deb84beedb1a2eee5a91fa5f86910f8cab77a7",
+            "id": "component-CalendarComponent-f2413ba514cace5f0c433ca6357363622583eec4173fd64ea8b77aaf41bebe7d76738e7281291b073443342871eea542838b829a67706ba7f7eab526ff20efa2",
             "file": "src/app/common-ui/controls/calendar/calendar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -449,26 +458,79 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "isRequired",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Date of Birth'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "openDatePicker",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-calendar',\r\n   standalone: true,\r\n  templateUrl: './calendar.component.html',\r\n  styleUrl: './calendar.component.css'\r\n})\r\nexport class CalendarComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component,Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-calendar',\r\n  standalone: true,\r\n  imports:[CommonModule],\r\n  templateUrl: './calendar.component.html',\r\n  styleUrl: './calendar.component.css'\r\n})\r\nexport class CalendarComponent {\r\n  @Input() label: string = 'Date of Birth';\r\n  @Input() isRequired: boolean = true;\r\n  openDatePicker(event: Event) {\r\n  const input = event.target as HTMLInputElement;\r\n  input.showPicker(); \r\n}\r\n}\r\n",
             "styleUrl": "./calendar.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<label class=\"dob-label\">Date of Birth <span class=\"required\">*</span></label><br>\r\n<input type=\"date\" class=\"dob-input\" placeholder=\"dd-mm-yyyy\" required/>"
+            "templateData": "<label class=\"dob-label\">\r\n    {{ label}} \r\n    <span *ngIf=\"isRequired\" class=\"required-star\">*</span>\r\n</label><br>\r\n<input type=\"date\" class=\"dob-input\" (click)=\"openDatePicker($event)\" placeholder=\"dd-mm-yyyy\" required/>"
         },
         {
             "name": "DropDownComponent",
@@ -510,7 +572,7 @@
         },
         {
             "name": "FileUploadComponent",
-            "id": "component-FileUploadComponent-a7f87dba6992d9fda1940fe24d2031db3931560c0f0bbd2c326561a34dba3fbe47ce0486c98f4ee506cfa7d6c54dc6562f31109d6bcb7d639df012c9c65c882b",
+            "id": "component-FileUploadComponent-2539e99908843245d25a750fb558f7b4b75a43d9c9c3b5995a087e1846acb00487497ddcda0792e05b43a53e8080a3095aa9a7f446df368c58d69a6a511b0895",
             "file": "src/app/common-ui/controls/file-upload/file-upload.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -525,26 +587,136 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "buttonLabel",
+                    "defaultValue": "'Choose file'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isRequired",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Government ID'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "fileInputRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef<HTMLInputElement>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fileInput', {static: false}"
+                        }
+                    ],
+                    "modifierKind": [
+                        171
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onAreaClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onFileSelected",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-file-upload',\r\n  standalone: true,\r\n  templateUrl: './file-upload.component.html',\r\n  styleUrl: './file-upload.component.css'\r\n})\r\nexport class FileUploadComponent {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, ViewChild, ElementRef } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-file-upload',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './file-upload.component.html',\r\n  styleUrl: './file-upload.component.css'\r\n})\r\nexport class FileUploadComponent {\r\n  @Input() label: string = 'Government ID';\r\n  @Input() isRequired: boolean = true;\r\n\r\n  @Input() buttonLabel: string = 'Choose file';\r\n\r\n  @ViewChild('fileInput', { static: false }) fileInputRef!: ElementRef<HTMLInputElement>;\r\n\r\n  onAreaClick(event: MouseEvent) {\r\n    // event.preventDefault();\r\n      this.fileInputRef.nativeElement.click();\r\n  }\r\n\r\n  onFileSelected(event: Event) {\r\n    const input = event.target as HTMLInputElement;\r\n    const file = input.files?.[0];\r\n    if (file) {\r\n      console.log('Selected file:', file.name);\r\n      const statusElement = input.closest('.file-upload-field')?.querySelector('.file-status');\r\n      if (statusElement) statusElement.textContent = file.name;\r\n    }\r\n  }\r\n}\r\n",
             "styleUrl": "./file-upload.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"single-upload\">\r\n  <label class=\"upload-label\" for=\"fileInput\">Government ID</label>\r\n  <div class=\"file-upload-field\">\r\n    <div class=\"icon\" aria-hidden=\"true\">\r\n      <!-- <img src=\"assets/file-upload.png\" alt=\"\" class=\"icon-img\" width=\"20\" height=\"20\" /> -->\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-upload h-4 w-4 text-gray-400\" aria-hidden=\"true\"><path d=\"M12 3v12\"></path><path d=\"m17 8-5-5-5 5\"></path><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path></svg>\r\n    </div>\r\n      <label class=\"choose-btn choose-btn-inline\">\r\n        <input id=\"fileInput\" type=\"file\" />\r\n        <span>Choose file</span>\r\n      </label>\r\n      <span class=\"file-status\">No file chosen</span>\r\n  </div>\r\n</div>"
+            "templateData": "<div class=\"parent\">\r\n  <div class=\"single-upload\">\r\n    <!-- Wrap label and * inside a wrapper -->\r\n    <div class=\"upload-label-wrapper\">\r\n      <label class=\"upload-label\" for=\"fileInput\">{{ label }}</label>\r\n      <ng-container *ngIf=\"isRequired\">\r\n        <span class=\"required-star\">*</span>\r\n      </ng-container>\r\n    </div>\r\n\r\n    <div class=\"file-upload-field\" (click)=\"onAreaClick($event)\">\r\n      <div class=\"icon\" aria-hidden=\"true\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\"\r\n          viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\r\n          stroke-linecap=\"round\" stroke-linejoin=\"round\"\r\n          class=\"lucide lucide-upload h-4 w-4 text-gray-400\" aria-hidden=\"true\">\r\n          <path d=\"M12 3v12\"></path>\r\n          <path d=\"m17 8-5-5-5 5\"></path>\r\n          <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path>\r\n        </svg>\r\n      </div>\r\n\r\n      <label class=\"choose-btn choose-btn-inline\" (click)=\"$event.stopPropagation()\">\r\n        <input #fileInput id=\"fileInput\" type=\"file\" (change)=\"onFileSelected($event)\" />\r\n        <span>{{ buttonLabel }}</span>\r\n      </label>\r\n\r\n      <span class=\"file-status\">No file chosen</span>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -631,6 +803,85 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "NoticeBannerComponent",
+            "id": "component-NoticeBannerComponent-24bfb1ff4c7b61476ed481a194bfb59c05df3907575c2397a1d3a593d63ea4ea13b460fcc7d871d9c15d468f75c028929ccc7833c41937982ffa9fe46fd83655",
+            "file": "src/app/common-ui/feature-components/notice-banner/notice-banner.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-notice-banner",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./notice-banner.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "'Changes to leave policies will apply to all employees from the next calendar year. Current year balances will remain unchanged.'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n📝 Banner content text (editable in Storybook)",
+                    "description": "<p>📝 Banner content text (editable in Storybook)</p>\n",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "contentColor",
+                    "defaultValue": "'#374151'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n🎨 Content text color",
+                    "description": "<p>🎨 Content text color</p>\n",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "heading",
+                    "defaultValue": "'Important'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "headingColor",
+                    "defaultValue": "'#1E3A8A'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-notice-banner',\r\n  standalone: true,\r\n  templateUrl: './notice-banner.html',\r\n  styleUrl: './notice-banner.css'\r\n})\r\nexport class NoticeBannerComponent {\r\n  @Input() heading: string = 'Important';\r\n\r\n  /** 📝 Banner content text (editable in Storybook) */\r\n  @Input() content: string =\r\n    'Changes to leave policies will apply to all employees from the next calendar year. Current year balances will remain unchanged.';\r\n   @Input() headingColor: string = '#1E3A8A'; // Tailwind blue-900\r\n\r\n  /** 🎨 Content text color */\r\n  @Input() contentColor: string = '#374151';\r\n \r\n}\r\n",
+            "styleUrl": "./notice-banner.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"flex items-start bg-blue-100 border-l-4 border-blue-400 p-4 rounded-md\">\r\n  <svg\r\n    class=\"w-6 h-6 text-blue-400 mt-0.5 flex-shrink-0\"\r\n    fill=\"none\"\r\n    viewBox=\"0 0 24 24\"\r\n    stroke=\"currentColor\"\r\n  >\r\n    <circle cx=\"12\" cy=\"12\" r=\"10\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" />\r\n    <line x1=\"12\" y1=\"16\" x2=\"12\" y2=\"12\" stroke=\"currentColor\" stroke-width=\"2\" />\r\n    <circle cx=\"12\" cy=\"9\" r=\"1\" fill=\"currentColor\" />\r\n  </svg>\r\n\r\n  <div class=\"ml-3\">\r\n    <span class=\"font-semibold\" [style.color]=\"headingColor\">{{ heading }}: </span>\r\n    <span [style.color]=\"contentColor\">{{ content }}</span>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "PageComponent",
@@ -727,8 +978,69 @@
             "extends": []
         },
         {
+            "name": "PasswordBoxComponent",
+            "id": "component-PasswordBoxComponent-6db891251fe78014552dab8c506553db0def8a5b0f229e84943ba3bc99776c02fe114388551507eaf6e38c3c3a3d631e4da7a8128de0ad69c69936aafe407ea2",
+            "file": "src/app/common-ui/controls/password-box/password-box.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-password-box",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./password-box.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "passwordVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "togglePassword",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-password-box',\r\n  templateUrl: './password-box.component.html',\r\n  styleUrl: './password-box.component.css'\r\n})\r\nexport class PasswordBoxComponent {\r\n    passwordVisible = false; // toggle state\r\n\r\n  togglePassword() {\r\n    this.passwordVisible = !this.passwordVisible;\r\n  }\r\n\r\n}\r\n",
+            "styleUrl": "./password-box.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"flex flex-col gap-1 font-sans text-md text-gray-700 m-6 mb-6 mr-[100px]\">\r\n  <!-- Label -->\r\n  <div class=\"flex items-center gap-1\">\r\n    <div class=\"font-medium\">Temporary Password</div>\r\n    <div class=\"text-red-500\">*</div>\r\n  </div>\r\n\r\n  <!-- Input wrapper -->\r\n  <div class=\"relative rounded-md bg-[#f6faff] p-[1px] border border-[#B0D5FD]\r\n              focus-within:border-[#2563eb]\r\n              focus-within:shadow-[0_0_0_3px_rgba(146,176,244,1)]\">\r\n              \r\n    <div class=\"flex items-center justify-between bg-white rounded-md px-3 py-2.5\">\r\n      \r\n      <!-- Password input -->\r\n      <input \r\n        [type]=\"passwordVisible ? 'text' : 'password'\" \r\n        placeholder=\"Enter temporary password\"\r\n        class=\"flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400\"\r\n      />\r\n\r\n      <!-- Eye icon toggle -->\r\n      <button type=\"button\" class=\"ml-2 text-gray-400\" (click)=\"togglePassword()\">\r\n        <!-- Eye open -->\r\n        <svg *ngIf=\"!passwordVisible\" xmlns=\"http://www.w3.org/2000/svg\"\r\n             class=\"w-4 h-4\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n          <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                d=\"M15 12a3 3 0 11-6 0 3 3 0 016 0z\" />\r\n          <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                d=\"M2.458 12C3.732 7.943 7.523 5 12 5\r\n                   c4.478 0 8.268 2.943 9.542 7\r\n                   -1.274 4.057-5.064 7-9.542 7\r\n                   -4.477 0-8.268-2.943-9.542-7z\" />\r\n        </svg>\r\n\r\n        <!-- Eye slash -->\r\n        <svg *ngIf=\"passwordVisible\" xmlns=\"http://www.w3.org/2000/svg\"\r\n             class=\"w-4 h-4\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n          <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                d=\"M13.875 18.825A10.05 10.05 0 0112 19\r\n                   c-4.478 0-8.268-2.943-9.542-7\r\n                   a9.956 9.956 0 012.223-3.425\r\n                   M6.168 6.168A9.956 9.956 0 0112 5\r\n                   c4.477 0 8.268 2.943 9.542 7\r\n                   a10.05 10.05 0 01-1.18 2.524M3 3l18 18\" />\r\n        </svg>\r\n      </button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
             "name": "TextAreaComponent",
-            "id": "component-TextAreaComponent-b777493dcf505506b978aac0ee71bb7a6e53098cb72651f592944699cc16f029a6a84cbdfac9d298d00d9e92b64a28a7edb0f51e9061815c9691a9e281031ced",
+            "id": "component-TextAreaComponent-16a0ad98f50032d34a60112af5d915ef599d9ae89cb8b99bd4904239c78d73f3b71fdeb0b5c67e2213d942cfdd5eeac618b3de03b6408b55d7bce365e90f078b",
             "file": "src/app/common-ui/controls/text-area/text-area.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -743,7 +1055,35 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "isRequired",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Address'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "Placeholder",
+                    "defaultValue": "'Enter your address'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -752,17 +1092,22 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-text-area',\r\n  standalone: true,\r\n  templateUrl: './text-area.component.html',\r\n  styleUrl: './text-area.component.css'\r\n})\r\nexport class TextAreaComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-text-area',\r\n  standalone: true,\r\n  templateUrl: './text-area.component.html',\r\n  styleUrl: './text-area.component.css',\r\n  imports: [CommonModule]\r\n})\r\nexport class TextAreaComponent {\r\n  @Input() label: string = 'Address';\r\n  @Input() Placeholder: string = 'Enter your address';\r\n  @Input() isRequired: boolean = true;\r\n}\r\n",
             "styleUrl": "./text-area.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"form-group\">\r\n  <label for=\"address\">Address <span>*</span></label>\r\n  <textarea id=\"address\" name=\"address\" placeholder=\"Enter your address\"></textarea>\r\n</div>\r\n"
+            "templateData": "<div class=\"form-group\">\r\n  <label for=\"address\">{{label}} <span *ngIf=\"isRequired\" class=\"required-star\">*</span></label>\r\n  <textarea id=\"address\" name=\"address\" [placeholder]=\"Placeholder\" ></textarea>\r\n</div>\r\n"
         },
         {
             "name": "TextBoxComponent",
@@ -806,13 +1151,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-d6c14943ef985536fa957e5d79cc960fe3865c22ba8cde727daae38c098d97506aa57fca1d7d33dcd5e5255aaaf17a5cdd1c2987527d015996ba92fac46af749",
+            "id": "module-AppModule-e7f2eb4520c01428cb9baf09a37b3675dd5d823dd4876f6562aaa2594e0703a7223f2a0a26fad2e62136f91a71bf857b5f2938bfd6ddc933a3aaf129e5e1f65c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\n\r\n\r\n@NgModule({\r\n    declarations: [AppComponent],\r\n    imports: [\r\n        BrowserModule, HttpClientModule,\r\n        AppRoutingModule\r\n    ],\r\n    providers: [],\r\n    bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { PasswordBoxComponent } from './common-ui/controls/password-box/password-box.component';\r\n\r\n\r\n@NgModule({\r\n    declarations: [AppComponent, PasswordBoxComponent],\r\n    imports: [\r\n        BrowserModule, HttpClientModule,\r\n        AppRoutingModule\r\n    ],\r\n    providers: [],\r\n    bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -823,6 +1168,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "PasswordBoxComponent"
                         }
                     ]
                 },
@@ -903,7 +1251,7 @@
         ]
     },
     "coverage": {
-        "count": 6,
+        "count": 8,
         "status": "low",
         "files": [
             {
@@ -930,7 +1278,7 @@
                 "linktype": "component",
                 "name": "BadgeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -939,7 +1287,7 @@
                 "linktype": "component",
                 "name": "CalendarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -957,7 +1305,16 @@
                 "linktype": "component",
                 "name": "FileUploadComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/common-ui/controls/password-box/password-box.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PasswordBoxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -966,7 +1323,7 @@
                 "linktype": "component",
                 "name": "TextAreaComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -977,6 +1334,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
+            },
+            {
+                "filePath": "src/app/common-ui/feature-components/notice-banner/notice-banner.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NoticeBannerComponent",
+                "coveragePercent": 40,
+                "coverageCount": "2/5",
+                "status": "medium"
             },
             {
                 "filePath": "src/stories/button.component.ts",
