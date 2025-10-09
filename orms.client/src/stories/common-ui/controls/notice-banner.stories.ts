@@ -55,7 +55,11 @@ iconColor: {
   description: 'Color of the icon beside the heading',
   defaultValue: '#1E3A8A',
 },
-
+showBorder: {
+  control: 'boolean',
+  description: 'Show full border around the banner',
+  defaultValue: false,
+},
 
   },
 };
@@ -75,6 +79,7 @@ export const NoticeBanner: Story = {
      highlighterColor: '#1E3A8A',
      showIcon: true,
      iconColor: '#1E3A8A',
+    showBorder: false,
 
 
   },

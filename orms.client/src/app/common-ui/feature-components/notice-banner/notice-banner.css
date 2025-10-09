@@ -2,6 +2,10 @@
   background-color: var(--banner-color, #DBEAFE);
   border-left: 4px solid var(--border-color, #1E3A8A);
 }
+.notice-banner.with-border {
+  border: 1px solid var(--border-color, #1E3A8A);
+  border-left-width: 4px; 
+}
 
 .notice-banner .heading {
   color: var(--heading-color, #1E3A8A);

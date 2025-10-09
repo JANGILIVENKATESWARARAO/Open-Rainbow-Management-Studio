@@ -1,13 +1,14 @@
 <div
   class="notice-banner flex items-start p-4 rounded-md"
   [class.hide-icon]="!showIcon"
+  [class.with-border]="showBorder"
   [style.--banner-color]="bannerColor"
   [style.--border-color]="highlighterColor"
   [style.--heading-color]="headingColor"
   [style.--content-color]="contentColor"
   [style.--icon-color]="iconColor"
 >
-  <svg
+<svg
     *ngIf="showIcon"
     class="w-6 h-6 mt-0.5 flex-shrink-0"
     fill="none"
@@ -19,6 +20,7 @@
     <circle cx="12" cy="9" r="1" fill="var(--icon-color)" />
   </svg>
 
+  <!-- Text -->
   <div class="ml-3">
     <span class="font-semibold heading">{{ heading }}</span>
 
