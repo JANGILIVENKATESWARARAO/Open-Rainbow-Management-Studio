@@ -4,7 +4,7 @@ import { NoticeBannerComponent } from '../../../app/common-ui/feature-components
 const meta: Meta<NoticeBannerComponent> = {
   title: 'Common-UI/NoticeBanner',
   component: NoticeBannerComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
@@ -12,7 +12,7 @@ const meta: Meta<NoticeBannerComponent> = {
     heading: {
       control: 'text',
       description: 'Heading text of the notice banner',
-      defaultValue: 'Important',
+      defaultValue: 'Important: ',
     },
     content: {
       control: 'text',
@@ -30,6 +30,32 @@ const meta: Meta<NoticeBannerComponent> = {
       description: 'Color for content text',
       defaultValue: '#374151',
     },
+    contentInNextLine: {
+    control: 'boolean',
+    description: 'If true, shows content on next line',
+    defaultValue: false,
+  },
+  bannerColor: {
+  control: 'color',
+  description: 'Background color for the banner',
+  defaultValue: '#DBEAFE',
+},
+highlighterColor: {
+  control: 'color',
+  description: 'Left border (highlighter) color',
+  defaultValue: '#1E3A8A',
+},
+showIcon: {
+  control: 'boolean',
+  description: 'Toggle to show/hide the icon',
+  defaultValue: true,
+},
+iconColor: {
+  control: 'color',
+  description: 'Color of the icon beside the heading',
+  defaultValue: '#1E3A8A',
+},
+
 
   },
 };
@@ -39,10 +65,17 @@ type Story = StoryObj<NoticeBannerComponent>;
 
 export const NoticeBanner: Story = {
   args: {
-    heading: 'Important',
+    heading: 'Important: ',
     content:
       'Changes to leave policies will apply to all employees from the next calendar year. Current year balances will remain unchanged.',
     headingColor: '#1E3A8A',
     contentColor: '#374151',
+     contentInNextLine: false,
+     bannerColor: '#DBEAFE',
+     highlighterColor: '#1E3A8A',
+     showIcon: true,
+     iconColor: '#1E3A8A',
+
+
   },
 };
