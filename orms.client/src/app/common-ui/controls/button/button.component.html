@@ -1,13 +1,7 @@
-<div class="pb-10 flex align-center ">
-  <button
-    class="border border-red-500 m-10 px-4 py-2 pb-[11.5px] w-[130px]"
-    [style.backgroundColor]="isHovered ? activeBGColor : bgColor"
-    [style.color]="isHovered ? activeColor : color"
-    [style.borderRadius]="borderRadius"
-    (mouseenter)="isHovered = true"
-    (mouseleave)="isHovered = false"
-  >
+<div class="flex align-center ">
+  <button class="border border-red-500 px-4 py-2 pb-[11.5px]"
+    [style.backgroundColor]="isHovered ? hoverBGColor : bgColor" [style.color]="isHovered ? hoverColor : color"
+    [style.borderRadius]="borderRadius" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
     {{ text }}
   </button>
 </div>
-

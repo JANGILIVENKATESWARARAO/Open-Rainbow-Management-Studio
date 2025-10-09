@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports:[CommonModule],
+  imports: [CommonModule],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.css'
 })
 export class CalendarComponent {
-  @Input() label: string = 'Date of Birth';
-  @Input() isRequired: boolean = true;
+  @Input() label?: string = 'Calendar';
+  @Input() isRequired?: boolean = true;
   openDatePicker(event: Event) {
-  const input = event.target as HTMLInputElement;
-  input.showPicker(); 
-}
+    const input = event.target as HTMLInputElement;
+    input.showPicker();
+  }
 }

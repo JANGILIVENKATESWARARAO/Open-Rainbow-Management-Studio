@@ -5,7 +5,7 @@ import { TextAreaComponent } from '../../../app/common-ui/controls/text-area/tex
 const meta: Meta<TextAreaComponent> = {
   title: 'Common-UI/TextArea',
   component: TextAreaComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

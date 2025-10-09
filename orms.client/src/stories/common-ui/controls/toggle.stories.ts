@@ -5,7 +5,7 @@ import { ToggleComponent } from '../../../app/common-ui/controls/toggle/toggle.c
 const meta: Meta<ToggleComponent> = {
   title: 'Common-UI/Toggle',
   component: ToggleComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [ToggleComponent], 

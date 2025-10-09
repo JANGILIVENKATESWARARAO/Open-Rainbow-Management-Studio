@@ -4,7 +4,7 @@ import { NoticeBannerComponent } from '../../../app/common-ui/feature-components
 const meta: Meta<NoticeBannerComponent> = {
   title: 'Common-UI/NoticeBanner',
   component: NoticeBannerComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
@@ -30,7 +30,7 @@ const meta: Meta<NoticeBannerComponent> = {
       description: 'Color for content text',
       defaultValue: '#374151',
     },
-  
+
   },
 };
 
@@ -44,6 +44,5 @@ export const NoticeBanner: Story = {
       'Changes to leave policies will apply to all employees from the next calendar year. Current year balances will remain unchanged.',
     headingColor: '#1E3A8A',
     contentColor: '#374151',
-    
   },
 };

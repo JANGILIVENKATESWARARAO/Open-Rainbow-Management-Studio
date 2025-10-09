@@ -1,8 +1,5 @@
 .toggle-container {
   display: flex;
-  justify-content: flex-start; 
-  align-items: center;
-  height: 100px;
 }
 
 .toggle-input {
@@ -12,7 +9,7 @@
 .toggle-label {
   width: 60px;
   height: 30px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border-radius: 30px;
   position: relative;
   cursor: pointer;
@@ -31,8 +28,7 @@
   transition: transform 0.2s ease;
 }
 
-
-.toggle-input:checked + .toggle-label::after {
+.toggle-input:checked+.toggle-label::after {
   transform: translateX(30px);
 }
 
@@ -40,6 +36,3 @@
 .toggle-input:checked + .toggle-label {
   background-color: #4CAF50;
 } */
-
-
-
