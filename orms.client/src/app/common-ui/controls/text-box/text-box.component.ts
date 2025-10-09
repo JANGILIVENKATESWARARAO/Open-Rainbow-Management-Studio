@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-text-box',
@@ -9,7 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class TextBoxComponent {
   @Input() label: string = 'Full Name';
-    @Input() placeHolder: string = 'Enter full name';
-    @Input() isRequired: boolean = true;
+  @Input() placeHolder: string = 'Enter full name';
+  @Input() isRequired: boolean = true;
+  @Input() showBorder: boolean = true;
 
 }
