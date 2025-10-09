@@ -16,4 +16,10 @@ const meta: Meta<TextBoxComponent> = {
 export default meta;
 type Story = StoryObj<TextBoxComponent>;
 
-export const Textbox: Story = {};
+export const Textbox: Story = {
+  args: {
+    isRequired: true,
+    label: "Full Name",
+    placeHolder: "Enter Full Name"
+  }
+};
