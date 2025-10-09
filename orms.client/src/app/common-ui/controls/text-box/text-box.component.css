@@ -1,43 +1,44 @@
    body {
-      font-family: "Segoe UI";
-      background-color: #f9fafb;
-      padding: 40px;
-    }
+     font-family: "Segoe UI";
+     background-color: #f9fafb;
+     padding: 40px;
+   }
 
-    .form-group {
-      margin-bottom: 20px;
-      max-width: 400px;
-    }
+   .form-group {
+     margin-bottom: 20px;
+     max-width: 400px;
+   }
 
-    label {
-      display: block;
-      font-weight: 600;
-      color: #1f2937;
-      margin-bottom: 6px;
-      font-size: 15px;
-    }
+   label {
+     display: block;
+     font-weight: 600;
+     color: #1f2937;
+     margin-bottom: 6px;
+     font-size: 15px;
+   }
 
-    label span {
-      color: #e11d48;
-    }
+   label span {
+     color: #e11d48;
+   }
 
-    input[type="text"] {
-      width: 100%;
-      padding: 10px 10px;
-      font-size: 15px;
-      color: #1f2937;
-      border: 2px solid #cbd5e1;
-      border-radius: 6px;
-      outline: none;
-      
-    }
+   input[type="text"] {
+     width: 100%;
+     padding: 10px 10px;
+     font-size: 15px;
+     color: #1f2937;
 
-    input[type="text"]::placeholder {
-      color: #9ca3af;
-    }
+     border-radius: 6px;
+     outline: none;
 
-        input[type="text"]:focus {
-  border-color: #2563eb; 
-  box-shadow:  0 0 0 3px rgba(146, 176, 244);
-  outline: none;
-}
+   }
+
+   input[type="text"]::placeholder {
+     color: #9ca3af;
+   }
+
+   input[type="text"]:focus {
+     border: 1px solid grey;
+     border-color: #2563eb;
+     box-shadow: 0 0 0 3px rgba(146, 176, 244);
+     outline: none;
+   }

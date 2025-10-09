@@ -8,9 +8,9 @@
  
 </head>
 <body>
-  <div class="form-group">
-    <label for="fullname">Full Name <span>*</span></label>
-    <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+  <div  class="form-group" >
+    <label for="fullname">{{label}}<span *ngIf="isRequired">*</span></label>
+    <input type="text" id="fullname" name="fullname" [placeholder]="placeHolder" required>
   </div>
 </body>
 </html>
