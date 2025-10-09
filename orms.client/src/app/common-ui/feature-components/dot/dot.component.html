@@ -1,17 +1,17 @@
-<div class="cell">
+<div>
   <ng-container *ngIf="label; else onlyDot">
     <ng-container *ngIf="labelPosition === 'left'; else rightposition">
       <span class="text" [style.color]="labelColor">{{ label }}</span>
-      <span class="dot" [style.color]="dotColor">.</span>
+      <span class="dot" [style.backgroundColor]="dotColor"></span>
     </ng-container>
   </ng-container>
 
   <ng-template #rightposition>
-    <span class="dot" [style.color]="dotColor">.</span>
+    <span class="dot" [style.backgroundColor]="dotColor"></span>
     <span class="text" [style.color]="labelColor">{{ label }}</span>
   </ng-template>
 
   <ng-template #onlyDot>
-    <span class="dot" [style.color]="dotColor">.</span>
+    <span class="dot" [style.backgroundColor]="dotColor"></span>
   </ng-template>
 </div>

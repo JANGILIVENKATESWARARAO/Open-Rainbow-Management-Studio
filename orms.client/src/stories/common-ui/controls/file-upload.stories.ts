@@ -6,7 +6,7 @@ import { FileUploadComponent } from '../../../app/common-ui/controls/file-upload
 const meta: Meta<FileUploadComponent> = {
   title: 'Common-UI/FileUpload',
   component: FileUploadComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
