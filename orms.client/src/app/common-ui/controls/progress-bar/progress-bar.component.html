@@ -1,0 +1,37 @@
+<div class="parent">
+  <div class="progress-card">
+    <div class="progress-header">
+      <span class="leave-type">{{ leaveType }}</span>
+    </div>
+
+    <div class="progress-info">
+      <span class="used-text" [style.color]="usedTextColor">
+        Used: {{ used }}
+      </span>
+      <span class="total-text" [style.color]="totalTextColor">
+        Total: {{ total }}
+      </span>
+    </div>
+
+    <div
+      class="progress-bar"
+      [ngStyle]="{
+        borderRadius: showBorderRadius ? '8px' : '0px'
+      }"
+    >
+      <div
+        class="progress-fill"
+        [ngStyle]="{
+          width: progressPercentage + '%',
+          background: barColor,
+          borderRadius: showBorderRadius ? '8px' : '0px'
+        }"
+      ></div>
+    </div>
+
+    <div class="remaining-text" [style.color]="remainingTextColor">
+      <!-- {{ total - used }} days remaining -->
+      {{ remainingDays }} days remaining
+    </div>
+  </div>
+</div>
