@@ -14,7 +14,7 @@ export class ButtonComponent {
   @Input() color: string = 'red';
   @Input() hoverBGColor: string = 'red';
   @Input() hoverColor: string = 'black';
-  @Input() borderRadius: string = '5px';
+  @Input() borderRadius: number = 5;
   @Input() borderColor: string = 'blue';
   @Input() showBorder: boolean = true;
 
