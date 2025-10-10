@@ -6,13 +6,14 @@ import { Component, Input } from '@angular/core';
   styleUrl: './button.component.css',
 })
 export class ButtonComponent {
-  @Input() text: string = 'texttexttexttexttext';
+  @Input() text: string = 'text';
   @Input() bgColor: string = 'white';
   @Input() color: string = 'red';
   @Input() hoverBGColor: string = 'red';
   @Input() hoverColor: string = 'black';
   @Input() borderRadius: string = '5px';
   @Input() borderColor: string = 'blue';
+  @Input() showBorder: boolean = true;
 
   isHovered: boolean = false;
 }

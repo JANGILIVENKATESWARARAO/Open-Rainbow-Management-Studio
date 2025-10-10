@@ -1,7 +1,8 @@
-<div class="flex align-center ">
-  <button class="border border-red-500 px-4 py-2 pb-[11.5px]"
-    [style.backgroundColor]="isHovered ? hoverBGColor : bgColor" [style.color]="isHovered ? hoverColor : color"
-    [style.borderRadius]="borderRadius" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
-    {{ text }}
-  </button>
-</div>
+<button class="px-4 py-2 pb-[11.5px]" [class.border]="showBorder" [ngStyle]="{
+    backgroundColor: isHovered ? hoverBGColor : bgColor,
+    color: isHovered ? hoverColor : color,
+    borderRadius: borderRadius,
+    borderColor: borderColor
+  }" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
+  {{ text }}
+</button>
