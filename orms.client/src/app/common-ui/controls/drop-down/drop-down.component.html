@@ -1,25 +1,14 @@
-<div class="form-down">
-  <label class="form-label">Gender<span class="required">*</span></label>
-  <select
-  class="form-select form-select-lg mb-3 custom-select-focus"
-  aria-label=".form-select-lg example">
-  <option value="1" selected>Male</option>
-  <option value="2">Female</option>
-  <option value="3">Others</option>
-</select>
-</div>
-
-<!-- <div class="dropdown-wrapper">
-  <label>Gender <span class="required">*</span></label>
+<div class="dropdown-wrapper">
+  <label class="label-name">{{label}} <span *ngIf="isRequired" class="required">*</span></label>
 
   <div class="custom-dropdown">
     <input type="checkbox" id="toggle" class="dropdown-toggle" hidden>
-    <label for="toggle" class="custom-dropdown-selected">Select gender <i class="fa-light fa-angle-down"></i></label>
-
+    <label for="toggle" class="custom-dropdown-selected">{{selectedValue || placeHolder}}</label>
     <ul class="custom-dropdown-list">
-      <li><label for="toggle">Male</label></li>
-      <li><label for="toggle">Female</label></li>
-      <li><label for="toggle">Other</label></li>
+      <li *ngFor="let option of options" (click)="selectOption(option)"
+        [class.selected]="selectedValue === option.value">
+        <label for="toggle">{{ option.name }}</label>
+      </li>
     </ul>
   </div>
-</div> -->
+</div>

@@ -1,115 +1,17 @@
-/* 
-*{
-margin-left: 20px;
-}
-select:focus {
-  border-color: #3182ce;
-  box-shadow: 0 0 0 1px #3182ce;
-}
-
-select option:hover {
-  background-color: #f0f0f0; 
-  
-}
-.required{
-  color: red;
-}
-.form-down{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.form-label{
-  font-weight:600;
-}
-option:hover {
-  background-color: yellow;
-}
-
-.form-select
-{
-
-   margin-top: 8px;
-      padding: 10px 12px;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      width: 30%;
-      font-size: 16px;
-      outline: none;
-      background: #fff;
-      color: #444;
-}
-
-.form-select:focus{
-  border-color: #3182ce;
-  box-shadow: 0 0 0 2px rgba(49,130,206,0.15);
-}
-
-
-
-option:hover {
-  background: linear-gradient(red, blue); 
-  position: relative;
-}
-
-
-
-.form-select option {
-  padding: 80px;
-  margin: 4px;
-  border-radius: 6px;
-}
-
-.form-select option:hover {
-background: red;
-} */
-
-/* option:hover,
- option:focus {
-  background-color: #d3d3d3; 
-  color: #000;
-}  */
-
-         
-
-
-
-
-
-
-
-/*------------------------*/
-
-/* select {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: 6px; 
-} */
-
-/* option{
-  color: blue;
-  background-color: red;
-} */
-
-
-
-/*---------------------------------------------------*/
-
 .dropdown-wrapper {
+  text-align: left;
   font-family: Arial, sans-serif;
-  width: 300px;
-  margin: 20px;
+  width: 400px;
+  margin: 10px;
+}
+
+.label-name {
+  margin-bottom: 10px;
 }
 
 label {
-
   color: #1f2937;
   display: block;
-   margin-bottom: 20px; 
-
 }
 
 .required {
@@ -119,80 +21,88 @@ label {
 .custom-dropdown {
   position: relative;
   user-select: none;
+  width: 100%;
 }
 
+
+
 .custom-dropdown-selected {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 14px;
   border: 1px solid #d1d5db;
   border-radius: 6px;
   background: #fff;
   cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
+
 .custom-dropdown-list {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  margin: 6px 0 0 0;
-  padding: 1px;
-  list-style: none;
   background: #fff;
-  border-radius: 8px;
   border: 1px solid #e5e7eb;
-  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
-  display: none;
+  border-radius: 8px;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
   z-index: 1000;
-  box-shadow: 3px 3px 3px 3px rgba(145, 144, 144, 0.1);
 }
 
 .custom-dropdown-list li {
-  padding: 3px;
-  margin: 3px;
+  margin: 4px 3px;
   border-radius: 6px;
-  cursor: pointer;
-line-height: 0.7;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 
-  
+
+}
+
+
+.custom-dropdown-list li label {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin: 3px 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #111827;
+  line-height: 1.4;
 }
 
 .custom-dropdown-list li:hover {
-  background-color: #757678;
+  background-color: #c7cacf;
+  /* font-size: 16px;
+  transition: font-size 0.3s ease; */
+  font-weight: bold;
+  transform: scale(1);
 }
 
-.dropdown-toggle:checked ~ .custom-dropdown-list {
+.dropdown-toggle:checked~.custom-dropdown-list {
   display: block;
 }
 
+/* .custom-dropdown .dropdown-toggle:checked
+{
+  border-color: #0d61af;
+} */
 
-
-.custom-dropdown:focus ,
-.custom-dropdown:hover{
-  border-color: #0a0a0a;
-  
-} 
-.form-select{
-     width: 300px;
-    border-radius: 7px;
+.custom-dropdown-selected:hover,
+.custom-dropdown-selected:focus {
+  /* border:1px solid #2563eb;  
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2); */
+  border: 2px solid #2563eb;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
 }
 
- 
-
-
-.custom-select-focus {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 5px;
-  border-radius: 4px;
-  width: 300px;
- 
-}
- 
-.custom-select-focus:focus {
-  border-color: blue;      
-  outline: none;          
-  box-shadow: 0 0 2px blue;
- 
+.custom-dropdown-list li.selected {
+  background-color: #c7cacf;
 }
