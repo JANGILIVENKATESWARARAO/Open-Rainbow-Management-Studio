@@ -6,7 +6,7 @@ import { TextBoxComponent } from '../../../app/common-ui/controls/text-box/text-
 const meta: Meta<TextBoxComponent> = {
   title: 'Common-UI/Textbox',
   component: TextBoxComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
