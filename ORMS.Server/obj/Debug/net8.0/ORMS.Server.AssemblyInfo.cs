@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ORMS.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21e863e54787d1104ca2b6f73043ee296d5d1ad9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ORMS.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ORMS.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

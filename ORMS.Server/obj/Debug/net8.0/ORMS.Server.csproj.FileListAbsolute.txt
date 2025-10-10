@@ -1,0 +1,10 @@
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\ORMS.Server.csproj.AssemblyReference.cache
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\spa.proxy.json
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\ORMS.Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\ORMS.Server.AssemblyInfoInputs.cache
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\ORMS.Server.AssemblyInfo.cs
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\ORMS.Server.csproj.CoreCompileInputs.cache
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\ORMS.Server.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\ORMS.Server.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\ORMS\ORMS.Server\obj\Debug\net8.0\ORMS.Server.sourcelink.json
