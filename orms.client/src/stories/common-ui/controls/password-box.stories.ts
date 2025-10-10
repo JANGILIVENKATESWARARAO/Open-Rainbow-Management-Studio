@@ -5,7 +5,7 @@ import { PasswordBoxComponent } from '../../../app/common-ui/controls/password-b
 const meta: Meta<PasswordBoxComponent> = {
   title: 'Common-UI/password-box',
   component: PasswordBoxComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
@@ -15,4 +15,4 @@ const meta: Meta<PasswordBoxComponent> = {
 export default meta;
 type Story = StoryObj<PasswordBoxComponent>;
 
-export const PasswordBox: Story = {};
+export const Password: Story = {};

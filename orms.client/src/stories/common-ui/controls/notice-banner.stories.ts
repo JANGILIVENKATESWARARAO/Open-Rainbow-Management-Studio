@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { NoticeBannerComponent } from '../../../app/common-ui/feature-components/notice-banner/notice-banner';
 
 const meta: Meta<NoticeBannerComponent> = {
-  title: 'Common-UI/NoticeBanner',
+  title: 'Feature Components/NoticeBanner',
   component: NoticeBannerComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
