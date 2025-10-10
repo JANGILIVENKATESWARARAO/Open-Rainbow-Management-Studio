@@ -1,15 +1,25 @@
-<div class="toggle-container">
-  <input
-    type="checkbox"
-    id="toggle"
-    class="toggle-input"
-    [checked]="checked"
-    (change)="onToggle($event)"
-  />
-  <label
-    for="toggle"
-    class="toggle-label"
-    [ngStyle]="{ 'background-color': checked ? color : '#ccc' }"
-  ></label>
+<div
+  class="toggle-container"
+  [class.label-left]="labelPosition === 'left'"
+  [style.--label-color]="labelColor"   
+>
+  <label *ngIf="label" class="upload-label" for="toggle">{{ label }}</label>
+
+  <div class="switch-wrapper">
+    <input
+      type="checkbox"
+      id="toggle"
+      class="toggle-input"
+      [checked]="checked"
+      (change)="onToggle($event)"
+    />
+    <label
+      for="toggle"
+      class="toggle-label"
+      [class.on]="checked"
+      [style.--toggle-color]="color"
+    ></label>
+  </div>
 </div>
+
 
