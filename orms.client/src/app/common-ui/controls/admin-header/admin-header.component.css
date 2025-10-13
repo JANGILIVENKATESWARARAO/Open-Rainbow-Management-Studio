@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 8px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 60px;
+  width: 100%;
+}
+.name{
+    color: blue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.name_1{
+    font-size: 9px;
+    color: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.design_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    color: white;
+    height: 29px;
+    width: 31px;
+    border-radius: 24px;
+}
+.name_3{
+    font-size: 9px;
+    color: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.design_3{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.admin_role{
+    font-size: 10px;
+    color: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.design_1{
+    display: flex;
+    gap: 10px;
+}
+.header-logo{
+    width: 30px;
+}
+.bell-button:hover{
+    background-color: lightgrey;
+}
+.bell-button{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.bell-svg-icon{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
