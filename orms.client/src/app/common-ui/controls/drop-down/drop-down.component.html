@@ -2,12 +2,12 @@
   <label class="label-name">{{label}} <span *ngIf="isRequired" class="required">*</span></label>
 
   <div class="custom-dropdown">
-    <input type="checkbox" id="toggle" class="dropdown-toggle" hidden>
-    <label for="toggle" class="custom-dropdown-selected">{{selectedValue || placeHolder}}</label>
+    <input type="checkbox"  [id]="label + '_toggle'" class="dropdown-toggle" hidden>
+    <label  [for] ="label + '_toggle'" class="custom-dropdown-selected">{{selectedValue || placeHolder}}</label>
     <ul class="custom-dropdown-list">
       <li *ngFor="let option of options" (click)="selectOption(option)"
         [class.selected]="selectedValue === option.value">
-        <label for="toggle">{{ option.name }}</label>
+       <label [for]="label + '_toggle'">{{ option.name }}</label>
       </li>
     </ul>
   </div>
