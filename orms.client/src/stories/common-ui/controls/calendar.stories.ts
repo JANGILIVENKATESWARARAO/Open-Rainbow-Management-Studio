@@ -5,7 +5,7 @@ import { CalendarComponent } from '../../../app/common-ui/controls/calendar/cale
 const meta: Meta<CalendarComponent> = {
   title: 'Common-UI/Calendar',
   component: CalendarComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

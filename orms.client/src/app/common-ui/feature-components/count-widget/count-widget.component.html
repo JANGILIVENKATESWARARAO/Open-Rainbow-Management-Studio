@@ -1,0 +1,6 @@
+<div class="w-full h-full border-2 border-gray-300 rounded-lg p-5 flex flex-col justify-center items-center" 
+     [ngStyle]="{'border-color': showBorder ? borderColor : 'transparent', 'background-color': backgroundColor }">
+  <div class="text-center py-1" [style.color]="labelColor">{{ label }}</div>
+  <div class="text-center py-1 text-sm" [style.color]="valueColor">{{ value }}</div>
+</div>
+
