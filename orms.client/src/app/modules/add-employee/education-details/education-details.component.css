@@ -1,3 +1,8 @@
+.eduDetails{
+  padding: 20px;
+  border:1px solid rgb(176, 176, 176);
+  border-radius: 25px;
+}
 .eduDetails-header{
   display: flex;
   align-items: center;
