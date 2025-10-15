@@ -99,6 +99,49 @@
     "directives": [],
     "components": [
         {
+            "name": "AdminHeaderComponent",
+            "id": "component-AdminHeaderComponent-cf76985ba29f55d2936d282c392082fd1ef1edbe8551ce85e174005e9f4c554665b3fe18fa3b64f6a135887f7441c31dc0badb8422324f150cb093fd08f050f9",
+            "file": "src/app/common-ui/controls/admin-header/admin-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-admin-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./admin-header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "DotComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { DotComponent } from \"../../feature-components/dot/dot.component\";\r\n\r\n@Component({\r\n  selector: 'app-admin-header',\r\n  templateUrl: './admin-header.component.html',\r\n  styleUrl: './admin-header.component.css',\r\n  standalone: true,\r\n  imports: [DotComponent],\r\n})\r\nexport class AdminHeaderComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./admin-header.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"header\">\r\n    <div class=\"design_1\">\r\n        <img class=\"header-logo\"\r\n            src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDtV5o8uP07w1WZBt1RhCfk6qtv37V3HpzkQ&s\" />\r\n        <div>\r\n            <div class=\"name\">Open Rainbow</div>\r\n            <div class=\"name_1\">Employee Management System</div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"design_3\">\r\n        <div class=\"bell-container\">\r\n            <button class=\"bell-button\">\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"\r\n                    stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\r\n                    class=\"bell-svg-icon\">\r\n                    <path d=\"M10.268 21a2 2 0 0 0 3.464 0\"></path>\r\n                    <path\r\n                        d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\">\r\n                    </path>\r\n                </svg>\r\n            </button>\r\n            <span class=\"notification-dot\"></span>\r\n        </div>\r\n\r\n\r\n        <div class=\"admin_details\">\r\n            <div class=\"design_2\">JA</div>\r\n            <div class=\"admin_details_text\">\r\n                <div class=\"admin_name\">John Admin</div>\r\n                <div class=\"admin_role\">System Administrator</div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+        },
+        {
             "name": "AppComponent",
             "id": "component-AppComponent-9533aa51ac3ced825361cafe7c3c82f8df3b000f01d515a5afcfefe505d951307bc637ab19d6e12244a182dcc937dfe07a6725631d2fd4bac5f421fc220ac063",
             "file": "src/app/app.component.ts",
@@ -389,7 +432,7 @@
         },
         {
             "name": "CalendarComponent",
-            "id": "component-CalendarComponent-819fc80658fe162abc18981a79b755039fd2c6c05acb83c1a159de45bf7d6810a3411be3d72543b163a0e00551071b8a2ceec7a9b2afd95922b05e8d68688e37",
+            "id": "component-CalendarComponent-dddab66bafa9f8398c7b7da1dbc06cb58c44e4f07f5c996ce41f4714d9b7bfa77c2d40854a21df84ff68c21c5930da7769c9a2436ec1f525a73ef89fe3a0ea8b",
             "file": "src/app/common-ui/controls/calendar/calendar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -397,7 +440,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-calendar",
-            "styleUrls": [],
+            "styleUrls": [
+                "./calendar.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./calendar.component.html"
@@ -406,27 +451,288 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "defaultDate",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "Date | null",
+                    "decorators": []
+                },
+                {
                     "name": "isRequired",
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "label",
-                    "defaultValue": "'Calendar'",
+                    "defaultValue": "'Date of Birth'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
-            "propertiesClass": [],
+            "outputsClass": [
+                {
+                    "name": "calendarClosed",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "dateSelected",
+                    "defaultValue": "new EventEmitter<Date | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "calendarDays",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "currentDate",
+                    "defaultValue": "new Date()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "currentMonth",
+                    "defaultValue": "new Date().getMonth()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "currentYear",
+                    "defaultValue": "new Date().getFullYear()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "months",
+                    "defaultValue": "[\r\n    'January', 'February', 'March', 'April', 'May', 'June',\r\n    'July', 'August', 'September', 'October', 'November', 'December'\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "showCalendar",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "weekdays",
+                    "defaultValue": "['S', 'M', 'T', 'W', 'T', 'F', 'S']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "years",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                }
+            ],
             "methodsClass": [
+                {
+                    "name": "clearSelection",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 156,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "closeCalendar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 162,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "generateCalendar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 65,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "generateYears",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "goToToday",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 147,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "isSelected",
+                    "args": [
+                        {
+                            "name": "date",
+                            "type": "Date",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 100,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "date",
+                            "type": "Date",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "isToday",
+                    "args": [
+                        {
+                            "name": "date",
+                            "type": "Date",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 91,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "date",
+                            "type": "Date",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "nextMonth",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 116,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onMonthChange",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 126,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onYearChange",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 132,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
                 {
                     "name": "openDatePicker",
                     "args": [
@@ -440,13 +746,51 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 52,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
                             "name": "event",
                             "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "previousMonth",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 106,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "selectDate",
+                    "args": [
+                        {
+                            "name": "day",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 137,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "day",
+                            "type": "any",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -465,18 +809,40 @@
                 {
                     "name": "CommonModule",
                     "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-calendar',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './calendar.component.html',\r\n  styleUrl: './calendar.component.css'\r\n})\r\nexport class CalendarComponent {\r\n  @Input() label?: string = 'Calendar';\r\n  @Input() isRequired?: boolean = true;\r\n  openDatePicker(event: Event) {\r\n    const input = event.target as HTMLInputElement;\r\n    input.showPicker();\r\n  }\r\n}\r\n",
-            "styleUrl": "./calendar.component.css",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-calendar',\r\n  standalone: true,\r\n  imports: [CommonModule, FormsModule],\r\n  templateUrl: './calendar.component.html',\r\n  styleUrls: ['./calendar.component.css']\r\n})\r\nexport class CalendarComponent implements OnInit {\r\n  @Input() label: string = 'Date of Birth';\r\n  @Input() isRequired: boolean = true;\r\n  @Input() defaultDate: Date | null = null;\r\n  @Output() dateSelected = new EventEmitter<Date | null>();\r\n  @Output() calendarClosed = new EventEmitter<void>();\r\n\r\n  showCalendar = false;\r\n  currentDate = new Date();\r\n  calendarDays: any[] = [];\r\n  weekdays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];\r\n  months = [\r\n    'January', 'February', 'March', 'April', 'May', 'June',\r\n    'July', 'August', 'September', 'October', 'November', 'December'\r\n  ];\r\n\r\n  currentMonth = new Date().getMonth();\r\n  currentYear = new Date().getFullYear();\r\n  years: number[] = [];\r\n\r\n  ngOnInit() {\r\n    this.generateYears();\r\n\r\n    if (!this.defaultDate) {\r\n      this.defaultDate = new Date();\r\n    }\r\n\r\n    this.currentMonth = this.defaultDate.getMonth();\r\n    this.currentYear = this.defaultDate.getFullYear();\r\n\r\n    this.generateCalendar();\r\n  }\r\n\r\n  get formattedDate(): string {\r\n    if (!this.defaultDate) return '';\r\n    return this.defaultDate\r\n      .toLocaleDateString('en-GB')\r\n      .replace(/\\//g, '-'); // dd-mm-yyyy\r\n  }\r\n\r\n  openDatePicker(event: Event) {\r\n    event.preventDefault();\r\n    this.showCalendar = !this.showCalendar;\r\n  }\r\n\r\n  generateYears() {\r\n    const currentYear = new Date().getFullYear();\r\n    this.years = [];\r\n    for (let i = currentYear - 100; i <= currentYear + 10; i++) {\r\n      this.years.push(i);\r\n    }\r\n  }\r\n\r\n  generateCalendar() {\r\n    const firstDay = new Date(this.currentYear, this.currentMonth, 1);\r\n    const startDate = new Date(firstDay);\r\n    startDate.setDate(startDate.getDate() - firstDay.getDay());\r\n\r\n    this.calendarDays = [];\r\n    const totalDays = 42; // 6x7 grid\r\n\r\n    for (let i = 0; i < totalDays; i++) {\r\n      const date = new Date(startDate);\r\n      date.setDate(startDate.getDate() + i);\r\n\r\n      const isCurrentMonth = date.getMonth() === this.currentMonth;\r\n      const isSelected = this.isSelected(date);\r\n      const isToday = this.isToday(date) && !isSelected;\r\n\r\n      this.calendarDays.push({\r\n        date,\r\n        day: date.getDate(),\r\n        isCurrentMonth,\r\n        isToday,\r\n        isSelected\r\n      });\r\n    }\r\n  }\r\n\r\n  isToday(date: Date): boolean {\r\n    const today = new Date();\r\n    return (\r\n      date.toDateString() === today.toDateString() &&\r\n      (!this.defaultDate ||\r\n        this.defaultDate.toDateString() === today.toDateString())\r\n    );\r\n  }\r\n\r\n  isSelected(date: Date): boolean {\r\n    return this.defaultDate\r\n      ? date.toDateString() === this.defaultDate.toDateString()\r\n      : false;\r\n  }\r\n\r\n  previousMonth() {\r\n    if (this.currentMonth === 0) {\r\n      this.currentMonth = 11;\r\n      this.currentYear--;\r\n    } else {\r\n      this.currentMonth--;\r\n    }\r\n    this.generateCalendar();\r\n  }\r\n\r\n  nextMonth() {\r\n    if (this.currentMonth === 11) {\r\n      this.currentMonth = 0;\r\n      this.currentYear++;\r\n    } else {\r\n      this.currentMonth++;\r\n    }\r\n    this.generateCalendar();\r\n  }\r\n\r\n  onMonthChange() {\r\n    debugger;\r\n    this.currentMonth = Number(this.currentMonth);\r\n    this.generateCalendar();\r\n  }\r\n\r\n  onYearChange() {\r\n    this.currentYear = Number(this.currentYear);\r\n    this.generateCalendar();\r\n  }\r\n\r\n  selectDate(day: any) {\r\n    debugger;\r\n    this.defaultDate = new Date(day.date);\r\n    this.currentMonth = this.defaultDate.getMonth();\r\n    this.currentYear = this.defaultDate.getFullYear();\r\n\r\n    this.generateCalendar();\r\n    this.dateSelected.emit(this.defaultDate);\r\n  }\r\n\r\n  goToToday() {\r\n    const today = new Date();\r\n    this.currentMonth = today.getMonth();\r\n    this.currentYear = today.getFullYear();\r\n    this.defaultDate = today;\r\n    this.generateCalendar();\r\n    this.dateSelected.emit(this.defaultDate);\r\n  }\r\n\r\n  clearSelection() {\r\n    this.defaultDate = null;\r\n    this.generateCalendar();\r\n    this.dateSelected.emit(null);\r\n  }\r\n\r\n  closeCalendar() {\r\n    this.showCalendar = false;\r\n    this.calendarClosed.emit();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".dob-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  margin-bottom: 1rem;\r\n  position: relative;\r\n}\r\n\r\n.dob-label {\r\n  font-family: 'Roboto', sans-serif;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n  color: #333;\r\n}\r\n\r\n.required-star {\r\n  color: #dc2626;\r\n  font-size: 1rem;\r\n  /* font-weight: 600; */\r\n  /* margin-top: -12px; */\r\n}\r\n\r\n.input-container {\r\n  position: relative;\r\n  display: inline-block;\r\n}\r\n\r\n.dob-input {\r\n  width: 100%;\r\n  padding: 0.5rem 2.5rem 0.5rem 0.5rem;\r\n  /* add right padding for icon */\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  font-size: 14px;\r\n  color: #2d2d2d;\r\n  font-family: sans-serif;\r\n  margin-top: 10px;\r\n  cursor: pointer;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.calendar-icon {\r\n  position: absolute;\r\n  right: 10px;\r\n  top: 59%;\r\n  transform: translateY(-50%);\r\n  color: #888;\r\n  pointer-events: none;\r\n  /* ensures clicking icon triggers input */\r\n  transition: color 0.2s ease;\r\n}\r\n\r\n.dob-input:focus+.calendar-icon {\r\n  color: #007BFF;\r\n}\r\n\r\n.dob-input:focus {\r\n  outline: none;\r\n  border-color: #007BFF;\r\n  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);\r\n  background-color: #f0f8ff;\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n/* Calendar Overlay */\r\n.calendar-overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  background-color: rgba(0, 0, 0, 0.3);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  z-index: 1000;\r\n}\r\n\r\n.calendar-container {\r\n  width: 320px;\r\n  background: #ffffff;\r\n  border-radius: 12px;\r\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);\r\n  padding: 20px;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\r\n}\r\n\r\n.calendar-header {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.nav-btn {\r\n  background: none;\r\n  border: none;\r\n  cursor: pointer;\r\n  padding: 8px;\r\n  border-radius: 6px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: #666;\r\n  transition: all 0.2s ease;\r\n}\r\n\r\n.nav-btn:hover {\r\n  background-color: #f0f0f0;\r\n  color: #333;\r\n}\r\n\r\n.month-year-selectors {\r\n  display: flex;\r\n  gap: 8px;\r\n}\r\n\r\n.month-select,\r\n.year-select {\r\n  border: none;\r\n  background: none;\r\n  font-size: 16px;\r\n  font-weight: 500;\r\n  cursor: pointer;\r\n  padding: 4px 8px;\r\n  border-radius: 4px;\r\n  transition: background-color 0.2s ease;\r\n}\r\n\r\n.month-select:hover,\r\n.year-select:hover {\r\n  background-color: #f0f0f0;\r\n}\r\n\r\n.month-select:focus,\r\n.year-select:focus {\r\n  outline: none;\r\n  background-color: #e0e0e0;\r\n}\r\n\r\n.calendar-weekdays {\r\n  display: grid;\r\n  grid-template-columns: repeat(7, 1fr);\r\n  gap: 2px;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.weekday {\r\n  text-align: center;\r\n  font-size: 12px;\r\n  font-weight: 500;\r\n  color: #888;\r\n  padding: 8px 4px;\r\n}\r\n\r\n.calendar-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(7, 1fr);\r\n  gap: 2px;\r\n}\r\n\r\n.calendar-day {\r\n  aspect-ratio: 1;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n  border-radius: 8px;\r\n  font-size: 14px;\r\n  font-weight: 400;\r\n  transition: all 0.2s ease;\r\n  position: relative;\r\n}\r\n\r\n.calendar-day.current-month {\r\n  color: #333;\r\n}\r\n\r\n.calendar-day.other-month {\r\n  color: #ccc;\r\n}\r\n\r\n.calendar-day.current-month:hover {\r\n  background-color: #f0f0f0;\r\n}\r\n\r\n.calendar-day.today {\r\n  background-color: #ff6b35;\r\n  color: white;\r\n  font-weight: 500;\r\n}\r\n\r\n.calendar-day.selected {\r\n  background-color: #ff6b35;\r\n  color: white;\r\n  font-weight: 500;\r\n  border-radius: 8px;\r\n}\r\n\r\n.calendar-day.today.selected {\r\n  background-color: #ff6b35;\r\n  box-shadow: 0 0 0 2px #ff6b35, 0 0 0 4px rgba(255, 107, 53, 0.2);\r\n}\r\n\r\n.calendar-footer {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin-top: 20px;\r\n  padding-top: 16px;\r\n  border-top: 1px solid #e0e0e0;\r\n}\r\n\r\n.footer-btn {\r\n  background: none;\r\n  border: none;\r\n  cursor: pointer;\r\n  padding: 8px 16px;\r\n  border-radius: 6px;\r\n  font-size: 14px;\r\n  font-weight: 500;\r\n  transition: all 0.2s ease;\r\n}\r\n\r\n.today-btn {\r\n  color: #ff6b35;\r\n}\r\n\r\n.today-btn:hover {\r\n  background-color: rgba(255, 107, 53, 0.1);\r\n}\r\n\r\n.clear-btn {\r\n  color: #666;\r\n}\r\n\r\n.clear-btn:hover {\r\n  background-color: #f0f0f0;\r\n}\r\n\r\n.close-btn {\r\n  color: #ff6b35;\r\n}\r\n\r\n.close-btn:hover {\r\n  background-color: rgba(255, 107, 53, 0.1);\r\n}\r\n\r\n/* Responsive adjustments */\r\n@media (max-width: 480px) {\r\n  .calendar-overlay {\r\n    padding: 20px;\r\n  }\r\n\r\n  .calendar-container {\r\n    width: 100%;\r\n    max-width: 320px;\r\n  }\r\n}",
+                    "styleUrl": "./calendar.component.css"
+                }
+            ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<label class=\"dob-label\">\r\n    {{ label}} \r\n    <span *ngIf=\"isRequired\" class=\"required-star\">*</span>\r\n</label><br>\r\n<input type=\"date\" class=\"dob-input\" (click)=\"openDatePicker($event)\" placeholder=\"dd-mm-yyyy\" required/>"
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "formattedDate": {
+                    "name": "formattedDate",
+                    "getSignature": {
+                        "name": "formattedDate",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 45
+                    }
+                }
+            },
+            "templateData": "<div class=\"dob-container\">\r\n    <label class=\"dob-label\">\r\n        {{ label }}\r\n        <span *ngIf=\"isRequired\" class=\"required-star\">*</span>\r\n    </label>\r\n\r\n    <div class=\"input-container\">\r\n        <input type=\"text\" class=\"dob-input\" [value]=\"formattedDate\" (click)=\"openDatePicker($event)\"\r\n            placeholder=\"dd-mm-yyyy\" readonly required />\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"calendar-icon\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"\r\n            fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n            <path d=\"M8 2v4\"></path>\r\n            <path d=\"M16 2v4\"></path>\r\n            <rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"></rect>\r\n            <path d=\"M3 10h18\"></path>\r\n        </svg>\r\n\r\n        <div *ngIf=\"showCalendar\" class=\"calendar-overlay\" (click)=\"closeCalendar()\">\r\n            <div class=\"calendar-container\" (click)=\"$event.stopPropagation()\">\r\n                <div class=\"calendar-header\">\r\n                    <button class=\"nav-btn\" (click)=\"previousMonth()\">\r\n                        <svg width=\"8\" height=\"12\" viewBox=\"0 0 8 12\" fill=\"none\">\r\n                            <path d=\"M7 1L1 6L7 11\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"\r\n                                stroke-linejoin=\"round\" />\r\n                        </svg>\r\n                    </button>\r\n\r\n                    <div class=\"month-year-selectors\">\r\n                        <select [(ngModel)]=\"currentMonth\" (change)=\"onMonthChange()\" class=\"month-select\">\r\n                            <option *ngFor=\"let month of months; let i = index\" [ngValue]=\"i\">\r\n                                {{month}}\r\n                            </option>\r\n                        </select>\r\n\r\n                        <select [(ngModel)]=\"currentYear\" (change)=\"onYearChange()\" class=\"year-select\">\r\n                            <option *ngFor=\"let year of years\" [ngValue]=\"year\">\r\n                                {{year}}\r\n                            </option>\r\n                        </select>\r\n                    </div>\r\n\r\n                    <button class=\"nav-btn\" (click)=\"nextMonth()\">\r\n                        <svg width=\"8\" height=\"12\" viewBox=\"0 0 8 12\" fill=\"none\">\r\n                            <path d=\"M1 1L7 6L1 11\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"\r\n                                stroke-linejoin=\"round\" />\r\n                        </svg>\r\n                    </button>\r\n                </div>\r\n\r\n                <div class=\"calendar-weekdays\">\r\n                    <div *ngFor=\"let weekday of weekdays\" class=\"weekday\">\r\n                        {{weekday}}\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"calendar-grid\">\r\n                    <div *ngFor=\"let day of calendarDays\" class=\"calendar-day\"\r\n                        [class.current-month]=\"day.isCurrentMonth\" [class.other-month]=\"!day.isCurrentMonth\"\r\n                        [class.today]=\"day.isToday\" [class.selected]=\"day.isSelected\" (click)=\"selectDate(day)\">\r\n                        {{day.day}}\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"calendar-footer\">\r\n                    <button class=\"footer-btn today-btn\" (click)=\"goToToday()\">Today</button>\r\n                    <button class=\"footer-btn clear-btn\" (click)=\"clearSelection()\">Clear</button>\r\n                    <button class=\"footer-btn close-btn\" (click)=\"closeCalendar()\">Close</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
         },
         {
             "name": "ChipComponent",
@@ -582,6 +948,146 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div\r\n  class=\"inline-flex items-center px-3 border border-gray-200 shadow-sm cursor-pointer transition-all duration-300 ease-in-out select-none\"\r\n  [style.backgroundColor]=\"isHovered ? activeBGColor : bgColor\" [style.color]=\"isHovered ? activeColor : color\"\r\n  [style.borderRadius]=\"borderRadius\" (mouseenter)=\"isHovered = true\" (mouseleave)=\"isHovered = false\">\r\n  {{ text }}\r\n</div>"
+        },
+        {
+            "name": "ContactInfoComponent",
+            "id": "component-ContactInfoComponent-546d77363c01f7d638158d9c9017f9696399ad1a625e906e7a4bb5343d1e84ccd1fcfa844e938e3608c8fdb6bac02f6f8a675dfdac2a9bff9741c78c35ea9946",
+            "file": "src/app/modules/add-employee/basic-info/contact-info/contact-info.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-contact-info",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./contact-info.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "checkedChange",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "selectedChange",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleChange",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "TextAreaComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TextBoxComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ToggleComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "DropDownComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextAreaComponent } from \"../../../../common-ui/controls/text-area/text-area.component\";\r\nimport { TextBoxComponent } from \"../../../../common-ui/controls/text-box/text-box.component\";\r\nimport { ToggleComponent } from \"../../../../common-ui/controls/toggle/toggle.component\";\r\nimport { DropDownComponent } from \"../../../../common-ui/controls/drop-down/drop-down.component\";\r\n\r\n@Component({\r\n  selector: 'app-contact-info',\r\n  templateUrl: './contact-info.component.html',\r\n  styleUrl: './contact-info.component.css',\r\n  standalone: true,\r\n  imports: [TextAreaComponent, TextBoxComponent, ToggleComponent, DropDownComponent]\r\n})\r\nexport class ContactInfoComponent {\r\nselectedChange($event: any) {\r\nthrow new Error('Method not implemented.');\r\n}\r\ncheckedChange($event: boolean) {\r\nthrow new Error('Method not implemented.');\r\n}\r\ntoggleChange($event: boolean) {\r\nthrow new Error('Method not implemented.');\r\n}\r\n\r\n}\r\n",
+            "styleUrl": "./contact-info.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"contact_info\">\r\n    <div class=\"header\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"\r\n            stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\r\n            class=\"lucide lucide-phone h-5 w-5 text-green-600\" aria-hidden=\"true\">\r\n            <path\r\n                d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\">\r\n            </path>\r\n        </svg>\r\n        <p>Contact Information</p>\r\n        <hr>\r\n    </div>\r\n\r\n    <div class=\"grid-container\">\r\n        <div class=\"item-1\">\r\n            <app-text-box [label]=\"'Personal Mail'\" [placeHolder]=\"'Enter your mail Id'\" [isRequired]=\"true\"\r\n                [showBorder]=\"false\"></app-text-box>\r\n        </div>\r\n        <div class=\"item-2\">\r\n            <app-text-box [label]=\"'Linkedin Url'\" [placeHolder]=\"'Enter your linkedin url'\" [isRequired]=\"true\"\r\n                [showBorder]=\"false\"></app-text-box>\r\n        </div>\r\n    </div>\r\n    <div class=\"item-3\">\r\n        <app-text-box [label]=\"'Contact No'\" [placeHolder]=\"'Enter your contact number'\" [isRequired]=\"true\"\r\n            [showBorder]=\"false\"></app-text-box>\r\n    </div>\r\n\r\n    <p class=\"Address-1\">Address Details</p>\r\n    <hr>\r\n    <div class=\"permanent\">\r\n        <app-text-area [label]=\"'Permanent Address'\" [Placeholder]=\"'Enter your permanent address'\"\r\n            [showBorder]=\"false\"></app-text-area>\r\n    </div>\r\n    <div class=\"current\">\r\n        <app-text-area [label]=\"'Current Address'\" [Placeholder]=\"'Enter your current address'\"\r\n            [showBorder]=\"false\"></app-text-area>\r\n    </div>\r\n    <div class=\"Toggle\">\r\n        <app-toggle [checked]=\"false\" [color]=\"'#4CAF50'\" [label]=\"'Same as Permanent Address '\"\r\n            [labelPosition]=\"'right'\" [labelColor]=\"'#333'\" (checkedChange)=\"checkedChange($event)\"\r\n            (toggleChange)=\"toggleChange($event)\"></app-toggle>\r\n    </div>\r\n    <p class=\"text-1\">Emergency contact details</p>\r\n    <hr>\r\n    <div class=\"emergency\">\r\n        <div class=\"item-4\">\r\n            <app-text-box [label]=\"'Contact Name'\" [placeHolder]=\"'Enter name'\" [isRequired]=\"true\"\r\n                [showBorder]=\"false\"></app-text-box>\r\n        </div>\r\n        <div class=\"item-5\">\r\n            <app-text-box [label]=\"'Contact Number'\" [placeHolder]=\"'Enter Contact Number'\" [isRequired]=\"true\"\r\n                [showBorder]=\"false\"></app-text-box>\r\n        </div>\r\n    </div>\r\n    <div class=\"item-6\">\r\n        <app-drop-down [label]=\"'Relation'\" [placeHolder]=\"'Select Your Relation'\" [isRequired]=\"true\" [options]=\"[{value: 1, name: 'Father'}, {value: 2, name: 'Mother'}, {value: 3, name: 'Spouse'}, {value: 4, name: 'Brother/Sister'}, {value: 5, name: 'Child'}, {value: 6, name: 'Others'}]\" (selectedChange)=\"selectedChange($event)\"></app-drop-down>\r\n    </div>\r\n    <!-- <div class=\"emergency-2\">\r\n            <p class=\"text-2\">Emergency contact details-2</p>\r\n            <app-text-box [label]=\"'Contact Name-2'\" [placeHolder]=\"'Enter name'\" [isRequired]=\"true\"\r\n                [showBorder]=\"false\"></app-text-box>\r\n            <app-text-box [label]=\"'Contact Number-2'\" [placeHolder]=\"'Enter Contact Number'\" [isRequired]=\"true\"\r\n                [showBorder]=\"false\"></app-text-box>\r\n            <app-text-box [label]=\"'Relation-2'\" [placeHolder]=\"'Enter relation name '\" [isRequired]=\"true\"\r\n                [showBorder]=\"false\"></app-text-box>\r\n    </div> -->\r\n</div>"
         },
         {
             "name": "CountWidgetComponent",
@@ -734,7 +1240,7 @@
         },
         {
             "name": "DotComponent",
-            "id": "component-DotComponent-a4a68f93a8a7fe03cf37eeb622cdbeadd5ddb3eeccae7af1ca6f3ca93a07a26a584150df49f7414c561da745ff153f0e01df023fee0a9e3b434005971b9a9c0d",
+            "id": "component-DotComponent-c4f04f4daf6dc88b82c701f68a347a9c51a45ac844c0a3255c58034b5729bbb3d99df01a81a74beb71331dc742609f85e9414ef86cdd61635dc00b1f6ed662e0",
             "file": "src/app/common-ui/feature-components/dot/dot.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -754,7 +1260,7 @@
             "inputsClass": [
                 {
                     "name": "dotColor",
-                    "defaultValue": "'red'",
+                    "defaultValue": "\"lightgreen\"",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 15,
@@ -762,8 +1268,17 @@
                     "decorators": []
                 },
                 {
+                    "name": "dotSize",
+                    "defaultValue": "'small'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                },
+                {
                     "name": "label",
-                    "defaultValue": "'Text'",
+                    "defaultValue": "\"Text\"",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
@@ -791,7 +1306,36 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "getDotSize",
+                    "args": [
+                        {
+                            "name": "dotSize",
+                            "type": "\"small\" | \"medium\" | \"large\"",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "{ width: string; height: string; }",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "dotSize",
+                            "type": "\"small\" | \"medium\" | \"large\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -806,17 +1350,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-dot',\r\n  templateUrl: './dot.component.html',\r\n  styleUrls: ['./dot.component.css'],\r\n  standalone:true,\r\n  imports: [CommonModule]\r\n})\r\nexport class DotComponent {\r\n  @Input() label = 'Text';\r\n  @Input() labelColor: string = 'lightgreen';\r\n  @Input() labelPosition: 'left' | 'right' = 'left';\r\n  @Input() dotColor: string = 'red';\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-dot',\r\n  templateUrl: './dot.component.html',\r\n  styleUrls: ['./dot.component.css'],\r\n  standalone: true,\r\n  imports: [CommonModule]\r\n})\r\nexport class DotComponent {\r\n  @Input() label = \"Text\"\r\n  @Input() labelColor: string = 'lightgreen'\r\n  @Input() labelPosition: 'left' | 'right' = 'left';\r\n  @Input() dotColor: string = \"lightgreen\"\r\n  @Input() dotSize: 'small' | 'medium' | 'large' = 'small';\r\n\r\n  getDotSize(dotSize: 'small' | 'medium' | 'large') {\r\n    switch (dotSize) {\r\n      case 'small':\r\n        return { width: '8px', height: '8px' };\r\n      case 'medium':\r\n        return { width: '10px', height: '10px' };\r\n      case 'large':\r\n        return { width: '12px', height: '12px' };\r\n      default:\r\n        return { width: '8px', height: '8px' };\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".text {\r\n  font-size: 24px;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n}\r\n\r\n.dot {\r\n  width: 16px;\r\n  height: 16px;\r\n  border-radius: 50%;\r\n  vertical-align: middle;\r\n  display: inline-block;\r\n}",
+                    "data": "",
                     "styleUrl": "./dot.component.css"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\r\n  <ng-container *ngIf=\"label; else onlyDot\">\r\n    <ng-container *ngIf=\"labelPosition === 'left'; else rightposition\">\r\n      <span class=\"text\" [style.color]=\"labelColor\">{{ label }}</span>\r\n      <span class=\"dot\" [style.backgroundColor]=\"dotColor\"></span>\r\n    </ng-container>\r\n  </ng-container>\r\n\r\n  <ng-template #rightposition>\r\n    <span class=\"dot\" [style.backgroundColor]=\"dotColor\"></span>\r\n    <span class=\"text\" [style.color]=\"labelColor\">{{ label }}</span>\r\n  </ng-template>\r\n\r\n  <ng-template #onlyDot>\r\n    <span class=\"dot\" [style.backgroundColor]=\"dotColor\"></span>\r\n  </ng-template>\r\n</div>\r\n"
+            "templateData": "<div class=\"cell\">\r\n  <ng-container *ngIf=\"label; else onlyDot\">\r\n    <ng-container *ngIf=\"labelPosition === 'left'; else rightposition\">\r\n      <span class=\"text text-2xl font-bold inline-block\" [style.color]=\"labelColor\">{{ label }}</span>\r\n      <span class=\"dot inline-block rounded-full align-middle mx-1 bg-current\" [style.color]=\"dotColor\" [ngStyle]=\"getDotSize(dotSize)\"></span>\r\n    </ng-container>\r\n  \r\n\r\n  <ng-template #rightposition>\r\n    <span class=\"dot inline-block rounded-full align-middle mx-1 bg-current\" [style.color]=\"dotColor\" [ngStyle]=\"getDotSize(dotSize)\"></span>\r\n    <span class=\"text text-2xl font-bold inline-block\" [style.color]=\"labelColor\">{{ label }}</span>\r\n  </ng-template>\r\n</ng-container>\r\n  <ng-template #onlyDot>\r\n    <span class=\"dot inline-block rounded-full align-middle mx-1 bg-current\" [style.color]=\"dotColor\" [ngStyle]=\"getDotSize(dotSize)\"></span>\r\n  </ng-template>\r\n</div>\r\n"
         },
         {
             "name": "DropDownComponent",
@@ -946,6 +1490,141 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"dropdown-wrapper\">\r\n  <label class=\"label-name\">{{label}} <span *ngIf=\"isRequired\" class=\"required\">*</span></label>\r\n\r\n  <div class=\"custom-dropdown\">\r\n    <input type=\"checkbox\"  [id]=\"label + '_toggle'\" class=\"dropdown-toggle\" hidden>\r\n    <label  [for] =\"label + '_toggle'\" class=\"custom-dropdown-selected\">{{selectedValue || placeHolder}}</label>\r\n    <ul class=\"custom-dropdown-list\">\r\n      <li *ngFor=\"let option of options\" (click)=\"selectOption(option)\"\r\n        [class.selected]=\"selectedValue === option.value\">\r\n       <label [for]=\"label + '_toggle'\">{{ option.name }}</label>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>"
+        },
+        {
+            "name": "EducationDetailsComponent",
+            "id": "component-EducationDetailsComponent-1b93c264a3c43daf97e192234f168215dcaa762840f9da852191d046d26ef973974b41e6fdcd69c0ba0f0f071f3e5f8c203fbe191596b1af88cc1dddf5b47ee2",
+            "file": "src/app/modules/add-employee/education-details/education-details.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-education-details",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./education-details.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "TextBoxComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "DropDownComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TextAreaComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.component';\r\nimport { DropDownComponent } from '../../../common-ui/controls/drop-down/drop-down.component';\r\nimport { TextAreaComponent } from '../../../common-ui/controls/text-area/text-area.component';\r\n\r\n@Component({\r\n  selector: 'app-education-details',\r\n  standalone: true,\r\n  templateUrl: './education-details.component.html',\r\n  styleUrl: './education-details.component.css',\r\n  imports: [TextBoxComponent, DropDownComponent, TextAreaComponent]\r\n})\r\nexport class EducationDetailsComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./education-details.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"eduDetails\">\r\n<div class=\"eduDetails-header\">\r\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-graduation-cap h-5 w-5 text-orange-600\" aria-hidden=\"true\"><path d=\"M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z\"></path><path d=\"M22 10v6\"></path><path d=\"M6 12.5V16a6 3 0 0 0 12 0v-3.5\"></path></svg> Education Details\r\n</div>\r\n<div class=\"content\">\r\n<app-text-box [label]=\"'Higher Qualification'\" [placeHolder]=\"'eg, Bachelors, Masters, PhD'\" [isRequired]=\"False\"></app-text-box>\r\n<app-text-box [label]=\"'Specialization'\" [placeHolder]=\"'eg, Computer Science'\" [isRequired]=\"False\"></app-text-box>\r\n</div>\r\n<div class=\"content\">\r\n<app-drop-down  [label]=\"'Year of Passing'\" [placeHolder]=\"'Select year'\" [options]=\"[{value: 1, name: '2024'}, {value: 2, name: '2023'}, {value: 3, name: '2022'},{value: 4, name: '2021'},{value: 5, name: '2020'},{value: 6, name: '2019'},{value: 7, name: '2018'},{value: 8, name: '2017'},{value: 9, name: '2016'},{value: 10, name: '2015'},{value: 11, name: '2014'},{value: 12, name: '2013'},{value: 13, name: '2012'},{value: 14, name: '2011'},{value: 15, name: '2010'},{value: 16, name: '2009'},{value: 17, name: '2008'},{value: 18, name: '2007'},{value: 19, name: '2006'},{value: 20, name: '2005'},{value: 21, name: '2004'},{value: 22, name: '2003'},{value: 23, name: '2002'},{value: 24, name: '2002'},{value: 25, name: '2001'},{value: 26, name: '2000'},{value: 27, name: '1999'},{value: 28, name: '1998'},{value: 29, name: '1997'},{value: 30, name: '1996'}]\" (selectedChange)=\"selectedChange($event)\"></app-drop-down>\r\n<app-text-box [label]=\"'University/College Name'\" [placeHolder]=\"'Enter University/College Name'\" [isRequired]=\"False\"></app-text-box>\r\n</div>\r\n<app-text-area [label]=\"'Certifications'\" [Placeholder]=\"'List any certifications'\" [isRequired]=\"false\"></app-text-area>\r\n</div>"
+        },
+        {
+            "name": "EdynCheckboxComponent",
+            "id": "component-EdynCheckboxComponent-2073ea11b4cc4316b67402b4b38b5b5294284851a7cd6b854c8f4490a7d955f7fd058c6e0ec04bff16476f56bda4f6e09dcd1f16da2596defcce5e681fcdadce",
+            "file": "src/app/common-ui/controls/edyn-checkbox/edyn-checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-edyn-checkbox",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./edyn-checkbox.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "labelPosition",
+                    "defaultValue": "'right'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "\"left\" | \"right\"",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component,Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-edyn-checkbox',\r\n  templateUrl: './edyn-checkbox.component.html',\r\n  styleUrl: './edyn-checkbox.component.css'\r\n})\r\nexport class EdynCheckboxComponent {\r\n  @Input() disabled: boolean = false;\r\n  @Input() checked: boolean = false;\r\n  @Input() labelPosition: 'left' | 'right' = 'right';\r\n  @Input() required: boolean = false;\r\n  @Input() label: string = '';\r\n}\r\n",
+            "styleUrl": "./edyn-checkbox.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"check_button\" [class.left]=\"labelPosition === 'left'\">\r\n  <label *ngIf=\"labelPosition === 'left'\" [for]=\"label\">{{ label }} <span *ngIf=\"required\">*</span></label>\r\n  <input\r\n    type=\"checkbox\"\r\n    [id]=\"label\"\r\n    [checked]=\"checked\"\r\n    [disabled]=\"disabled\"\r\n  >\r\n  <label *ngIf=\"labelPosition === 'right'\" [for]=\"label\">{{ label }} <span *ngIf=\"required\">*</span></label>\r\n</div>\r\n"
         },
         {
             "name": "FileUploadComponent",
@@ -1094,6 +1773,61 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"parent\">\r\n  <div class=\"single-upload\">\r\n    <!-- Wrap label and * inside a wrapper -->\r\n    <div class=\"upload-label-wrapper\">\r\n      <label class=\"upload-label\" for=\"fileInput\">{{ label }}</label>\r\n      <ng-container *ngIf=\"isRequired\">\r\n        <span class=\"required-star\">*</span>\r\n      </ng-container>\r\n    </div>\r\n\r\n    <div class=\"file-upload-field\" (click)=\"onAreaClick($event)\">\r\n      <div class=\"icon\" aria-hidden=\"true\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\"\r\n          viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\r\n          stroke-linecap=\"round\" stroke-linejoin=\"round\"\r\n          class=\"lucide lucide-upload h-4 w-4 text-gray-400\" aria-hidden=\"true\">\r\n          <path d=\"M12 3v12\"></path>\r\n          <path d=\"m17 8-5-5-5 5\"></path>\r\n          <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path>\r\n        </svg>\r\n      </div>\r\n\r\n      <label class=\"choose-btn choose-btn-inline\" (click)=\"$event.stopPropagation()\">\r\n        <input #fileInput id=\"fileInput\" type=\"file\" (change)=\"onFileSelected($event)\" />\r\n        <span>{{ buttonLabel }}</span>\r\n      </label>\r\n\r\n      <span class=\"file-status\">No file chosen</span>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "InsuranceDetailsComponent",
+            "id": "component-InsuranceDetailsComponent-8c29d7f213300efb28d8217592579aa9ebee1cfab09ba85f628cb5436e40995dc1d9b0af78036490ef72913768b1d6645bdcf3df4ce3c55ecfb5e56adf563dd7",
+            "file": "src/app/modules/add-employee/insurance-details/insurance-details.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-insurance-details",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./insurance-details.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "FileUploadComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TextAreaComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CalendarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ToggleComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FileUploadComponent } from '../../../common-ui/controls/file-upload/file-upload.component';\r\nimport { TextAreaComponent } from '../../../common-ui/controls/text-area/text-area.component';\r\nimport { CalendarComponent } from '../../../common-ui/controls/calendar/calendar.component';\r\nimport { ToggleComponent } from '../../../common-ui/controls/toggle/toggle.component';\r\n\r\n@Component({\r\n  selector: 'app-insurance-details',\r\n  templateUrl: './insurance-details.component.html',\r\n  styleUrl: './insurance-details.component.css',\r\n  standalone: true,\r\n  imports:[FileUploadComponent, TextAreaComponent,CalendarComponent,ToggleComponent]\r\n})\r\nexport class InsuranceDetailsComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./insurance-details.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "\r\n<div class=\"blank-space\">\r\n \r\n    <div class=\"inside\">\r\n        <div class=\"icon\" aria-hidden=\"true\">\r\n         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" \r\n                viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" \r\n                stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" \r\n                class=\"lucide lucide-shield-check h-4 w-4\" aria-hidden=\"true\">\r\n            <path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path>\r\n            <path d=\"M9 12l2 2 4-4\"></path>\r\n        </svg>\r\n\r\n        </div>\r\n        <h5>Insurance Details</h5>\r\n    </div>\r\n    <p>Father Details</p>\r\n    <div class=\"grid-container\">\r\n        <!-- <app-file-upload [label]=\"'Employee Photo'\" [buttonLabel]=\"'Upload File'\"></app-file-upload> -->\r\n        <!-- <div></div> -->\r\n        <app-text-area [label]=\"'Father Name'\" [Placeholder]=\"'Enter Father Name'\"></app-text-area>\r\n        <div></div>\r\n        <!-- <app-file-upload [label]=\"'Employee PAN'\" [buttonLabel]=\"'Choose File'\"></app-file-upload> -->\r\n        <app-text-area [label]=\"'Father Aadhar Number'\" [Placeholder]=\"'Enter Aadhar Number'\"></app-text-area>\r\n        <app-file-upload [label]=\"'Aadhar Upload'\" [buttonLabel]=\"'Choose File'\"></app-file-upload>\r\n        <app-text-area [label]=\"'Father Pan Number'\" [Placeholder]=\"'Enter PAN Number'\"></app-text-area>\r\n        <app-file-upload [label]=\"'PAN Upload'\" [buttonLabel]=\"'Choose File'\"></app-file-upload>\r\n        <app-calendar [label]=\"'DOB'\"></app-calendar>\r\n        <app-text-area [label]=\"'Occupation'\" [Placeholder]=\"'Enter Father Occupation'\"></app-text-area>       \r\n    </div>\r\n\r\n    <p>Mother Details</p>\r\n    <div class=\"grid-container\">\r\n        \r\n        <app-text-area [label]=\"'Mother Name'\" [Placeholder]=\"'Enter Mother Name'\"></app-text-area>\r\n        <div></div>\r\n        <app-text-area [label]=\"'Mother Aadhar Number'\" [Placeholder]=\"'Enter Aadhar Number'\"></app-text-area>\r\n        <app-file-upload [label]=\"'Aadhar Upload'\" [buttonLabel]=\"'Choose File'\"></app-file-upload>\r\n        <app-text-area [label]=\"'Mother Pan Number'\" [Placeholder]=\"'Enter PAN Number'\"></app-text-area>\r\n        <app-file-upload [label]=\"'PAN Upload'\" [buttonLabel]=\"'Choose File'\"></app-file-upload>\r\n        <app-calendar [label]=\"'Date of Birth'\"></app-calendar>\r\n        <app-text-area [label]=\"'Occupation'\" [Placeholder]=\"'Enter Mother Occupation'\"></app-text-area> \r\n           \r\n        <!-- <app-toggle [checked]=\"false\" [color]=\"'#4CAF50'\" [label]=\"'If your Father have any pre existing details, please enable  '\" [labelPosition]=\"'left'\" [labelColor]=\"'#333'\" (checkedChange)=\"checkedChange($event)\" (toggleChange)=\"toggleChange($event)\"></app-toggle>   -->\r\n    </div>\r\n\r\n    <p>Spouse Details</p>\r\n    <div class=\"grid-container\">\r\n       \r\n        <app-text-area [label]=\"'Spouse Name'\" [Placeholder]=\"'Enter Spouse Name'\" [isRequired]=\"false\"></app-text-area>\r\n        <div></div>\r\n        <!-- <app-file-upload [label]=\"'Employee PAN'\" [buttonLabel]=\"'Choose File'\"></app-file-upload> -->\r\n        <app-text-area [label]=\"'Spouse Aadhar Number'\" [Placeholder]=\"'Enter Aadhar Number'\" [isRequired]=\"false\"></app-text-area>\r\n        <app-file-upload [label]=\"'Aadhar Upload'\" [buttonLabel]=\"'Choose File'\" [isRequired]=\"false\"></app-file-upload>\r\n        <app-text-area [label]=\"'Spouse Pan Number'\" [Placeholder]=\"'Enter PAN Number'\" [isRequired]=\"false\"></app-text-area>\r\n        <app-file-upload [label]=\"'PAN Upload'\" [buttonLabel]=\"'Choose File'\" [isRequired]=\"false\"></app-file-upload>\r\n        <app-calendar [label]=\"'DOB'\" [isRequired]=\"false\"></app-calendar>\r\n        <app-text-area [label]=\"'Occupation'\" [Placeholder]=\"'Enter Spouse Occupation'\" [isRequired]=\"false\"></app-text-area>       \r\n    </div>\r\n</div>"
         },
         {
             "name": "JobDetailsComponent",
@@ -1480,7 +2214,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "\r\n\r\n\r\n\r\n\r\n\r\n<div class=\"blank-space\">\r\n    <div class=\"inside\">\r\n        <div class=\"icon\" aria-hidden=\"true\">\r\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-briefcase h-5 w-5 text-purple-600\" aria-hidden=\"true\"><path d=\"M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\"></path><rect width=\"20\" height=\"14\" x=\"2\" y=\"6\" rx=\"2\"></rect></svg>\r\n        </div>\r\n        <p>Job Details</p>\r\n    </div>\r\n    <div class=\"grid-container\">\r\n    \r\n            <div>\r\n<app-text-box\r\n  label=\"Office Email\"\r\n  placeholder=\"Enter office email\"\r\n  [isRequired]=\"true\"\r\n  type=\"email\"\r\n></app-text-box>\r\n\r\n\r\n  <app-drop-down\r\n    label=\"Department\"\r\n    placeHolder=\"Select department\"\r\n    [isRequired]=\"true\"\r\n    [options]=\"departmentOptions\"\r\n    (selectedChange)=\"onDepartmentChange($event)\"\r\n  ></app-drop-down>\r\n\r\n  <app-text-box\r\n  label=\"Designation\"\r\n  placeholder=\"Enter your job title\"\r\n  [isRequired]=\"true\"\r\n></app-text-box>\r\n\r\n\r\n  <app-drop-down\r\n    label=\"Employee Type\"\r\n    placeHolder=\"Select designation\"\r\n    [options]=\"designationOptions\"\r\n    (selectedChange)=\"onDesignationChange($event)\"\r\n  ></app-drop-down>\r\n\r\n  <app-drop-down\r\n  label=\"Pay Level / Grade\"\r\n  placeHolder=\"Select pay level\"\r\n  [isRequired]=\"true\"\r\n  [options]=\"payLevelOptions\"\r\n  (selectedChange)=\"onPayLevelChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n<app-drop-down\r\n  label=\"Reporting Manager\"\r\n  placeHolder=\"Select manager\"\r\n  [options]=\"reportingManagerOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onReportingManagerChange($event)\"\r\n></app-drop-down>\r\n\r\n</div>\r\n<div>\r\n<app-drop-down\r\n  label=\"Work Location\"\r\n  placeHolder=\"Select work location\"\r\n  [options]=\"workLocationOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onWorkLocationChange($event)\"\r\n></app-drop-down>\r\n\r\n<app-drop-down\r\n  label=\"Shift Timings\"\r\n  placeHolder=\"Select shift\"\r\n  [options]=\"shiftTimingOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onShiftTimingChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n<!-- <app-number-box> -->\r\n<app-drop-down\r\n  label=\"Casual Leaves\"\r\n  placeHolder=\"Select casual leaves\"\r\n  [options]=\"casualLeaveOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onCasualLeaveChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n<app-drop-down\r\n  label=\"Festival Leaves\"\r\n  placeHolder=\"Select festival leaves\"\r\n  [options]=\"festivalLeaveOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onFestivalLeaveChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n<app-drop-down\r\n  label=\"Earned Leaves\"\r\n  placeHolder=\"Select earned leaves\"\r\n  [options]=\"earnedLeaveOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onEarnedLeaveChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n\r\n<app-drop-down\r\n  label=\"Optional Leaves\"\r\n  placeHolder=\"Select optional leaves\"\r\n  [options]=\"optionalLeaveOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onOptionalLeaveChange($event)\"\r\n></app-drop-down>\r\n\r\n</div>\r\n\r\n<!-- \r\n</app-number-box> -->\r\n\r\n\r\n</div>\r\n   \r\n</div>"
+            "templateData": "<div class=\"blank-space\">\r\n    <div class=\"inside\">\r\n        <div class=\"icon\" aria-hidden=\"true\">\r\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-briefcase h-5 w-5 text-purple-600\" aria-hidden=\"true\"><path d=\"M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\"></path><rect width=\"20\" height=\"14\" x=\"2\" y=\"6\" rx=\"2\"></rect></svg>\r\n        </div>\r\n        <p>Job Details</p>\r\n    </div>\r\n    <div class=\"grid-container\">\r\n    \r\n            <div>\r\n<app-text-box\r\n  label=\"Office Email\"\r\n  placeholder=\"Enter office email\"\r\n  [isRequired]=\"true\"\r\n  type=\"email\"\r\n></app-text-box>\r\n\r\n\r\n  <app-drop-down\r\n    label=\"Department\"\r\n    placeHolder=\"Select department\"\r\n    [isRequired]=\"true\"\r\n    [options]=\"departmentOptions\"\r\n    (selectedChange)=\"onDepartmentChange($event)\"\r\n  ></app-drop-down>\r\n\r\n  <app-text-box\r\n  label=\"Designation\"\r\n  placeholder=\"Enter your job title\"\r\n  [isRequired]=\"true\"\r\n></app-text-box>\r\n\r\n\r\n  <app-drop-down\r\n    label=\"Employee Type\"\r\n    placeHolder=\"Select designation\"\r\n    [options]=\"designationOptions\"\r\n    (selectedChange)=\"onDesignationChange($event)\"\r\n  ></app-drop-down>\r\n\r\n  <app-drop-down\r\n  label=\"Pay Level / Grade\"\r\n  placeHolder=\"Select pay level\"\r\n  [isRequired]=\"true\"\r\n  [options]=\"payLevelOptions\"\r\n  (selectedChange)=\"onPayLevelChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n<app-drop-down\r\n  label=\"Reporting Manager\"\r\n  placeHolder=\"Select manager\"\r\n  [options]=\"reportingManagerOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onReportingManagerChange($event)\"\r\n></app-drop-down>\r\n\r\n</div>\r\n<div>\r\n<app-drop-down\r\n  label=\"Work Location\"\r\n  placeHolder=\"Select work location\"\r\n  [options]=\"workLocationOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onWorkLocationChange($event)\"\r\n></app-drop-down>\r\n\r\n<app-drop-down\r\n  label=\"Shift Timings\"\r\n  placeHolder=\"Select shift\"\r\n  [options]=\"shiftTimingOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onShiftTimingChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n<!-- <app-number-box> -->\r\n<app-drop-down\r\n  label=\"Casual Leaves\"\r\n  placeHolder=\"Select casual leaves\"\r\n  [options]=\"casualLeaveOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onCasualLeaveChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n<app-drop-down\r\n  label=\"Festival Leaves\"\r\n  placeHolder=\"Select festival leaves\"\r\n  [options]=\"festivalLeaveOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onFestivalLeaveChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n<app-drop-down\r\n  label=\"Earned Leaves\"\r\n  placeHolder=\"Select earned leaves\"\r\n  [options]=\"earnedLeaveOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onEarnedLeaveChange($event)\"\r\n></app-drop-down>\r\n\r\n\r\n\r\n<app-drop-down\r\n  label=\"Optional Leaves\"\r\n  placeHolder=\"Select optional leaves\"\r\n  [options]=\"optionalLeaveOptions\"\r\n  [isRequired]=\"true\"\r\n  (selectedChange)=\"onOptionalLeaveChange($event)\"\r\n></app-drop-down>\r\n\r\n</div>\r\n\r\n<!-- \r\n</app-number-box> -->\r\n\r\n\r\n</div>\r\n   \r\n</div>"
         },
         {
             "name": "NoticeBannerComponent",
@@ -1676,7 +2410,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"form-group\">\r\n    <label for=\"Casual\">{{label}} <span *ngIf=\"isRequired\"> * </span></label>\r\n    <input type=\"number\" id=\"numbers\" placeholder=\" \" min=\"0\" value=\"0\" required>\r\n</div>\r\n"
+            "templateData": "<div class=\"form-group\">\r\n    <label for=\"Casual\">{{label}} <span *ngIf=\"isRequired\"> * </span></label>\r\n    <input type=\"number\" id=\"numbers\" placeholder=\"0.0\" required>\r\n</div>\r\n"
         },
         {
             "name": "PasswordComponent",
@@ -1969,7 +2703,7 @@
         },
         {
             "name": "TextAreaComponent",
-            "id": "component-TextAreaComponent-16a0ad98f50032d34a60112af5d915ef599d9ae89cb8b99bd4904239c78d73f3b71fdeb0b5c67e2213d942cfdd5eeac618b3de03b6408b55d7bce365e90f078b",
+            "id": "component-TextAreaComponent-6ea593cf66886c1bcfdd401d9ec95bd11d53d543fca2c2541473a6f048b67582f3ff3df3b2395876cde655f0d0a65f7ee2685d4a58907f32242ce977d6066c43",
             "file": "src/app/common-ui/controls/text-area/text-area.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2011,6 +2745,15 @@
                     "line": 13,
                     "type": "string",
                     "decorators": []
+                },
+                {
+                    "name": "showBorder",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
                 }
             ],
             "outputsClass": [],
@@ -2030,13 +2773,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-text-area',\r\n  standalone: true,\r\n  templateUrl: './text-area.component.html',\r\n  styleUrl: './text-area.component.css',\r\n  imports: [CommonModule]\r\n})\r\nexport class TextAreaComponent {\r\n  @Input() label: string = 'Address';\r\n  @Input() Placeholder: string = 'Enter your address';\r\n  @Input() isRequired: boolean = true;\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-text-area',\r\n  standalone: true,\r\n  templateUrl: './text-area.component.html',\r\n  styleUrl: './text-area.component.css',\r\n  imports: [CommonModule]\r\n})\r\nexport class TextAreaComponent {\r\n  @Input() label: string = 'Address';\r\n  @Input() Placeholder: string = 'Enter your address';\r\n  @Input() isRequired: boolean = true;\r\n  @Input() showBorder: boolean = true;\r\n}\r\n",
             "styleUrl": "./text-area.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"form-group\">\r\n  <label for=\"address\">{{label}} <span *ngIf=\"isRequired\" class=\"required-star\">*</span></label>\r\n  <textarea id=\"address\" name=\"address\" [placeholder]=\"Placeholder\" ></textarea>\r\n</div>\r\n"
+            "templateData": "<div class=\"form-group\">\r\n  <label for=\"address\">{{label}} <span *ngIf=\"isRequired\" class=\"required-star\">*</span></label>\r\n  <textarea id=\"address\" name=\"address\" [placeholder]=\"Placeholder\" [ngStyle]=\"{\r\n    border: showBorder ? '1px solid black' : '1px solid #fff'\r\n  }\" ></textarea>\r\n</div>\r\n"
         },
         {
             "name": "TextBoxComponent",
@@ -2385,6 +3128,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/common-ui/controls/admin-header/admin-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AdminHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/common-ui/controls/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2399,7 +3151,7 @@
                 "linktype": "component",
                 "name": "CalendarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/28",
                 "status": "low"
             },
             {
@@ -2427,6 +3179,15 @@
                 "name": "DropDown",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/common-ui/controls/edyn-checkbox/edyn-checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EdynCheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -2471,7 +3232,7 @@
                 "linktype": "component",
                 "name": "TextAreaComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2507,7 +3268,7 @@
                 "linktype": "component",
                 "name": "DotComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -2529,10 +3290,37 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/modules/add-employee/basic-info/contact-info/contact-info.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContactInfoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/modules/add-employee/documents-upload/documents-upload.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "DocumentsUploadComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/add-employee/education-details/education-details.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EducationDetailsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/add-employee/insurance-details/insurance-details.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InsuranceDetailsComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

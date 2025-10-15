@@ -1,0 +1,56 @@
+.check_button {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #7c7c7c;
+}
+.check_button.left {
+  flex-direction: row-reverse;
+}
+.check_button input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #7c7c7c; 
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease;
+}
+.check_button input[type="checkbox"]:checked {
+  background-color: #000000; 
+  border-color: #000000;
+}
+.check_button input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: #ffffff;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+.check_button input[type="checkbox"]:hover:not(:disabled) {
+  border: 3px solid #000000; 
+}
+.check_button input[type="checkbox"]:disabled {
+  border: 2px solid rgba(124, 124, 124, 0.5);
+  background-color: rgba(124, 124, 124, 0.1);
+  cursor: not-allowed;
+}
+.check_button input[type="checkbox"]:disabled:checked {
+  background-color: rgba(124, 124, 124, 0.5);
+  border-color: rgba(124, 124, 124, 0.5);
+}
+.check_button input[type="checkbox"]:disabled + label {
+  color: rgba(124, 124, 124, 0.5);
+  cursor: not-allowed;
+}
+
+.check_button label span {
+  color: #000000;
+  margin-left: 2px;
+}

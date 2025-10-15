@@ -1,4 +1,6 @@
 <div class="form-group">
   <label for="address">{{label}} <span *ngIf="isRequired" class="required-star">*</span></label>
-  <textarea id="address" name="address" [placeholder]="Placeholder" ></textarea>
+  <textarea id="address" name="address" [placeholder]="Placeholder" [ngStyle]="{
+    border: showBorder ? '1px solid black' : '1px solid #fff'
+  }" ></textarea>
 </div>
