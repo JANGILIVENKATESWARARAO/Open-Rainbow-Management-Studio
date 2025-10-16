@@ -102,3 +102,10 @@
     align-items: center;
     gap: 12px;
 }
+
+.grid{
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 45% 1fr;
+  gap: 20px;
+  padding: 30px;
+}
