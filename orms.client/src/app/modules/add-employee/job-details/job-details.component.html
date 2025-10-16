@@ -6,7 +6,7 @@
         </div>
         <div class="m-0">Job Details</div>
     </div>
-    <div class="grid  grid-cols-1 md:grid-cols-2 p-[20px]">
+    <div class="grid  grid-cols-1 md:grid-cols-2 p-[20px] ">
     
             <div>
               <app-text-box label="Office Email" placeholder="Enter office email" [isRequired]="true" type="email"></app-text-box>
@@ -21,12 +21,7 @@
               <app-drop-down label="Employee Type" placeHolder="Select designation" [options]="designationOptions"
                 (selectedChange)="onDesignationChange($event)"></app-drop-down>
             
-              <app-drop-down label="Pay Level / Grade" placeHolder="Select pay level" [isRequired]="true"
-                [options]="payLevelOptions" (selectedChange)="onPayLevelChange($event)"></app-drop-down>
-            
-            
-              <app-drop-down label="Reporting Manager" placeHolder="Select manager" [options]="reportingManagerOptions"
-                [isRequired]="true" (selectedChange)="onReportingManagerChange($event)"></app-drop-down>
+              
             
             </div>
 
@@ -37,9 +32,16 @@
               <app-drop-down label="Shift Timings" placeHolder="Select shift" [options]="shiftTimingOptions" [isRequired]="true"
                 (selectedChange)="onShiftTimingChange($event)"></app-drop-down>
 
+              <app-drop-down label="Pay Level / Grade" placeHolder="Select pay level" [isRequired]="true"
+                [options]="payLevelOptions" (selectedChange)="onPayLevelChange($event)"></app-drop-down>
+            
+            
+              <app-drop-down label="Reporting Manager" placeHolder="Select manager" [options]="reportingManagerOptions"
+                [isRequired]="true" (selectedChange)="onReportingManagerChange($event)"></app-drop-down>  
+
 
               <!-- <app-number-box> -->
-              <app-drop-down label="Casual Leaves" placeHolder="Select casual leaves" [options]="casualLeaveOptions"
+              <!-- <app-drop-down label="Casual Leaves" placeHolder="Select casual leaves" [options]="casualLeaveOptions"
                 [isRequired]="true" (selectedChange)="onCasualLeaveChange($event)"></app-drop-down>
 
 
@@ -53,15 +55,28 @@
 
 
               <app-drop-down label="Optional Leaves" placeHolder="Select optional leaves" [options]="optionalLeaveOptions"
-                [isRequired]="true" (selectedChange)="onOptionalLeaveChange($event)"></app-drop-down>
+                [isRequired]="true" (selectedChange)="onOptionalLeaveChange($event)"></app-drop-down> -->
+
+
 
             </div>
-
-
+            <p class="text">Leave Allocation</p>
+        
+      
 
 
 </div>
-   
+    <div class="grid-contsiner-wrspper">
+        <div class="grid-container2">
+            <app-count-widget [label]="'Casual '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
+            <app-count-widget [label]="'Festive '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
+        </div>
+        <div class="grid-container2">
+                    <app-count-widget [label]="'Earned '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
+                    <app-count-widget [label]="'Optional '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
+        </div>
+
+</div>
 </div>
 
 
