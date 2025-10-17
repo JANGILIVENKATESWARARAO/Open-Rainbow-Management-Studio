@@ -53,11 +53,12 @@ export class CalendarComponent implements OnInit {
     event.preventDefault();
     this.showCalendar = !this.showCalendar;
   }
-
+startingYear:number = 1950;
+endingYear: number = 2050;
   generateYears() {
-    const currentYear = new Date().getFullYear();
+    // const currentYear = new Date().getFullYear();
     this.years = [];
-    for (let i = currentYear - 100; i <= currentYear + 10; i++) {
+    for (let i = this.startingYear; i <= this.endingYear; i++) {
       this.years.push(i);
     }
   }
