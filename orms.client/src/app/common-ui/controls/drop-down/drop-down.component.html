@@ -3,7 +3,11 @@
 
   <div class="custom-dropdown">
     <input type="checkbox"  [id]="label + '_toggle'" class="dropdown-toggle" hidden>
-    <label  [for] ="label + '_toggle'" class="custom-dropdown-selected">{{selectedValue || placeHolder}}</label>
+    <label [for]="label + '_toggle'" 
+       class="custom-dropdown-selected" 
+       [class.placeholder]="!selectedValue">
+        {{ selectedValue || placeHolder }}
+    </label>
     <ul class="custom-dropdown-list">
       <li *ngFor="let option of options" (click)="selectOption(option)"
         [class.selected]="selectedValue === option.value">
