@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-password-box',
   templateUrl: './password-box.component.html',
-  styleUrl: './password-box.component.css'
+  styleUrl: './password-box.component.css',
+   standalone: true, 
 })
 export class PasswordBoxComponent {
      @Input() label: string = 'Temporary Password';
