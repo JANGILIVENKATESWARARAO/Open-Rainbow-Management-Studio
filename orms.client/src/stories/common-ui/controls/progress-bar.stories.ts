@@ -6,7 +6,7 @@ import { ProgressBarComponent } from '../../../app/common-ui/controls/progress-b
 const meta: Meta<ProgressBarComponent> = {
   title: 'Common-UI/ProgressBar',
   component: ProgressBarComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

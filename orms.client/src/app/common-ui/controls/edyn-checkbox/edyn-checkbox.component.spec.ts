@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PasswordBoxComponent } from './password-box.component';
+import { EdynCheckboxComponent } from './edyn-checkbox.component';
 
-describe('PasswordBoxComponent', () => {
-  let component: PasswordBoxComponent;
-  let fixture: ComponentFixture<PasswordBoxComponent>;
+describe('EdynCheckboxComponent', () => {
+  let component: EdynCheckboxComponent;
+  let fixture: ComponentFixture<EdynCheckboxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PasswordBoxComponent]
+      declarations: [EdynCheckboxComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PasswordBoxComponent);
+    fixture = TestBed.createComponent(EdynCheckboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

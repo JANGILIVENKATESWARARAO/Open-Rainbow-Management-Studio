@@ -1,0 +1,63 @@
+
+<div class="blank-space">
+ 
+    <div class="inside">
+        <div class="icon" aria-hidden="true">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                class="lucide lucide-shield-check h-4 w-4" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+        </svg>
+
+        </div>
+        <h5>Insurance Details</h5>
+    </div>
+    <p>Father Details</p>
+    <hr class="custom-line">
+    <div class="grid-container">
+        <!-- <app-file-upload [label]="'Employee Photo'" [buttonLabel]="'Upload File'"></app-file-upload> -->
+        <!-- <div></div> -->
+        <app-text-area [label]="'Father Name'" [Placeholder]="'Enter Father Name'"></app-text-area>
+        <div></div>
+        <!-- <app-file-upload [label]="'Employee PAN'" [buttonLabel]="'Choose File'"></app-file-upload> -->
+        <app-text-area [label]="'Father Aadhar Number'" [Placeholder]="'Enter Aadhar Number'"></app-text-area>
+        <app-file-upload [label]="'Aadhar Upload'" [buttonLabel]="'Choose File'"></app-file-upload>
+        <app-text-area [label]="'Father Pan Number'" [Placeholder]="'Enter PAN Number'"></app-text-area>
+        <app-file-upload [label]="'PAN Upload'" [buttonLabel]="'Choose File'"></app-file-upload>
+        <app-calendar [label]="'DOB'"></app-calendar>
+        <app-text-area [label]="'Occupation'" [Placeholder]="'Enter Father Occupation'"></app-text-area>       
+    </div>
+
+    <p>Mother Details</p>
+    <hr class="custom-line">
+    <div class="grid-container">
+        
+        <app-text-area [label]="'Mother Name'" [Placeholder]="'Enter Mother Name'"></app-text-area>
+        <div></div>
+        <app-text-area [label]="'Mother Aadhar Number'" [Placeholder]="'Enter Aadhar Number'"></app-text-area>
+        <app-file-upload [label]="'Aadhar Upload'" [buttonLabel]="'Choose File'"></app-file-upload>
+        <app-text-area [label]="'Mother Pan Number'" [Placeholder]="'Enter PAN Number'"></app-text-area>
+        <app-file-upload [label]="'PAN Upload'" [buttonLabel]="'Choose File'"></app-file-upload>
+        <app-calendar [label]="'Date of Birth'"></app-calendar>
+        <app-text-area [label]="'Occupation'" [Placeholder]="'Enter Mother Occupation'"></app-text-area> 
+           
+        <!-- <app-toggle [checked]="false" [color]="'#4CAF50'" [label]="'If your Father have any pre existing details, please enable  '" [labelPosition]="'left'" [labelColor]="'#333'" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></app-toggle>   -->
+    </div>
+
+    <p>Spouse Details</p>
+    <hr class="custom-line">
+    <div class="grid-container">
+       
+        <app-text-area [label]="'Spouse Name'" [Placeholder]="'Enter Spouse Name'" [isRequired]="false"></app-text-area>
+        <div></div>
+        <!-- <app-file-upload [label]="'Employee PAN'" [buttonLabel]="'Choose File'"></app-file-upload> -->
+        <app-text-area [label]="'Spouse Aadhar Number'" [Placeholder]="'Enter Aadhar Number'" [isRequired]="false"></app-text-area>
+        <app-file-upload [label]="'Aadhar Upload'" [buttonLabel]="'Choose File'" [isRequired]="false"></app-file-upload>
+        <app-text-area [label]="'Spouse Pan Number'" [Placeholder]="'Enter PAN Number'" [isRequired]="false"></app-text-area>
+        <app-file-upload [label]="'PAN Upload'" [buttonLabel]="'Choose File'" [isRequired]="false"></app-file-upload>
+        <app-calendar [label]="'DOB'" [isRequired]="false"></app-calendar>
+        <app-text-area [label]="'Occupation'" [Placeholder]="'Enter Spouse Occupation'" [isRequired]="false"></app-text-area>       
+    </div>
+</div>

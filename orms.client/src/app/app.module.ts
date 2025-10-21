@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PasswordBoxComponent } from './common-ui/controls/password-box/password-box.component';
+// import { PasswordBoxComponent } from './common-ui/controls/password-box/password-box.component';
+import { JobDetailsComponent } from './modules/add-employee/job-details/job-details.component';
+import { ButtonNavigationComponent } from './common-ui/controls/button-navigation/button-navigation.component';
 import { TempLoginCredentialsComponent } from './modules/temp-login-credentials/temp-login-credentials.component';
 
 
 @NgModule({
-    declarations: [AppComponent, PasswordBoxComponent, TempLoginCredentialsComponent],
+    declarations: [AppComponent, JobDetailsComponent, ButtonNavigationComponent, TempLoginCredentialsComponent],
     imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule

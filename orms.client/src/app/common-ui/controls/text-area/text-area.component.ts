@@ -12,4 +12,5 @@ export class TextAreaComponent {
   @Input() label: string = 'Address';
   @Input() Placeholder: string = 'Enter your address';
   @Input() isRequired: boolean = true;
+  @Input() showBorder: boolean = true;
 }

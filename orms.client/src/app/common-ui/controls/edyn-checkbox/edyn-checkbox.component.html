@@ -1,0 +1,10 @@
+<div class="check_button" [class.left]="labelPosition === 'left'">
+  <label *ngIf="labelPosition === 'left'" [for]="label">{{ label }} <span *ngIf="required">*</span></label>
+  <input
+    type="checkbox"
+    [id]="label"
+    [checked]="checked"
+    [disabled]="disabled"
+  >
+  <label *ngIf="labelPosition === 'right'" [for]="label">{{ label }} <span *ngIf="required">*</span></label>
+</div>

@@ -5,7 +5,7 @@ import { DropDownComponent } from '../../../app/common-ui/controls/drop-down/dro
 const meta: Meta<DropDownComponent> = {
   title: 'Common-UI/Dropdown',
   component: DropDownComponent,
-  // tags: ['autodocs'],
+   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
@@ -24,6 +24,8 @@ const meta: Meta<DropDownComponent> = {
         name: 'Other',
       },
     ],
+
+    
   },
 };
 

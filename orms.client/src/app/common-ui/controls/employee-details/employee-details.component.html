@@ -1,0 +1,28 @@
+<div class="blank-space">
+    <div class="employee-details-header">
+  <div class="left-section">
+    <div class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text h-6 w-6" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
+        </div>
+    <div class="title-section">
+      <h3>Employee Details Preview</h3>
+      <p>Complete overview of employee information</p>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <app-button [text]= "'Print'" [bgColor]="'#3b73ed'" [color]="'White'" [hoverBGColor]="'#3b73ed'" [hoverColor]="'Black'" [borderRadius]="12" [borderColor]="'whitesmoke'" [showBorder]="true"></app-button>
+    <app-button [text]="'Export'" [bgColor]="'#3b73ed'" [color]="'White'" [hoverBGColor]="'#3b73ed'" [hoverColor]="'Black'" [borderRadius]="12" [borderColor]="'whitesmoke'" [showBorder]="true"></app-button>
+    <button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 text-white hover:bg-white/20"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x h-5 w-5" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+</div>
+</div>
+</div>
+<div class="grid">
+  <app-inner-info></app-inner-info>
+  <app-inner-contact></app-inner-contact>
+  <app-inner-job></app-inner-job>
+  <app-inner-education></app-inner-education>
+  <app-inner-work></app-inner-work>
+  <app-inner-other></app-inner-other>
+  <app-inner-salary></app-inner-salary>
+</div>

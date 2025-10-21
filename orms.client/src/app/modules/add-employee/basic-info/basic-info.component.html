@@ -1,8 +1,52 @@
-<div class="grid grid-cols-12">
-    <div class="col-span-3">
-        <app-calendar [label]="'DOB'" [isRequired]="true"></app-calendar>
+<div class="form-container">
+
+ <div class="form-header">
+  <span style="display:inline-block; width:32px; height:32px; background:#e9f0fb; border-radius:8px; margin-right:12px; vertical-align:middle;">
+    <svg width="32" height="32" viewBox="0 0 32 32" style="display:block; margin:auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="8" fill="#e9f0fb"/>
+      <circle cx="16" cy="13" r="5" stroke="#2563eb" stroke-width="2"/>
+      <path d="M8 25c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#2563eb" stroke-width="2"/>
+    </svg>
+  </span>
+  <div class="header-text" style="display:inline-block; vertical-align:middle;">
+    <h3>Basic Information</h3>
+    <p>Personal details and identification</p>
+  </div>
+</div>
+
+
+  <div class="grid">
+    <div>
+      <app-text-box [label]="'Full Name'" [placeHolder]="'Enter Full Name'" [isRequired]="true"></app-text-box>
     </div>
-    <div class="col-span-3">
-        <app-drop-down></app-drop-down>
+    <div>
+      <app-text-box [label]="'Employee ID'" [placeHolder]="'EMP0042'" [isRequired]="true"></app-text-box>
     </div>
+     <div>
+      <app-calendar [label]="'Date of Birth'" (dateSelected)="dateSelected($event)"
+        (calendarClosed)="calendarClosed($event)">
+      </app-calendar>
+    </div>
+   
+    <div>
+      <app-calendar [label]="'Date of Joining'" [isRequired]="false"
+        (dateSelected)="dateSelected($event)"
+        (calendarClosed)="calendarClosed($event)">
+      </app-calendar>
+    </div>
+    <div>
+      <app-drop-down [label]="'Gender'" [placeHolder]="'Select Gender'"
+        [options]="[{value: 1, name: 'Male'}, {value: 2, name: 'Female'}, {value: 3, name: 'Other'}]"
+        (selectedChange)="selectedChange($event)">
+      </app-drop-down>
+    </div>
+     <div>
+      <app-drop-down [label]="'Marital Status'" [placeHolder]="'Select Marital Status'" [isRequired]="false"
+        [options]="[{value: 1, name: 'Single'}, {value: 2, name: 'Married'}]"
+        (selectedChange)="selectedChange($event)">
+      </app-drop-down>
+    </div>
+    
+   
+  </div>
 </div>

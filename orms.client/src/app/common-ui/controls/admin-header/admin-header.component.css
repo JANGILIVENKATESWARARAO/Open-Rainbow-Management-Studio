@@ -1,0 +1,141 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 8px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 60px;
+  width: 100%;
+}
+
+.name {
+  color: blue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.name_1 {
+  font-size: 9px;
+  color: grey;
+}
+
+.design_1 {
+  display: flex;
+  gap: 10px;
+}
+
+.header-logo {
+  width: 30px;
+}
+
+.design_3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.design_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2563eb;
+  color: white;
+  height: 31px;
+  width: 31px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.admin_details {
+   display: flex;
+  /*flex-direction: column; */
+  align-items: center;
+  line-height: 1.2;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.admin_details_text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.admin_details:hover {
+  background-color: #f3f4f6;
+}
+
+.admin_name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.admin_role {
+  font-size: 10px;
+  color: grey;
+}
+.bell-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bell button styling */
+.bell-button {
+  position: relative;
+  background-color: #f3f6fb;   /* light blueish background like screenshot */
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;         /* soft square shape */
+  padding: 10px;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.bell-button:hover {
+  background-color: #e8edf5;
+}
+
+.bell-svg-icon {
+  stroke: #374151;
+}
+
+.notification-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 13px;
+  height: 13px;
+  background-color: #e11d48;
+  border-radius: 50%;
+  /* border: 3px solid #fff; */
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+/* Keyframes for blinking effect */
+@keyframes blink {
+  0%, 100% {
+    background-color: #e11d48; /* bright red */
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    background-color: #f87171; /* faded red */
+    transform: scale(0.9);     /* slight pulse shrink */
+    opacity: 0.6;
+  }
+}
+

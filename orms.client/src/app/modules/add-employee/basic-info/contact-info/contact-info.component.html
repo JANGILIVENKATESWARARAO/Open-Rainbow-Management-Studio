@@ -1,0 +1,68 @@
+<div class="contact_info">
+    <div class="header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-phone h-5 w-5 text-green-600" aria-hidden="true">
+            <path
+                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+            </path>
+        </svg>
+        <p>Contact Information</p>
+        <hr>
+    </div>
+
+    <div class="grid-container">
+        <div class="item-1">
+            <app-text-box [label]="'Personal Mail'" [placeHolder]="'Enter your mail Id'" [isRequired]="true"
+                [showBorder]="false"></app-text-box>
+        </div>
+        <div class="item-2">
+            <app-text-box [label]="'Linkedin Url'" [placeHolder]="'Enter your linkedin url'" [isRequired]="true"
+                [showBorder]="false"></app-text-box>
+        </div>
+    </div>
+    <div class="item-3">
+        <app-text-box [label]="'Contact No'" [placeHolder]="'Enter your contact number'" [isRequired]="true"
+            [showBorder]="false"></app-text-box>
+    </div>
+
+    <p class="Address-1">Address Details</p>
+    <hr>
+    <div class="permanent">
+        <app-text-area [label]="'Permanent Address'" [Placeholder]="'Enter your permanent address'"
+            [showBorder]="false"></app-text-area>
+    </div>
+    <div class="current">
+        <app-text-area [label]="'Current Address'" [Placeholder]="'Enter your current address'"
+            [showBorder]="false"></app-text-area>
+    </div>
+    <div class="Toggle">
+        <app-toggle [checked]="false" [color]="'#4CAF50'" [label]="'Same as Permanent Address '"
+            [labelPosition]="'right'" [labelColor]="'#333'" (checkedChange)="checkedChange($event)"
+            (toggleChange)="toggleChange($event)"></app-toggle>
+    </div>
+    <p class="text-1">Emergency contact details</p>
+    <hr>
+    <div class="emergency">
+        <div class="item-4">
+            <app-text-box [label]="'Contact Name'" [placeHolder]="'Enter name'" [isRequired]="true"
+                [showBorder]="false"></app-text-box>
+        </div>
+        <div class="item-5">
+            <app-text-box [label]="'Contact Number'" [placeHolder]="'Enter Contact Number'" [isRequired]="true"
+                [showBorder]="false"></app-text-box>
+        </div>
+    </div>
+    <div class="item-6">
+        <app-drop-down [label]="'Relation'" [placeHolder]="'Select Your Relation'" [isRequired]="true" [options]="[{value: 1, name: 'Father'}, {value: 2, name: 'Mother'}, {value: 3, name: 'Spouse'}, {value: 4, name: 'Brother/Sister'}, {value: 5, name: 'Child'}, {value: 6, name: 'Others'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+    </div>
+    <!-- <div class="emergency-2">
+            <p class="text-2">Emergency contact details-2</p>
+            <app-text-box [label]="'Contact Name-2'" [placeHolder]="'Enter name'" [isRequired]="true"
+                [showBorder]="false"></app-text-box>
+            <app-text-box [label]="'Contact Number-2'" [placeHolder]="'Enter Contact Number'" [isRequired]="true"
+                [showBorder]="false"></app-text-box>
+            <app-text-box [label]="'Relation-2'" [placeHolder]="'Enter relation name '" [isRequired]="true"
+                [showBorder]="false"></app-text-box>
+    </div> -->
+</div>
