@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { TextAreaComponent } from "../../../../common-ui/controls/text-area/text-area.component";
-import { TextBoxComponent } from "../../../../common-ui/controls/text-box/text-box.component";
-import { ToggleComponent } from "../../../../common-ui/controls/toggle/toggle.component";
-import { DropDownComponent } from "../../../../common-ui/controls/drop-down/drop-down.component";
+import { TextAreaComponent } from "../../../common-ui/controls/text-area/text-area.component";
+import { TextBoxComponent } from "../../../common-ui/controls/text-box/text-box.component";
+import { ToggleComponent } from "../../../common-ui/controls/toggle/toggle.component";
+import { DropDownComponent } from "../../../common-ui/controls/drop-down/drop-down.component";
 
 @Component({
   selector: 'app-contact-info',

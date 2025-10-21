@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
-import { ContactInfoComponent } from '../../../app/modules/add-employee/basic-info/contact-info/contact-info.component';
+import { ContactInfoComponent } from '../../../app/modules/add-employee/contact-info/contact-info.component';
 
 const meta: Meta<ContactInfoComponent> = {
   title: 'Modules/AddEmployee/ContactInfo',
