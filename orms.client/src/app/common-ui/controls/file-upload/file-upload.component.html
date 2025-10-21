@@ -1,16 +1,20 @@
 <div class="parent">
   <div class="single-upload">
     <!-- Wrap label and * inside a wrapper -->
-    <div class="upload-label-wrapper">
-      <label class="upload-label" for="fileInput">{{ label }}</label>
+    <div class="upload-label-wrapper w-full font-inherit flex items-center gap-1">
+      <label class="upload-label block text-left font-semibold text-base mb-3 text-gray-900 font-semibold text-base text-gray-900" for="fileInput">{{ label }}</label>
       <ng-container *ngIf="isRequired">
-        <span class="required-star">*</span>
+        <span class="required-star text-red-600 text-base font-semibold -mt-3">*</span>
       </ng-container>
     </div>
 
-    <div class="file-upload-field" (click)="onAreaClick($event)">
-      <div class="icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+    <div class="file-upload-field border border-dashed border-gray-300 bg-white rounded-lg
+         py-4 px-5 flex items-center gap-3 min-h-16
+         transition duration-200 ease-in-out relative hover:border-dashed hover:border-blue-500 " (click)="onAreaClick($event)">
+
+         
+      <div class="icon flex items-center flex-shrink-0 text-gray-400" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 block object-contain" width="24" height="24"
           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round"
           class="lucide lucide-upload h-4 w-4 text-gray-400" aria-hidden="true">
@@ -20,12 +24,20 @@
         </svg>
       </div>
 
-      <label class="choose-btn choose-btn-inline" (click)="$event.stopPropagation()">
-        <input #fileInput id="fileInput" type="file" (change)="onFileSelected($event)" />
-        <span>{{ buttonLabel }}</span>
+      <label class="choose-btn bg-sky-100 border border-sky-200 text-blue-700 
+         px-4 py-2 rounded-lg cursor-pointer 
+         font-medium text-sm leading-4 
+         inline-flex items-center gap-1.5 flex-shrink-0 
+         select-none transition duration-200 ease-in-out relative bg-blue-50 border border-[#c6ddfa] hover:bg-[#e1f0ff] hover:border-[#b4d3f7] 
+         active:bg-[#d4e9ff] active:border-[#a3caf5] active:translate-y-[1px] 
+         focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#dbeafe] focus-visible:ring-offset-[2px] focus-visible:ring-offset-[#3b82f6]
+         choose-btn-inline  relative overflow-hidden 
+         " (click)="$event.stopPropagation()">
+        <input #fileInput id="fileInput" type="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer text-[0px] " (change)="onFileSelected($event)" />
+        <span>{{ buttonLabel }} </span>
       </label>
 
-      <span class="file-status">No file chosen</span>
+      <span class="file-status" class="text-[0.9rem] text-[#4b5563] leading-none">No file chosen</span>
     </div>
   </div>
 </div>
