@@ -17,4 +17,4 @@ const meta: Meta<TempLoginCredentialsComponent> = {
 export default meta;
 type Story = StoryObj<TempLoginCredentialsComponent>;
 
-export const BasicInfo: Story = {};
+export const TempLoginCredentials: Story = {};
