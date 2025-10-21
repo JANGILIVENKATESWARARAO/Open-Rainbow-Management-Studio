@@ -1,0 +1,20 @@
+import type { Meta, StoryObj } from '@storybook/angular';
+import { fn } from 'storybook/test';
+
+import { TempLoginCredentialsComponent } from '../../../app/temp-login-credentials/temp-login-credentials.component';
+
+
+const meta: Meta<TempLoginCredentialsComponent> = {
+  title: 'Modules/AddEmployee/templogin',
+  component: TempLoginCredentialsComponent,
+  // tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {},
+};
+
+export default meta;
+type Story = StoryObj<TempLoginCredentialsComponent>;
+
+export const BasicInfo: Story = {};
