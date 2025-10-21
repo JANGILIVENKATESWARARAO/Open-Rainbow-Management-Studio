@@ -4,7 +4,7 @@ import { InnerInfoComponent } from '../../../../app/modules/add-employee/employe
 
 
 const meta: Meta<InnerInfoComponent> = {
-  title: 'Common-UI/InnerInfo',
+  title: 'Modules/AddEmployee/EmployeePreview/InnerInfo',
   component: InnerInfoComponent,
   // tags: ['autodocs'],
   parameters: {

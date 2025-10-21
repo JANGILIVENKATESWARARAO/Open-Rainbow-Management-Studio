@@ -4,7 +4,7 @@ import { InnerWorkComponent } from '../../../../app/modules/add-employee/employe
 
 
 const meta: Meta<InnerWorkComponent> = {
-  title: 'Common-UI/InnerWork',
+  title: 'Modules/AddEmployee/EmployeePreview/InnerWork',
   component: InnerWorkComponent,
   // tags: ['autodocs'],
   parameters: {

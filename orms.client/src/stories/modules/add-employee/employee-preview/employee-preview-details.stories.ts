@@ -3,7 +3,7 @@ import { fn } from 'storybook/test';
 import { EmployeePreviewDetailsComponent } from '../../../../app/modules/add-employee/employee-preview/employee-preview-details/employee-preview-details.component';
 
 const meta: Meta<EmployeePreviewDetailsComponent> = {
-  title: 'Common-UI/EmployeePreviewDetails',
+  title: 'Modules/AddEmployee/EmployeePreview/EmployeePreviewDetails',
   component: EmployeePreviewDetailsComponent,
   // tags: ['autodocs'],
   parameters: {
@@ -15,4 +15,4 @@ const meta: Meta<EmployeePreviewDetailsComponent> = {
 export default meta;
 type Story = StoryObj<EmployeePreviewDetailsComponent>;
 
-export const EmployeeDetails: Story = {};
+export const EmployeePreviewDetails: Story = {};

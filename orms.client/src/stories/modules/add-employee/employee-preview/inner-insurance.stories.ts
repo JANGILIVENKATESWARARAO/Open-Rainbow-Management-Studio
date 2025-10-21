@@ -4,7 +4,7 @@ import { InnerInsuranceComponent } from '../../../../app/modules/add-employee/em
 
 
 const meta: Meta<InnerInsuranceComponent> = {
-  title: 'Common-UI/InnerInsurance',
+  title: 'Modules/AddEmployee/EmployeePreview/InnerInsurance',
   component: InnerInsuranceComponent,
   // tags: ['autodocs'],
   parameters: {

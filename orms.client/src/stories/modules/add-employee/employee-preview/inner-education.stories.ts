@@ -4,7 +4,7 @@ import { InnerEducationComponent } from '../../../../app/modules/add-employee/em
 
 
 const meta: Meta<InnerEducationComponent> = {
-  title: 'Common-UI/InnerEducation',
+  title: 'Modules/AddEmployee/EmployeePreview/InnerEducation',
   component: InnerEducationComponent,
   // tags: ['autodocs'],
   parameters: {

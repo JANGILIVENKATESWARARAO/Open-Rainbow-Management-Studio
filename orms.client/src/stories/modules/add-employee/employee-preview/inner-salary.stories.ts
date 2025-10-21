@@ -4,7 +4,7 @@ import { InnerSalaryComponent } from '../../../../app/modules/add-employee/emplo
 
 
 const meta: Meta<InnerSalaryComponent> = {
-  title: 'Common-UI/InnerSalary',
+  title: 'Modules/AddEmployee/EmployeePreview/InnerSalary',
   component: InnerSalaryComponent,
   // tags: ['autodocs'],
   parameters: {

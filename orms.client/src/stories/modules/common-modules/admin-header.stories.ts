@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { AdminHeaderComponent } from '../../../app/modules/common-modules/admin-header/admin-header.component';
 
 const meta: Meta<AdminHeaderComponent> = {
-  title: 'Common-UI/AdminHeader',
+  title: 'Modules/CommonModules/AdminHeader',
   component: AdminHeaderComponent,
   // tags: ['autodocs'],
   parameters: {

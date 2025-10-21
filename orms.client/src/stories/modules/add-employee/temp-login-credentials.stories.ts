@@ -5,7 +5,7 @@ import { TempLoginCredentialsComponent } from '../../../app/modules/add-employee
 
 
 const meta: Meta<TempLoginCredentialsComponent> = {
-  title: 'Modules/AddEmployee/templogin',
+  title: 'Modules/AddEmployee/TempLoginCredentials',
   component: TempLoginCredentialsComponent,
   // tags: ['autodocs'],
   parameters: {

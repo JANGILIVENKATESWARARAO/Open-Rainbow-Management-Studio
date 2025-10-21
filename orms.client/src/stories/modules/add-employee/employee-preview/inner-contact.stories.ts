@@ -4,7 +4,7 @@ import { InnerContactComponent } from '../../../../app/modules/add-employee/empl
 
 
 const meta: Meta<InnerContactComponent> = {
-  title: 'Common-UI/InnerContact',
+  title: 'Modules/AddEmployee/EmployeePreview/InnerContact',
   component: InnerContactComponent,
   // tags: ['autodocs'],
   parameters: {
