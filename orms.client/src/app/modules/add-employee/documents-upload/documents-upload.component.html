@@ -1,6 +1,6 @@
-<div class="blank-space">
-    <div class="inside">
-        <div class="icon" aria-hidden="true">
+<div class="blank-space  w-full h-full bg-white rounded-[25px] p-5 items-start border border-gray-500">
+    <div class="inside flex shrink-0 gap-2.5 mb-6 ml-[16px]">
+        <div class="icon text-red-500 mt-[5px]" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-upload h-4 w-4" aria-hidden="true">
@@ -9,9 +9,9 @@
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             </svg>
         </div>
-        <p>Documents Upload</p>
+        <p class="m-0">Documents Upload</p>
     </div>
-    <div class="grid-container">
+    <div class="grid-container grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
         <app-file-upload [label]="'Employee Photo'" [buttonLabel]="'Upload File'"></app-file-upload>
         <div></div>
         <app-text-area [label]="'Employee PAN Number'" [Placeholder]="'Enter your PAN Number'"></app-text-area>
@@ -26,4 +26,10 @@
         <app-file-upload [label]="'Relieving Letter'" [buttonLabel]="'Choose File'"></app-file-upload>
         <app-file-upload [label]="'Offer Letter'" [buttonLabel]="'Choose File'"></app-file-upload>
     </div>
+</div>
+
+
+
+<div class="grid grid-container p-[20px] m-[30px] bg-[%f5f5f5]" >
+
 </div>

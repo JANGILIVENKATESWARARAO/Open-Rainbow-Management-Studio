@@ -16,4 +16,10 @@ const meta: Meta<FileUploadComponent> = {
 export default meta;
 type Story = StoryObj<FileUploadComponent>;
 
-export const FileUpload: Story = {};
+export const FileUpload: Story = {
+  args: {
+    buttonLabel: "Choose File",
+    isRequired: true,
+    label: "Priya"
+  }
+};
