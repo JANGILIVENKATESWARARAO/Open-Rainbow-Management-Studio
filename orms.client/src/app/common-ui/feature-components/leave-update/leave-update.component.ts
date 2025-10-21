@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class LeaveUpdateComponent {
   @Input() Title: string = 'Leave Balance';
-  @Input() leaveBalance: string = '18';
+  @Input() leaveBalance: string = '18 Days';
   @Input() usedLeaves: string = '7';
   @Input() Availabledays: string = 'Available Days';
   @Input() Used: string = 'Used:';
