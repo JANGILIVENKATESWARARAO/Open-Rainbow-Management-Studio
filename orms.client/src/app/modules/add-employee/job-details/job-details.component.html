@@ -6,38 +6,51 @@
         </div>
         <div class="m-0">Job Details</div>
     </div>
-    <div class="grid  grid-cols-1 md:grid-cols-2 p-[20px] ">
+    <div class="grid  grid-cols-1 md:grid-cols-2 p-[20px] gap-5 ">
     
             <div>
+              <div class="mb-5">
               <app-text-box label="Office Email" placeholder="Enter office email" [isRequired]="true" type="email"></app-text-box>
+              </div>
             
-            
+              <div class="mb-5">
               <app-drop-down label="Department" placeHolder="Select department" [isRequired]="true" [options]="departmentOptions"
                 (selectedChange)="onDepartmentChange($event)"></app-drop-down>
+              </div>
             
+              <div class="mb-5">
               <app-text-box label="Designation" placeholder="Enter your job title" [isRequired]="true"></app-text-box>
+              </div>
             
-            
+              <div class="mb-5">
               <app-drop-down label="Employee Type" placeHolder="Select designation" [options]="designationOptions"
                 (selectedChange)="onDesignationChange($event)"></app-drop-down>
+              </div>
             
               
             
             </div>
 
             <div>
+              <div class="mb-5">
               <app-drop-down label="Work Location" placeHolder="Select work location" [options]="workLocationOptions"
                 [isRequired]="true" (selectedChange)="onWorkLocationChange($event)"></app-drop-down>
-
+              </div>
+               
+              <div class="mb-5">
               <app-drop-down label="Shift Timings" placeHolder="Select shift" [options]="shiftTimingOptions" [isRequired]="true"
                 (selectedChange)="onShiftTimingChange($event)"></app-drop-down>
-
+              </div>
+              
+              <div class="mb-5">
               <app-drop-down label="Pay Level / Grade" placeHolder="Select pay level" [isRequired]="true"
                 [options]="payLevelOptions" (selectedChange)="onPayLevelChange($event)"></app-drop-down>
+              </div>
             
-            
+              <div class="mb-5">
               <app-drop-down label="Reporting Manager" placeHolder="Select manager" [options]="reportingManagerOptions"
-                [isRequired]="true" (selectedChange)="onReportingManagerChange($event)"></app-drop-down>  
+                [isRequired]="true" (selectedChange)="onReportingManagerChange($event)"></app-drop-down>
+                </div>  
 
 
               <!-- <app-number-box> -->

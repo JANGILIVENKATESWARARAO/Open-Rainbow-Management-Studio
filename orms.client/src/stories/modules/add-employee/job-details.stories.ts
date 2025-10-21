@@ -3,7 +3,7 @@ import { JobDetailsComponent } from '../../../app/modules/add-employee/job-detai
 
 
 const meta: Meta<JobDetailsComponent> = {
-  title: 'Common-UI/jobdetails',
+  title: 'Modules/AddEmployee/JobDetails',
   component: JobDetailsComponent,
   // tags: ['autodocs'],
   parameters: {
@@ -15,4 +15,4 @@ const meta: Meta<JobDetailsComponent> = {
 export default meta;
 type Story = StoryObj<JobDetailsComponent>;
 
-export const Calendar: Story = {};
+export const JobDetails: Story = {};
