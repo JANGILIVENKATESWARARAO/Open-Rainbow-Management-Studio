@@ -16,4 +16,5 @@ export class CountWidgetComponent {
   @Input() borderColor: string = "gray"
   @Input() backgroundColor: string = "white"
   @Input() showBorder: boolean = true;
+  @Input()  labelPosition: 'top' | 'bottom' | 'before' | 'after' = 'top';
 }

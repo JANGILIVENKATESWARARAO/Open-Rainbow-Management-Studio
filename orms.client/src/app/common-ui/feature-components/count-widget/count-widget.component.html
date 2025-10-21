@@ -1,6 +1,30 @@
-<div class="w-full h-full border-2 border-gray-300 rounded-lg p-5 flex flex-col justify-center items-center" 
-     [ngStyle]="{'border-color': showBorder ? borderColor : 'transparent', 'background-color': backgroundColor }">
-  <div class="text-center py-1" [style.color]="labelColor">{{ label }}</div>
-  <div class="text-center py-1 text-sm" [style.color]="valueColor">{{ value }}</div>
-</div>
+<div class="w-full h-full border-2 border-gray-300 rounded-lg p-5 flex justify-center items-center relative" [ngStyle]="{
+    'border-color': showBorder ? borderColor : 'transparent',
+    'background-color': backgroundColor
+  }" style="height: 100px; position: relative;">
 
+  <div *ngIf="labelPosition === 'top'"
+    class="absolute flex flex-col items-center top-2 left-1/2 transform -translate-x-1/2 gap-2"
+    [style.color]="labelColor">
+    <span>{{ label }}</span>
+  </div>
+  <div class="absolute insert-0 flex justify-center items-center">
+    <span [style.color]="valueColor">{{ value }}</span>
+  </div>
+  <div *ngIf="labelPosition === 'bottom'"
+    class="absolute flex flex-col items-center bottom-2 left-1/2 transform -translate-x-1/2 gap-2"
+    [style.color]="labelColor">
+    <span>{{ label }}</span>
+  </div>
+  <div *ngIf="labelPosition === 'before'"
+    class="absolute left-2/2 transform -translate-x-[calc(50%+25px)] top-1/2 -translate-y-1/2 flex items-center gap-2"
+    [style.color]="labelColor">
+    <span>{{ label }}</span>
+  </div>
+  <div *ngIf="labelPosition === 'after'"
+    class="absolute right-2/2 transform translate-x-[calc(50%+25px)] top-1/2 -translate-y-1/2 flex items-center gap-2"
+    [style.color]="labelColor">
+    <span>{{ label }}</span>
+  </div>
+
+</div>
