@@ -6,7 +6,7 @@ import { InsuranceDetailsComponent } from '../../../app/modules/add-employee/ins
 const meta: Meta<InsuranceDetailsComponent> = {
   title: 'Modules/AddEmployee/InsuranceDetails',
   component: InsuranceDetailsComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

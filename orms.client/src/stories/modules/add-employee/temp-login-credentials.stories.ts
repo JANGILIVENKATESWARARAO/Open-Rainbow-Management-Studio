@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
 
-import { TempLoginCredentialsComponent } from '../../../app/temp-login-credentials/temp-login-credentials.component';
+import { TempLoginCredentialsComponent } from '../../../app/modules/add-employee/temp-login-credentials/temp-login-credentials.component';
 
 
 const meta: Meta<TempLoginCredentialsComponent> = {
