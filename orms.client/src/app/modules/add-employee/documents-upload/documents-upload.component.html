@@ -14,11 +14,11 @@
     <div class="grid-container grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
         <app-file-upload [label]="'Employee Photo'" [buttonLabel]="'Upload File'"></app-file-upload>
         <div></div>
-        <app-text-area [label]="'Employee PAN Number'" [Placeholder]="'Enter your PAN Number'"></app-text-area>
+        <app-text-box [label]="'Employee PAN Number'" [placeHolder]="'Enter your PAN number'" [isRequired]="true"></app-text-box>
         <app-file-upload [label]="'Employee PAN'" [buttonLabel]="'Choose File'"></app-file-upload>
-        <app-text-area [label]="'Employee Aadhar Number'" [Placeholder]="'Enter your Aadhar Number'"></app-text-area>
+        <app-text-box [label]="'Employee Aadhar Number'" [placeHolder]="'Enter your Aadhar number'" [isRequired]="true"></app-text-box>
         <app-file-upload [label]="'Employee Aadhar'" [buttonLabel]="'Choose File'"></app-file-upload>
-        <app-text-area [label]="'Employee Passport'" [Placeholder]="'Enter your Passport Number'"></app-text-area>
+        <app-text-box [label]="'Employee Passport'" [placeHolder]="'Enter your Passport number'" [isRequired]="true"></app-text-box>
         <app-file-upload [label]="'Employee Passport'" [buttonLabel]="'Choose File'"></app-file-upload>
         <app-file-upload [label]="'Last 6months Bank Statements '" [buttonLabel]="'Choose File'"></app-file-upload>
         <app-file-upload [label]="'Last 3months Payslips'" [buttonLabel]="'Choose File'"></app-file-upload>
