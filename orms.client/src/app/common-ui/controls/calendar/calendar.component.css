@@ -171,6 +171,8 @@
   justify-items: center;
   align-items: center;
   text-align: center;
+  column-gap: 5px; /* space between columns */
+  row-gap: 10px;   /* space between rows */
 }
 
 .weekday {
@@ -184,7 +186,7 @@
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0px; /* reduce gap between cells */
+  gap: 10px; /* reduce gap between cells */
 
 }
 
