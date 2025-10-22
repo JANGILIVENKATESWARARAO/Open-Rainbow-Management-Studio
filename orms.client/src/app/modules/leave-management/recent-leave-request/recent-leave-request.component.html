@@ -1,0 +1,45 @@
+<div class="leave-container">
+  <div class="headding">Recent Leave Requests</div>
+
+  <div class="leave-card" *ngFor="let leave of leaveRequests">
+    <div class="leave-header">
+      <div class="left">
+        <h3>
+          {{ leave.type }}
+          <ng-container *ngIf="leave.status === 'Pending'">
+            <app-chip [text]="leave.status" [bgColor]="'#f0dc98'" [color]="'#a42424'" [activeBGColor]="'#f0dc98'"
+              [activeColor]="'#a42424'"></app-chip>
+          </ng-container>
+
+          <ng-container *ngIf="leave.status === 'Approved'">
+            <app-chip [text]="leave.status" [bgColor]="'#bff3c6'" [color]="'#093c07'" [activeBGColor]="'#bff3c6'"
+              [activeColor]="'#093c07'"></app-chip>
+          </ng-container>
+
+
+
+          <ng-container *ngIf="leave.status === 'Rejected'">
+            <app-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
+              [activeColor]="'#0b0303'"></app-chip>
+          </ng-container>
+        </h3>
+
+        <p class="date">
+          {{ leave.fromDate }}
+          <ng-container *ngIf="leave.toDate"> to {{ leave.toDate }}</ng-container>
+        </p>
+        <p class="desc">{{ leave.description }}</p>
+      </div>
+
+      <div class="right">
+        <p class="days">{{ leave.days }} day{{ leave.days > 1 ? 's' : '' }}</p>
+
+        <ng-container *ngIf="leave.showCancel">
+
+          <app-button [text]="'Cancel'" [bgColor]="'#ee120d'" [color]="'#fff'" [hoverBGColor]="'#ee120d'"
+            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12"></app-button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
