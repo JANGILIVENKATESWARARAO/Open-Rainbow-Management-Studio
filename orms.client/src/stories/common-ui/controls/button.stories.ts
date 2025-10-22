@@ -5,7 +5,7 @@ import { ButtonComponent } from '../../../app/common-ui/controls/button/button.c
 const meta: Meta<ButtonComponent> = {
   title: 'Common-UI/Button',
   component: ButtonComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

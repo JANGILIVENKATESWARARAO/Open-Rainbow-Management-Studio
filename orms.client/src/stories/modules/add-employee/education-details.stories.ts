@@ -5,7 +5,7 @@ import { EducationDetailsComponent } from '../../../app/modules/add-employee/edu
 const meta: Meta<EducationDetailsComponent> = {
   title: 'Modules/AddEmployee/EducationDetails',
   component: EducationDetailsComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
   layout: 'fullscreen',
   },

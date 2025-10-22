@@ -6,7 +6,7 @@ import { LabelValueComponent } from '../../../app/common-ui/controls/label-value
 const meta: Meta<LabelValueComponent> = {
   title: 'Common-UI/LabelValue',
   component: LabelValueComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
 
-import { TempLoginCredentialsComponent } from '../../../app/temp-login-credentials/temp-login-credentials.component';
+import { TempLoginCredentialsComponent } from '../../../app/modules/add-employee/temp-login-credentials/temp-login-credentials.component';
 
 
 const meta: Meta<TempLoginCredentialsComponent> = {
-  title: 'Modules/AddEmployee/templogin',
+  title: 'Modules/AddEmployee/TempLoginCredentials',
   component: TempLoginCredentialsComponent,
   // tags: ['autodocs'],
   parameters: {
@@ -17,4 +17,4 @@ const meta: Meta<TempLoginCredentialsComponent> = {
 export default meta;
 type Story = StoryObj<TempLoginCredentialsComponent>;
 
-export const BasicInfo: Story = {};
+export const TempLoginCredentials: Story = {};

@@ -1,0 +1,19 @@
+import type { Meta, StoryObj } from '@storybook/angular';
+import { fn } from 'storybook/test';
+import { InnerEducationComponent } from '../../../../app/modules/add-employee/employee-preview/inner-education/inner-education.component';
+
+
+const meta: Meta<InnerEducationComponent> = {
+  title: 'Modules/AddEmployee/EmployeePreview/InnerEducation',
+  component: InnerEducationComponent,
+  // tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {},
+};
+
+export default meta;
+type Story = StoryObj<InnerEducationComponent>;
+
+export const InnerEducation: Story = {};
