@@ -38,6 +38,7 @@ label {
   width: 100%;
   box-sizing: border-box;
   transition: all 0.2s ease;
+  height: 36px;
 }
 .custom-dropdown-selected.placeholder {
   color: #9ca3af /* Grey placeholder text */
