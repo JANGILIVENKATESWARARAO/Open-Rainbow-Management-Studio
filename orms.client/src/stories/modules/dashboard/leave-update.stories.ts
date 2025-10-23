@@ -1,0 +1,17 @@
+import type { Meta, StoryObj } from '@storybook/angular';
+import { LeaveUpdateComponent } from '../../../app/modules/dashboard/leave-update/leave-update.component';
+
+const meta: Meta<LeaveUpdateComponent> = {
+  title: 'Modules/Dashboard/LeaveUpdate',
+  component: LeaveUpdateComponent,
+  // tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {},
+};
+
+export default meta;
+type Story = StoryObj<LeaveUpdateComponent>;
+
+export const LeaveUpdate: Story = {};

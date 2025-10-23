@@ -5,7 +5,7 @@ import { ContactInfoComponent } from '../../../app/modules/add-employee/contact-
 const meta: Meta<ContactInfoComponent> = {
   title: 'Modules/AddEmployee/ContactInfo',
   component: ContactInfoComponent,
-   tags: ['autodocs'],
+  //  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

@@ -9,7 +9,7 @@
 }
 
 label {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-size: 15px;
   font-weight: 500;
   color: #171717;
@@ -39,18 +39,20 @@ textarea {
   border-color: #80bdff;
   background-color: #f9fcff;
 } */
-textarea:hover {
+
+/* textarea:hover {
   outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(146, 176, 244);
   background-color: #f0f8ff;
   transition: all 0.3s ease;
-}
+} */
 
 textarea:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(146, 176, 244);
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
   background-color: #fff;
-} 
+}
+
 

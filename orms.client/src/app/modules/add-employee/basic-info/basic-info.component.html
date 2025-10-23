@@ -23,27 +23,28 @@
       <app-text-box [label]="'Employee ID'" [placeHolder]="'EMP0042'" [isRequired]="true"></app-text-box>
     </div>
      <div>
-      <app-calendar [label]="'Date of Birth'" (dateSelected)="dateSelected($event)"
-        (calendarClosed)="calendarClosed($event)">
+      <app-calendar [label]="'Date of Birth'">
+         <!-- (dateSelected)="dateSelected($event)"> -->
+        <!-- (calendarClosed)="calendarClosed($event)"> -->
       </app-calendar>
     </div>
    
     <div>
-      <app-calendar [label]="'Date of Joining'" [isRequired]="false"
-        (dateSelected)="dateSelected($event)"
-        (calendarClosed)="calendarClosed($event)">
+      <app-calendar [label]="'Date of Joining'" [isRequired]="false">
+        <!-- (dateSelected)="dateSelected($event)"
+        (calendarClosed)="calendarClosed($event)"> -->
       </app-calendar>
     </div>
     <div>
       <app-drop-down [label]="'Gender'" [placeHolder]="'Select Gender'"
-        [options]="[{value: 1, name: 'Male'}, {value: 2, name: 'Female'}, {value: 3, name: 'Other'}]"
-        (selectedChange)="selectedChange($event)">
+        [options]="[{value: 1, name: 'Male'}, {value: 2, name: 'Female'}, {value: 3, name: 'Other'}]">
+        <!-- (selectedChange)="selectedChange($event)"> -->
       </app-drop-down>
     </div>
      <div>
       <app-drop-down [label]="'Marital Status'" [placeHolder]="'Select Marital Status'" [isRequired]="false"
-        [options]="[{value: 1, name: 'Single'}, {value: 2, name: 'Married'}]"
-        (selectedChange)="selectedChange($event)">
+        [options]="[{value: 1, name: 'Single'}, {value: 2, name: 'Married'}]">
+        <!-- (selectedChange)="selectedChange($event)"> -->
       </app-drop-down>
     </div>
     
