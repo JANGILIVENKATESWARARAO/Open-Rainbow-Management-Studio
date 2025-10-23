@@ -1,0 +1,15 @@
+<div class="leave-balance-container">
+    <div class="header">
+    <h3>Leave Balance Overview</h3>
+    <app-button [text]="'Request Leave'" [bgColor]="'#030213'" [color]="'white'" [hoverBGColor]="'#1c1b2b'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'#030213'" [showBorder]="false"></app-button>
+    </div>
+    <div class="grid">
+    <app-count-widget [label]="'Total Days'" [value]="25" [valueColor]="'blue'" [showBorder]="false"></app-count-widget>
+    <app-count-widget [label]="'Remaining'" [value]="18" [valueColor]="'green'" [showBorder]="false"></app-count-widget>
+    <app-count-widget [label]="'Used'" [value]="7" [valueColor]="'#4c5665'" [showBorder]="false"></app-count-widget>
+    <app-count-widget [label]="'Pending'" [value]="2" [valueColor]="'red'" [showBorder]="false"></app-count-widget>
+    </div>
+    <div>
+    <app-progress-bar [leaveType]="''" [total]="27" [used]="7" [barColor]="'black'" [remainingTextColor]="'#353d43'"></app-progress-bar>
+    </div>
+</div>

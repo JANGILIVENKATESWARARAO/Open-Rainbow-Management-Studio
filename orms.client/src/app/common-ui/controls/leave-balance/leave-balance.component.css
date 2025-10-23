@@ -1,0 +1,17 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.leave-balance-container {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px 0 rgba(35,32,67,0.13);
+    padding: 38px 32px 22px 32px;
+    width: 100%;
+    
+    
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
