@@ -1,0 +1,91 @@
+.recent-payslips{
+  padding: 20px;
+  border:1px solid rgb(176, 176, 176);
+  border-radius: 25px;
+}
+.header{
+  font-family:sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+}
+.recent-payslips-header{
+  display: flex;
+  align-items: center;
+  gap: 8px; /* spacing between icon and text */
+  padding: 8px 0;
+  margin-bottom: 20px;
+}
+.recent-payslips-content{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px; 
+    padding: 1rem 1.25rem; 
+    align-items: center; 
+    gap: 0.75rem; 
+    min-height: 64px; 
+    max-width: 100%;
+    position: relative;
+    background-color:rgba(241, 241, 241, 0.529);
+    
+}
+.recent-payslips-content:hover{
+    background-color: rgb(233, 233, 233);
+}
+.icon{
+  background-color: #e3f2fd;
+  padding: 0.5rem;
+  border-radius: 6px;
+
+}
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.title-section h3, .right-section h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.title-section p, .right-section  p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+   
+}
+.status{
+    padding:2px 3px;
+    border:1px solid rgb(199, 199, 199);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(209, 209, 209);
+    margin-left: 35px;
+}
+.view-payslip{
+    padding: 8px;
+    border:1px solid rgb(228, 228, 228);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    font-weight: 600;
+}
+button.view-payslip:hover {
+  background-color: #e9e9e9;
+}
+button.btn-pdf{
+  display: flex;
+  align-items: center;
+  gap:3px;
+  border:1px solid rgb(214, 214, 214);
+  padding:3px 6px;
+  border-radius: 3px;
+}
+button.btn-pdf:hover{
+  background-color: rgb(255, 255, 255);
+}

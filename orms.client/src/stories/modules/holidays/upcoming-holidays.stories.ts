@@ -6,7 +6,7 @@ import { UpcomingHolidaysComponent } from '../../../app/modules/holidays/upcomin
 const meta: Meta<UpcomingHolidaysComponent> = {
    title: 'Modules/Holidays/UpcomingHolidays',
   component: UpcomingHolidaysComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
