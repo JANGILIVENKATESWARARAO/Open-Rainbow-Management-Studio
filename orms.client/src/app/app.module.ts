@@ -4,11 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LeaveManagementComponent } from './modules/leavemanagement/leave-management/leave-management.component';
 
 
 @NgModule({
-    declarations: [AppComponent, LeaveManagementComponent],
+    declarations: [AppComponent],
     imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule

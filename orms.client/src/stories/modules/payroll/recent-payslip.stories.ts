@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { RecentPayslipsComponent } from '../../../app/modules/Payslips/recent-payslips/recent-payslips.component';
-
+import { RecentPayslipsComponent } from '../../../app/modules/payroll/recent-payslips/recent-payslips.component';
 
 const meta: Meta<RecentPayslipsComponent> = {
-  title: 'Modules/Payslips/RecentPayslips',
+  title: 'Modules/Payroll/RecentPayslips',
   component: RecentPayslipsComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

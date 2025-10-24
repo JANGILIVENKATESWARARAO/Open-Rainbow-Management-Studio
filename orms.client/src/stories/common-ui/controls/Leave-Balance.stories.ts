@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { LeaveBalanceComponent } from '../../../app/common-ui/controls/leave-balance/leave-balance.component';
+import { LeaveBalanceComponent } from '../../../app/modules/leave-management/leave-balance/leave-balance.component';
 
 const meta: Meta<LeaveBalanceComponent> = {
-  title: 'Common-UI/AdminHeader',
+  title: 'Modules/LeaveManagement/LeaveBalance',
   component: LeaveBalanceComponent,
   // tags: ['autodocs'],
   parameters: {

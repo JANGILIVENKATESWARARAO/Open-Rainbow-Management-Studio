@@ -8,11 +8,11 @@ import { NumberBoxComponent } from '../../../common-ui/controls/number-box/numbe
   selector: 'app-leave-management',
   templateUrl: './leave-management.component.html',
   styleUrl: './leave-management.component.css',
-   standalone: true,
-    imports:[NoticeBannerComponent,DropDownComponent,ToggleComponent,NumberBoxComponent]
+  standalone: true,
+  imports: [NoticeBannerComponent, DropDownComponent, ToggleComponent, NumberBoxComponent]
 })
 export class LeaveManagementComponent {
-   designationOptions = [
+  designationOptions = [
     { name: 'Software Engineer', value: 'software_engineer' },
     { name: 'Senior Software Engineer', value: 'senior_software_engineer' },
     { name: 'Team Lead', value: 'team_lead' },
