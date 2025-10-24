@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../button/button.component';
-import { CountWidgetComponent } from '../../feature-components/count-widget/count-widget.component';
-import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
+import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
+import { CountWidgetComponent } from '../../../common-ui/feature-components/count-widget/count-widget.component';
+import { ProgressBarComponent } from '../../../common-ui/controls/progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-leave-balance',

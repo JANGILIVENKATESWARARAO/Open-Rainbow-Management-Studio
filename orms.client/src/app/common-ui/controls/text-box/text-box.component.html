@@ -10,12 +10,12 @@
            focus:border-blue-600 focus:ring-4 focus:outline-none focus:border-[#2563eb] focus:ring-[3px] focus:ring-[rgba(37,99,235,0.5)] focus:ring-blue-300 placeholder:text-gray-400
            bg-white"/>
      <p
-    *ngIf="showChara"
+    *ngIf="showCharCount"
     class="text-xs mt-1 text-left ml-[13px] transition-colors duration-200"
-    [ngStyle]="{
+    >
+    <!-- [ngStyle]="{
       color: currentCharCount >= maxChars - 20 ? '#dc2626' : '#6b7280'
-    }"
-  >
-    {{ currentCharCount }} / {{ maxChars }} characters
+    }" -->
+  {{ currentCharCount }} of {{ maxChars }} characters left
   </p>
 </div>
