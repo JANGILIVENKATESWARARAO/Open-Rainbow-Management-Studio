@@ -4,9 +4,9 @@ import { LeaveManagementComponent } from '../../../app/modules/leave-management/
 
 
 const meta: Meta<LeaveManagementComponent> = {
-   title: 'Modules/Holidays/LeaveManagement',
+   title: 'Modules/LeaveManagement/LeaveManagement',
   component: LeaveManagementComponent,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
