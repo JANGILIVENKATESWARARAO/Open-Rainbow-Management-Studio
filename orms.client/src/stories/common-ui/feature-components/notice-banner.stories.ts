@@ -4,7 +4,7 @@ import { NoticeBannerComponent } from '../../../app/common-ui/feature-components
 const meta: Meta<NoticeBannerComponent> = {
   title: 'Feature Components/NoticeBanner',
   component: NoticeBannerComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
