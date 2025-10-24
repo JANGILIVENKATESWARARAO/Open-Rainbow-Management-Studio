@@ -15,6 +15,7 @@ export class TextAreaComponent {
   @Input() isRequired: boolean = true;
   @Input() showBorder: boolean = true;
   @Input() maxChars: number = 2000; 
+  @Input() showChara: boolean = true; 
   inputText: string = '';
   currentCharCount: number = 0;
 
