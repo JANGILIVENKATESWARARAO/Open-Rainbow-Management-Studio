@@ -4,13 +4,7 @@
     Configure leave types, annual allowances, and policy rules for your organization
   </p>
 
-  <!-- <div class="info-box">
-    <div class="info-icon">!</div>
-    <p>
-      <strong>Important:</strong> Changes to leave policies will apply to all employees from the next calendar year.
-      Current year balances will remain unchanged.
-    </p>
-  </div> -->
+  
 
   <div class="info-icon" >
       <app-notice-banner [heading]="'Important: '" [content]="'Changes to leave policies will apply to all employees from the next calendar year. Current year balances will remain unchanged.'" [headingColor]="'#1E3A8A'" [contentColor]="'#374151'" [contentInNextLine]="false" [bannerColor]="'#DBEAFE'" [highlighterColor]="'#1E3A8A'" [showIcon]="true" [iconColor]="'#1E3A8A'" [showBorder]="false"></app-notice-banner>
@@ -21,53 +15,261 @@
         <app-drop-down label="Employment Type" placeHolder="Select designation" [options]="designationOptions"
                 (selectedChange)="onDesignationChange($event)"></app-drop-down>
  </div>
-  <h3 class="section-title">Standard Leave Types</h3>
-   <hr class="custom-line">
-  <div class="leave-card">
-    <div class="leave-card-header">
-      <!-- <div class="icon">
-        🧑‍⚕️
-      </div> -->
-      <div>
-        <h4 class="leave-name">Sick Leave</h4>
-        <p class="leave-desc">Leave for medical reasons, illness, or health-related issues</p>
-      </div>
-    </div>
+ <div>
+    <h3 class="section-title">Standard Leave Types</h3>
+    <hr class="custom-line">
+    <div class="leave-card">
+        <div class="leave-card-header">
+        <!-- <div class="icon">
+            🧑‍⚕️
+        </div> -->
+        <div>
+            <h4 class="leave-name">Sick Leave</h4>
+            <p class="leave-desc">Leave for medical reasons, illness, or health-related issues</p>
+        </div>
+        </div>
 
-    <div class="form-grid">
-      <div class="form-group">
-        <!-- <label>Annual Allowance</label>
-        <input type="number" placeholder="12" />
-        <span class="hint">Days per year</span> -->
-        <app-number-box [label]="'Annual Allowance'" [isRequired]="true"></app-number-box>
+        <div class="form-grid">
+        <div class="form-group">
+            <!-- <label>Annual Allowance</label>
+            <input type="number" placeholder="12" />
+            <span class="hint">Days per year</span> -->
+            <app-number-box [label]="'Annual Allowance'" [isRequired]="true"></app-number-box>
+            
+        </div>
+
+        <div class="form-group">
+            <!-- <label>Carry Forward</label>
+            <input type="number" placeholder="6" />
+            <span class="hint">Max days to next year</span> -->
+            <app-number-box [label]="'Carry Forward'" [isRequired]="true"></app-number-box>
+        </div>
+
+        <div class="form-group">
+            <!-- <label>Encashment Allowed</label>
+            <select>
+            <option>Yes</option>
+            <option>No</option>
+            </select> -->
+            <app-drop-down [label]="'Encashment Allowed'" [placeHolder]="'Yes'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+        </div>
+        </div>
+
+        <!-- <div class="checkbox-group">
+        <input type="checkbox" id="medical-cert" />
+        <label for="medical-cert">Require medical certificate for leaves exceeding 2 days</label>
+        </div> -->
+        <div  class="checkbox-group">
+            <app-toggle [checked]="false" [color]="'#4CAF50'" [label]="'Require medical certificate for leaves exceeding 2 days'" [labelPosition]="'right'" [labelColor]="'#333'" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></app-toggle>
+
+        </div>
+
+    </div>
+    <div class="leave-card">
+        <div class="leave-card-header">
+      
+        <div>
+            <h4 class="leave-name">Casual Leave</h4>
+            <p class="leave-desc">Leave for personal work, family functions, or short-term needs</p>
+        </div>
+        </div>
+
+        <div class="form-grid">
+        <div class="form-group">
+          
+            <app-number-box [label]="'Annual Allowance'" [isRequired]="true"></app-number-box>
+            
+        </div>
+
+        <div class="form-group">
+         
+            <app-number-box [label]="'Carry Forward'" [isRequired]="true"></app-number-box>
+        </div>
+
+        <div class="form-group">
+           
+            <app-drop-down [label]="'Encashment Allowed'" [placeHolder]="'Yes'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+        </div>
+        </div>
+
+   
+        <div  class="checkbox-group">
+            <app-toggle [checked]="false" [color]="'#4CAF50'" [label]="'Require advance notice of at least 24 hours'" [labelPosition]="'right'" [labelColor]="'#333'" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></app-toggle>
+
+        </div>
+
+    </div>
+        <div class="leave-card">
+        <div class="leave-card-header">
         
-      </div>
+        <div>
+            <h4 class="leave-name">Earned Leave / Privilege Leave</h4>
+            <p class="leave-desc">Vacation leave earned based on service duration</p>
+        </div>
+        </div>
 
-      <div class="form-group">
-        <!-- <label>Carry Forward</label>
-        <input type="number" placeholder="6" />
-        <span class="hint">Max days to next year</span> -->
-        <app-number-box [label]="'Carry Forward'" [isRequired]="true"></app-number-box>
-      </div>
+        <div class="form-grid">
+        <div class="form-group">
+           
+            <app-number-box [label]="'Annual Allowance'" [isRequired]="true"></app-number-box>
+            
+        </div>
 
-      <div class="form-group">
-        <!-- <label>Encashment Allowed</label>
-        <select>
-          <option>Yes</option>
-          <option>No</option>
-        </select> -->
-        <app-drop-down [label]="'Encashment Allowed'" [placeHolder]="'Yes'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
-      </div>
+        <div class="form-group">
+        
+            <app-number-box [label]="'Carry Forward'" [isRequired]="true"></app-number-box>
+        </div>
+
+        <div class="form-group">
+          
+            <app-drop-down [label]="'Encashment Allowed'" [placeHolder]="'Yes'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+        </div>
+        </div>
+        <div>
+            <app-drop-down [label]="'Accural Method'" [placeHolder]="'Monthly Accural'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+                    <p class="leave-desc">How leave balance is credited</p>
+
+        </div>
+
+       
+
     </div>
-
-    <!-- <div class="checkbox-group">
-      <input type="checkbox" id="medical-cert" />
-      <label for="medical-cert">Require medical certificate for leaves exceeding 2 days</label>
-    </div> -->
-    <div  class="checkbox-group">
-        <app-toggle [checked]="false" [color]="'#4CAF50'" [label]="'Require medical certificate for leaves exceeding 2 days'" [labelPosition]="'right'" [labelColor]="'#333'" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></app-toggle>
-
-    </div>
-
   </div>
+   
+   <div>
+    <h3 class="section-title">Parental Leave Types</h3>
+    <hr class="custom-line">
+    <div class="leave-card">
+        <div class="leave-card-header">
+      
+        <div>
+            <h4 class="leave-name">Maternity Leave</h4>
+            <p class="leave-desc">Leave for female employees before and after childbirth</p>
+        </div>
+        </div>
+
+        <div class="form-grid">
+        <div class="form-group">
+
+            <app-number-box [label]="'Total Duration'" [isRequired]="true"></app-number-box>
+            
+        </div>
+
+        <div class="form-group">
+            <app-number-box [label]="'Paid Duration'" [isRequired]="true"></app-number-box>
+
+        </div>
+
+        <div class="form-group">
+            <app-drop-down [label]="'Extension Allowed'" [placeHolder]="'Yes'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+
+        </div>
+        </div>
+
+    </div>
+    
+      <div class="leave-card">
+        <div class="leave-card-header">
+     
+        <div>
+            <h4 class="leave-name">Paternity Leave</h4>
+            <p class="leave-desc">Leave for male employees for childbirth or adaption</p>
+        </div>
+        </div>
+
+        <div class="form-grid">
+        <div class="form-group">
+
+            <app-number-box [label]="'Total Duration'" [isRequired]="true"></app-number-box>
+            
+        </div>
+
+        <div class="form-group">
+            <app-number-box [label]="'Paid Duration'" [isRequired]="false"></app-number-box>
+
+
+        </div>
+
+        <div class="form-group">
+            <app-drop-down [label]="'Must be taken within'" [placeHolder]="'30 days of birth'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+
+        </div>
+        </div>
+
+    </div>
+   
+  </div>
+
+
+   <div>
+    <h3 class="section-title">Additional Leave Types</h3>
+    <hr class="custom-line">
+    <div class="leave-card">
+        <div class="leave-card-header">
+     
+        <div>
+            <h4 class="leave-name">Compensatory Off (Comp-Off)</h4>
+            <p class="leave-desc">Leave earned for working on holidays or overtime</p>
+        </div>
+        </div>
+
+        <div class="form-grid">
+        <div class="form-group">
+            <app-drop-down [label]="'Enable Comp-Off'" [placeHolder]="'Yes'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+
+            
+        </div>
+
+        <div class="form-group">
+            <app-drop-down [label]="'Expiry Period'" [placeHolder]="'30 days'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+
+        </div>
+
+        <div class="form-group">
+            <app-number-box [label]="'Max Accrual Limit'" [isRequired]="false"></app-number-box>
+
+        </div>
+        </div>
+
+    </div>
+    
+      <div class="leave-card">
+        <div class="leave-card-header">
+        
+        <div>
+            <h4 class="leave-name">Loss of Pay(LOP) / Unpaid Leave</h4>
+            <p class="leave-desc">Leave without pay when other leave balances are exhausted</p>
+        </div>
+        </div>
+
+        <div class="form-grid">
+        <div class="form-group">
+            <app-drop-down [label]="'Allow Unpaid Leave'" [placeHolder]="'Yes'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+
+            
+        </div>
+
+        <div class="form-group">
+            <app-number-box [label]="'Max Consecutive Days'" [isRequired]="false"></app-number-box>
+
+
+        </div>
+
+        <div class="form-group">
+            <app-drop-down [label]="'Approval Required'" [placeHolder]="'Manager'" [options]="[{value: 1, name: 'Yes'}, {value: 2, name: 'No'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+
+        </div>
+        </div>
+
+    </div>
+   
+  </div>
+
+   <hr class="custom-line">
+  
+  <div class="button-row">
+  <button class="btn-secondary">Previous</button>
+  <button class="btn-primary">Save Leave Policy</button>
+</div>
+
 </div>

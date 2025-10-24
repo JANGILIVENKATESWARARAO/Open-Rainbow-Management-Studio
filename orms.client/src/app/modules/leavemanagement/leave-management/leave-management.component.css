@@ -57,6 +57,7 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 24px;
 }
 
 .leave-card-header {
@@ -147,3 +148,55 @@
   margin: 10px 0;              
   opacity: 0.6; 
   }
+  
+
+  .leave-policy-container {
+  background-color: #f9fafb;
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 16px;
+ 
+}
+
+.btn-secondary {
+  background: none;
+  border: 2px solid #6366f1;
+  color: #4f46e5;
+  padding: 10px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #eef2ff;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.15);
+  transition: filter 0.2s;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
