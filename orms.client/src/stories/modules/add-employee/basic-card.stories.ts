@@ -1,13 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
-
-
 import { BasicCardComponent } from '../../../app/modules/basic-card/basic-card.component';
 
-
-
 const meta: Meta<BasicCardComponent> = {
-  title: 'Modules/AddEmployee/basiccard',
+  title: 'Modules/AddEmployee/BasicCard',
   component: BasicCardComponent,
   // tags: ['autodocs'],
   parameters: {
@@ -19,4 +15,4 @@ const meta: Meta<BasicCardComponent> = {
 export default meta;
 type Story = StoryObj<BasicCardComponent>;
 
-export const BasicInfo: Story = {};
+export const BasicCard: Story = {};
