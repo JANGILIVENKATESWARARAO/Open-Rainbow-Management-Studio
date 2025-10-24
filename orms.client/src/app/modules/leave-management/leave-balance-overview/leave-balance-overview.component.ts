@@ -4,12 +4,12 @@ import { CountWidgetComponent } from '../../../common-ui/feature-components/coun
 import { ProgressBarComponent } from '../../../common-ui/controls/progress-bar/progress-bar.component';
 
 @Component({
-  selector: 'app-leave-balance',
-  templateUrl: './leave-balance.component.html',
-  styleUrl: './leave-balance.component.css',
+  selector: 'app-leave-balance-overview',
+  templateUrl: './leave-balance-overview.component.html',
+  styleUrl: './leave-balance-overview.component.css',
   standalone: true,
   imports: [ButtonComponent,CountWidgetComponent,ProgressBarComponent]
 })
-export class LeaveBalanceComponent {
+export class LeaveBalanceOverviewComponent {
 
 }
