@@ -4,12 +4,13 @@
     (input)="updateCharCount()" [placeholder]="Placeholder" [ngStyle]="{
     border: showBorder ? '1px solid #cbd5e1' : 'none'
   }" ></textarea>
-    <p 
+    <p
+    *ngIf="showCharCount" 
     class="text-xs mt-1 text-left ml-[13px]"
-    [ngStyle]="{
-      color: currentCharCount >= maxChars - 50 ? '#dc2626' : '#6b7280'
-    }"
-  >
-    {{ currentCharCount }} / {{ maxChars }} characters
+    >
+    <!-- [ngStyle]="{
+      color: currentCharCount <= maxChars - 5 ? '#dc2626' : '#6b7280'
+    }" -->
+    {{ currentCharCount }} of {{ maxChars }} characters left
   </p>
 </div>

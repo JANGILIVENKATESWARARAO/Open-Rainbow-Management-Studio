@@ -5,7 +5,7 @@ import { NumberBoxComponent } from '../../../app/common-ui/controls/number-box/n
 const meta: Meta<NumberBoxComponent> = {
   title: 'Common-UI/NumberBox',
   component: NumberBoxComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

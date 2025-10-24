@@ -1,0 +1,202 @@
+.leave-policy-container {
+  background-color: #f9fafb;
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  color: #333;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  display: flex;
+  align-items: flex-start;
+  background-color: #eef5ff;
+  border: 1px solid #cce1ff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+}
+
+/* .info-icon {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+  margin-right: 10px;
+  font-size: 14px;
+} */
+.info-icon{
+    margin:20px 0px;
+}
+.section-title {
+  color: #6b21a8;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.leave-card {
+  background-color: #f8f9ff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 24px;
+}
+
+.leave-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.icon {
+  background-color: #fff2e6;
+  color: #f97316;
+  font-size: 22px;
+  padding: 8px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.leave-name {
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.leave-desc {
+  color: #666;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+}
+
+.hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.checkbox-group {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #444;
+}
+
+.checkbox-group input {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.custom-line {
+  border: none;                
+  border-top: 2px solid #dfe9f1;
+  margin: 10px 0;              
+  opacity: 0.6; 
+  }
+  
+
+  .leave-policy-container {
+  background-color: #f9fafb;
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 16px;
+ 
+}
+
+.btn-secondary {
+  background: none;
+  border: 2px solid #6366f1;
+  color: #4f46e5;
+  padding: 10px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #eef2ff;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.15);
+  transition: filter 0.2s;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
