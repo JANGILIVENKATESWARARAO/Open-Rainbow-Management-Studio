@@ -1,6 +1,16 @@
 <div class="form-group">
   <label for="address">{{label}} <span *ngIf="isRequired" class="required-star">*</span></label>
-  <textarea id="address" name="address" [placeholder]="Placeholder" [ngStyle]="{
+  <textarea id="address" name="address"     [(ngModel)]="inputText"
+    (input)="updateCharCount()" [placeholder]="Placeholder" [ngStyle]="{
     border: showBorder ? '1px solid #cbd5e1' : 'none'
   }" ></textarea>
+    <p
+    *ngIf="showCharCount" 
+    class="text-xs mt-1 text-left ml-[13px]"
+    >
+    <!-- [ngStyle]="{
+      color: currentCharCount <= maxChars - 5 ? '#dc2626' : '#6b7280'
+    }" -->
+    {{ currentCharCount }} of {{ maxChars }} characters left
+  </p>
 </div>

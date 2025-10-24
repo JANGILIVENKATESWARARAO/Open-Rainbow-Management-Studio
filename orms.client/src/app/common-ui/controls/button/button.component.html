@@ -1,7 +1,7 @@
 <button class="px-4 py-2 pb-[11.5px]" [class.border]="showBorder" [ngStyle]="{
     backgroundColor: isHovered ? hoverBGColor : bgColor,
     color: isHovered ? hoverColor : color,
-    borderRadius: borderRadius+'%',
+    borderRadius: borderRadius+'px',
     borderColor: borderColor
   }" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
   {{ text }}

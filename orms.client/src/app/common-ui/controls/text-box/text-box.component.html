@@ -4,9 +4,18 @@
     <span *ngIf="isRequired" class="text-rose-600">*</span>
   </label>
 
-  <input type="text" id="fullname" name="fullname" [placeholder]="placeHolder"[ngClass]="{'border border-slate-300': showBorder,'border-transparent': !showBorder}"
+  <input type="text" id="fullname" name="fullname" [(ngModel)]="inputText"          
+    (input)="updateCharCount()"  [placeholder]="placeHolder"[ngClass]="{'border border-slate-300': showBorder,'border-transparent': !showBorder}"
     class="h-[36px] w-full px-3 py-2 text-[15px] text-gray-800 rounded-md outline-none transition
            focus:border-blue-600 focus:ring-4 focus:outline-none focus:border-[#2563eb] focus:ring-[3px] focus:ring-[rgba(37,99,235,0.5)] focus:ring-blue-300 placeholder:text-gray-400
            bg-white"/>
+     <p
+    *ngIf="showCharCount"
+    class="text-xs mt-1 text-left ml-[13px] transition-colors duration-200"
+    >
+    <!-- [ngStyle]="{
+      color: currentCharCount >= maxChars - 20 ? '#dc2626' : '#6b7280'
+    }" -->
+  {{ currentCharCount }} of {{ maxChars }} characters left
+  </p>
 </div>
-

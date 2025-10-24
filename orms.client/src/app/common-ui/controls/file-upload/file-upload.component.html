@@ -24,14 +24,14 @@
         </svg>
       </div>
 
-      <label class="choose-btn bg-sky-100 border border-sky-200 text-blue-700 
+      <label class="h-[36px] choose-btn bg-sky-100 border border-sky-200 text-blue-700 
          px-4 py-2 rounded-lg cursor-pointer 
          font-medium text-sm leading-4 
          inline-flex items-center gap-1.5 flex-shrink-0 
          select-none transition duration-200 ease-in-out relative bg-blue-50 border border-[#c6ddfa] hover:bg-[#e1f0ff] hover:border-[#b4d3f7] 
          active:bg-[#d4e9ff] active:border-[#a3caf5] active:translate-y-[1px] 
          focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#dbeafe] focus-visible:ring-offset-[2px] focus-visible:ring-offset-[#3b82f6]
-         choose-btn-inline  relative overflow-hidden 
+         choose-btn-inline  relative overflow-hidden
          " (click)="$event.stopPropagation()">
         <input #fileInput id="fileInput" type="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer text-[0px] " (change)="onFileSelected($event)" />
         <span>{{ buttonLabel }} </span>
