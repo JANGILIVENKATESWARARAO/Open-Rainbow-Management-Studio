@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import {
   Component,
+  ElementRef,
   EventEmitter,
+  HostListener,
   Input,
   Output,
   SimpleChanges,
@@ -25,9 +27,28 @@ export class DropDownComponent {
   @Output() selectedChange = new EventEmitter<any>();
   @Input() options: DropDown[] = [];
 
-  selectedValue: any;
+  selectedValue: string | null = null;
+
+  constructor(private eRef: ElementRef) {}
   selectOption(option: DropDown) {
     this.selectedValue = option.name;
     this.selectedChange.emit(option.value);
+
+    setTimeout(() => {
+      this.closeDropdown();
+    }, 0);
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: MouseEvent) {
+    if (!this.eRef.nativeElement.contains(event.target)) {
+      this.closeDropdown();
+    }
+  }
+
+  private closeDropdown() {
+    const checkbox: HTMLInputElement | null =
+      this.eRef.nativeElement.querySelector('.dropdown-toggle');
+    if (checkbox) checkbox.checked = false;
   }
 }
