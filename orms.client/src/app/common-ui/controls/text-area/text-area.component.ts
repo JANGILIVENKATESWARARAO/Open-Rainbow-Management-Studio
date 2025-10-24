@@ -1,27 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-text-area',
   standalone: true,
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.css'],
-  imports: [CommonModule, FormsModule] 
+  imports: [CommonModule, FormsModule]
 })
 export class TextAreaComponent {
   @Input() label: string = 'Address';
   @Input() Placeholder: string = 'Enter your address';
   @Input() isRequired: boolean = true;
   @Input() showBorder: boolean = true;
-  @Input() maxChars: number = 2000; 
-  @Input() showChara: boolean = true; 
+  @Input() maxChars: number = 2000;
+  @Input() showCharCount: boolean = true;
   inputText: string = '';
-  currentCharCount: number = 0;
+  currentCharCount: number = this.maxChars;
 
   updateCharCount() {
     if (!this.inputText) {
-      this.currentCharCount = 0;
+      this.currentCharCount = this.maxChars;
       return;
     }
     this.currentCharCount = this.inputText.length;
