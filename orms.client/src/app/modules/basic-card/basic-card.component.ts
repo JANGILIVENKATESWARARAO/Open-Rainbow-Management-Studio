@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-basic-card',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   standalone: true
 })
 export class BasicCardComponent {
-
+  @Input() title: string = 'title';
+  @Input() currentStep: number = 1;
 }
