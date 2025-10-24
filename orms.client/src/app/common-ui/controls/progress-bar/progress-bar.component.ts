@@ -9,7 +9,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   styleUrls: ['./progress-bar.component.css']
 })
 export class ProgressBarComponent implements OnChanges {
-  @Input() leaveType: string = 'Sick Leave';
+  // @Input() leaveType: string = 'Sick Leave';
   @Input() total: number = 12;
   @Input() used: number = 3;
 

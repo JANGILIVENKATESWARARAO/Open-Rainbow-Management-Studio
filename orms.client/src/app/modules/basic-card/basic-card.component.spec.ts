@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LeaveBalanceComponent } from './leave-balance.component';
+import { BasicCardComponent } from './basic-card.component';
 
-describe('LeaveBalanceComponent', () => {
-  let component: LeaveBalanceComponent;
-  let fixture: ComponentFixture<LeaveBalanceComponent>;
+describe('BasicCardComponent', () => {
+  let component: BasicCardComponent;
+  let fixture: ComponentFixture<BasicCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LeaveBalanceComponent]
+      declarations: [BasicCardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LeaveBalanceComponent);
+    fixture = TestBed.createComponent(BasicCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

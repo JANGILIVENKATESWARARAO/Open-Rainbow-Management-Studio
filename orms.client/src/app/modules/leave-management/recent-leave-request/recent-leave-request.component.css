@@ -30,7 +30,6 @@ body {
   border-radius: 12px;
   padding: 15px;
   margin-bottom: 16px;
-  /* gap: 10px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,25 +57,14 @@ body {
   font-weight: 600;
   color: #111827;
   margin-bottom: 5px;
+
+  /* display: flex; */
+  /* align-items: center;   */
+  /* gap: 8px;  */
 }
 
-.badge {
-  font-size: 13px;
-  padding: 3px 10px;
-  border-radius: 8px;
-  margin-left: 8px;
-  font-weight: 500;
-}
 
-/* .badge.pending {
-  background: #fde68a;
-  color: #92400e;
-} */
 
-.badge.approved {
-  background: #d1fae5;
-  color: #065f46;
-}
 
 .date {
   color: #6b7280;
@@ -119,6 +107,15 @@ body {
 .cancel-btn:hover {
   background-color: #b91c1c;
 }
+
+
+::ng-deep app-chip div {
+  height: 15px !important;
+  padding: 2px 9px !important;
+  font-size: 10px !important;
+  line-height: normal;
+  border-style: none;
+  }
 
 
 
