@@ -14,7 +14,8 @@ export class TextBoxComponent {
   @Input() isRequired: boolean = true;
   @Input() showBorder: boolean = true;
   @Input() maxChars: number = 50;  
-
+  @Input() showChara: boolean = true; 
+  
 inputText: string = '';
 currentCharCount: number = 0;
 
