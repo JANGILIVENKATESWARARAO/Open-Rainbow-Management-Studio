@@ -13,17 +13,19 @@ export class FileUploadComponent {
   @Input() isRequired: boolean = true;
 
   @Input() buttonLabel: string = 'Choose file';
-
+ @Input() errorNote: string = 'Please upload jpg, png, mp3 formats only';
   @ViewChild('fileInput', { static: false }) fileInputRef!: ElementRef<HTMLInputElement>;
-
+  
   onAreaClick(event: MouseEvent) {
     // event.preventDefault();
       this.fileInputRef.nativeElement.click();
   }
 
   onFileSelected(event: Event) {
+    
     const input = event.target as HTMLInputElement;
     const file = input.files?.[0];
+    
     if (file) {
       console.log('Selected file:', file.name);
       const statusElement = input.closest('.file-upload-field')?.querySelector('.file-status');
