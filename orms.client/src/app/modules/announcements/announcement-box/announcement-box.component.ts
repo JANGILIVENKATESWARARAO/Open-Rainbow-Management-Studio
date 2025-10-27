@@ -36,6 +36,14 @@ export class AnnouncementBoxComponent {
       postedBy: 'HR Department',
       expireDate: '24/12/2024',
     },
+    {
+      title: 'Holiday Schedule Update2',
+      priority: 'high' as const,
+      description: 'Please note that the office will be closed from December 24th to January 2nd. Emergency contacts will be available during this period.',
+      postedDate: '29/12/2024',
+      postedBy: 'HR Department',
+      expireDate: '24/12/2024',
+    },
   ];
 
   get highPriorityAnnouncements(): Announcement[] {
