@@ -80,7 +80,7 @@
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: 16px; /*padding all over*/
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   width: 100%;
   max-width: inherit; /* Inherit from parent overlay */
@@ -91,14 +91,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .nav-btn {
   background-color:#bababa;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 16px;
+  margin:8px;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -156,12 +157,11 @@
   color: #ff6b35;
 }
 
-/* .calendar-weekdays {
+.calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
-  margin-bottom: 12px;
-} */
+}
 
 
 .calendar-weekdays,
@@ -186,14 +186,15 @@
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px; /* reduce gap between cells */
+  gap: 8px; /* reduce gap between cells */
+  padding-bottom: 8px;
 
 }
 
 .calendar-day {
   aspect-ratio: 1;
-  width: 50px;           /* decrease cell width */
-  height: 50px;          /* decrease cell height */
+  width: 50px;            /*decrease cell width */
+  height: 50px;          /*decrease cell height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,8 +238,7 @@
 .calendar-footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  padding-top: 16px;
+  padding-top: 8px;
   border-top: 1px solid #e0e0e0;
 }
 
@@ -276,6 +276,57 @@
 .close-btn:hover {
   background-color: rgba(255, 107, 53, 0.1);
 }
+.dropdown {
+  position: relative;
+  width: 120px;
+  font-size: 16px;
+}
+
+.dropdown-display {
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 240px; /* 10 items × ~24px */
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-list li {
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-list li:hover {
+  background-color: #bcbcbc; /* grey on hover */
+}
+
+.dropdown-list li.selected {
+  background-color: #ff6b35; /* orange when selected */
+  color: white;
+  font-weight: 500;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 480px) {

@@ -1,0 +1,42 @@
+<div class="announcement-card" *ngIf="highPriorityAnnouncements.length > 0">
+  <h3 class="card-title">Pinned Announcements</h3>
+  <ng-container *ngFor="let announcement of highPriorityAnnouncements; let last = last">
+    <div class="announcement-item">
+      <div class="title-row">
+        <h4 class="title">{{ announcement.title }}</h4>
+        <app-chip [text]="'high'" [bgColor]="'red'"></app-chip>
+      </div>
+      <p class="description">{{ announcement.description }}</p>
+      <div class="footer-row">
+        <div class="date">
+          <span>Expire on: {{ formatDate(announcement.expireDate) }}</span>
+        </div>
+        <span class="posted-by">by {{ announcement.postedBy }} on {{ formatDate(announcement.postedDate) }}</span>
+      </div>
+    </div>
+    <hr class="custom-line" *ngIf="!last">
+  </ng-container>
+</div>
+
+<div class="announcement-card recent" *ngIf="otherAnnouncements.length > 0">
+  <h3 class="card-title">Recent Announcements</h3>
+  <ng-container *ngFor="let announcement of otherAnnouncements; let last = last">
+    <div class="announcement-item">
+      <div class="title-row">
+        <h4 class="title">{{ announcement.title }}</h4>
+        <app-chip 
+          [text]="announcement.priority"
+          [bgColor]="announcement.priority === 'medium' ? 'gold' : (announcement.priority === 'low' ? 'green' : 'gray')">
+        </app-chip>
+      </div>
+      <p class="description">{{ announcement.description }}</p>
+      <div class="footer-row">
+        <div class="date">
+          <span>Expire on: {{ formatDate(announcement.expireDate) }}</span>
+        </div>
+        <span class="posted-by">by {{ announcement.postedBy }} on {{ formatDate(announcement.postedDate) }}</span>
+      </div>
+    </div>
+    <hr class="custom-line" *ngIf="!last">
+  </ng-container>
+</div>

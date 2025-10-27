@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
 import { CommonModule } from '@angular/common';
@@ -18,16 +18,17 @@ export interface LeaveRequest {
   templateUrl: './recent-leave-request.component.html',
   styleUrl: './recent-leave-request.component.css',
   standalone: true,
-  imports: [ButtonComponent, ChipComponent, CommonModule],
+  imports: [CommonModule, ButtonComponent, ChipComponent],
 })
 export class RecentLeaveRequestComponent {
   leaveRequests: LeaveRequest[] = [
     {
       type: 'Vacation',
       status: 'Pending',
-      fromDate: '15 Jan 2025',  
+      fromDate: '15 Jan 2025',
       toDate: '17 Jan 2025',
-      description: 'Family vacation',
+      description:
+        'At the end of last year, my father announced that we will be having a family meeting to discuss our summer vacation plans. Not this again I thought.  Every year, when my father announced a family meeting regarding our vacation plans, he just explains how we',
       days: 3,
       showCancel: true,
     },
@@ -47,4 +48,19 @@ export class RecentLeaveRequestComponent {
       days: 4,
     },
   ];
+
+  leaveDescription(text: string, limit: number): string {
+    if (!text) return '';
+    if (text.length <= limit) return text;
+
+    let trimmed = text.substring(0, limit);
+
+    if (text.charAt(limit) !== ' ' && trimmed.lastIndexOf(' ') !== -1) {
+      trimmed = trimmed.substring(0, trimmed.lastIndexOf(' '));
+    }
+
+    trimmed = trimmed.trim();
+
+    return trimmed + '...';
+  }
 }

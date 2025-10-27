@@ -1,0 +1,28 @@
+<div class="login-page">
+  <div class="welcome-section">
+    <h1>Welcome to website</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    </p>
+  </div>
+
+  <div class="login-section">
+    <h2>USER LOGIN</h2>
+
+    <div class="input-group">
+      <app-text-box [label]="''" [placeHolder]="'Username'" [isRequired]="false" [showBorder]="true"  [showCharCount]="false"></app-text-box>
+    </div>
+
+    <div class="input-group">
+      <app-text-box [label]="''" [placeHolder]="'Password'" [isRequired]="false" [showBorder]="true" [showCharCount]="false"></app-text-box>
+    </div>
+
+    <div class="options">
+      <app-edyn-checkbox [label]="'Remember'"></app-edyn-checkbox>
+      <a href="#">Forgot password?</a>
+    </div>
+
+    <app-button [text]="'Login'" [bgColor]="'rgba(161, 3, 246, 1)'" [color]="'White'" [hoverBGColor]="'#f787c9'" [hoverColor]="'white'" [borderRadius]="10" [showBorder]="false"></app-button>
+  </div>
+</div>
+

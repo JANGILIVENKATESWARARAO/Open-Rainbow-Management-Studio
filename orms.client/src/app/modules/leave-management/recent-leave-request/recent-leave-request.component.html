@@ -28,13 +28,17 @@
           {{ leave.fromDate }}
           <ng-container *ngIf="leave.toDate"> to {{ leave.toDate }}</ng-container>
         </p>
-        <p class="desc">{{ leave.description }}</p>
+
+        <p class="desc">{{ leaveDescription(leave.description, 50) }} </p>
       </div>
 
       <div class="right">
         <p class="days">{{ leave.days }} day{{ leave.days > 1 ? 's' : '' }}</p>
 
         <ng-container *ngIf="leave.showCancel">
+
+          <app-button [text]="'Edit'" [bgColor]="'#1880d6'" [color]="'#fff'" [hoverBGColor]="'#1880d6'"
+            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12" style="margin-right: 10px;"></app-button>
 
           <app-button [text]="'Cancel'" [bgColor]="'#ee120d'" [color]="'#fff'" [hoverBGColor]="'#ee120d'"
             [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12"></app-button>
