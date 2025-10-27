@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,22 @@ export class CalendarComponent implements OnInit {
   @Input() defaultDate: Date | null = null;
   @Output() dateSelected = new EventEmitter<Date | null>();
   @Output() calendarClosed = new EventEmitter<void>();
+
+  clickedInside = false;
+  @HostListener('document:click')
+  handleOutsideClick() {
+  if (this.clickedInside) {
+    this.clickedInside = false;
+    return;
+  }
+
+  this.showCalendar = false;
+  this.showMonthDropdown = false;
+  this.showYearDropdown = false;
+  this.calendarClosed.emit();
+}
+
+
 
   showCalendar = false;
   currentDate = new Date();
@@ -49,10 +65,11 @@ export class CalendarComponent implements OnInit {
       .replace(/\//g, '-'); // dd-mm-yyyy
   }
 
-  openDatePicker(event: Event) {
-    event.preventDefault();
-    this.showCalendar = !this.showCalendar;
-  }
+ openDatePicker(event: Event) {
+  event.preventDefault();
+  this.clickedInside = true;
+  this.showCalendar = true;
+}
 startingYear:number = 1950;
 endingYear: number = 2050;
   generateYears() {
@@ -125,17 +142,19 @@ endingYear: number = 2050;
   }
 
   onMonthChange() {
-    debugger;
-    this.currentMonth = Number(this.currentMonth);
-    this.generateCalendar();
-  }
+  this.currentMonth = Number(this.currentMonth);
+  this.defaultDate = new Date(this.currentYear, this.currentMonth, 1); // default to 1st of month
+  this.generateCalendar();
+  this.dateSelected.emit(this.defaultDate);
+}
 
-  onYearChange() {
-    this.currentYear = Number(this.currentYear);
-    this.generateCalendar();
-  }
-
-  selectDate(day: any) {
+onYearChange() {
+  this.currentYear = Number(this.currentYear);
+  this.defaultDate = new Date(this.currentYear, this.currentMonth, 1);
+  this.generateCalendar();
+  this.dateSelected.emit(this.defaultDate);
+}
+ selectDate(day: any) {
     debugger;
     this.defaultDate = new Date(day.date);
     this.currentMonth = this.defaultDate.getMonth();
@@ -164,4 +183,31 @@ endingYear: number = 2050;
     this.showCalendar = false;
     this.calendarClosed.emit();
   }
+
+showMonthDropdown = false;
+showYearDropdown = false;
+
+toggleMonthDropdown() {
+  this.showMonthDropdown = !this.showMonthDropdown;
+  this.showYearDropdown = false;
 }
+
+toggleYearDropdown() {
+  this.showYearDropdown = !this.showYearDropdown;
+  this.showMonthDropdown = false;
+}
+
+selectMonth(index: number) {
+  this.currentMonth = index;
+  this.showMonthDropdown = false;
+  this.onMonthChange();
+}
+
+selectYear(year: number) {
+  this.currentYear = year;
+  this.showYearDropdown = false;
+  this.onYearChange();
+}
+
+}
+
