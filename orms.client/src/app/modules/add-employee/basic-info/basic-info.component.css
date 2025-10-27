@@ -5,15 +5,14 @@
   box-shadow: 0 2px 8px rgba(30, 64, 175, 0.06);
   padding: 32px 24px 28px 24px;
   height: 100%;
-  margin: 16px;
-  
+  /* margin: 16px; */
 }
 
 .form-header {
   background-color: #eef4ff;
   border-radius: 8px 8px 0 0;
   padding: 18px 20px;
-  margin: -32px -24px 32px -24px; 
+  margin: -32px -24px 32px -24px;
   border-bottom: 1px solid #dbeafe;
 }
 
@@ -36,12 +35,15 @@
   grid-template-rows: 20% 20% 20%;
   gap: 32px;
 }
+
 @media (max-width: 768px) {
   .grid-container {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
-input, select {
+
+input,
+select {
   height: 44px;
   padding: 10px 14px;
   border-radius: 6px;
