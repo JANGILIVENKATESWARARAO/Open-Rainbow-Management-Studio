@@ -1,8 +1,6 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  /* width: 300px;
-  margin: 20px; */
   height: 100%;
   width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,7 +16,6 @@ label {
 
 textarea {
   padding: 10px 12px;
-  border: 1px solid #fff;
   border-radius: 6px;
   font-size: 14px;
   transition: all 0.25s ease;
@@ -30,23 +27,8 @@ textarea {
 
 .required-star {
   color: #dc2626;
-  /* font-size: 1rem; */
   font-weight: 600;
-  margin-top: -12px;
 }
-
-/* textarea:hover {
-  border-color: #80bdff;
-  background-color: #f9fcff;
-} */
-
-/* textarea:hover {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(146, 176, 244);
-  background-color: #f0f8ff;
-  transition: all 0.3s ease;
-} */
 
 textarea:focus {
   outline: none;
@@ -54,5 +36,3 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
   background-color: #fff;
 }
-
-
