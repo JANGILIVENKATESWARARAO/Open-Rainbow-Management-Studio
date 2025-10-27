@@ -4,4 +4,5 @@ export interface Announcement {
   description: string;
   postedDate: string;
   postedBy: string;
+  expireDate: string;
 }

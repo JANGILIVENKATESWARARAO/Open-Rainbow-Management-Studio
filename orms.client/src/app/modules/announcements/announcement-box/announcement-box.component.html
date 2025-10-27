@@ -9,9 +9,9 @@
       <p class="description">{{ announcement.description }}</p>
       <div class="footer-row">
         <div class="date">
-          <span class="posted-date">{{ formatDate(announcement.postedDate) }}</span>
+          <span>Expire on: {{ formatDate(announcement.expireDate) }}</span>
         </div>
-        <span class="posted-by">by {{ announcement.postedBy }}</span>
+        <span class="posted-by">by {{ announcement.postedBy }} on {{ formatDate(announcement.postedDate) }}</span>
       </div>
     </div>
     <hr class="custom-line" *ngIf="!last">
@@ -32,9 +32,9 @@
       <p class="description">{{ announcement.description }}</p>
       <div class="footer-row">
         <div class="date">
-          <span class="posted-date">{{ formatDate(announcement.postedDate) }}</span>
+          <span>Expire on: {{ formatDate(announcement.expireDate) }}</span>
         </div>
-        <span class="posted-by">by {{ announcement.postedBy }}</span>
+        <span class="posted-by">by {{ announcement.postedBy }} on {{ formatDate(announcement.postedDate) }}</span>
       </div>
     </div>
     <hr class="custom-line" *ngIf="!last">

@@ -16,22 +16,25 @@ export class AnnouncementBoxComponent {
       title: 'Holiday Schedule Update',
       priority: 'medium' as const,
       description: 'Please note that the office will be closed from December 24th to January 2nd. Emergency contacts will be available during this period.',
-      postedDate: '24/12/2024',
-      postedBy: 'HR Department'
+      postedDate: '30/12/2024',
+      postedBy: 'HR Department',
+      expireDate: '24/12/2024',
     },
     {
       title: 'New Security Policy',
       priority: 'low' as const,
       description: 'All employees must update their passwords by end of week following the new security guidelines.',
       postedDate: '25/12/2024',
-      postedBy: 'IT Security'
+      postedBy: 'IT Security',
+      expireDate: '24/12/2024',
     },
     {
       title: 'Holiday Schedule Update1',
       priority: 'high' as const,
       description: 'Please note that the office will be closed from December 24th to January 2nd. Emergency contacts will be available during this period.',
       postedDate: '29/12/2024',
-      postedBy: 'HR Department'
+      postedBy: 'HR Department',
+      expireDate: '24/12/2024',
     },
   ];
 
