@@ -16,11 +16,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  background-image: url('C:\Users\sasis\Downloads\image (1).png');
-  background-size: cover;                  /* Ensures full coverage */
+  /* background-image: url('C:\Users\sasis\Downloads\image (1).png'); */
+  background-size: cover;
   background-position: center;        
-  background-repeat: no-repeat;            /* Prevents tiling */
+  background-repeat: no-repeat;
 }
 
 .welcome-section h1 {
