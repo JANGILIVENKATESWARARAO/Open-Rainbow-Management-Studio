@@ -1,7 +1,9 @@
 <div class="blank-space">
     <div class="inside">
             <app-text-box [label]="'Title'" [placeHolder]="'Enter the title '" [isRequired]="true"></app-text-box>
-            <app-drop-down [label]="'Seviarity'" [placeHolder]="'Select seviarity type'" [isRequired]="true" [options]="[{value: 1, name: 'high'}, {value: 2, name: 'medium'}, {value: 3, name: 'low'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+            <app-drop-down [label]="'Seviarity'" [placeHolder]="'Select seviarity type'" [isRequired]="true" [options]="[{value: 1, name: 'high'}, {value: 2, name: 'medium'}, {value: 3, name: 'low'}]" 
+            ></app-drop-down>
+            <!-- (selectedChange)="selectedChange($event)" -->
     </div>
     <app-text-area [label]="'Description'" [Placeholder]="'Enter description '" [isRequired]="true" [showBorder]="false"></app-text-area>
     <div class="footer">
