@@ -47,7 +47,7 @@
 .section-title {
   color: #6b21a8;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 12px;
 }
 
@@ -76,15 +76,17 @@
 }
 
 .leave-name {
-  font-weight: 600;
+  font-weight: 500;
   color: #111;
   margin: 0;
+  font-size: 16px;
 }
 
 .leave-desc {
   color: #666;
-  font-size: 13px;
+  font-size: 12px;
   margin-top: 2px;
+  font-weight: 400;
 }
 
 .form-grid {
@@ -99,7 +101,7 @@
 }
 
 .form-group label {
-  font-size: 13px;
+  font-size: 14px;
   color: #555;
   margin-bottom: 6px;
   font-weight: 500;
@@ -200,3 +202,8 @@
 .btn-primary:hover {
   filter: brightness(1.08);
 }
+
+/* .control{
+  font-size: 14px;
+  font-weight: 500;
+} */
