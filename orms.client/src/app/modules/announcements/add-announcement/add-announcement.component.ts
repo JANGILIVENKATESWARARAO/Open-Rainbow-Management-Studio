@@ -5,12 +5,12 @@ import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.
 import { DropDownComponent } from '../../../common-ui/controls/drop-down/drop-down.component';
 
 @Component({
-  selector: 'app-announcement-content',
-  templateUrl: './announcement-content.component.html',
-  styleUrl: './announcement-content.component.css',
+  selector: 'app-add-announcement',
+  templateUrl: './add-announcement.component.html',
+  styleUrl: './add-announcement.component.css',
   standalone: true,
   imports: [ButtonComponent, TextAreaComponent,  TextBoxComponent, DropDownComponent]
 })
-export class AnnouncementContentComponent {
+export class AddAnnouncementComponent {
 
 }
