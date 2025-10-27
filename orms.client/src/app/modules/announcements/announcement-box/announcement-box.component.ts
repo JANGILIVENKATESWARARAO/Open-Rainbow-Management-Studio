@@ -14,18 +14,18 @@ export class AnnouncementBoxComponent {
   @Input() announcements: Announcement[] = [
     {
       title: 'Holiday Schedule Update',
-      priority: 'high' as const,
+      priority: 'medium' as const,
       description: 'Please note that the office will be closed from December 24th to January 2nd. Emergency contacts will be available during this period.',
       postedDate: '24/12/2024',
       postedBy: 'HR Department'
     },
-    // {
-    //   title: 'New Security Policy',
-    //   priority: 'low' as const,
-    //   description: 'All employees must update their passwords by end of week following the new security guidelines.',
-    //   postedDate: '25/12/2024',
-    //   postedBy: 'IT Security'
-    // },
+    {
+      title: 'New Security Policy',
+      priority: 'low' as const,
+      description: 'All employees must update their passwords by end of week following the new security guidelines.',
+      postedDate: '25/12/2024',
+      postedBy: 'IT Security'
+    },
     {
       title: 'Holiday Schedule Update1',
       priority: 'high' as const,
