@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PasswordComponent } from '../../../common-ui/controls/password/password.component';
+import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
+
 
 
 
@@ -7,12 +9,22 @@ import { PasswordComponent } from '../../../common-ui/controls/password/password
   selector: 'app-temp-login-credentials',
   templateUrl: './temp-login-credentials.component.html',
   styleUrl: './temp-login-credentials.component.css',
-  imports:[PasswordComponent],
+   imports: [PasswordComponent, ButtonComponent],
   standalone:true
 })
 export class TempLoginCredentialsComponent {
-  @Input() label: string = 'Temporary username';
-  @Input() placeholder:string='Enter Temporary username'
+  
+   @Input() text: string = '';
+  @Input() bgColor: string = 'white';
+  @Input() color: string = 'red';
+  @Input() hoverBGColor: string = 'red';
+  @Input() hoverColor: string = 'black';
+  @Input() borderRadius: number = 5;
+  @Input() borderColor: string = 'blue';
+  @Input() showBorder: boolean = true;
+  @Input() width: string = 'auto';
+   
+ 
  temporaryPassword: string = '';
   showPassword: boolean = false;
 

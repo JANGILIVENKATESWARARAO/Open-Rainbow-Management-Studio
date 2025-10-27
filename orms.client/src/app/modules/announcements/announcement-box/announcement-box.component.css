@@ -1,0 +1,84 @@
+.announcement-card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e6e9f0;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.card-title {
+  color: #e55300;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.priority {
+  background-color: #ffe0e0;
+  color: #c40000;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  text-transform: lowercase;
+}
+
+.description {
+  font-size: 14px;
+  color: #4b4b4b;
+  margin: 10px 0 16px 0;
+  line-height: 1.4;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #6c6c6c;
+}
+
+.posted-by {
+  font-style: italic;
+  color: #666;
+}
+
+.priority.high {
+  background-color: #ffe0e0;
+  color: #c40000;
+}
+
+.priority.medium {
+  background-color: #fff5cc;
+  color: #a67c00;
+}
+
+.priority.low {
+  background-color: #e0ffe0;
+  color: #007c00;
+}
+
+.custom-line {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 30px 0;
+  opacity: 0.6;
+}
