@@ -37,7 +37,7 @@
   margin-bottom: 5px;
   margin-top: 14px;
 }
-.text-2{
+/* .text-2{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -45,15 +45,15 @@
   font-size: 20px;
   color: #111111;
   margin-bottom: 20px;
-}
+} */
 .emergency{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto;
   gap: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
-.item-4{
+/* .item-4{
   width: 50%;
 }
 .item-5{
@@ -61,7 +61,7 @@
 }
 .item-6{
   width: 50%;
-}
+} */
 .Address-1{
   display: flex;
   flex-direction: row;
@@ -73,12 +73,13 @@
   margin-top: 14px;
 }
 .grid-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto;
   gap: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
-.item-1{
+/* .item-1{
   width: 50%;
 }
 .item-2{
@@ -90,8 +91,11 @@
 .Toggle{
   margin-top: 10px;
   margin-bottom: 10px;
-}
+} */
 .permanent{
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
