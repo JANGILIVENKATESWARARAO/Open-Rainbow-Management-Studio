@@ -12,4 +12,7 @@ import { TextAreaComponent } from '../../../common-ui/controls/text-area/text-ar
 })
 export class EducationDetailsComponent {
 
+  selectedChange(value:any){
+    
+  }
 }
