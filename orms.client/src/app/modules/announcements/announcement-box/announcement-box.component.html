@@ -1,20 +1,39 @@
-<div class="announcement-card">
-  <h3 class="card-title">{{ cardTitle }}</h3>
-
-  <div class="announcement-item">
-    <div class="title-row">
-      <h4 class="title">{{ title1 }}</h4>
-      <span class="priority" [ngClass]="priority1">{{ priority1 }}</span>
-    </div>
-
-    <p class="description">{{ description1 }}</p>
-
-    <div class="footer-row">
-      <div class="date">
-        <span class="posted-date">{{ formattedDate1 }}</span>
+<div class="announcement-card" *ngIf="highPriorityAnnouncements.length > 0">
+  <h3 class="card-title">Pinned Announcements</h3>
+  <ng-container *ngFor="let announcement of highPriorityAnnouncements; let last = last">
+    <div class="announcement-item">
+      <div class="title-row">
+        <h4 class="title">{{ announcement.title }}</h4>
+        <app-chip [text]="'high'" [bgColor]="'red'"></app-chip>
       </div>
-      <span class="posted-by">{{ postedBy1 }}</span>
+      <p class="description">{{ announcement.description }}</p>
+      <div class="footer-row">
+        <div class="date">
+          <span class="posted-date">{{ formatDate(announcement.postedDate) }}</span>
+        </div>
+        <span class="posted-by">by {{ announcement.postedBy }}</span>
+      </div>
     </div>
-  </div>
-  <hr class="custom-line">
+    <hr class="custom-line" *ngIf="!last">
+  </ng-container>
+</div>
+
+<div class="announcement-card recent" *ngIf="otherAnnouncements.length > 0">
+  <h3 class="card-title">Recent Announcements</h3>
+  <ng-container *ngFor="let announcement of otherAnnouncements; let last = last">
+    <div class="announcement-item">
+      <div class="title-row">
+        <h4 class="title">{{ announcement.title }}</h4>
+        <span class="priority" [ngClass]="announcement.priority">{{ announcement.priority }}</span>
+      </div>
+      <p class="description">{{ announcement.description }}</p>
+      <div class="footer-row">
+        <div class="date">
+          <span class="posted-date">{{ formatDate(announcement.postedDate) }}</span>
+        </div>
+        <span class="posted-by">by {{ announcement.postedBy }}</span>
+      </div>
+    </div>
+    <hr class="custom-line" *ngIf="!last">
+  </ng-container>
 </div>
