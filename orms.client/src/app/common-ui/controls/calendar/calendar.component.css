@@ -37,6 +37,7 @@
   width: 100%;
   box-sizing: border-box;
   transition: all 0.2s ease;
+  height: 36px !important;
 }
 
 .calendar-icon {
