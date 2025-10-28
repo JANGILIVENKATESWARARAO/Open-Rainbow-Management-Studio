@@ -8,6 +8,7 @@
 
   <div class="login-section">
     <h2>USER LOGIN</h2>
+    <hr>
 
     <div class="input-group">
       <app-text-box [label]="''" [placeHolder]="'Username'" [isRequired]="false" [showBorder]="true"  [showCharCount]="false"></app-text-box>
@@ -18,7 +19,7 @@
     </div>
 
     <div class="options">
-      <app-edyn-checkbox [label]="'Remember'"></app-edyn-checkbox>
+      <app-toggle [checked]="false" [color]="'#5d008e'" [label]="'Remember'" [labelPosition]="'right'" [labelColor]="'#333'" [size]="'small'" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></app-toggle>
       <a href="#">Forgot password?</a>
     </div>
 
