@@ -24,19 +24,31 @@
           </ng-container>
         </h3>
 
+
         <p class="date">
-          {{ leave.fromDate }}
-          <ng-container *ngIf="leave.toDate"> to {{ leave.toDate }}</ng-container>
+          <span class="date-text">
+            {{ leave.fromDate }}
+            <ng-container *ngIf="leave.toDate"> to {{ leave.toDate }}</ng-container>
+          </span>
+          <span class="apply-text">Apply on : {{ leave.applyDate }}</span>
         </p>
 
-        <p class="desc">{{ leaveDescription(leave.description, 50) }} </p>
+        <p class="desc" [class.truncated]="isTruncated(leave.description, 50)"
+          [appTooltip]="isTruncated(leave.description, 50) ? leave.description : ''" tooltipPosition="bottom">
+          {{ leaveDescription(leave.description, 50) }}
+        </p>
+
+
       </div>
 
       <div class="right">
-        <p class="days">{{ leave.days }} day{{ leave.days > 1 ? 's' : '' }}</p>
+        <p class="days">
+          {{ calculateDays(leave.fromDate, leave.toDate) }} day{{
+          calculateDays(leave.fromDate, leave.toDate) > 1 ? 's' : ''
+          }}
+        </p>
 
-        <ng-container *ngIf="leave.showCancel">
-
+        <ng-container *ngIf="leave.status === 'Pending'">
           <app-button [text]="'Edit'" [bgColor]="'#1880d6'" [color]="'#fff'" [hoverBGColor]="'#1880d6'"
             [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12" style="margin-right: 10px;"></app-button>
 

@@ -56,9 +56,10 @@ label {
   list-style: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 0;
-  margin-top: 4px; 
-  overflow: hidden;
+  margin-top: 4px;
   z-index: 1000;
+  max-height: 240px;
+  overflow-y: auto;
 }
 
 .custom-dropdown-list li {
@@ -113,4 +114,3 @@ label {
   margin-top: 0;
   margin-bottom: 4px;
 }
-
