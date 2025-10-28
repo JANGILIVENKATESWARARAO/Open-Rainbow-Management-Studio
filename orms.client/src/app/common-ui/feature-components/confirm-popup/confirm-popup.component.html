@@ -1,11 +1,13 @@
-<div class="popup">
+<div class="popup"  [ngStyle]="{'border-left': '5px solid ' + borderColor}" >
   <div class="icon">
+    {{changeIcon}}
   </div>
   <h2 class="title">{{title}}</h2>
   <p class="message">
     {{ label }}
   </p>
   <div class="btn">
-    
+    <app-button [text]="this.noButton" [bgColor]="'#e6e1e1'" [color]="'#061f4b'" [hoverBGColor]="'#1c1c1a'" [hoverColor]="'#fff8f8'" [borderColor]="'#e81e1e'" [showBorder]="false"></app-button>
+    <app-button [text]="this.yesButton" [bgColor]="'#f30b0b'" [color]="'#e8e0e0'" [hoverBGColor]="'#fff'" [hoverColor]="'#ec1717'" [borderColor]="'#e81e1e'" [showBorder]="true" style="margin-left: 10px;"></app-button>
   </div>
 </div>
