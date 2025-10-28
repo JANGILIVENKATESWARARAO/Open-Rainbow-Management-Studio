@@ -15,4 +15,4 @@ const meta: Meta<ConfirmPopupComponent> = {
 export default meta;
 type Confirmpopup = StoryObj<ConfirmPopupComponent>;
 
-export const dot: Confirmpopup = {};
+export const ConfirmPopup: Confirmpopup = {};
