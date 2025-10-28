@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 25px;
+  padding: 20px;
+  align-items: flex-start;
+  border: 1px solid gray;
+}
+.container > div:not(.header) {
+  width: 48%;
+  margin: 10px 1%;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  color: #111111;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
