@@ -23,9 +23,19 @@ export class TempLoginCredentialsComponent {
   @Input() borderColor: string = 'blue';
   @Input() showBorder: boolean = true;
   @Input() width: string = 'auto';
+  hasUppercase: boolean = false;
+hasLowercase: boolean = false;
+hasNumber: boolean = false;
+hasSpecialChar: boolean = false;
+
+ @Input() maxLength: number = 12;
    
+  isLengthValid: boolean = false;
+  hasRequiredChars: boolean = false;
  
  temporaryPassword: string = '';
+ valueLength: string = '';
+
   showPassword: boolean = false;
 
   toggleShowPassword() {
@@ -39,5 +49,23 @@ generatePassword() {
     this.temporaryPassword = Array.from({ length }, () =>
       chars.charAt(Math.floor(Math.random() * chars.length))
     ).join('');
+  }
+
+   checkPasswordRules() {
+    const password = this.temporaryPassword;
+  console.log(password);
+  
+    
+
+    
+    this.isLengthValid = password.length == 12;
+
+    
+    this.hasUppercase = /[A-Z]/.test(password);
+    this.hasLowercase = /[a-z]/.test(password);
+    this.hasNumber = /\d/.test(password);
+    this.hasSpecialChar = /[!@#$%^&*()_+]/.test(password);
+
+    this.hasRequiredChars =  this.hasUppercase &&  this.hasLowercase &&  this.hasNumber && this.hasSpecialChar ;
   }
 }
