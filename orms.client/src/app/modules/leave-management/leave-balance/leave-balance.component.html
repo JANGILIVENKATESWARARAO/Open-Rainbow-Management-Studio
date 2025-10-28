@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="header">
+        <h1>Your Leave Balance</h1>
+    </div>
+    <div>
+        <p>Sick Leave</p>
+        <app-progress-bar></app-progress-bar>
+    </div>
+    <div>
+        <p>Casual Leave</p>
+        <app-progress-bar [used]="7"></app-progress-bar>
+    </div>
+    <div>
+        <p>Earned Leave</p>
+        <app-progress-bar [used]="10"></app-progress-bar>
+    </div>
+    <div>
+        <p>Maternity Leave</p>
+        <app-progress-bar [used]="10"></app-progress-bar>
+    </div>
+    <div>
+        <p>Paternity Leave</p>
+        <app-progress-bar [used]="10"></app-progress-bar>
+    </div>
+    <div>
+        <p>Comp-off Leave</p>
+        <app-progress-bar [used]="10"></app-progress-bar>
+    </div>
+    <div>
+        <p>Unpaid Leave</p>
+        <app-progress-bar [used]="10"></app-progress-bar>
+    </div>
+</div>

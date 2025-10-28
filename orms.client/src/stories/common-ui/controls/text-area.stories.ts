@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from 'storybook/test';
 import { TextAreaComponent } from '../../../app/common-ui/controls/text-area/text-area.component';
 
 const meta: Meta<TextAreaComponent> = {
   title: 'Common-UI/TextArea',
   component: TextAreaComponent,
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
@@ -15,4 +13,13 @@ const meta: Meta<TextAreaComponent> = {
 export default meta;
 type Story = StoryObj<TextAreaComponent>;
 
-export const TextArea: Story = {};
+export const TextArea: Story = {
+  args: {
+    label: 'Address',
+    Placeholder: 'Enter your address',
+    isRequired: true,
+    showBorder: true,
+    maxChars: 50,
+    showCharCount: true
+  }
+};

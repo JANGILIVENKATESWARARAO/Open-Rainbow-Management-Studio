@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'app-edyn-checkbox',
+  standalone:true,
   templateUrl: './edyn-checkbox.component.html',
-  styleUrl: './edyn-checkbox.component.css'
+  styleUrl: './edyn-checkbox.component.css',
+  imports:[CommonModule]
 })
 export class EdynCheckboxComponent {
   @Input() disabled: boolean = false;

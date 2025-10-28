@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.welcome-section {
+  flex: 1;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-image: url('C:\Users\sasis\Downloads\image (1).png'); */
+  background-size: cover;
+  background-position: center;        
+  background-repeat: no-repeat;
+}
+
+.welcome-section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.welcome-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.login-section {
+  flex: 1;
+  background: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.login-section h2 {
+  color: #a36be8;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 640;
+}
+hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set height to create the line thickness */
+    background-color: #d4d4d4; /* Set the color of the line */
+    width: 58%; /* Set the width of the line */
+    margin-bottom: 15px;
+}
+.input-group {
+  /* display: flex;
+  align-items: center;
+  background-color: #f3f0ff;
+  border-radius: 10px;
+  padding: 10px 30px; */
+  width: 58%;
+  margin-bottom: 10px;
+}
+
+
+/* .input-group input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex:1px;
+  font-size: 16px;
+  width: 300px;
+} */
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+.options a {
+  color: #999;
+  text-decoration: none;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #f785c8, #a103f6);
+  color: white;
+  border: none;
+  padding: 10px 60px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #ff7dc9, #5d008e);
+}

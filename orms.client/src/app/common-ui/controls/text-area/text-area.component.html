@@ -1,16 +1,29 @@
 <div class="form-group">
-  <label for="address">{{label}} <span *ngIf="isRequired" class="required-star">*</span></label>
-  <textarea id="address" name="address"     [(ngModel)]="inputText"
-    (input)="updateCharCount()" [placeholder]="Placeholder" [ngStyle]="{
-    border: showBorder ? '1px solid #cbd5e1' : 'none'
-  }" ></textarea>
-    <p
-    *ngIf="showCharCount" 
-    class="text-xs mt-1 text-left"
-    >
-    <!-- [ngStyle]="{
-      color: currentCharCount <= maxChars - 5 ? '#dc2626' : '#6b7280'
-    }" -->
+  <label for="address">
+    {{ label }}
+    <span *ngIf="isRequired" class="required-star">*</span>
+  </label>
+
+  <textarea
+    id="address"
+    name="address"
+    [(ngModel)]="inputText"
+    (input)="updateCharCount()"
+    [placeholder]="Placeholder"
+    [attr.maxlength]="maxChars"
+    [ngStyle]="{
+      border: showBorder ? '1px solid #cbd5e1' : 'none'
+    }"
+  ></textarea>
+
+  <p
+    *ngIf="showCharCount"
+    [ngStyle]="{
+      color: isRequired ? '#dc2626' : '#000000',
+      
+    }"
+    class="text-[11px] font-medium text-xs mt-1 text-left ml-[13px]"
+  >
     {{ currentCharCount }} of {{ maxChars }} characters left
   </p>
 </div>

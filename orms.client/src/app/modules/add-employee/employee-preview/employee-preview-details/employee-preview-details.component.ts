@@ -7,12 +7,14 @@ import { InnerJobComponent } from '../inner-job/inner-job.component';
 import { InnerWorkComponent } from '../inner-work/inner-work.component';
 import { InnerOtherComponent } from '../inner-other/inner-other.component';
 import { InnerSalaryComponent } from '../inner-salary/inner-salary.component';
+import { InnerDocumentComponent } from '../inner-document/inner-document.component';
+import { InnerInsuranceComponent } from '../inner-insurance/inner-insurance.component';
 @Component({
   selector: 'app-employee-preview-details',
   templateUrl: './employee-preview-details.component.html',
   styleUrls: ['./employee-preview-details.component.css'],
   standalone: true,
-  imports: [ButtonComponent,InnerInfoComponent,InnerContactComponent,InnerJobComponent,InnerEducationComponent,InnerWorkComponent,InnerOtherComponent,InnerSalaryComponent]
+  imports: [ButtonComponent,InnerInfoComponent,InnerContactComponent,InnerJobComponent,InnerEducationComponent,InnerWorkComponent,InnerOtherComponent,InnerSalaryComponent,InnerDocumentComponent,InnerInsuranceComponent]
 })
 export class EmployeePreviewDetailsComponent {
   printDetails() {

@@ -25,19 +25,38 @@
                         </svg>
                     </button>
 
-                    <div class="month-year-selectors">
-                        <select [(ngModel)]="currentMonth" (change)="onMonthChange()" class="month-select">
-                            <option *ngFor="let month of months; let i = index" [ngValue]="i">
-                                {{month}}
-                            </option>
-                        </select>
+                   <div class="month-year-selectors">
+                        <!-- Month Dropdown -->
+                        <div class="dropdown" (click)="$event.stopPropagation()">
+                            <div class="dropdown-display" (click)="toggleMonthDropdown()">
+                            {{ months[currentMonth] }}
+                            <span class="arrow">&#9662;</span>
+                            </div>
+                            <ul *ngIf="showMonthDropdown" class="dropdown-list">
+                            <li *ngFor="let month of months; let i = index"
+                                [class.selected]="i === currentMonth"
+                                (click)="selectMonth(i)">
+                                {{ month }}
+                            </li>
+                            </ul>
+                        </div>
 
-                        <select [(ngModel)]="currentYear" (change)="onYearChange()" class="year-select">
-                            <option *ngFor="let year of years" [ngValue]="year">
-                                {{year}}
-                            </option>
-                        </select>
-                    </div>
+                        <!-- Year Dropdown -->
+                        <div class="dropdown" (click)="$event.stopPropagation()">
+                            <div class="dropdown-display" (click)="toggleYearDropdown()">
+                            {{ currentYear }}
+                            <span class="arrow">&#9662;</span>
+                            </div>
+                            <ul *ngIf="showYearDropdown" class="dropdown-list">
+                            <li *ngFor="let year of years"
+                                [class.selected]="year === currentYear"
+                                (click)="selectYear(year)">
+                                {{ year }}
+                            </li>
+                            </ul>
+                        </div>
+                        </div>
+
 
                     <button class="nav-btn" (click)="nextMonth()">
                         <svg width="8" height="12" viewBox="0 0 8 12" fill="none">

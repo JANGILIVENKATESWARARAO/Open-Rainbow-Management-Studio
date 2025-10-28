@@ -1,3 +1,13 @@
+.container{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.main{
+    margin-bottom: 25px;
+}
+
 .announcement-card {
   width: 100%;
   height: 100%;
@@ -9,10 +19,23 @@
   font-family: "Segoe UI", sans-serif;
 }
 
+.announcement-card-recent{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e6e9f0;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+  margin-top: 25px;
+}
+
 .card-title {
-  color: #e55300;
+  color: black;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -62,18 +85,18 @@
 }
 
 .priority.high {
-  background-color: #ffe0e0;
-  color: #c40000;
+  background-color: #ffe2e2;
+  color: #aa355b;
 }
 
 .priority.medium {
-  background-color: #fff5cc;
-  color: #a67c00;
+  background-color: #fef9c2;
+  color: #b38742;
 }
 
 .priority.low {
-  background-color: #e0ffe0;
-  color: #007c00;
+  background-color: #dbfce7;
+  color: #23816c;
 }
 
 .custom-line {
@@ -82,3 +105,20 @@
   margin: 30px 0;
   opacity: 0.6;
 }
+
+.date {
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px; 
+}
+
+.expire-label {
+  color: #000000; 
+}
+
+.expire-date {
+  color: #C0171A; 
+}
+

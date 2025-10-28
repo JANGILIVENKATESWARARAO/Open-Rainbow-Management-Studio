@@ -7,7 +7,7 @@ const config: StorybookConfig = {
   "addons": [
     "@storybook/addon-docs",
     "@storybook/addon-onboarding",
-    "@storybook/addon-postcss",
+    // "@storybook/addon-postcss",
   ],
   "framework": {
     "name": "@storybook/angular",

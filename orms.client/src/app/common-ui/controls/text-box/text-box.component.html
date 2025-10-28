@@ -1,4 +1,4 @@
-<div class="text-left">
+<!-- <div class="text-left">
   <label class="block font-semibold text-gray-800 mb-1.5 text-[15px]">
     {{ label }}
     <span *ngIf="isRequired" class="text-rose-600">*</span>
@@ -11,11 +11,50 @@
            bg-white"/>
      <p
     *ngIf="showCharCount"
-    class="text-xs mt-1 text-left transition-colors duration-200"
+    class="text-xs mt-1 text-left ml-[13px] transition-colors duration-200"
     >
-    <!-- [ngStyle]="{
-      color: currentCharCount >= maxChars - 20 ? '#dc2626' : '#6b7280'
-    }" -->
+   
   {{ currentCharCount }} of {{ maxChars }} characters left
+  </p>
+</div> -->
+
+
+
+
+<div class="text-left">
+  <!-- Label -->
+  <label class="block font-semibold text-gray-800 mb-1.5 text-[14px]">
+    {{ label }}
+    <span *ngIf="isRequired" class="text-rose-600">*</span>
+  </label>
+
+  <!-- Input Field -->
+  <input
+    type="text"
+    id="fullname"
+    name="fullname"
+    [(ngModel)]="inputText"
+    (input)="updateCharCount()"
+    [placeholder]="placeHolder"
+    [attr.maxlength]="maxChars"
+    [ngClass]="{
+      'border border-slate-300': showBorder,
+      'border-transparent': !showBorder
+    }"
+    class="h-[36px] w-full px-3 py-2 text-[15px] text-gray-800 rounded-md outline-none transition
+           focus:border-blue-600 focus:ring-4 focus:outline-none focus:border-[#2563eb]
+           focus:ring-[3px] focus:ring-[rgba(37,99,235,0.5)] focus:ring-blue-300
+           placeholder:text-gray-400 bg-white"
+  />
+
+  <!-- Character Counter -->
+  <p
+    *ngIf="showCharCount"
+    [ngStyle]="{
+      color: isRequired ? '#dc2626' : '#000000',
+    }"
+    class="text-[11px] font-medium mt-1 ml-[13px] text-left transition-colors duration-200"
+  >
+    {{ currentCharCount }} of {{ maxChars }} characters left
   </p>
 </div>
