@@ -3,7 +3,8 @@
   <input *ngFor="let digit of otpArray; let i = index"
          type="text"
          maxlength="1"
-         (paste)="handlePaste($event)"
+         [attr.maxlength]="i === 0 ? '6' : '1'"
+         (paste)="i === 0 ? handlePaste($event) : null"
          (input)="handleInput($event, i)"
          (keydown)="handleKeyDown($event, i)"
          #otpInput />

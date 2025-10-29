@@ -22,8 +22,8 @@ export class OtpComponent implements AfterViewInit {
     this.otpInputs.first.nativeElement.focus();
   }
 
- handlePaste(event: ClipboardEvent): void {
-    const pasteData = event.clipboardData?.getData('text') || '';
+  handlePaste(event: ClipboardEvent): void {
+    const pasteData = event.clipboardData?.getData('text/plain') || '';
     if (/^\d{6}$/.test(pasteData)) {
       event.preventDefault();
       pasteData.split('').forEach((char, i) => {
@@ -41,13 +41,13 @@ export class OtpComponent implements AfterViewInit {
     const value = input.value;
 
     // Allow only digits
-    if (!/^\d$/.test(value)) {
+    if (!/^\d$/.test(value) && value !== '') {
       input.value = '';
       return;
     }
 
     // Move to next input if valid
-    if (index < this.otpArray.length - 1) {
+    if (value && index < this.otpArray.length - 1) {
       this.otpInputs.get(index + 1)?.nativeElement.focus();
     }
   }
@@ -63,7 +63,7 @@ export class OtpComponent implements AfterViewInit {
 
     // Optional: prevent non-digit keys (except navigation)
     const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Tab'];
-    if (!/^\d$/.test(event.key) && !allowedKeys.includes(event.key)) {
+    if (!/^\d$/.test(event.key) && !allowedKeys.includes(event.key) && event.key !== 'v' && !event.ctrlKey) {
       event.preventDefault();
     }
   }
