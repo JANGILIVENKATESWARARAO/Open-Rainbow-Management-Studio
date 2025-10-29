@@ -1,0 +1,44 @@
+.leave-approval-container {
+  background-color: #f9fafb;
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  color: #333;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.leave-balance-container {
+    background: #fff;
+    box-shadow: 0 8px 32px 0 rgba(35,32,67,0.13);
+    padding: 38px 32px 22px 32px;
+    width: 100%;   
+}
+.leavebalance-header{
+    display: flex;
+    justify-content: space-between;
+}
+.button-row {
+  display: flex;
+  justify-content: right;
+  margin-top: 15px;
+  gap: 16px;
+ 
+}
+.typesOf-request app-chip{
+    padding:4px;
+}
