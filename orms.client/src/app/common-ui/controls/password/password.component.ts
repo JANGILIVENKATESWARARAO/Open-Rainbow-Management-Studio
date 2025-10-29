@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input , Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -5,6 +6,7 @@ import { Component, Input , Output, EventEmitter } from '@angular/core';
   templateUrl: './password.component.html',
   styleUrl: './password.component.css',
   standalone: true,
+  imports: [CommonModule]
 })
 export class PasswordComponent {
   @Input() label: string = 'Temporary Password';
