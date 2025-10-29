@@ -34,7 +34,7 @@
         </p>
 
         <p class="desc" [class.truncated]="isTruncated(leave.description, 50)"
-          [appTooltip]="isTruncated(leave.description, 50) ? leave.description : ''" tooltipPosition="bottom">
+          [appTooltip]="isTruncated(leave.description, 50) ? leave.description : ''" tooltipPosition="top">
           {{ leaveDescription(leave.description, 50) }}
         </p>
 

@@ -60,6 +60,16 @@ export class TooltipDirective implements OnDestroy {
 
     requestAnimationFrame(() => {
       this.reposition();
+
+      const tooltipEl = domEl.querySelector('.tooltip') as HTMLElement;
+      if (tooltipEl) {
+        this.renderer.setAttribute(
+          tooltipEl,
+          'data-position',
+          this.tooltipPosition
+        );
+      }
+
       this.renderer.addClass(domEl, 'visible');
     });
 
@@ -98,10 +108,33 @@ export class TooltipDirective implements OnDestroy {
       left = 0;
     const margin = 8;
 
+    const vw = document.documentElement.clientWidth;
+    const vh = document.documentElement.clientHeight;
+
+    const isBottomOverflow =
+      hostRect.bottom + tipRect.height + margin >
+      document.documentElement.clientHeight;
+    const isTopOverflow = hostRect.top - tipRect.height - margin < 0;
+
+    if (
+      this.tooltipPosition === 'bottom' &&
+      isBottomOverflow &&
+      !isTopOverflow
+    ) {
+      this.tooltipPosition = 'top';
+    } else if (
+      this.tooltipPosition === 'top' &&
+      isTopOverflow &&
+      !isBottomOverflow
+    ) {
+      this.tooltipPosition = 'bottom';
+    }
+
     switch (this.tooltipPosition) {
       case 'top':
         top = hostRect.top - tipRect.height - margin;
         left = hostRect.left + (hostRect.width - tipRect.width) / 2;
+
         break;
       case 'bottom':
         top = hostRect.bottom + margin;
@@ -118,8 +151,6 @@ export class TooltipDirective implements OnDestroy {
         break;
     }
 
-    const vw = document.documentElement.clientWidth;
-    const vh = document.documentElement.clientHeight;
     left = Math.max(6, Math.min(left, vw - tipRect.width - 6));
     top = Math.max(6, Math.min(top, vh - tipRect.height - 6));
 
