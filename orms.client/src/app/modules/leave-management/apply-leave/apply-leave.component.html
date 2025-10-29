@@ -20,8 +20,13 @@
     </app-drop-down><br>
     <!-- (selectedChange)="selectedChange($event)" -->
     <app-text-area [label]="'Reason for Leave'" [Placeholder]="'Please provide a detailed reason for your leave request'"></app-text-area><br>
+    <div class="close">
+    <app-button [text]="'Close'" [bgColor]="'white'" [color]="'black'" [hoverBGColor]="'#d3d3d3'" [hoverColor]="'black'" [borderColor]="'black'" (click)="CloseApplication()"></app-button>
+    <div>
     <app-button [text]="'Clear Form'" [color]="'black'" [hoverBGColor]="'white'" [borderRadius]="10" [borderColor]="'light grey'"></app-button>
-    <app-button [text]="'Submit Application'" [bgColor]="'#aca1f2'" [color]="'white'" [hoverBGColor]="'#aca1f2'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'light grey'" [showBorder]="false" (click)="submitApplication()"></app-button>
+    <app-button [text]="'Submit Application'" [bgColor]="'#aca1f2'" [color]="'white'" [hoverBGColor]="'#aca1f2'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'light grey'" [showBorder]="false" ></app-button>
+    </div>
+    </div>
     
 </div>
 </div>

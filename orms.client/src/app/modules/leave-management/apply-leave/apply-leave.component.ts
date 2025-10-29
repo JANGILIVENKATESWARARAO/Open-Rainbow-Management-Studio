@@ -22,7 +22,7 @@ export class ApplyLeaveComponent {
     this.showForm = !this.showForm; 
   }
 
-  submitApplication() {
+  CloseApplication() {
     this.showForm = false;
   }
   
