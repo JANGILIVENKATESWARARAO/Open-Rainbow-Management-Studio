@@ -13,7 +13,7 @@ export class ChipComponent implements OnChanges {
   @Input() activeBGColor: string = '#7c3aedff';
   @Input() activeColor: string = 'white';
   @Input() borderRadius: string = '9999px';
-  @Input() size: 'small' | 'medium' | 'large' = 'medium';
+  @Input() size: 'extrasmall' |'small' | 'medium' | 'large' = 'extrasmall';
 
   height = '28px';
   width = 'auto';
@@ -32,20 +32,25 @@ export class ChipComponent implements OnChanges {
   updateSize() {
     switch (this.size) {
       case 'large':
-       this.height = '38px';
-        this.fontSize = '1.4rem';
-        this.horizontalGap = '24px';
+       this.height = '33px';
+        this.fontSize = '1.1rem';
+        this.horizontalGap = '22px';
+        break;
+        case 'medium':
+      default:
+       this.height = '28px';
+        this.fontSize = '1rem';
+        this.horizontalGap = '16px';
         break;
       case 'small':
         this.height = '22px';
         this.fontSize = '.8rem';
         this.horizontalGap = '10px';
         break;
-      case 'medium':
-      default:
-       this.height = '28px';
-        this.fontSize = '1rem';
-        this.horizontalGap = '16px';
+         case 'extrasmall':
+        this.height = '18px';
+        this.fontSize = '.6rem';
+        this.horizontalGap = '12px';
         break;
     }
   }
