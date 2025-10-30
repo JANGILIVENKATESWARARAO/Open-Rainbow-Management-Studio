@@ -1,4 +1,10 @@
-import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  ViewChildren,
+  QueryList,
+  ElementRef,
+  AfterViewInit
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,16 +16,14 @@ import { CommonModule } from '@angular/common';
 })
 export class OtpComponent implements AfterViewInit {
   otpArray = Array(6).fill('');
-  
   @ViewChildren('otpInput') otpInputs!: QueryList<ElementRef<HTMLInputElement>>;
 
   ngAfterViewInit(): void {
-    // Optional: focus first input on load
     this.otpInputs.first.nativeElement.focus();
   }
 
   handlePaste(event: ClipboardEvent): void {
-    const pasteData = event.clipboardData?.getData('text') || '';
+    const pasteData = event.clipboardData?.getData('text/plain') || '';
     if (/^\d{6}$/.test(pasteData)) {
       event.preventDefault();
       pasteData.split('').forEach((char, i) => {
@@ -34,8 +38,33 @@ export class OtpComponent implements AfterViewInit {
 
   handleInput(event: Event, index: number): void {
     const input = event.target as HTMLInputElement;
-    if (input.value.length === 1 && index < this.otpArray.length - 1) {
+    const value = input.value;
+
+    // Allow only digits
+    if (!/^\d$/.test(value) && value !== '') {
+      input.value = '';
+      return;
+    }
+
+    // Move to next input if valid
+    if (value && index < this.otpArray.length - 1) {
       this.otpInputs.get(index + 1)?.nativeElement.focus();
+    }
+  }
+
+  handleKeyDown(event: KeyboardEvent, index: number): void {
+    const input = event.target as HTMLInputElement;
+
+    if (event.key === 'Backspace') {
+      if (input.value === '' && index > 0) {
+        this.otpInputs.get(index - 1)?.nativeElement.focus();
+      }
+    }
+
+    // Optional: prevent non-digit keys (except navigation)
+    const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Tab'];
+    if (!/^\d$/.test(event.key) && !allowedKeys.includes(event.key) && event.key !== 'v' && !event.ctrlKey) {
+      event.preventDefault();
     }
   }
 }
