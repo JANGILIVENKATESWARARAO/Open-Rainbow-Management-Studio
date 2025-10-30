@@ -1,0 +1,87 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #eef3fb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+.leave-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  height: 90%;
+}
+.leave-card:hover {
+  /* background: #f3f4f6; */
+  background: #e6e7e9;
+}
+
+.leave-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.left{
+width: 57%;
+}
+
+.left h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 5px;
+}
+.date {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+ justify-content: space-between;
+ width: 100%;
+}
+
+
+.desc {
+  color: #6b7280;
+  font-size: 14px;
+  display: inline-block; 
+  position: relative;
+}
+
+.desc.truncated {
+  cursor: pointer;
+}
+
+
+.right {
+  text-align: right;
+}
+
+
+.days {
+  font-weight: 600;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.cancel-btn {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #b91c1c;
+}
