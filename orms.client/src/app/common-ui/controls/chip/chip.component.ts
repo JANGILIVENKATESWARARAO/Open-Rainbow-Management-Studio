@@ -32,20 +32,20 @@ export class ChipComponent implements OnChanges {
   updateSize() {
     switch (this.size) {
       case 'large':
-        this.height = '48px';
-        this.fontSize = '1.7rem';
-        this.horizontalGap = '40px';
+       this.height = '38px';
+        this.fontSize = '1.4rem';
+        this.horizontalGap = '24px';
         break;
       case 'small':
-        this.height = '28px';
-        this.fontSize = '1rem';
-        this.horizontalGap = '16px';
+        this.height = '22px';
+        this.fontSize = '.8rem';
+        this.horizontalGap = '10px';
         break;
       case 'medium':
       default:
-        this.height = '38px';
-        this.fontSize = '1.4rem';
-        this.horizontalGap = '24px';
+       this.height = '28px';
+        this.fontSize = '1rem';
+        this.horizontalGap = '16px';
         break;
     }
   }
