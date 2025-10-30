@@ -111,13 +111,13 @@ width: 57%;
 }
 
 
-::ng-deep app-chip div {
+/* ::ng-deep app-chip div {
   height: 15px !important;
   padding: 2px 9px !important;
   font-size: 10px !important;
   line-height: normal;
   border-style: none;
-  }
+  } */
 
 
 
