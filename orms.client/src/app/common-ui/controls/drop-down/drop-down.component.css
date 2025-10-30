@@ -39,6 +39,7 @@ label {
   box-sizing: border-box;
   transition: all 0.2s ease;
   height: 36px;
+  font-size: 12px;
 }
 .custom-dropdown-selected.placeholder {
   color: #9ca3af /* Grey placeholder text */
