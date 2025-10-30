@@ -1,0 +1,137 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  margin: 0;
+}
+
+.salary-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 55%;
+  padding: 25px 30px;
+}
+
+
+
+.tab {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  background: none;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  text-align: left;
+  display: flex;
+  place-content: center;
+}
+
+.tab.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  align-items: self-end;
+}
+
+.summary-details {
+  text-align: left;
+}
+
+.summary-details h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.summary-details p {
+  margin: 5px 0 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.salary-summary {
+  display: flex;
+  gap: 60px;
+  justify-content: flex-start;
+
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 4px solid;
+  padding-left: 10px;
+}
+
+.item h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.item p {
+  margin: 4px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+}
+
+.earnings {
+  border-color: #22c55e;
+}
+
+.reimbursements {
+  border-color: #3b82f6;
+}
+
+.deductions {
+  border-color: #f59e0b;
+}
+
+
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+  width: 100%;
+  color: grey;
+  border: none;
+  background-color: white;
+
+}
+
+.link-btn {
+  border: none;
+  background: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
