@@ -7,10 +7,10 @@
 }
 
 .dob-label {
-  font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 600;
-  color: #333;
+  font-weight: 500;
+  color: #171717;
+  margin-bottom: 6px;
 }
 
 .required-star {
@@ -37,12 +37,14 @@
   width: 100%;
   box-sizing: border-box;
   transition: all 0.2s ease;
+  height: 36px;
+  font-size: 12px;
 }
 
 .calendar-icon {
   position: absolute;
   right: 10px;
-  top: 59%;
+  top: 54%;
   transform: translateY(-50%);
   color: #888;
   pointer-events: none;
