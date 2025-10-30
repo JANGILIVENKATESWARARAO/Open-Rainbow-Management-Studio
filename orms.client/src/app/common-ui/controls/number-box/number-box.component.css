@@ -21,6 +21,7 @@
       border: 2px solid #cbd5e1;
       border-radius: 6px;
       outline: none;
+      font-size: 12px;
     }
     input[type="number"]::placeholder {
       color: #9ca3af;
