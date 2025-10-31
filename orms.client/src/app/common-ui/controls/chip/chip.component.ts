@@ -14,6 +14,7 @@ export class ChipComponent implements OnChanges {
   @Input() activeColor: string = 'white';
   @Input() borderRadius: string = '9999px';
   @Input() size: 'extrasmall' |'small' | 'medium' | 'large' = 'extrasmall';
+  @Input() usePointerCursor: boolean = true;
 
   height = '28px';
   width = 'auto';
