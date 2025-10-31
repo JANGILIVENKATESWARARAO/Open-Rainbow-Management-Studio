@@ -104,6 +104,19 @@ export class TooltipDirective implements OnDestroy {
     if (!tooltipEl) return;
     const tipRect = tooltipEl.getBoundingClientRect();
 
+    let firstRect: DOMRect | null = null;
+    try {
+      const range = document.createRange();
+      range.selectNodeContents(this.host.nativeElement);
+      const rects = range.getClientRects();
+      if (rects && rects.length > 0) {
+        firstRect = rects[0];
+      }
+      range.detach?.();
+    } catch (e) {
+      firstRect = null;
+    }
+
     let top = 0,
       left = 0;
     const margin = 8;
@@ -111,9 +124,7 @@ export class TooltipDirective implements OnDestroy {
     const vw = document.documentElement.clientWidth;
     const vh = document.documentElement.clientHeight;
 
-    const isBottomOverflow =
-      hostRect.bottom + tipRect.height + margin >
-      document.documentElement.clientHeight;
+    const isBottomOverflow = hostRect.bottom + tipRect.height + margin > vh;
     const isTopOverflow = hostRect.top - tipRect.height - margin < 0;
 
     if (
@@ -132,13 +143,23 @@ export class TooltipDirective implements OnDestroy {
 
     switch (this.tooltipPosition) {
       case 'top':
-        top = hostRect.top - tipRect.height - margin;
-        left = hostRect.left + (hostRect.width - tipRect.width) / 2;
+        top = firstRect
+          ? firstRect.top - tipRect.height - margin
+          : hostRect.top - tipRect.height - margin;
 
+        if (firstRect) {
+          left = firstRect.left;
+        } else {
+          left = hostRect.left + (hostRect.width - tipRect.width) / 2;
+        }
         break;
       case 'bottom':
-        top = hostRect.bottom + margin;
-        left = hostRect.left + (hostRect.width - tipRect.width) / 2;
+        top = firstRect ? firstRect.bottom + margin : hostRect.bottom + margin;
+        if (firstRect) {
+          left = firstRect.left;
+        } else {
+          left = hostRect.left + (hostRect.width - tipRect.width) / 2;
+        }
         break;
       case 'left':
         top = hostRect.top + (hostRect.height - tipRect.height) / 2;
@@ -151,12 +172,12 @@ export class TooltipDirective implements OnDestroy {
         break;
     }
 
-    left = Math.max(6, Math.min(left, vw - tipRect.width - 6));
-    top = Math.max(6, Math.min(top, vh - tipRect.height - 6));
+    left = Math.max(6, Math.min(Math.round(left), vw - tipRect.width - 6));
+    top = Math.max(6, Math.min(Math.round(top), vh - tipRect.height - 6));
 
     this.renderer.setStyle(domEl, 'position', 'fixed');
-    this.renderer.setStyle(domEl, 'top', `${Math.round(top)}px`);
-    this.renderer.setStyle(domEl, 'left', `${Math.round(left)}px`);
+    this.renderer.setStyle(domEl, 'top', `${top}px`);
+    this.renderer.setStyle(domEl, 'left', `${left}px`);
     this.renderer.setStyle(domEl, 'pointerEvents', 'none');
   }
 

@@ -51,13 +51,15 @@ width: 57%;
 .desc {
   color: #6b7280;
   font-size: 14px;
-  display: inline-block; 
+  display: block; 
   position: relative;
 }
 
 .desc.truncated {
   cursor: pointer;
 }
+
+
 
 
 .right {
