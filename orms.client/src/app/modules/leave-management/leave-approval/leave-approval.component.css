@@ -1,5 +1,5 @@
 .leave-approval-container {
-  background-color: #f9fafb;
+  background-color: #efefef;
   padding: 24px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
@@ -21,16 +21,27 @@
 .grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap:12px;
 }
 .leave-balance-container {
     background: #fff;
-    box-shadow: 0 8px 32px 0 rgba(35,32,67,0.13);
-    padding: 38px 32px 22px 32px;
+    padding: 2px 32px 20px 32px;
     width: 100%;   
 }
-.leavebalance-header{
-    display: flex;
-    justify-content: space-between;
+.leave-balance-container h3{
+  margin-bottom: 10px;
+  color: #666;
+}
+.request-header h3{
+  font-size: medium;
+  color: #535353;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.requester-content{
+  background: #fff;
+  border-radius: 14px;
+  padding:8px 8px;
 }
 .button-row {
   display: flex;
@@ -39,6 +50,51 @@
   gap: 16px;
  
 }
+.typesOf-request {
+  margin-top: 20px;    
+  margin-bottom: 20px;
+}
 .typesOf-request app-chip{
-    padding:4px;
+  margin-right: 10px;
+}
+.design_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2563eb;
+  color: white;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 500;
+}
+.admin_details {
+   display: flex;
+  /*flex-direction: column; */
+  align-items: center;
+  line-height: 1.2;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.admin_details_text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.admin_name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.admin_role {
+  font-size: 13px;
+  color: grey;
 }
