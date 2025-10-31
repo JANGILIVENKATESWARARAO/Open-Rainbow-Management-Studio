@@ -1,0 +1,65 @@
+<!-- <div class="dropdown">
+  <button
+    class="dropbtn"
+    id="selected-year"
+    (click)="toggleDropdown()"
+    [class.active-btn]="isOpen"
+    [ngStyle]="{
+      color: textColor,
+      backgroundColor: isOpen ? activeBackgroundColor : backgroundColor,
+      borderColor: borderColor,
+      width: dropdownWidth
+    }"
+  >
+    {{ selectedYear }}
+  </button>
+
+  <div class="dropdown-content" [class.show]="isOpen" [ngStyle]="{ width: dropdownWidth }">
+    <a
+      href="#"
+      *ngFor="let value of dropdownValues"
+      [class.active]="value === selectedYear"
+      (click)="selectYear(value, $event)"
+      [ngStyle]="{
+        color: value === selectedYear ? activeTextColor : textColor
+      }"
+    >
+      {{ value }}
+    </a>
+  </div>
+</div> -->
+
+<div class="dropdown">
+<button
+  class="dropbtn"
+  id="selected-year"
+  (click)="toggleDropdown()"
+  [class.active-btn]="isOpen"
+  [ngStyle]="{
+    color: isOpen ? activeTextColor : textColor,
+    backgroundColor: isOpen ? activeBackgroundColor : backgroundColor,
+    borderColor: borderColor,
+    width: dropdownWidth
+  }"
+>
+  {{ selectedYear }}
+</button>
+
+
+
+  <div class="dropdown-content" [class.show]="isOpen" [ngStyle]="{ width: dropdownWidth }">
+<a
+  href="#"
+  *ngFor="let value of dropdownValues"
+  [class.active]="value === selectedYear"
+  (click)="selectYear(value, $event)"
+  [ngStyle]="{
+    color: value === selectedYear ? activeTextColor : textColor,
+    backgroundColor: value === selectedYear ? activeBackgroundColor : 'transparent'
+  }"
+>
+  {{ value }}
+</a>
+
+  </div>
+</div>
