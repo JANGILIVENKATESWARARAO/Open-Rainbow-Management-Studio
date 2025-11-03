@@ -3,7 +3,8 @@ import { Component, HostListener, Input, OnInit, ViewChild, ElementRef, Renderer
 @Component({
   selector: 'app-value-dropdown',
   templateUrl: './value-dropdown.component.html',
-  styleUrls: ['./value-dropdown.component.css']
+  styleUrls: ['./value-dropdown.component.css'],
+  standalone: true
 })
 export class ValueDropdownComponent implements OnInit {
   @Input() dropdownValues: (string | number)[] = [2024, 2023, 2022, 2021];
