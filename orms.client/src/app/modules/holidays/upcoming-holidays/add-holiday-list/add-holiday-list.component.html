@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="header">
+    <p class="main">Add-Holiday</p>
+    <app-button
+      [text]="'Add Announcement'"
+      [bgColor]="'#c1eb92'"
+      [color]="'#323f24'"
+      [hoverBGColor]="'#d4eeb6'"
+      [hoverColor]="'#0e0d0d'"
+      [borderRadius]="10"
+      [borderColor]="'#4c5740'"
+      [showBorder]="true"
+      (click)="toggleForm()"
+    ></app-button>
+  </div>
+
+  <div class="blank-space" [class.visible]="showForm">
+    <app-text-box [label]="'Title'" [placeHolder]="'Enter the title '" [isRequired]="true"></app-text-box>
+    <div class="inside">
+         <app-calendar
+        [label]="'Date'"
+        (dateSelected)="dateSelected($event)"
+        (calendarClosed)="calendarClosed($event)"
+      ></app-calendar>
+      <app-drop-down
+        [label]="'Type'"
+        [placeHolder]="'Select seviarity type'"
+        [isRequired]="true"
+        [options]="[
+          { value: 1, name: 'high' },
+          { value: 2, name: 'medium' },
+          { value: 3, name: 'low' }
+        ]"
+      ></app-drop-down>
+   
+    </div>
+
+    <app-text-area
+      [label]="'Description'"
+      [Placeholder]="'Enter description '"
+      [isRequired]="true"
+      [showBorder]="true"
+    ></app-text-area>
+
+    <div class="footer">
+      <app-button
+        [text]="'Clear'"
+        [color]="'red'"
+        [hoverBGColor]="'#f2b6b6'"
+        [hoverColor]="'Black'"
+        [borderRadius]="8"
+        [borderColor]="'red'"
+        [showBorder]="true"
+      ></app-button>
+      <app-button
+        [text]="'Save'"
+        [bgColor]="'green'"
+        [color]="'white'"
+        [hoverBGColor]="'#519c51'"
+        [hoverColor]="'white'"
+        [borderRadius]="8"
+        [showBorder]="false"
+      ></app-button>
+    </div>
+  </div>
+</div>
+
