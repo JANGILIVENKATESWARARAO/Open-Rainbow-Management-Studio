@@ -9,24 +9,17 @@ const meta: Meta<ValueDropdownComponent> = {
     // layout: 'centered',
   },
   args: {
-    dropdownValues: [2025, 2024, 2023, 2022],
-    // defaultSelected: 2024,
-    placeholderText: 'Select Year',
+    dropdownValues: [2024, 2023, 2022, 2021],
+    placeholderText: '2024',
     textColor: '#111',
     activeTextColor: '#4076ff',
     backgroundColor: 'white',
     activeBackgroundColor: '#ecf2fd',
     borderColor: 'lightgray',
-    dropdownWidth: '140px',
   },
 };
 
 export default meta;
 type Story = StoryObj<ValueDropdownComponent>;
 
-export const ValueDropdown: Story = {
-  args: {
-    dropdownValues: [2030, 2029, 2028, 2027],
-    // defaultSelected: 2029,
-  },
-};
+export const ValueDropdown: Story = {};
