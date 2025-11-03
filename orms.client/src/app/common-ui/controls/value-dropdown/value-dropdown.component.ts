@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, HostListener, Input, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-value-dropdown',
   templateUrl: './value-dropdown.component.html',
   styleUrls: ['./value-dropdown.component.css'],
-  standalone: true
+  standalone: true,
+  imports:[CommonModule]
 })
 export class ValueDropdownComponent implements OnInit {
   @Input() dropdownValues: (string | number)[] = [2024, 2023, 2022, 2021];
