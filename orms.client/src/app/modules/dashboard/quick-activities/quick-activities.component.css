@@ -1,4 +1,4 @@
-.quick-announcement-container{
+.quick-activity-container{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 50vh;
   border: 1px solid rgb(208, 208, 208);
@@ -6,56 +6,47 @@
   height: 100%;
   background-color: white;
   border-radius: 25px;
-  padding: 20px;
+  padding: 14px;
 }
-.quick-announcement-header{
+.quick-activity-header{
     display: flex;
     justify-content: space-between;
+    padding: 12px;
 }
-.Announcements-title{
+.Activities-title{
     color: #000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 23px;
     font-weight: 600;
-    margin-bottom: 20px;
 }
 .button-row{
     display: flex;
     gap:18px;
     color: rgb(0, 119, 255);
-    margin-bottom: 20px;
 }
-.addNew-btn{
-    border: 1px solid rgb(219, 219, 219);
-    padding:2px 4px;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.addNew-btn:hover{
-    background-color: rgba(165, 192, 255, 0.167);
-    border:1px solid rgba(165, 192, 255, 0.167);
-}
-.announcements-list{
+.activities-list{
     display: flex;
     gap:10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: large;
-    padding:10px 12px;
+    padding:12px 14px;
     border-radius: 6px;
     margin: 5px;
     align-items: center;
 }
-.announcements-list:hover{
+.activities-list:hover{
     background-color: rgba(165, 192, 255, 0.167);
 }
 .name{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #000;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
 }
 .date{
     color: grey;
     font-size: 10px;
     font-weight: 400;
+    margin-top: 4px;
+
 }
