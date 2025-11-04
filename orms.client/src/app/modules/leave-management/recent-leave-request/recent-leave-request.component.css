@@ -74,16 +74,15 @@ width: 57%;
 
 .desc {
   color: #6b7280;
-  font-size: 14px;
-  cursor: auto;
-  display: inline-block; 
+    display: block;
+  width: 100%;
   position: relative;
+  font-size: 14px;
 }
 
 .desc.truncated {
   cursor: pointer;
 }
-
 
 .right {
   text-align: right;
@@ -112,13 +111,13 @@ width: 57%;
 }
 
 
-::ng-deep app-chip div {
+/* ::ng-deep app-chip div {
   height: 15px !important;
   padding: 2px 9px !important;
   font-size: 10px !important;
   line-height: normal;
   border-style: none;
-  }
+  } */
 
 
 

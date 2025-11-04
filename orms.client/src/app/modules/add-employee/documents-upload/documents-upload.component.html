@@ -10,10 +10,11 @@
             </svg>
         </div>
         <p class="m-0">Documents Upload</p>
+        <!-- grid-container grid grid-cols-1 md:grid-cols-2 gap-5 p-5 -->
     </div>
-    <div class="grid-container grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
+    <div class=" grid grid-cols-1 md:grid-cols-3 gap-5 p-5">
         <app-file-upload [label]="'Employee Photo'" [buttonLabel]="'Upload File'"></app-file-upload>
-        <div></div>
+        <!-- <div></div> -->
         <app-text-box [label]="'Employee PAN Number'" [placeHolder]="'Enter your PAN number'" [isRequired]="true"></app-text-box>
         <app-file-upload [label]="'Employee PAN'" [buttonLabel]="'Choose File'"></app-file-upload>
         <app-text-box [label]="'Employee Aadhar Number'" [placeHolder]="'Enter your Aadhar number'" [isRequired]="true"></app-text-box>

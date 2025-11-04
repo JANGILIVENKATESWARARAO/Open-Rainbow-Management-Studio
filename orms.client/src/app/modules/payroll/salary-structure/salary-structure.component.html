@@ -1,0 +1,55 @@
+
+<div class="salary-container">
+  <div class="tab">
+    <button class="tab active">Salary Structure</button>
+    <button class="tab">Payslips</button>
+    <button class="tab">Annual Earnings</button>
+  </div>
+
+  <div class="summary">
+    <div class="summary-details">
+      <h3>Monthly CTC: ₹65,910.00</h3>
+      <p>Yearly CTC: ₹7,90,920.00</p>
+
+      <div class="salary-summary">
+          <app-notice-banner [heading]="'Earnings'" [content]="'₹59,914.00'" [headingColor]="'grey'" [contentColor]="'#374151'" [contentInNextLine]="true" [bannerColor]="'white'" [highlighterColor]="'green'" [showIcon]="true" [iconColor]="'#1E3A8A'" [showBorder]="false"></app-notice-banner>
+
+        
+          <app-notice-banner [heading]="'Reimbursements'" [content]="'₹2,700.00'" [headingColor]="'grey'" [contentColor]="'black'" [contentInNextLine]="true" [bannerColor]="'white'" [highlighterColor]="'blue'" [showIcon]="true" [iconColor]="'#1E3A8A'" [showBorder]="false"></app-notice-banner>
+        
+        
+         <app-notice-banner [heading]="'Deductions'" [content]="'₹3,296.00'" [headingColor]="'grey'" [contentColor]="'black'" [contentInNextLine]="true" [bannerColor]="'white'" [highlighterColor]="'yellow'" [showIcon]="true" [iconColor]="'#1E3A8A'" [showBorder]="false"></app-notice-banner>
+        
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h4>Earnings</h4>
+    <button class="row">Basic <span >₹32,955.00</span></button>
+    <button class="row">House Rent Allowance <span >₹32,955.00</span></button>
+    <button class="row">Conveyance Allowance <span >₹16,478.00</span></button>
+    <button class="row">Transport Allowance <span >₹500.00</span></button>
+    <button class="row">Fixed Allowance <span >₹9.481.00</span></button>
+    </div>
+  
+
+  <div>
+    <h4>Reimbursements</h4>
+    
+    <button class="row">Fuel Reimbursement <span>₹500.00</span></button>
+    </div>
+  
+
+  <div class="flex-between">
+    <h4>Flexible Benefit Plan Components</h4>
+    <button class="link-btn">View Declaration</button>
+  </div>
+
+  <div>
+    
+    <button class="row">Leave Travel Allowance <span>₹1,000.00</span></button>
+    <button class="row">Telephone Reimbursement <span>₹1,200.00</span></button>
+    </div>
+  
+</div>

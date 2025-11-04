@@ -1,0 +1,41 @@
+.profile-container {
+  display: flex;
+  padding-top: 30px;
+
+ width: 20%;
+ height: auto;
+}
+
+.profile-sidebar {
+  width: 260px;
+  text-align: center;
+  
+  
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #e6ebf5;
+  margin: 0 auto 15px;
+}
+
+.profile-sidebar h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.designation {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.details p {
+  font-size: 13px;
+  color: #444;
+  text-align: left;
+  margin: 20px 30px;
+  
+}

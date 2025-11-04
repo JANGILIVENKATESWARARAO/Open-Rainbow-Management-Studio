@@ -2,7 +2,8 @@
     backgroundColor: isHovered ? hoverBGColor : bgColor,
     color: isHovered ? hoverColor : color,
     borderRadius: borderRadius+'px',
-    borderColor: borderColor
+    borderColor: borderColor,
+    width: isexpand ? '100%' : 'auto'
   }" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
   {{ text }}
 </button>

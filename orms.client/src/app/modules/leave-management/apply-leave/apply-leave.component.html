@@ -1,17 +1,32 @@
 <div class="container">
+    <div class="header">
     <h2><b>Apply for Leave</b></h2><br>
+    <div class="button-wrapper" [class.disabled]="showForm">
+    <app-button [text]="'Apply Leave'" [bgColor]="'white'" [color]="'black'" [hoverBGColor]="'#d3d3d3'" [hoverColor]="'black'" [borderColor]="'black'" [showBorder]="true" [disable]="showForm" (click)="showLeaveForm()"></app-button></div>
+
+    </div>
     <p>Select Leave type and provide details for your leave request</p><br>
     <app-notice-banner [heading]="'Important: '" [content]="'Please ensure you apply for in advance. Some leave types require advance notice or approval.'" [headingColor]="'#637eca'" [contentColor]="'#637eca'" [contentInNextLine]="false" [bannerColor]="'#DBEAFE'" [highlighterColor]="'#1E3A8A'" [showIcon]="true" [iconColor]="'#1E3A8A'" [showBorder]="false"></app-notice-banner><br>
+    <div class="blank-space" [class.visible]="showForm">
     <div class="grid">
-    <app-calendar [label]="'Start Date'" 
-    ></app-calendar>
+    <app-calendar [label]="'Start Date'" ></app-calendar>
     <!-- (calendarClosed)="calendarClosed($event)"
     (dateSelected)="dateSelected($event)"  -->
-    <app-calendar [label]="'End Date'" 
-    ></app-calendar>
+    <app-calendar [label]="'End Date'" ></app-calendar>
     <!-- (dateSelected)="dateSelected($event)" (calendarClosed)="calendarClosed($event)" -->
     </div>
+    <app-drop-down [label]="'Leave Type'" [placeHolder]="'Select Leave'" [options]="[{value: 1, name: 'Casual Leave'}, {value: 2, name: 'Earned Leave'}, {value: 3, name: 'Maternity Leave'}, {value: 4, name: 'Paternity Leave'}, {value: 4, name: 'Comp-Off'}, {value: 5, name: 'Unpaid Leave'}]">
+    </app-drop-down><br>
+    <!-- (selectedChange)="selectedChange($event)" -->
     <app-text-area [label]="'Reason for Leave'" [Placeholder]="'Please provide a detailed reason for your leave request'"></app-text-area><br>
+    <div class="close">
+    <app-button [text]="'Close'" [bgColor]="'white'" [color]="'black'" [hoverBGColor]="'#d3d3d3'" [hoverColor]="'black'" [borderColor]="'black'" (click)="CloseApplication()"></app-button>
+    <div>
     <app-button [text]="'Clear Form'" [color]="'black'" [hoverBGColor]="'white'" [borderRadius]="10" [borderColor]="'light grey'"></app-button>
-    <app-button [text]="'Submit Application'" [bgColor]="'#aca1f2'" [color]="'white'" [hoverBGColor]="'#aca1f2'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'light grey'" [showBorder]="false"></app-button>
+    <app-button [text]="'Submit Application'" [bgColor]="'#aca1f2'" [color]="'white'" [hoverBGColor]="'#aca1f2'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'light grey'" [showBorder]="false" ></app-button>
+    </div>
+    </div>
+    
 </div>
+</div>
+

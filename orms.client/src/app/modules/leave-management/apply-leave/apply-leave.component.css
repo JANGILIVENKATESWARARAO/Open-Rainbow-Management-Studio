@@ -2,11 +2,69 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    
 }
+
 .container{
     width: 100%;
     border: 2px;
     padding: 20px;
     box-shadow: 0 8px 32px 0 rgba(35,32,67,0.13);
     border-radius: 10px;
+    
 }
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.blank-space {
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0 20px;
+  align-items: flex-start;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.blank-space.visible {
+  padding: 20px;
+  max-height: 800px;
+  opacity: 1;
+}
+.button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  cursor: not-allowed;
+  border-radius: 8px;
+}
+
+
+.button-wrapper.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.close{
+    justify-content: space-between;
+    display: flex;
+    
+}
+
+.close div {
+  display: flex;
+  gap: 10px; 
+  align-items: center;
+}
+

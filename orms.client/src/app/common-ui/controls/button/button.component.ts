@@ -17,6 +17,8 @@ export class ButtonComponent {
   @Input() borderRadius: number = 8;
   @Input() borderColor: string = 'blue';
   @Input() showBorder: boolean = true;
+  @Input() disable: boolean = true;
+  @Input() isexpand: boolean = false;
 
   isHovered: boolean = false;
 }
