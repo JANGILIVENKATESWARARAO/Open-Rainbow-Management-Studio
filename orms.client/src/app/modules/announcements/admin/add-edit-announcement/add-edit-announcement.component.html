@@ -29,9 +29,9 @@
       ></app-drop-down>
       <app-calendar
         [label]="'Expires On'"
-        (dateSelected)="dateSelected($event)"
-        (calendarClosed)="calendarClosed($event)"
-      ></app-calendar>
+        ></app-calendar>
+        <!-- (dateSelected)="dateSelected($event)"
+        (calendarClosed)="calendarClosed($event)" -->
     </div>
 
     <app-text-area
@@ -74,7 +74,7 @@
           <app-chip
             [text]="announcement.priority"
             [color]="
-              announcement.priority === 'hihg'
+              announcement.priority === 'high'
                 ? '#b38742'
  : announcement.priority === 'low' ? '#23816c': '#aa355b'"
             [activeColor]="announcement.priority === 'medium'? '#b38742': announcement.priority === 'low' ? '#23816c': '#aa355b'"
