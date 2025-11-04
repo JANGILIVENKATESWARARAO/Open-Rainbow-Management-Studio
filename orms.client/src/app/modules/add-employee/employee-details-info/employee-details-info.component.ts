@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { CommonModule,NgIf, NgClass } from '@angular/common';
+import { Component, Input, input } from '@angular/core';
+import { CommonModule, NgIf, NgClass } from '@angular/common';
 import { InnerInfoComponent } from '../employee-preview/inner-info/inner-info.component';
-import { ContactInfoComponent } from '../contact-info/contact-info.component';
-import { JobDetailsComponent } from '../job-details/job-details.component';
 import { InnerEducationComponent } from '../employee-preview/inner-education/inner-education.component';
 import { InnerWorkComponent } from '../employee-preview/inner-work/inner-work.component';
 import { InnerOtherComponent } from '../employee-preview/inner-other/inner-other.component';
 import { InnerSalaryComponent } from '../employee-preview/inner-salary/inner-salary.component';
 import { InnerInsuranceComponent } from '../employee-preview/inner-insurance/inner-insurance.component';
+import { InnerContactComponent } from '../employee-preview/inner-contact/inner-contact.component';
+import { InnerJobComponent } from '../employee-preview/inner-job/inner-job.component';
 
 
 @Component({
@@ -15,70 +15,29 @@ import { InnerInsuranceComponent } from '../employee-preview/inner-insurance/inn
   templateUrl: './employee-details-info.component.html',
   styleUrl: './employee-details-info.component.css',
   standalone: true,
-  imports: [InnerInfoComponent,ContactInfoComponent,JobDetailsComponent,InnerEducationComponent,InnerWorkComponent,InnerOtherComponent,InnerSalaryComponent,InnerInsuranceComponent,NgIf],
-  
+  imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerInsuranceComponent, NgIf],
 })
 
 export class EmployeeDetailsInfoComponent {
-  showInnerinfo: boolean = false;
-showContactInfo: boolean = false;
-showJobInfo: boolean = false;
-showEducationInfo: boolean = false;
-showWorkInfo: boolean = false;
-showOtherInfo: boolean = false;
-showSalaryInfo: boolean = false;
-showInsuranceInfo: boolean = false;
-
-innerinfo() {
-  this.showInnerinfo = !this.showInnerinfo;
-}
 
 
+autoCloseExpansion: boolean = true; 
+openDivIdList: Set<string> = new Set(); 
+openDivId: string | null = null; 
 
-contactInfo() {
-  this.showContactInfo = !this.showContactInfo;
-}
-
-
-
-jobInfo() {
-  this.showJobInfo = !this.showJobInfo;
-}
-
-
-
-educationInfo() {
-  this.showEducationInfo = !this.showEducationInfo;
-}
-
-
-
-workInfo() {
-  this.showWorkInfo = !this.showWorkInfo;
-}
-
-
-
-otherInfo() {
-  this.showOtherInfo = !this.showOtherInfo;
-}
-
-
-
-salaryInfo() {
-  this.showSalaryInfo = !this.showSalaryInfo;
-}
-
-
-
-insuranceInfo() {
-  this.showInsuranceInfo = !this.showInsuranceInfo;
+openExpansion(divId: string): void {
+  if (this.autoCloseExpansion) {
+    this.openDivId = this.openDivId === divId ? null : divId;
+  } else {
+    if (this.openDivIdList.has(divId)) {
+      this.openDivIdList.delete(divId);
+    } else {
+      this.openDivIdList.add(divId);
+    }
+  }
 }
 
 
 
 
 }
-
-
-
