@@ -1,0 +1,19 @@
+.container{
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 8px 32px 0 rgba(35,32,67,0.13);
+  padding: 20px;
+}
+.button1{
+  color: blue;
+}
+.button2{
+  border-bottom: 1px solid blue;
+}
+.button3{
+  padding-left: 20px;
+}
+.main{
+  display: flex;
+}
+
