@@ -14,9 +14,9 @@ export class ValueDropdownComponent implements OnInit {
   @Input() placeholderText: string = '2024';
   @Input() textColor: string = '#111';
   @Input() backgroundColor: string = 'white';
-  @Input() activeBackgroundColor: string = '#ecf2fd';
+  @Input() activeBackgroundColor: string = '#eaf0ff';
   @Input() borderColor: string = 'lightgray';
-  @Input() activeTextColor: string = '#4076ff';
+  @Input() activeTextColor: string = '#316aff';
 
   @ViewChild('selectedYearRef', { static: true }) selectedYearRef!: ElementRef<HTMLButtonElement>;
   @ViewChild('ripple', { static: true }) rippleRef!: ElementRef<HTMLSpanElement>;
@@ -27,7 +27,7 @@ export class ValueDropdownComponent implements OnInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit() {
-    this.selectedYear = this.defaultSelected ?? this.placeholderText;
+    this.selectedYear = Number(this.defaultSelected ?? this.placeholderText);
   }
 
   toggleDropdown(event: MouseEvent) {
@@ -48,7 +48,7 @@ export class ValueDropdownComponent implements OnInit {
   }
 
   selectYear(value: string | number, event: Event) {
-    event.preventDefault();
+    // event.preventDefault();
     this.selectedYear = value;
     this.isOpen = false;
   }
