@@ -30,3 +30,8 @@
   flex: 1 1 45%;
   box-sizing: border-box;
 } */
+.grid-container{
+  display: grid;
+  grid-template-columns: auto;
+  margin-top: 20px;
+}
