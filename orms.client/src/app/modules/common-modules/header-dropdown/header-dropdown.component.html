@@ -1,0 +1,14 @@
+
+<div class="dashboard-container">
+  <div 
+    class="admin-header-wrapper"
+    (click)="toggleDropdown()" 
+    [ngClass]="{'admin-header--active': showDropdown}">
+    <app-admin-header></app-admin-header>
+  </div>
+  <div *ngIf="showDropdown" class="admin-dropdown">
+    <div class="dropdown-item">Edit Profile</div>
+    <div class="dropdown-item">Logout</div>
+  </div>
+</div>
+
