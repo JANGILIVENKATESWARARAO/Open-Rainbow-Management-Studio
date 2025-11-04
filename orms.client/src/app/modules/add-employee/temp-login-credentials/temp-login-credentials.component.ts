@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { PasswordComponent } from '../../../common-ui/controls/password/password.component';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
 import { CommonModule } from '@angular/common';
+import { NoticeBannerComponent } from '../../../common-ui/feature-components/notice-banner/notice-banner';
+import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.component';
 
 
 
@@ -10,10 +12,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-temp-login-credentials',
   templateUrl: './temp-login-credentials.component.html',
   styleUrl: './temp-login-credentials.component.css',
-   imports: [PasswordComponent, ButtonComponent,CommonModule],
-  standalone:true
-   imports: [PasswordComponent, ButtonComponent,NoticeBannerComponent,TextBoxComponent],
-   standalone:true
+  standalone:true,
+   imports: [PasswordComponent, ButtonComponent,NoticeBannerComponent,TextBoxComponent,CommonModule]
 })
 export class TempLoginCredentialsComponent {
   
