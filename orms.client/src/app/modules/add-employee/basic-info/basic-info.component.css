@@ -31,9 +31,9 @@
 .grid {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr; 
   grid-template-rows: 20% 20% 20%;
-  gap: 32px;
+  gap: 40px;
 }
 
 @media (max-width: 768px) {
