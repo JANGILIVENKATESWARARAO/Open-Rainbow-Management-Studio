@@ -12,11 +12,18 @@ const meta: Meta<SearchBarComponent> = {
     showBorder: { control: 'boolean' },
     borderColor: { control: 'color' },
     placeholderText: { control: 'text' },
+    iconPosition: {
+      control: 'select',
+      options: ['left', 'right'],
+    },
+    showIcon: { control: 'boolean' }, 
   },
   args: {
     placeholderText: 'Search employees by name, email, position, or department...',
     showBorder: true,
-    borderColor: '#2563eb', 
+    borderColor: '#2563eb',
+    iconPosition: 'left',
+    showIcon: true, 
   },
 };
 

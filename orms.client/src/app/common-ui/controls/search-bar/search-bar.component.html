@@ -4,8 +4,9 @@
       class="search-box"
       [class.show-border]="showBorder"
       [style.--border-color]="borderColor"
+      [class.icon-right]="iconPosition === 'right'"
     >
-      <span class="search-icon">🔍</span>
+      <span *ngIf="showIcon" class="search-icon" [class.icon-left-margin]="iconPosition === 'left'" [class.icon-right-margin]="iconPosition === 'right'">🔍</span>
       <input type="text" [placeholder]="placeholderText" />
     </div>
   </div>
