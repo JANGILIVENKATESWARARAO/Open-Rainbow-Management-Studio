@@ -5,7 +5,7 @@ import { LoginPageComponent } from '../../../app/modules/login-page/login-page/l
 const meta: Meta<LoginPageComponent> = {
   title: 'Modules/LoginPage/LoginPage',
   component: LoginPageComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

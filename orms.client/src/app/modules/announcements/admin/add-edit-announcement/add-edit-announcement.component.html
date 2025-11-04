@@ -1,69 +1,51 @@
 <div class="container">
   <div class="header">
     <p class="main">Announcement</p>
-    <app-button
-      [text]="'Add Announcement'"
-      [bgColor]="'#c1eb92'"
-      [color]="'#323f24'"
-      [hoverBGColor]="'#d4eeb6'"
-      [hoverColor]="'#0e0d0d'"
-      [borderRadius]="10"
-      [borderColor]="'#4c5740'"
-      [showBorder]="true"
-      (click)="toggleForm()"
-    ></app-button>
+    <app-button [text]="'Add Announcement'" [bgColor]="'#c1eb92'" [color]="'#323f24'" [hoverBGColor]="'#d4eeb6'"
+      [hoverColor]="'#0e0d0d'" [borderRadius]="10" [borderColor]="'#4c5740'" [showBorder]="true"
+      (click)="toggleForm()"></app-button>
   </div>
-
+  <hr class="custom-line">
   <div class="blank-space" [class.visible]="showForm">
-    <app-text-box [label]="'Title'" [placeHolder]="'Enter the title '" [isRequired]="true"></app-text-box>
-    <div class="inside">
-      <app-drop-down
-        [label]="'Priority'"
-        [placeHolder]="'Select seviarity type'"
-        [isRequired]="true"
-        [options]="[
-          { value: 1, name: 'high' },
-          { value: 2, name: 'medium' },
-          { value: 3, name: 'low' }
-        ]"
-      ></app-drop-down>
-      <app-calendar
-        [label]="'Expires On'"
-        ></app-calendar>
+    <div class="form-grid">
+      <div class="form-item title-field">
+        <app-text-box [label]="'Title'" [placeHolder]="'Enter the title'" [isRequired]="true">
+        </app-text-box>
+      </div>
+
+
+      <div class="form-item">
+        <app-drop-down [label]="'Priority'" [placeHolder]="'Select severity type'" [isRequired]="true" [options]="[
+            { value: 1, name: 'high' },
+            { value: 2, name: 'medium' },
+            { value: 3, name: 'low' }
+          ]"></app-drop-down>
+      </div>
+
+
+      <div class="form-item">
+        <app-calendar [label]="'Expires On'"></app-calendar>
         <!-- (dateSelected)="dateSelected($event)"
-        (calendarClosed)="calendarClosed($event)" -->
-    </div>
+          (calendarClosed)="calendarClosed($event)" -->
+      </div>
 
-    <app-text-area
-      [label]="'Description'"
-      [Placeholder]="'Enter description '"
-      [isRequired]="true"
-      [showBorder]="true"
-    ></app-text-area>
 
-    <div class="footer">
-      <app-button
-        [text]="'Clear'"
-        [color]="'red'"
-        [hoverBGColor]="'#f2b6b6'"
-        [hoverColor]="'Black'"
-        [borderRadius]="8"
-        [borderColor]="'red'"
-        [showBorder]="true"
-      ></app-button>
-      <app-button
-        [text]="'Save'"
-        [bgColor]="'green'"
-        [color]="'white'"
-        [hoverBGColor]="'#519c51'"
-        [hoverColor]="'white'"
-        [borderRadius]="8"
-        [showBorder]="false"
-      ></app-button>
+      <div class="form-item desc-field">
+        <app-text-area [label]="'Description'" [Placeholder]="'Enter description'" [isRequired]="true"
+          [showBorder]="true"></app-text-area>
+      </div>
+
+
+      <div class="form-footer">
+        <app-button [text]="'Clear'" [color]="'red'" [hoverBGColor]="'#f2b6b6'" [hoverColor]="'Black'"
+          [borderRadius]="8" [borderColor]="'red'" [showBorder]="true"></app-button>
+        <app-button [text]="'Save'" [bgColor]="'green'" [color]="'white'" [hoverBGColor]="'#519c51'"
+          [hoverColor]="'white'" [borderRadius]="8" [showBorder]="false"></app-button>
+      </div>
     </div>
   </div>
 
- 
+
   <div class="blank-space-two">
     <h3 class="card-title">Recent Announcements</h3>
 
@@ -71,9 +53,7 @@
       <div class="announcement-item">
         <div class="title-row">
           <h4 class="title">{{ announcement.title }}</h4>
-          <app-chip
-            [text]="announcement.priority"
-            [color]="
+          <app-chip [text]="announcement.priority" [color]="
               announcement.priority === 'high'
                 ? '#b38742'
  : announcement.priority === 'low' ? '#23816c': '#aa355b'"
@@ -91,8 +71,10 @@
             <span class="expire-date">{{ formatDate(announcement.expireDate) }}</span>
           </div>
           <div class="footer">
-            <app-button [text]="'Edit'" [bgColor]="'#3965e9'" [color]="'white'" [hoverBGColor]="'#3965e9'" [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
-            <app-button [text]="'Delete'" [bgColor]="'red'" [color]="'white'" [hoverBGColor]="'red'" [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
+            <app-button [text]="'Edit'" [bgColor]="'#3965e9'" [color]="'white'" [hoverBGColor]="'#3965e9'"
+              [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
+            <app-button [text]="'Delete'" [bgColor]="'red'" [color]="'white'" [hoverBGColor]="'red'"
+              [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
           </div>
         </div>
       </div>

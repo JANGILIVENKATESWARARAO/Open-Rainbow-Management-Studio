@@ -29,6 +29,7 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   @Input() isRequired: boolean = false;
   @Input() options: DropDown[] = [];
   @Output() selectedChange = new EventEmitter<any>();
+  @Input() draggable: boolean = true;
 
   selectedValue: string | null = null;
   isOpenUp: boolean = false;
@@ -40,6 +41,7 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   private mouseUpListener?: (event: MouseEvent) => void;
   private clickTimeout: any = null;
   private clickCount: number = 0;
+  
 
   constructor(private eRef: ElementRef, private renderer: Renderer2) {}
 
@@ -170,50 +172,48 @@ const buffer = handleHeight + 8;
   }
 
 ngAfterViewInit() {
-  const list = this.eRef.nativeElement.querySelector(
-    '.custom-dropdown-list'
-  ) as HTMLElement;
+  if (!this.draggable) return; // don't set up dragging if not enabled
 
-  const handle = this.eRef.nativeElement.querySelector(
-    '.resize-hr'
-  ) as HTMLElement;
+  const list = this.eRef.nativeElement.querySelector('.custom-dropdown-list') as HTMLElement;
+  const handle = this.eRef.nativeElement.querySelector('.resize-hr') as HTMLElement;
 
-  if (!list || !handle) return;
+  if (!list || !handle) return;
 
-  handle.addEventListener('mousedown', (event: MouseEvent) => {
-    this.startY = event.clientY;
-    this.startHeight = list.offsetHeight;
-    this.resizing = true;
-    handle.classList.add('dragging'); // 👈 shrink handle when drag starts
-    document.body.style.cursor = 'ns-resize';
-    document.body.style.userSelect = 'none';
-    event.preventDefault();
-    event.stopPropagation();
-  });
+  handle.addEventListener('mousedown', (event: MouseEvent) => {
+    this.startY = event.clientY;
+    this.startHeight = list.offsetHeight;
+    this.resizing = true;
+    handle.classList.add('dragging'); // shrink handle when drag starts
+    document.body.style.cursor = 'ns-resize';
+    document.body.style.userSelect = 'none';
+    event.preventDefault();
+    event.stopPropagation();
+  });
 
-  document.addEventListener('mousemove', (event: MouseEvent) => {
-    if (!this.resizing) return;
-    const diff = event.clientY - this.startY;
-    let newHeight = this.startHeight + diff;
+  document.addEventListener('mousemove', (event: MouseEvent) => {
+    if (!this.resizing) return;
 
-    const totalHeight = this.options.length * 38;
-    newHeight = Math.min(newHeight, totalHeight +10);
-    newHeight = Math.max(newHeight, 80);
+    const diff = event.clientY - this.startY;
+    let newHeight = this.startHeight + diff;
 
-    list.style.height = `${newHeight}px`;
-    // list.style.paddingBottom = '10px';
-    list.style.overflowY = newHeight >= totalHeight ? 'hidden' : 'auto';
-  });
+    const totalHeight = this.options.length * 38;
+    newHeight = Math.min(newHeight, totalHeight + 10);
+    newHeight = Math.max(newHeight, 80);
 
-  document.addEventListener('mouseup', () => {
-    if (this.resizing) {
-      this.resizing = false;
-      handle.classList.remove('dragging'); // 👈 back to normal width
-      document.body.style.cursor = 'default';
-      document.body.style.userSelect = '';
-    }
-  });
+    list.style.height = `${newHeight}px`;
+    list.style.overflowY = newHeight >= totalHeight ? 'hidden' : 'auto';
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (this.resizing) {
+      this.resizing = false;
+      handle.classList.remove('dragging'); // back to normal width
+      document.body.style.cursor = 'default';
+      document.body.style.userSelect = '';
+    }
+  });
 }
+
 
 
 
@@ -367,6 +367,8 @@ private handleMouseMove(event: MouseEvent) {
     }
     document.removeEventListener('contextmenu', this.preventContextMenu);
   }
+
+  
 }
 
 

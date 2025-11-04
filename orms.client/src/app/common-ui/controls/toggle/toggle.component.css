@@ -85,7 +85,7 @@
 
 
 
- .toggle-container {
+ /* .toggle-container {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -169,4 +169,120 @@
 }
 .toggle-input:checked + .toggle-label:hover::after {
   transform: translateY(-50%) translateX(var(--knob-translate)) scale(1.10);
+} */
+
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.switch-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.upload-label {
+  font-size: 14px;
+  color: var(--label-color, #333);
+  cursor: pointer;
+}
+
+.toggle-container.label-left {
+  flex-direction: row-reverse;
+}
+
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  background-color: #ccc;
+  border-radius: var(--toggle-height);
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+}
+
+.toggle-label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: var(--knob-size);
+  height: var(--knob-size);
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.toggle-input:checked + .toggle-label {
+  background-color: var(--toggle-color, #4caf50);
+}
+
+.toggle-input:checked + .toggle-label::after {
+  transform: translateY(-50%) translateX(var(--knob-translate));
+}
+
+.checkbox-input {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #999;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.checkbox-input:hover {
+  border-color:  gray;
+  /* box-shadow: 0 0 4px rgba(76, 175, 80, 0.4); */
+}
+
+.checkbox-input:checked {
+  background-color: var(--checkbox-color, #4caf50);
+  border-color: var(--checkbox-color, #4caf50);
+}
+.checkbox-input:checked:hover {
+  /* background-color: var(--checkbox-color, #000000); */
+  border-color: gray;
+}
+
+
+.checkbox-input:checked::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 6px;
+  height: 12px;
+  border-right: 3px solid var(--tick-color, #fff);
+  border-bottom: 3px solid var(--tick-color, #fff);
+  transform: rotate(45deg);
+}
+
+.checkbox-input:active {
+  transform: scale(0.95);
+}
+
+
+.checkbox-input:checked::after {
+  top: 0px;    
+  bottom: 2px;           
+  left: 6px;            
+  width: 8px;             
+  height: 18px;           
+  border-right: 3.5px solid var(--tick-color, #fff); 
+  border-bottom: 3.5px solid var(--tick-color, #fff);
+  transform: rotate(45deg);
+}
+
+

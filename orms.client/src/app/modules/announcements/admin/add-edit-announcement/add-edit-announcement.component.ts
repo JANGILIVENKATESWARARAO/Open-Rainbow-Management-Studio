@@ -24,7 +24,7 @@ import { Announcement } from '../../../../common-ui/assests/view-models/common-v
   ],
 })
 export class AddEditAnnouncementComponent {
-  showForm = false; 
+  showForm = false;
 
   @Input() announcements: Announcement[] = [
     {
@@ -48,7 +48,8 @@ export class AddEditAnnouncementComponent {
     {
       title: 'Holiday Schedule Update1',
       priority: 'high' as const,
-      description: 'Please note that the office will be closed from December 24th to January 2nd. Emergency contacts will be available during this period.',
+      description:
+        'Please note that the office will be closed from December 24th to January 2nd. Emergency contacts will be available during this period.',
       postedDate: '29/12/2024',
       postedBy: 'HR Department',
       expireDate: '24/12/2024',
@@ -59,16 +60,16 @@ export class AddEditAnnouncementComponent {
     this.showForm = !this.showForm;
   }
 
-//   get highPriorityAnnouncements(): Announcement[] {
-//   return this.announcements
-//     .filter(a => a.priority === 'high')
-//     .sort((a, b) => this.parseDate(b.postedDate) - this.parseDate(a.postedDate));
-// }
-
+  //   get highPriorityAnnouncements(): Announcement[] {
+  //   return this.announcements
+  //     .filter(a => a.priority === 'high')
+  //     .sort((a, b) => this.parseDate(b.postedDate) - this.parseDate(a.postedDate));
+  // }
 
   get otherAnnouncements(): Announcement[] {
-    return this.announcements
-      .sort((a, b) => this.parseDate(b.postedDate) - this.parseDate(a.postedDate));
+    return this.announcements.sort(
+      (a, b) => this.parseDate(b.postedDate) - this.parseDate(a.postedDate)
+    );
   }
 
   formatDate(value: string): string {
@@ -76,7 +77,11 @@ export class AddEditAnnouncementComponent {
     if (parts.length === 3) {
       const [day, month, year] = parts.map(Number);
       const date = new Date(year, month - 1, day);
-      const options: Intl.DateTimeFormatOptions = { day: '2-digit', month: 'short', year: 'numeric' };
+      const options: Intl.DateTimeFormatOptions = {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      };
       return date.toLocaleDateString('en-GB', options).replace(/ /g, '-');
     }
     return value;
@@ -89,5 +94,24 @@ export class AddEditAnnouncementComponent {
       return new Date(year, month - 1, day).getTime();
     }
     return 0;
+  }
+
+  isTruncated(text: string, limit: number): boolean {
+    return !!text && text.length > limit;
+  }
+
+  leaveDescription(text: string, limit: number): string {
+    if (!text) return '';
+    if (text.length <= limit) return text;
+
+    let trimmed = text.substring(0, limit);
+
+    if (text.charAt(limit) !== ' ' && trimmed.lastIndexOf(' ') !== -1) {
+      trimmed = trimmed.substring(0, trimmed.lastIndexOf(' '));
+    }
+
+    trimmed = trimmed.trim();
+
+    return trimmed + '...';
   }
 }

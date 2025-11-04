@@ -1,12 +1,9 @@
-
-
-
 .section-btn {
   width: 100%;
   text-align: left;
   padding: 10px 15px;
   margin-bottom: 8px;
-  background: #e9ebef;
+  background: #eef3fe;
   border: none;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
@@ -16,15 +13,27 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .profile-section {
   width: 100%;
   background: #f5f6f8;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
 .section-btn:hover {
-  background: #dde2f0;
+  background: #dde8ff;
 }
+
+.section-btn.active {
+  background: #dde8ff; 
+}
+
+
+
+
+
 
 .section-content {
   background: #ffffff;
@@ -32,10 +41,10 @@
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
   margin-bottom: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
- 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.section-btn + .section-content {
+.section-btn+.section-content {
   margin-top: -8px !important;
 }
+

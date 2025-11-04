@@ -28,7 +28,7 @@
 .blank-space-two{
   width: 100%;
   height: 100%;
-  margin-top: 25px;
+  margin-top: 10px;
   background-color: white;
   border-radius: 20px;
   padding: 20px;
@@ -56,7 +56,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;            
-  margin: 20px 0 18px 0;         
+  margin: 20px 0 10px 0;         
   width: 100%;
   box-sizing: border-box;
 }
@@ -71,10 +71,10 @@
 }
 
 .custom-line {
-  border: none;                
-  border-top: 1px solid grey;
-  margin: 30px 0;              
-  opacity: 0.6;                
+  border: none !important;
+    border-top: 1px solid #c2c4c6 !important;
+    margin: 10px 0 !important;
+    opacity: 0.6 !important;              
 }
 
 .card-title {
@@ -125,7 +125,7 @@
 .custom-line {
   border: none;
   border-top: 1px solid #e2e8f0;
-  margin: 30px 0;
+  margin: 10px 0;
   opacity: 0.6;
 }
 
@@ -144,6 +144,48 @@
 .expire-date {
   color: #C0171A; 
 }
+
+
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "title title"
+    "priority expiry"
+    "desc desc"
+    "buttons buttons";
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title-field {
+  grid-area: title;
+}
+
+.form-item:nth-child(2) {
+  grid-area: priority;
+}
+
+.form-item:nth-child(3) {
+  grid-area: expiry;
+}
+
+.desc-field {
+  grid-area: desc;
+}
+
+.form-footer {
+  grid-area: buttons;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding-top: 10px;
+}
+
+
 
 
  

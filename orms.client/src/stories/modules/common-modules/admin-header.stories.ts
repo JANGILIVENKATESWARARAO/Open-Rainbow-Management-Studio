@@ -4,7 +4,7 @@ import { AdminHeaderComponent } from '../../../app/modules/common-modules/admin-
 const meta: Meta<AdminHeaderComponent> = {
   title: 'Modules/CommonModules/AdminHeader',
   component: AdminHeaderComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

@@ -16,9 +16,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-image: url('C:\Users\sasis\Downloads\image (1).png'); */
   background-size: cover;
-  background-position: center;        
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -26,7 +25,8 @@ body {
   font-size: 36px;
   margin-bottom: 20px;
   font-weight: 600;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .welcome-section p {
@@ -37,12 +37,11 @@ body {
 .login-section {
   flex: 1;
   background: white;
-  padding: 60px;
+  /* padding: 60px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
 }
 
 .login-section h2 {
@@ -51,40 +50,30 @@ body {
   font-size: 24px;
   font-weight: 640;
 }
+
 hr {
-    border: none; /* Remove default border */
-    height: 1px; /* Set height to create the line thickness */
-    background-color: #d4d4d4; /* Set the color of the line */
-    width: 58%; /* Set the width of the line */
-    margin-bottom: 15px;
+  border: none;
+  height: 1px;
+  background-color: #d4d4d4;
+  width: 58%;
+  margin-bottom: 15px;
 }
+
 .input-group {
-  /* display: flex;
-  align-items: center;
-  background-color: #f3f0ff;
-  border-radius: 10px;
-  padding: 10px 30px; */
   width: 58%;
   margin-bottom: 10px;
 }
-
-
-/* .input-group input {
-  border: none;
-  background: transparent;
-  outline: none;
-  flex:1px;
-  font-size: 16px;
-  width: 300px;
-} */
 
 .options {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  margin-bottom: 30px;
-  width: 300px;
+  margin-bottom: 20px;
+  width: 58%;
+  gap: 10px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .options a {
@@ -106,4 +95,143 @@ hr {
 
 .login-btn:hover {
   background: linear-gradient(135deg, #ff7dc9, #5d008e);
+}
+
+app-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58%;
+}
+
+@media (max-width: 1024px) {
+  .login-page {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .welcome-section {
+    padding: 40px;
+    text-align: center;
+  }
+/* 
+  .login-section {
+    padding: 40px 20px;
+  } */
+
+  .welcome-section h1 {
+    font-size: 30px;
+  }
+
+  .input-group,
+  hr,
+  app-button {
+    width: 70%;
+  }
+
+  .options {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .welcome-section {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .welcome-section h1 {
+    font-size: 26px;
+  }
+
+  .welcome-section p {
+    font-size: 14px;
+  }
+
+  .login-section {
+    padding: 30px 20px;
+  }
+
+  .login-section h2 {
+    font-size: 20px;
+  }
+
+  .input-group,
+  hr,
+  app-button,
+  .options {
+    width: 85%;
+  }
+
+  .options {
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 13px;
+    flex-wrap: nowrap;
+  }
+
+  .options a {
+    font-size: 13px;
+    text-align: right;
+  }
+
+  app-button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-section h1 {
+    font-size: 22px;
+  }
+
+  .welcome-section p {
+    font-size: 13px;
+  }
+
+  .login-section {
+    padding: 20px 15px;
+  }
+
+  .login-section h2 {
+    font-size: 18px;
+  }
+
+  .input-group,
+  hr,
+  .options,
+  app-button {
+    width: 95%;
+  }
+
+  .options {
+    font-size: 12.5px;
+    gap: 5px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  app-button {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 329px) {
+  .options {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 95%;
+    white-space: normal; 
+  }
+
+  .options a {
+    font-size: 12px;
+  }
 }

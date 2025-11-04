@@ -10,6 +10,7 @@ const meta: Meta<DropDownComponent> = {
     layout: 'fullscreen', 
   },
   args: {
+      draggable: true,
     options: [
       {
         value: 1,
@@ -66,6 +67,7 @@ const meta: Meta<DropDownComponent> = {
       //   value: 15,
       //   name: 'Other12',
       // },
+      
     ],
 
     
