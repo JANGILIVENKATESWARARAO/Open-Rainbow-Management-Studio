@@ -17,6 +17,9 @@ import { TooltipComponent } from '../tooltip.component';
 export class TooltipDirective implements OnDestroy {
   @Input('appTooltip') tooltipText = '';
   @Input() tooltipPosition: 'top' | 'bottom' | 'left' | 'right' = 'top';
+  @Input() tooltipbgColor: string = 'red';
+  @Input() tooltiptextColor: string = 'black';
+  @Input() tooltipMaxWidth: string = '' + '%';
 
   private compRef: ComponentRef<TooltipComponent> | null = null;
   private showTimeout: any = null;
@@ -54,6 +57,9 @@ export class TooltipDirective implements OnDestroy {
     const instance = this.compRef.instance;
     instance.text = this.tooltipText;
     instance.position = this.tooltipPosition;
+    instance.bgColor = this.tooltipbgColor;
+    instance.textColor = this.tooltiptextColor;
+    instance.maxWidth = this.tooltipMaxWidth;
 
     const domEl = this.compRef.location.nativeElement as HTMLElement;
     this.renderer.appendChild(document.body, domEl);
@@ -68,6 +74,8 @@ export class TooltipDirective implements OnDestroy {
           'data-position',
           this.tooltipPosition
         );
+        this.renderer.setStyle(tooltipEl, 'background', this.tooltipbgColor);
+        this.renderer.setStyle(tooltipEl, 'color', this.tooltiptextColor);
       }
 
       this.renderer.addClass(domEl, 'visible');

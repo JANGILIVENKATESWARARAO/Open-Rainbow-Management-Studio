@@ -1,9 +1,16 @@
-<button class="px-4 py-2 pb-[11.5px]" [class.border]="showBorder" [ngStyle]="{
+<button
+  class="relative overflow-hidden px-4 py-2 pb-[11.5px] transition-all duration-200 active:translate-y-[2px] active:shadow-[0_2px_4px_rgba(0,0,0,0.2)] "
+  [class.border]="showBorder"
+  [ngStyle]="{
     backgroundColor: isHovered ? hoverBGColor : bgColor,
     color: isHovered ? hoverColor : color,
-    borderRadius: borderRadius+'px',
+    borderRadius: borderRadius + 'px',
     borderColor: borderColor,
     width: isexpand ? '100%' : 'auto'
-  }" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
+  }"
+  (mouseenter)="isHovered = true"
+  (mouseleave)="isHovered = false"
+  (click)="createRipple($event)"
+>
   {{ text }}
 </button>

@@ -17,7 +17,7 @@
           </ng-container>
 
 
-          
+
           <ng-container *ngIf="leave.status === 'Rejected'">
             <app-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
               [activeColor]="'#0b0303'" [size]="'small'" [usePointerCursor]="false"></app-chip>
@@ -34,7 +34,8 @@
         </p>
 
         <p class="desc" [class.truncated]="isTruncated(leave.description, 50)"
-          [appTooltip]="isTruncated(leave.description, 50) ? leave.description : ''" tooltipPosition="top">
+          [appTooltip]="isTruncated(leave.description, 50) ? leave.description : ''" tooltipPosition="top"
+          [tooltipbgColor]="'red'" [tooltiptextColor]="'black'" [tooltipMaxWidth]="'80'">
           {{ leaveDescription(leave.description, 50) }}
         </p>
 
