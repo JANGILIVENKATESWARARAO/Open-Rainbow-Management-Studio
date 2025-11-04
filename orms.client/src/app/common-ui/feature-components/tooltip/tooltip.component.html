@@ -1,1 +1,4 @@
-<div class="tooltip" [attr.data-position]="position">{{ text }}</div>
+<div class="tooltip" [attr.data-position]="position" [style.background]="bgColor" [style.color]="textColor" [ngStyle]="{
+    'max-width': maxWidth ? maxWidth + '%' : 'none',
+    'width': 'auto'}">{{
+  text }}</div>

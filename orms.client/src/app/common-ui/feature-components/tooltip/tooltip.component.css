@@ -2,8 +2,8 @@
   pointer-events: none;
   position: fixed;
   z-index: 10000;
-  background: #03a9f4;
-  color: white;
+   background: var(--tooltip-bg, #03a9f4);
+  color: var(--tooltip-color, white);
   padding: 6px 10px;
   border-radius: 6px;
   font-size: 14px;
@@ -32,7 +32,7 @@
   bottom: -6px;
   left: 10px;
   border-width: 6px 6px 0 6px;
-  border-color: #03a9f4 transparent transparent transparent;
+  border-color: var(--tooltip-bg, #03a9f4) transparent transparent transparent;
 }
 
 
@@ -40,7 +40,7 @@
   top: -6px;
   left: 10px;
   border-width: 0 6px 6px 6px;
-  border-color: transparent transparent #03a9f4 transparent;
+  border-color: transparent transparent var(--tooltip-bg, #03a9f4) transparent;
 }
 
 
@@ -48,7 +48,7 @@
   top:10px;
   right: -6px;
   border-width: 6px 0 6px 6px;
-  border-color: transparent transparent transparent #03a9f4;
+  border-color: transparent transparent transparent var(--tooltip-bg, #03a9f4);
 }
 
 
@@ -56,6 +56,6 @@
   top: 10px;
   left: -6px;
   border-width: 6px 6px 6px 0;
-  border-color: transparent #03a9f4 transparent transparent;
+  border-color: transparent var(--tooltip-bg, #03a9f4) transparent transparent;
 }
 
