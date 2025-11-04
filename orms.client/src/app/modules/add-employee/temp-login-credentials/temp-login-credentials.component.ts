@@ -1,6 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { PasswordComponent } from '../../../common-ui/controls/password/password.component';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
+import { NoticeBannerComponent } from '../../../common-ui/feature-components/notice-banner/notice-banner';
+import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.component';
+
+
 
 
 
@@ -9,8 +13,8 @@ import { ButtonComponent } from '../../../common-ui/controls/button/button.compo
   selector: 'app-temp-login-credentials',
   templateUrl: './temp-login-credentials.component.html',
   styleUrl: './temp-login-credentials.component.css',
-   imports: [PasswordComponent, ButtonComponent],
-  standalone:true
+   imports: [PasswordComponent, ButtonComponent,NoticeBannerComponent,TextBoxComponent],
+   standalone:true
 })
 export class TempLoginCredentialsComponent {
   
@@ -23,6 +27,13 @@ export class TempLoginCredentialsComponent {
   @Input() borderColor: string = 'blue';
   @Input() showBorder: boolean = true;
   @Input() width: string = 'auto';
+
+
+  
+
+   
+ 
+
   hasUppercase: boolean = false;
 hasLowercase: boolean = false;
 hasNumber: boolean = false;

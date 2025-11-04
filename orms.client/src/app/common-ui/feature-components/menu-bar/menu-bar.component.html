@@ -1,0 +1,20 @@
+<div class="w-64 bg-gray-50 p-4">
+ 
+ 
+    <div  *ngFor="let item of menuItems; let i = index"
+    class="flex items-center justify-between p-2 rounded-lg text-gray-700 hover:bg-gray-200 mt-2" 
+       [ngClass]="{  'bg-blue-100 text-blue-900 border-l-4 border-blue-800 font-medium transition-all': activeIndex === i}" (click)="onClick(i)"
+  
+  >
+    <div class="flex items-center gap-3">
+    <i [class]="item.icon"></i>
+    <span >{{item.label}}</span>
+    </div>
+    <span
+      *ngIf="item.badge"
+      class="bg-gray-200 text-gray-700 text-sm font-medium  px-2 py-0.5 rounded-full"
+      >{{item.badge}}</span
+    >
+  </div>
+ 
+</div>
