@@ -6,7 +6,7 @@ describe('TempLoginCredentialsComponent', () => {
   let component: TempLoginCredentialsComponent;
   let fixture: ComponentFixture<TempLoginCredentialsComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async () => { 
     await TestBed.configureTestingModule({
       declarations: [TempLoginCredentialsComponent]
     })
