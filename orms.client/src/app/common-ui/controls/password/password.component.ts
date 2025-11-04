@@ -13,9 +13,10 @@ export class PasswordComponent {
   @Input() isRequired: boolean = true;
   @Input() placeholder: string = 'Enter Temporary password'
   passwordVisible: boolean = false;
-
+@Output() activeChange = new EventEmitter<boolean>();
   @Input() value: string = '';  
-  
+  isActive: boolean = false;
+
   @Output() valueChange = new EventEmitter<string>();  
 
 
@@ -28,9 +29,15 @@ export class PasswordComponent {
     
     const input = event.target as HTMLInputElement;
     this.value = input.value;
-      // console.log(this.value+ ""+"this is password compo");
     this.valueChange.emit(this.value); 
   }
+onFocusInput() {
+  this.activeChange.emit(true);  
+   
+}
+onBlurInput() {
+  this.activeChange.emit(false);  
+}
 }
 
 

@@ -1,10 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PasswordComponent } from '../../../common-ui/controls/password/password.component';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
-import { NoticeBannerComponent } from '../../../common-ui/feature-components/notice-banner/notice-banner';
-import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.component';
-
-
+import { CommonModule } from '@angular/common';
 
 
 
@@ -13,6 +10,8 @@ import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.
   selector: 'app-temp-login-credentials',
   templateUrl: './temp-login-credentials.component.html',
   styleUrl: './temp-login-credentials.component.css',
+   imports: [PasswordComponent, ButtonComponent,CommonModule],
+  standalone:true
    imports: [PasswordComponent, ButtonComponent,NoticeBannerComponent,TextBoxComponent],
    standalone:true
 })
@@ -38,7 +37,7 @@ export class TempLoginCredentialsComponent {
 hasLowercase: boolean = false;
 hasNumber: boolean = false;
 hasSpecialChar: boolean = false;
-
+   @Input() emailValidation: string = 'viddushiva@gmail.com';
  @Input() maxLength: number = 12;
    
   isLengthValid: boolean = false;
@@ -48,11 +47,14 @@ hasSpecialChar: boolean = false;
  valueLength: string = '';
 
   showPassword: boolean = false;
+isActive: boolean = false; 
 
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
 }
-
+emailSplitting(){
+  console.log(this.emailValidation)
+}
 generatePassword() {
     const chars =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
@@ -61,6 +63,36 @@ generatePassword() {
       chars.charAt(Math.floor(Math.random() * chars.length))
     ).join('');
   }
+onActiveChange(isActive: boolean) {
+  console.log('Child active state:', isActive);
+   this.isActive = isActive;
+}
+getPasswordLengthClass() {
+  const len = this.temporaryPassword.length;
+
+  if (this.isActive && len === 0) {
+    return 'active'; 
+  } else if (len > 0 && len < 12) {
+    return 'partial'; 
+  } else if (len === 12) {
+    return 'complete'; 
+  } else {
+    return '';
+  }
+}
+getPasswordRequirementClass() {
+  const len = this.temporaryPassword.length;
+
+  if (this.isActive && len === 0) {
+    return 'active'; 
+  } else if (len > 0 && !this.hasRequiredChars) {
+    return 'partial'; 
+  } else if (this.hasRequiredChars) {
+    return 'complete'; 
+  } else {
+    return '';
+  }
+}
 
    checkPasswordRules() {
     const password = this.temporaryPassword;
