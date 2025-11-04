@@ -38,7 +38,7 @@ hasSpecialChar: boolean = false;
  valueLength: string = '';
 
   showPassword: boolean = false;
-isActive: boolean = false;
+isActive: boolean = false; 
 
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
