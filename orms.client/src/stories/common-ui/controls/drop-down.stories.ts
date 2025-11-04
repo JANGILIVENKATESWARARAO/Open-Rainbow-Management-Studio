@@ -7,7 +7,7 @@ const meta: Meta<DropDownComponent> = {
   component: DropDownComponent,
    tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen',
+    layout: 'fullscreen', 
   },
   args: {
     options: [
@@ -23,6 +23,49 @@ const meta: Meta<DropDownComponent> = {
         value: 3,
         name: 'Other',
       },
+       {
+        value: 4,
+        name: 'Other1',
+      },
+         {
+        value: 5,
+        name: 'Other2',
+      },
+        {
+        value: 6,
+        name: 'Other3',
+      },  {
+        value: 7,
+        name: 'Other4',
+      },  
+      {
+        value: 8,
+        name: 'Other5',
+      }, 
+      
+      //  {
+      //   value: 9,
+      //   name: 'Other6',
+      // },
+      //   {
+      //   value: 10,
+      //   name: 'Other7',
+      // },  {
+      //   value: 11,
+      //   name: 'Other8',
+      // },  {
+      //   value: 12,
+      //   name: 'Other9',
+      // },  {
+      //   value: 13,
+      //   name: 'Other10',
+      // },  {
+      //   value: 14,
+      //   name: 'Other11',
+      // },  {
+      //   value: 15,
+      //   name: 'Other12',
+      // },
     ],
 
     

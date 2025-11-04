@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './temp-login-credentials.component.css',
    imports: [PasswordComponent, ButtonComponent,CommonModule],
   standalone:true
+   imports: [PasswordComponent, ButtonComponent,NoticeBannerComponent,TextBoxComponent],
+   standalone:true
 })
 export class TempLoginCredentialsComponent {
   
@@ -24,6 +26,13 @@ export class TempLoginCredentialsComponent {
   @Input() borderColor: string = 'blue';
   @Input() showBorder: boolean = true;
   @Input() width: string = 'auto';
+
+
+  
+
+   
+ 
+
   hasUppercase: boolean = false;
 hasLowercase: boolean = false;
 hasNumber: boolean = false;

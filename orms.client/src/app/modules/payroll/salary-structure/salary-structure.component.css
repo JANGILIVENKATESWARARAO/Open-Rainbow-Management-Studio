@@ -11,7 +11,7 @@ body {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  width: 55%;
+  width: 70%;
   padding: 25px 30px;
 }
 
@@ -68,44 +68,12 @@ body {
 
 .salary-summary {
   display: flex;
-  gap: 60px;
+  gap: 20px;
   justify-content: flex-start;
 
 }
 
-.item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-left: 4px solid;
-  padding-left: 10px;
-}
 
-.item h4 {
-  margin: 0;
-  font-size: 14px;
-  color: #555;
-  font-weight: 500;
-}
-
-.item p {
-  margin: 4px 0 0;
-  font-size: 15px;
-  font-weight: 600;
-  color: #000;
-}
-
-.earnings {
-  border-color: #22c55e;
-}
-
-.reimbursements {
-  border-color: #3b82f6;
-}
-
-.deductions {
-  border-color: #f59e0b;
-}
 
 
 

@@ -1,0 +1,29 @@
+<div class="employee-card" [ngClass]="{'bg-color':showBasicInfo}" (click)="basicinfo()">
+  <div class="employee-left">
+    <img [src]='EmployeePhoto' alt="sdfvb">
+    <div class="employee-info">
+      <h3 class="name">{{EmployeeName}}</h3>
+      <p class="role">{{Employeerole}} . {{EmployeeDesig}}</p>
+    </div>
+  </div>
+
+  <div class="employee-right">
+    <div class="details">
+      <span class="date">{{Date}}</span>
+      <ng-container>
+        <app-chip [text]="status" [bgColor]="status === 'Active' ? '#85f3bc' : '#eb7c7c'"
+          [color]="status === 'Active' ? '#1e592f' : '#000'"
+          [activeBGColor]="status === 'Active' ? '#85f3bc' : '#eb7c7c'"
+          [activeColor]="status === 'Active' ? '#1e592f' : '#000'" [size]="'small'"></app-chip>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="showBasicInfo" class="basic-info-section">
+  <app-inner-content></app-inner-content>
+</div>
+
+
+<!-- style="background-color: showBasicInfo ? 'blue' : 'gray';" -->

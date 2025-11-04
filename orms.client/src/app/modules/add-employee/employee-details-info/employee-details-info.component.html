@@ -1,0 +1,74 @@
+<!-- Basic-Info -->
+<div class="profile-section">
+  <button class="section-btn" (click)="innerinfo()">
+    Basic Information
+  </button>
+  <div *ngIf="showInnerinfo" class="section-content">
+    <app-inner-info></app-inner-info>
+  </div>
+
+
+<!-- Contact-info -->
+  <button class="section-btn" (click)="contactInfo()">
+    Contact Information
+  </button>
+  <div *ngIf="showContactInfo" class="section-content">
+    <app-inner-contact></app-inner-contact>
+  </div>
+
+<!-- Job-deatils -->
+  <button class="section-btn" (click)="jobInfo()">
+    Job Details
+  </button>
+  <div *ngIf="showJobInfo" class="section-content">
+    <app-inner-job></app-inner-job>
+  </div>
+
+
+<!-- Education-details -->
+  <button class="section-btn" (click)="educationInfo()">
+    Education Details
+  </button>
+  <div *ngIf="showEducationInfo" class="section-content">
+    <app-inner-education></app-inner-education>
+  </div>
+
+
+<!-- Work-experience -->
+   <button class="section-btn" (click)="workInfo()">
+    Work Experience
+  </button>
+  <div *ngIf="showWorkInfo" class="section-content">
+    <app-inner-work></app-inner-work>
+  </div>
+
+<!-- Other-details -->
+    <button class="section-btn" (click)="otherInfo()">
+    Other Details
+  </button>
+  <div *ngIf="showOtherInfo" class="section-content">
+    <app-inner-other></app-inner-other>
+  </div>
+
+
+<!-- Salary-info -->
+    <button class="section-btn" (click)="salaryInfo()">
+    Salary & Payroll Information
+  </button>
+  <div *ngIf="showSalaryInfo" class="section-content">
+    <app-inner-salary></app-inner-salary>
+  </div>
+
+
+<!-- Insurance-details -->
+     <button class="section-btn" (click)="insuranceInfo()">
+    Insurance Details
+  </button>
+  <div *ngIf="showInsuranceInfo" class="section-content">
+    <app-inner-insurance></app-inner-insurance>
+  </div>
+
+
+
+
+</div>

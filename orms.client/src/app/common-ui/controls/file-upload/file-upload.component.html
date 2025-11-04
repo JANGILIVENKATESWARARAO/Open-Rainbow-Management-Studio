@@ -1,8 +1,17 @@
 <div class="parent">
   <div class="single-upload">
-    <!-- Wrap label and * inside a wrapper -->
     <div class="upload-label-wrapper w-full font-inherit flex items-center gap-1">
-      <label class="block font-semibold text-gray-800 mb-1.5 text-[14px]" for="fileInput">{{ label }}</label>
+<div class="upload-label-wrapper w-full font-inherit flex items-center gap-1">
+  <label
+    class="block font-semibold text-gray-800 mb-1.5 text-[14px]"
+    (click)="$event.stopPropagation()"
+  >
+    {{ label }}
+  </label>
+  <ng-container *ngIf="isRequired">
+    <span class="required-star text-red-600 text-base font-semibold -mt-3">*</span>
+  </ng-container>
+</div>
       <ng-container *ngIf="isRequired">
         <span class="required-star text-red-600 text-base font-semibold -mt-3">*</span>
       </ng-container>
@@ -37,7 +46,15 @@
          focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#dbeafe] focus-visible:ring-offset-[2px] focus-visible:ring-offset-[#3b82f6]
          choose-btn-inline  relative overflow-hidden"
          [ngClass]="{ 'bg-blue-200 ': isFocused }"  (click)="$event.stopPropagation()">
-        <input #fileInput id="fileInput" type="file" class="w-0 h-0 opacity-0 cursor-pointer text-[0px]"   (change)="onFileSelected($event)" />
+         <input
+  #fileInput
+  id="fileInput"
+  type="file"
+  class="w-0 h-0 opacity-0 cursor-pointer text-[0px]"
+  (change)="onFileSelected($event)"
+  (click)="$event.stopPropagation()"
+/>
+
 <div
   class="ml-[-10px] text-[11px] transition-all duration-200"
  
@@ -46,7 +63,7 @@
 </div>
       </label>
 </div>
-      <div class="file-status" class="text-[0.9rem] text-[#4b5563] leading-none">No file chosen</div>
+      <div class="file-status" class="text-[12px] text-[#4b5563] leading-none">No file chosen</div>
        
     </div>
     <span class="text-red-500 text-xs mt-1 text-left transition-colors">

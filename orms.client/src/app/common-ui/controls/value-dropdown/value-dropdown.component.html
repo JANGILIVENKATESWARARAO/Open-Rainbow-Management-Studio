@@ -1,0 +1,35 @@
+<div class="dropdown">
+  <button
+    class="dropbtn"
+    id="selected-year"
+    #selectedYearRef
+    (click)="toggleDropdown($event)"
+    [class.active-btn]="isOpen"
+    [ngStyle]="{
+      color: isOpen ? activeTextColor : textColor,
+      backgroundColor: isOpen ? activeBackgroundColor : backgroundColor,
+      borderColor: borderColor
+    }"
+  >
+    {{ selectedYear }}
+    <span class="ripple" #ripple></span>
+  </button>
+
+  <div class="dropdown-content" [class.show]="isOpen">
+    <a
+      href="#"
+      *ngFor="let value of dropdownValues"
+      [class.active]="value === selectedYear"
+      (click)="selectYear(value, $event)"
+      [ngStyle]="{
+        color: value === selectedYear ? activeTextColor : textColor,
+        backgroundColor: value === selectedYear ? activeBackgroundColor : 'transparent'
+      }"
+    >
+      {{ value }}
+    </a>
+  </div>
+</div>
+
+
+
