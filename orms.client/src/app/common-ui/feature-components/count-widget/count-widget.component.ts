@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './count-widget.component.html',
   styleUrl: './count-widget.component.css',
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
 export class CountWidgetComponent {
   @Input() label: string = "Total"
@@ -16,5 +16,6 @@ export class CountWidgetComponent {
   @Input() borderColor: string = "gray"
   @Input() backgroundColor: string = "white"
   @Input() showBorder: boolean = true;
-  @Input()  labelPosition: 'top' | 'bottom' | 'before' | 'after' = 'top';
+  @Input()  labelPosition: 'top' |
+   'bottom' | 'before' | 'after' = 'top';
 }
