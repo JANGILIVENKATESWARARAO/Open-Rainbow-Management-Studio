@@ -4,6 +4,15 @@
   height: 100%;
 }
 
-span {
+.label-text,
+.value-text {
   font-family: 'Inter', sans-serif;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  font-size: clamp(8px, 2vw, 22px);
+}
+
+.value-text {
+  font-weight: 600;
 }

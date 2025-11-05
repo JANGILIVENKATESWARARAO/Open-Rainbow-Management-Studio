@@ -1,23 +1,24 @@
-<div class="w-full h-full border-2 border-gray-300 rounded-lg p-5 flex justify-center items-center" [ngStyle]="{
+<div class="w-full h-full border-2 border-gray-300 rounded-lg p-2 flex justify-center items-center" [ngStyle]="{
     'border-color': showBorder ? borderColor : 'transparent',
     'background-color': backgroundColor
-  }" style="height: 100px;">
-
+  }" style="overflow: hidden;">
 
   <div *ngIf="labelPosition === 'top' || labelPosition === 'bottom'"
-    class="flex flex-col items-center justify-center gap-1" [ngStyle]="{
+    class="flex items-center justify-center w-full h-full gap-2" [ngStyle]="{
       'flex-direction': labelPosition === 'top' ? 'column' : 'column-reverse'
     }">
-    <span [style.color]="labelColor">{{ label }}</span>
-    <span [style.color]="valueColor" class="text-xl font-semibold">{{ value }}</span>
+
+    <span [style.color]="labelColor" class="label-text">{{ label }}</span>
+    <span [style.color]="valueColor" class="value-text">{{ value }}</span>
   </div>
 
-
-  <div *ngIf="labelPosition === 'before' || labelPosition === 'after'" class="flex items-center justify-center gap-3"
-    [ngStyle]="{
+  <div *ngIf="labelPosition === 'before' || labelPosition === 'after'"
+    class="flex items-center justify-center w-full h-full gap-2" [ngStyle]="{
       'flex-direction': labelPosition === 'before' ? 'row' : 'row-reverse'
     }">
-    <span [style.color]="labelColor">{{ label }}</span>
-    <span [style.color]="valueColor" class="text-xl font-semibold">{{ value }}</span>
+
+    <span [style.color]="labelColor" class="label-text">{{ label }}</span>
+    <span [style.color]="valueColor" class="value-text">{{ value }}</span>
   </div>
+
 </div>

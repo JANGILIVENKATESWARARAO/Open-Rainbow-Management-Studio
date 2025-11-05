@@ -9,13 +9,12 @@ import { Component, Input } from '@angular/core';
   imports: [CommonModule],
 })
 export class CountWidgetComponent {
-  @Input() label: string = "Total"
-  @Input() labelColor: string = "gray"
-  @Input() value: number = 20
-  @Input() valueColor: string = "skyblue"
-  @Input() borderColor: string = "gray"
-  @Input() backgroundColor: string = "white"
+  @Input() label: string = 'Total';
+  @Input() labelColor: string = 'gray';
+  @Input() value: number = 20;
+  @Input() valueColor: string = 'skyblue';
+  @Input() borderColor: string = 'gray';
+  @Input() backgroundColor: string = 'white';
   @Input() showBorder: boolean = true;
-  @Input()  labelPosition: 'top' |
-   'bottom' | 'before' | 'after' = 'top';
+  @Input() labelPosition: 'top' | 'bottom' | 'before' | 'after' = 'top';
 }
