@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ORMS
+/orms.client/documentation.json
+/ORMS.Server/obj/Debug/net8.0/ORMS.Server.AssemblyInfo.cs
+/ORMS.Server/obj/Debug/net8.0/ORMS.Server.AssemblyInfoInputs.cache
+/ORMS.Server/obj/project.nuget.cache
+/ORMS.Server/obj/project.assets.json
+/ORMS.Server/obj/ORMS.Server.csproj.nuget.g.targets
+/ORMS.Server/obj/ORMS.Server.csproj.nuget.dgspec.json
+/ORMS.Server/obj/ORMS.Server.csproj.nuget.g.props
+/.vs/ProjectEvaluation/orms.metadata.v9.bin
+/.vs/ProjectEvaluation/orms.projects.v9.bin
+/.vs/ProjectEvaluation/orms.strings.v9.bin
+/ORMS.Server/obj/Debug/net8.0/ORMS.Server.AssemblyInfo.cs
+/ORMS.Server/obj/Debug/net8.0/ORMS.Server.assets.cache
+/ORMS.Server/obj/Debug/net8.0/ORMS.Server.csproj.AssemblyReference.cache
+/ORMS.Server/obj/Debug/net8.0/ORMS.Server.GeneratedMSBuildEditorConfig.editorconfig
+/ORMS.Server/obj/Debug/net8.0/spa.proxy.json
