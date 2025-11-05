@@ -21,7 +21,7 @@ import { InnerJobComponent } from '../employee-preview/inner-job/inner-job.compo
 export class EmployeeDetailsInfoComponent {
 
 
-autoCloseExpansion: boolean = true; 
+@Input() autoCloseExpansion: boolean = true; 
 openDivIdList: Set<string> = new Set(); 
 openDivId: string | null = null; 
 
