@@ -51,6 +51,7 @@ export class TextBoxComponent implements OnInit, OnChanges {
   @Input() showBorder: boolean = true;
   @Input() maxChars: number = 20; // ✅ Change this value — it will reflect automatically
   @Input() showCharCount: boolean = true;
+   @Input() isSave: boolean = false;
 
   inputText: string = '';
   currentCharCount: number = 0;

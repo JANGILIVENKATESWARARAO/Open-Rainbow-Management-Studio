@@ -53,7 +53,7 @@ export class TextAreaComponent implements OnChanges {
   @Input() showBorder: boolean = true;
   @Input() maxChars: number = 20; // ✅ Change this freely — both sides will reflect correctly
   @Input() showCharCount: boolean = true;
-
+   @Input() isSave: boolean = false;
   inputText: string = '';
   currentCharCount: number = this.maxChars;
 
