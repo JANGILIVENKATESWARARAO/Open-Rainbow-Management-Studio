@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, Input, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { DropdownValues } from '../../assests/view-models/common-view-models';
 
 @Component({
   selector: 'app-value-dropdown',
@@ -9,7 +10,7 @@ import { Component, HostListener, Input, OnInit, ViewChild, ElementRef, Renderer
   imports:[CommonModule]
 })
 export class ValueDropdownComponent implements OnInit {
-  @Input() dropdownValues: (string | number)[] = [2024, 2023, 2022, 2021];
+  @Input() dropdownValues: DropdownValues[] = [];
   @Input() defaultSelected: string | number | null = null;
   @Input() placeholderText: string = '2024';
   @Input() textColor: string = '#111';
@@ -27,7 +28,7 @@ export class ValueDropdownComponent implements OnInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit() {
-    this.selectedYear = Number(this.defaultSelected ?? this.placeholderText);
+    this.selectedYear = this.dropdownValues.filter(x=>x.isDefault)[0].value
   }
 
   toggleDropdown(event: MouseEvent) {

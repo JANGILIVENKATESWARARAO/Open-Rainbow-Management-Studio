@@ -14,7 +14,7 @@ body {
 
 .dropbtn {
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   font-size: 16px;
   padding: 10px 25px;
   border: 1px solid lightgray;
@@ -37,7 +37,7 @@ body {
   padding: 10px;
 }
 
-.dropdown-content a {
+.dropdown-content button {
   padding: 10px 16px;
   border-radius: 5px;
   text-decoration: none;
@@ -45,11 +45,11 @@ body {
   transition: background-color 0.2s, color 0.2s;
 }
 
-.dropdown-content a:hover {
+.dropdown-content button:hover {
   background-color: #f2f4f8 !important;
 }
 
-.dropdown-content a.active {
+.dropdown-content button.active {
   /* font-weight: 600; */
   background-color: #eaf0ff;
   color: #316aff !important;
@@ -79,4 +79,9 @@ body {
     transform: scale(15);
     opacity: 0;
   }
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }

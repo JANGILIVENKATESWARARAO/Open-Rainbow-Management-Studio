@@ -9,7 +9,36 @@ const meta: Meta<ValueDropdownComponent> = {
     // layout: 'centered',
   },
   args: {
-    dropdownValues: [2024, 2023, 2022, 2021],
+    dropdownValues: [
+      {
+        value: '2024',
+        isDefault: false,
+        textColor: 'blue',
+        backgroundColor: 'black',
+        isDisabled: false,
+      },
+      {
+        value: '2023',
+        isDefault: true,
+        textColor: 'green',
+        backgroundColor: 'black',
+        isDisabled: false,
+      },
+      {
+        value: '2022',
+        isDefault: true,
+        textColor: 'orange',
+        backgroundColor: 'red',
+        isDisabled: false,
+      },
+      {
+        value: '2021',
+        isDefault: false,
+        textColor: 'red',
+        backgroundColor: 'lightgray',
+        isDisabled: true,
+      },
+    ],
     placeholderText: '2024',
     textColor: '#111',
     activeTextColor: '#4076ff',

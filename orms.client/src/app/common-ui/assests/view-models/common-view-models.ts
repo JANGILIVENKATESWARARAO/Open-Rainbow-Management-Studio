@@ -6,3 +6,11 @@ export interface Announcement {
   postedBy: string;
   expireDate: string;
 }
+
+export interface DropdownValues {
+  value: string;
+  isDefault: boolean;
+  textColor: string;
+  backgroundColor: string;
+  isDisabled: boolean;
+}
