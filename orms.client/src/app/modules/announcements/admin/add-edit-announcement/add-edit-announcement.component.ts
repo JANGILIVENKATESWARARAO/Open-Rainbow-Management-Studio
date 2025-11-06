@@ -25,6 +25,7 @@ import { Announcement } from '../../../../common-ui/assests/view-models/common-v
 })
 export class AddEditAnnouncementComponent {
   showForm = false;
+    isSaveClicked: boolean = false;
 
   @Input() announcements: Announcement[] = [
     {
@@ -56,6 +57,9 @@ export class AddEditAnnouncementComponent {
     },
   ];
 
+  onSave() {
+    this.isSaveClicked = true;
+  }
   toggleForm() {
     this.showForm = !this.showForm;
   }

@@ -23,7 +23,10 @@
     <span *ngIf="isRequired" class="required">*</span>
   </label>
 
-  <div class="custom-dropdown">
+  <div class="custom-dropdown "     [ngStyle]="{
+    'border': '1px solid',
+    'border-color': isSave ? 'green' : null
+  }">
     <input type="checkbox" [id]="label + '_toggle'" class="dropdown-toggle" hidden>
     <label
       [for]="label + '_toggle'"
