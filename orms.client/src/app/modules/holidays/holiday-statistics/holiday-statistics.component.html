@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <h1>Holiday Statistics</h1>
+  </div>
+
+  <div
+    *ngFor="let item of data"
+    class="flex-item"
+    [ngStyle]="{ 'background-color': item.bg }"
+  >
+    <p>{{ item.name }}</p>
+    <span class="number" [ngStyle]="{ color: item.color }">{{ item.number }}</span>
+  </div>
+</div>

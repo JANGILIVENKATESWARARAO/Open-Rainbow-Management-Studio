@@ -12,17 +12,17 @@
       <div class="col">Department</div>
       <div class="col">Work Location</div>
     </div>
-    <div class="table-row">
+    <div class="table-row" *ngFor="let item of myReportees">
       <div class="col employee">
         <img [src]="EmployeePhoto" alt="profile">
         <div>
-          <div class="emp-name">{{employeeName}} - {{ employeeId }}</div>
-          <div class="emp-email">{{employeeEmail}}</div>
+          <div class="emp-name">{{item.employeeName}} - {{ item.employeeId }}</div>
+          <div class="emp-email">{{item.employeeEmail}}</div>
         </div>
       </div>
-      <div class="col">{{designation}}</div>
-      <div class="col">{{department}}</div>
-      <div class="col">{{workLocation}}</div>
+      <div class="col">{{item.designation}}</div>
+      <div class="col">{{item.department}}</div>
+      <div class="col">{{item.workLocation}}</div>
     </div>
   </div>
 </div>
