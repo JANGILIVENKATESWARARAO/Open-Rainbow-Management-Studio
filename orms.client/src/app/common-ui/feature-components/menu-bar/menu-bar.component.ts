@@ -10,13 +10,14 @@ import { Component } from '@angular/core';
 })
 export class MenuBarComponent {
  activeIndex: number = 0;
+ isSidebarVisible: boolean = true;
 
  menuItems = [
     { label: 'Dashboard', icon: 'fa fa-home', },
     { label: 'Payslip Access', icon: 'fa fa-file-text-o' },
     { label: 'Leave Management', icon: 'fa fa-clock-o', badge: 2 },
     { label: 'Announcements', icon: 'fa fa-bell-o', badge: 5 },
-    { label: 'Calendar', icon: 'fa fa-calendar' },
+    { label: 'Calendar', icon: 'fa fa-calender' },
     { label: 'FAQ & Help', icon: '' },
   ];
 
@@ -29,4 +30,11 @@ export class MenuBarComponent {
     this.activeIndex = index;
   
 }
+
+toggleSidebar() {
+  console.log(   this.isSidebarVisible);
+  
+    this.isSidebarVisible = !this.isSidebarVisible;
+      console.log(   this.isSidebarVisible);
+  }
 }

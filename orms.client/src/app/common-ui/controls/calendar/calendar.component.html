@@ -18,19 +18,12 @@
         <div *ngIf="showCalendar" class="calendar-overlay" (click)="closeCalendar()">
             <div class="calendar-container" (click)="$event.stopPropagation()">
                 <div class="calendar-header">
-                    <button class="nav-btn" (click)="previousMonth()">
-                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
-                            <path d="M7 1L1 6L7 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-
-                   <div class="month-year-selectors">
+                  <div class="month-year-selectors">
                         <!-- Month Dropdown -->
                         <div class="dropdown" (click)="$event.stopPropagation()">
                             <div class="dropdown-display" (click)="toggleMonthDropdown()">
                             {{ months[currentMonth] }}
-                            <span class="arrow">&#9662;</span>
+                            <!-- <span class="arrow">&#9662;</span> -->
                             </div>
                             <ul *ngIf="showMonthDropdown" class="dropdown-list">
                             <li *ngFor="let month of months; let i = index"
@@ -45,7 +38,7 @@
                         <div class="dropdown" (click)="$event.stopPropagation()">
                             <div class="dropdown-display" (click)="toggleYearDropdown()">
                             {{ currentYear }}
-                            <span class="arrow">&#9662;</span>
+                            <!-- <span class="arrow">&#9662;</span> -->
                             </div>
                             <ul *ngIf="showYearDropdown" class="dropdown-list">
                             <li *ngFor="let year of years"
@@ -56,15 +49,23 @@
                             </ul>
                         </div>
                         </div>
-
-
+                    <div class="nav-btns">
+                    <button class="nav-btn" (click)="previousMonth()">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
+                            <path d="M7 1L1 6L7 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
                     <button class="nav-btn" (click)="nextMonth()">
                         <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
                             <path d="M1 1L7 6L1 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                     </button>
+                    </div>
                 </div>
+
+                <div class="calendar-body">
 
                 <div class="calendar-weekdays">
                     <div *ngFor="let weekday of weekdays" class="weekday">
@@ -79,7 +80,7 @@
                         {{day.day}}
                     </div>
                 </div>
-
+                </div>
                 <div class="calendar-footer">
                     <button class="footer-btn today-btn" (click)="goToToday()">Today</button>
                     <button class="footer-btn clear-btn" (click)="clearSelection()">Clear</button>

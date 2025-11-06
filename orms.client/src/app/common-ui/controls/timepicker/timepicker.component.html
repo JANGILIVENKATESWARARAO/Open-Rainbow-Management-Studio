@@ -1,0 +1,46 @@
+<div class="timepicker">
+  <div class="display" (click)="togglePicker()">
+    {{ formatDisplayTime() }}
+  </div>
+
+  <div class="picker" *ngIf="isPickerOpen">
+    <div class="columns">
+      <div class="column" #hoursCol (scroll)="onScroll('hours')">
+        <div
+          *ngFor="let h of visibleHours"
+          class="item"
+          [class.active]="isActive('hours', h)"
+          (click)="selectValue('hours', h)"
+        >
+          {{ h < 10 ? '0' + h : h }}
+        </div>
+      </div>
+
+      <div class="separator">:</div>
+
+      <div class="column" #minutesCol (scroll)="onScroll('minutes')">
+        <div
+          *ngFor="let m of visibleMinutes"
+          class="item"
+          [class.active]="isActive('minutes', m)"
+          (click)="selectValue('minutes', m)"
+        >
+          {{ m < 10 ? '0' + m : m }}
+        </div>
+      </div>
+
+      <!-- Only show AM/PM in 12-hour mode -->
+<div *ngIf="!use24HourFormat" class="column ampm-col" #ampmCol (scroll)="onScroll('ampm')">
+  <div
+    *ngFor="let a of visibleAmPm; let i = index"
+    class="item"
+    [class.active]="ampm === a"
+    (click)="setAmPm(a,i)"
+  >
+    {{ a }}
+  </div>
+        <div class="highlight-bar"></div>
+</div>
+    </div>
+  </div>
+</div>

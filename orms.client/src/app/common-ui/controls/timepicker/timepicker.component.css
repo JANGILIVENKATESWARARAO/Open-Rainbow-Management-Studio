@@ -1,0 +1,140 @@
+.timepicker {
+  position: relative;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+}
+
+.display {
+  width: 250px;
+  padding: 10px 16px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+}
+
+.picker {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  padding: 12px 18px;
+}
+.columns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.column {
+  height: 120px;
+  width: 60px;
+  overflow-y: scroll;
+  text-align: center;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.column::-webkit-scrollbar {
+  display: none;
+}
+.column .item {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  opacity: 0.4;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.555); /* subtle separator */
+  border-top: 1px solid rgba(0, 0, 0, 0.555); /* subtle separator */
+}
+.column .item {
+  border-bottom: none;
+  border-top:none;
+}
+.column .item.active {
+  opacity: 1;
+  font-weight: 700;
+  color: #1565d8;
+  transform: scale(1.15);
+  border-bottom: 1px solid rgba(21, 97, 205, 0.409);
+}
+.item {
+  height: 40px;
+  line-height: 40px;
+  opacity: 0.4;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.item.active {
+  opacity: 1;
+  font-weight: 700;
+  color: #1565d8;
+  transform: scale(1.15);
+}
+
+.separator {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 10px;
+  color: #222;
+}
+
+.ampm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.ampm-item {
+  padding: 6px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.ampm-item.active {
+  font-weight: bold;
+  color: #1565d8;
+  opacity: 1;
+}
+.highlight-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 40px; /* same as item height */
+  border-radius: 6px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.ampm-col {
+  width: 60px;
+  margin-left: 10px;
+  height: 120px;
+  overflow-y: scroll;
+  text-align: center;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  position: relative;
+}
+
+.ampm-col::-webkit-scrollbar {
+  display: none;
+}
+
+.column ampm-col{
+  height: 120px;
+  width: 40px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  text-align: center;
+}

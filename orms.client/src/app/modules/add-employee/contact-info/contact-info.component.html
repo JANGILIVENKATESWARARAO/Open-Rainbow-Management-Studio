@@ -12,11 +12,11 @@
     </div>
 
     <div class="grid-container">
-            <app-text-box [label]="'Personal Mail'" [placeHolder]="'Enter your mail Id'" [isRequired]="true"
-                [showBorder]="false"></app-text-box>
-            <app-text-box [label]="'Linkedin Url'" [placeHolder]="'Enter your linkedin url'" [isRequired]="true"
-                [showBorder]="false"></app-text-box>
-            <app-text-box [label]="'Contact No'" [placeHolder]="'Enter your contact number'" [isRequired]="true"
+        <app-text-box [label]="'Personal Mail'" [placeHolder]="'Enter your mail Id'" [isRequired]="true"
+            [showBorder]="false"></app-text-box>
+        <app-text-box [label]="'Linkedin Url'" [placeHolder]="'Enter your linkedin url'" [isRequired]="true"
+            [showBorder]="false"></app-text-box>
+        <app-text-box [label]="'Contact No'" [placeHolder]="'Enter your contact number'" [isRequired]="true"
             [showBorder]="false"></app-text-box>
     </div>
 
@@ -27,18 +27,20 @@
             [showBorder]="false"></app-text-area>
         <app-text-area [label]="'Current Address'" [Placeholder]="'Enter your current address'"
             [showBorder]="false"></app-text-area>
-        <app-toggle [checked]="false" [color]="'#4CAF50'" [label]="'Same as Permanent Address '"
-            [labelPosition]="'right'" [labelColor]="'#333'" (checkedChange)="checkedChange($event)"
-            (toggleChange)="toggleChange($event)"></app-toggle>
+        <app-toggle [checked]="false" [color]="'#4CAF50'" [tickColor]="'#fff'" [label]="'Same as Permanent Address'"
+            [labelPosition]="'right'" [labelColor]="'#333'" [size]="'medium'" [useCheckbox]="true"
+            (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></app-toggle>
     </div>
     <p class="text-1">Emergency contact details</p>
     <hr>
     <div class="emergency">
-            <app-text-box [label]="'Contact Name'" [placeHolder]="'Enter name'" [isRequired]="true"
-                [showBorder]="false"></app-text-box>
-            <app-text-box [label]="'Contact Number'" [placeHolder]="'Enter Contact Number'" [isRequired]="true"
-                [showBorder]="false"></app-text-box>
-            <app-drop-down [label]="'Relation'" [placeHolder]="'Select Your Relation'" [isRequired]="true" [options]="[{value: 1, name: 'Father'}, {value: 2, name: 'Mother'}, {value: 3, name: 'Spouse'}, {value: 4, name: 'Brother/Sister'}, {value: 5, name: 'Child'}, {value: 6, name: 'Others'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
+        <app-text-box [label]="'Contact Name'" [placeHolder]="'Enter name'" [isRequired]="true"
+            [showBorder]="false"></app-text-box>
+        <app-text-box [label]="'Contact Number'" [placeHolder]="'Enter Contact Number'" [isRequired]="true"
+            [showBorder]="false"></app-text-box>
+        <app-drop-down [label]="'Relation'" [placeHolder]="'Select Your Relation'" [isRequired]="true"
+            [options]="[{value: 1, name: 'Father'}, {value: 2, name: 'Mother'}, {value: 3, name: 'Spouse'}, {value: 4, name: 'Brother/Sister'}, {value: 5, name: 'Child'}, {value: 6, name: 'Others'}]"
+            (selectedChange)="selectedChange($event)"></app-drop-down>
     </div>
     <!-- <div class="emergency-2">
             <p class="text-2">Emergency contact details-2</p>

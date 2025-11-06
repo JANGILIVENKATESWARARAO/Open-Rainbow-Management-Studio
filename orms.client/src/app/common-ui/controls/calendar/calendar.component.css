@@ -98,7 +98,7 @@
 }
 
 .nav-btn {
-  background-color:#bababa;
+  
   border: none;
   cursor: pointer;
   padding: 16px;
@@ -112,13 +112,16 @@
 }
 
 .nav-btn:hover {
-  background-color: #dddddd;
+  background-color:#bababa;
   color: #333;
 }
+.nav-btns{
+  display: flex;
 
+}
 .month-year-selectors {
   display: flex;
-  gap: 8px;
+  gap: 5px;
 }
 
 .month-select,
@@ -160,15 +163,14 @@
   color: #ff6b35;
 }
 
-.calendar-weekdays {
+/* .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
-}
+} */
 
 
-.calendar-weekdays,
-.calendar-grid {
+.calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   justify-items: center;
@@ -176,6 +178,8 @@
   text-align: center;
   column-gap: 5px; /* space between columns */
   row-gap: 10px;   /* space between rows */
+  gap: 8px; /* reduce gap between cells */
+  padding-bottom: 8px;
 }
 
 .weekday {
@@ -191,6 +195,11 @@
   grid-template-columns: repeat(7, 1fr);
   gap: 8px; /* reduce gap between cells */
   padding-bottom: 8px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  column-gap: 5px; /* space between columns */
+  row-gap: 10px;   /* space between rows */
 
 }
 
@@ -293,8 +302,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
 }
-
+.dropdown-display:hover{
+  font-weight: 700;
+}
 .arrow {
   font-size: 20px;
   margin-left: 5px;
