@@ -8,8 +8,8 @@
       'flex-direction': labelPosition === 'top' ? 'column' : 'column-reverse'
     }">
 
-    <span [style.color]="labelColor" class="label-text">{{ label }}</span>
-    <span [style.color]="valueColor" class="value-text">{{ value }}</span>
+    <span [style.color]="labelColor" [style.fontSize]="lebelsize" class="label-text">{{ label }}</span>
+    <span [style.color]="valueColor" [style.fontSize]="valuesize" class="value-text font-semibold">{{ value }}</span>
   </div>
 
   <div *ngIf="labelPosition === 'before' || labelPosition === 'after'"
@@ -17,8 +17,8 @@
       'flex-direction': labelPosition === 'before' ? 'row' : 'row-reverse'
     }">
 
-    <span [style.color]="labelColor" class="label-text">{{ label }}</span>
-    <span [style.color]="valueColor" class="value-text">{{ value }}</span>
+    <span [style.color]="labelColor" [style.fontSize]="lebelsize" class="label-text">{{ label }}</span>
+    <span [style.color]="valueColor" [style.fontSize]="valuesize" class="value-text font-semibold">{{ value }}</span>
   </div>
 
 </div>
