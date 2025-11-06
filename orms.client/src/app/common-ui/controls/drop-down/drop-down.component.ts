@@ -30,7 +30,7 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   @Input() options: DropDown[] = [];
   @Output() selectedChange = new EventEmitter<any>();
   @Input() draggable: boolean = true;
-
+ @Input() isSave: boolean = false;
   selectedValue: string | null = null;
   isOpenUp: boolean = false;
 

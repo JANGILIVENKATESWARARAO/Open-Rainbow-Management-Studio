@@ -4,7 +4,10 @@
         <span *ngIf="isRequired" class="required-star">*</span>
     </label>
 
-    <div class="input-container">
+    <div class="input-container "   [ngStyle]="{
+    'border': '1px solid',
+    'border-color': isSave ? 'green' : null
+  }">
         <input type="text" class="dob-input" [value]="formattedDate" (click)="openDatePicker($event)"
             placeholder="dd-mm-yyyy" readonly required />
         <svg xmlns="http://www.w3.org/2000/svg" class="calendar-icon" width="20" height="20" viewBox="0 0 24 24"

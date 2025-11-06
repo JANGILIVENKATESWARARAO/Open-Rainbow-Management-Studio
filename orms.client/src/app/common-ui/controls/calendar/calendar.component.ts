@@ -15,7 +15,7 @@ export class CalendarComponent implements OnInit {
   @Input() defaultDate: Date | null = null;
   @Output() dateSelected = new EventEmitter<Date | null>();
   @Output() calendarClosed = new EventEmitter<void>();
-
+ @Input() isSave: boolean = false;
   clickedInside = false;
   @HostListener('document:click')
   handleOutsideClick() {

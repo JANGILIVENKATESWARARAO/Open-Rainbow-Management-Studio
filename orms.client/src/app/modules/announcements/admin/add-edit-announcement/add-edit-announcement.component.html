@@ -9,7 +9,7 @@
   <div class="blank-space" [class.visible]="showForm">
     <div class="form-grid">
       <div class="form-item title-field">
-        <app-text-box [label]="'Title'" [placeHolder]="'Enter the title'" [isRequired]="true">
+        <app-text-box [label]="'Title'" [placeHolder]="'Enter the title'" [isRequired]="true" [isSave]="isSaveClicked">
         </app-text-box>
       </div>
 
@@ -19,19 +19,19 @@
             { value: 1, name: 'high' },
             { value: 2, name: 'medium' },
             { value: 3, name: 'low' }
-          ]"></app-drop-down>
+          ]" [isSave]="isSaveClicked"></app-drop-down>
       </div>
 
 
       <div class="form-item">
-        <app-calendar [label]="'Expires On'"></app-calendar>
+        <app-calendar [label]="'Expires On'" [isSave]="isSaveClicked"></app-calendar>
         <!-- (dateSelected)="dateSelected($event)"
           (calendarClosed)="calendarClosed($event)" -->
       </div>
 
 
       <div class="form-item desc-field">
-        <app-text-area [label]="'Description'" [Placeholder]="'Enter description'" [isRequired]="true"
+        <app-text-area [label]="'Description'" [isSave]="isSaveClicked" [Placeholder]="'Enter description'" [isRequired]="true"
           [showBorder]="true"></app-text-area>
       </div>
 
@@ -40,7 +40,7 @@
         <app-button [text]="'Clear'" [color]="'red'" [hoverBGColor]="'#f2b6b6'" [hoverColor]="'Black'"
           [borderRadius]="8" [borderColor]="'red'" [showBorder]="true"></app-button>
         <app-button [text]="'Save'" [bgColor]="'green'" [color]="'white'" [hoverBGColor]="'#519c51'"
-          [hoverColor]="'white'" [borderRadius]="8" [showBorder]="false"></app-button>
+          [hoverColor]="'white'" [borderRadius]="8" [showBorder]="false" (click)="onSave()"></app-button>
       </div>
     </div>
   </div>
