@@ -10,10 +10,29 @@ const meta: Meta<UpcomingHolidaysComponent> = {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {},
 };
 
 export default meta;
 type Story = StoryObj<UpcomingHolidaysComponent>;
 
-export const UpcomingHolidays: Story = {};
+export const UpcomingHolidays: Story = {
+  args: { 
+    holidayleave : [
+    {
+      holidayname: 'christmas holiday',
+      holidaylist: 'National Holiday',
+      holidaydate: '25 Dec 2025',
+    },
+    {
+      holidayname: 'Happy New Year',
+      holidaylist: 'National Holiday',
+      holidaydate: '1 Jan 2026',
+    },
+    {
+      holidayname: 'Re-Public Day',
+      holidaylist: 'federal Holiday',
+      holidaydate: '26 Jan 2026',
+    },
+  ]
+ }
+};
