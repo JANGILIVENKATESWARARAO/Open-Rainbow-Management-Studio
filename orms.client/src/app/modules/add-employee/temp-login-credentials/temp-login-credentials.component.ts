@@ -45,16 +45,21 @@ hasSpecialChar: boolean = false;
  
  temporaryPassword: string = '';
  valueLength: string = '';
-
+userName:string=''
   showPassword: boolean = false;
 isActive: boolean = false; 
 
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
 }
-emailSplitting(){
-  console.log(this.emailValidation)
+emailSplitting() {
+  if (!this.emailValidation) return '';
+
+  const userName = this.emailValidation.split('@')[0];
+  console.log('Username:', userName);
+  return userName;
 }
+
 generatePassword() {
     const chars =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
