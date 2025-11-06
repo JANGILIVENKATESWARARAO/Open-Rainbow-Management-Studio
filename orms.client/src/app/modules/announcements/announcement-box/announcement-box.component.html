@@ -1,6 +1,6 @@
 <div class="container">
     <p class="main">Announcements & Notifications</p>
-<div class="announcement-card" *ngIf="highPriorityAnnouncements.length > 0">
+<div class="announcement-card anycard" *ngIf="highPriorityAnnouncements.length > 0">
   <h3 class="card-title">Pinned Announcements</h3>
   <ng-container *ngFor="let announcement of highPriorityAnnouncements; let last = last">
     <div class="announcement-item">
@@ -28,7 +28,7 @@
   </ng-container>
 </div>
 
-<div class="announcement-card-recent" *ngIf="otherAnnouncements.length > 0">
+<div class="announcement-card-recent anycard" *ngIf="otherAnnouncements.length > 0">
   <h3 class="card-title">Recent Announcements</h3>
   <ng-container *ngFor="let announcement of otherAnnouncements; let last = last">
     <div class="announcement-item">
