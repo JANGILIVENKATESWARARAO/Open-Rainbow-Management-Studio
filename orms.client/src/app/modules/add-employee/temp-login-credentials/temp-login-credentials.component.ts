@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,Output,EventEmitter } from '@angular/core';
 import { PasswordComponent } from '../../../common-ui/controls/password/password.component';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
 import { CommonModule } from '@angular/common';
@@ -42,32 +42,63 @@ hasSpecialChar: boolean = false;
    
   isLengthValid: boolean = false;
   hasRequiredChars: boolean = false;
- 
+ password: string = '';
+  showPassword: boolean = false;
  temporaryPassword: string = '';
  valueLength: string = '';
 userName:string=''
-  showPassword: boolean = false;
 isActive: boolean = false; 
+temporaryUsername = '';
 
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
 }
 emailSplitting() {
+ this.generate();
   if (!this.emailValidation) return '';
 
-  const userName = this.emailValidation.split('@')[0];
-  console.log('Username:', userName);
-  return userName;
+   this.temporaryUsername = this.emailValidation.split('@')[0];
+  console.log('Username:', this.temporaryUsername);
+  return this.temporaryUsername;
 }
+ generate(): void {
+    const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lower = "abcdefghijklmnopqrstuvwxyz";
+    const numbers = "0123456789";
+    const special = "!@#$%^&*";
 
-generatePassword() {
-    const chars =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
-    const length = Math.floor(Math.random() * (16 - 8 + 1)) + 8;
-    this.temporaryPassword = Array.from({ length }, () =>
-      chars.charAt(Math.floor(Math.random() * chars.length))
-    ).join('');
+    const required =
+      upper[Math.floor(Math.random() * upper.length)] +
+      lower[Math.floor(Math.random() * lower.length)] +
+      numbers[Math.floor(Math.random() * numbers.length)] +
+      special[Math.floor(Math.random() * special.length)];
+
+    const allChars = upper + lower + numbers + special;
+    const length = Math.floor(Math.random() * (12 - 8 + 1)) + 8; 
+    let password = required;
+
+    for (let i = required.length; i < length; i++) {
+      password += allChars[Math.floor(Math.random() * allChars.length)];
+    }
+
+    this.password = password.split('').sort(() => Math.random() - 0.5).join('');
+    this.temporaryPassword=this.password
+    console.log(this.password);
+    
   }
+
+  toggleVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+// generatePassword() {
+//     const chars =
+//       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
+//     const length = Math.floor(Math.random() * (16 - 8 + 1)) + 8;
+//     this.temporaryPassword = Array.from({ length }, () =>
+//       chars.charAt(Math.floor(Math.random() * chars.length))
+//     ).join('');
+//   }
 onActiveChange(isActive: boolean) {
   console.log('Child active state:', isActive);
    this.isActive = isActive;

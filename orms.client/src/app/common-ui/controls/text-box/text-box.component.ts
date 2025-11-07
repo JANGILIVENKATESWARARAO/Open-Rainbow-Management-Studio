@@ -33,7 +33,7 @@
 
 
 
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output,OnInit,EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -52,15 +52,22 @@ export class TextBoxComponent implements OnInit, OnChanges {
   @Input() maxChars: number = 20; // ✅ Change this value — it will reflect automatically
   @Input() showCharCount: boolean = true;
    @Input() isSave: boolean = false;
-
+ @Output() valueChange = new EventEmitter<string>();
+ @Input() value: string = '';
+ 
   inputText: string = '';
+ 
   currentCharCount: number = 0;
 
   // Initialize with correct value
   ngOnInit() {
     this.resetCharCount();
   }
-
+ onInputChange(newValue: string) {
+    this.value = newValue;
+    this.valueChange.emit(this.value);
+    this.updateCharCount();
+  }
   // Triggered whenever @Input() maxChars changes
   ngOnChanges(changes: SimpleChanges) {
     if (changes['maxChars']) {
