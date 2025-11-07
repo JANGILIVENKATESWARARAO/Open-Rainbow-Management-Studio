@@ -1,31 +1,39 @@
 <div class="blank-space">
-    <div class="inside">
-      <div class="icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-    class="lucide lucide-file-upload h-5 w-5" aria-hidden="true">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-    <polyline points="14 2 14 8 20 8"></polyline>
-    <path d="M12 12v6"></path>
-    <path d="M9 15l3-3 3 3"></path>
-</svg>
+  <div class="inside">
+    <div class="icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-file-upload h-5 w-5" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <path d="M12 12v6"></path>
+        <path d="M9 15l3-3 3 3"></path>
+      </svg>
 
-        </div>
-        <p class="text">Documents Uploaded</p>
     </div>
-    <div class="grid-container">
-      <app-label-value [label]="'Employee Photo'" [value]="'Not Specified'"></app-label-value>
-      <!-- <div></div> -->
-      <app-label-value [label]="'Employee PAN Number'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Employee PAN Doc'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Employee Aadhar Number'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Employee Aadhar Doc'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Employee Passport Number'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Employee Passport Doc'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Last 6months Bank Statements Docs'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Last 3months Payslips Docs'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Experience Letter Doc'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Relieving Letter Doc'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Offer Letter Doc'" [value]="'Not Specified'"></app-label-value>
-    </div>
+    <p class="text">Documents Uploaded</p>
+  </div>
+  <div class="grid-container">
+    <app-label-value [label]="'Employee Photo'" [value]="uploadedDocuments?.employeePhoto??'NA'"></app-label-value>
+    <app-label-value [label]="'Employee PAN Number'"
+      [value]="uploadedDocuments?.employeePANNumber??'NA'"></app-label-value>
+    <app-label-value [label]="'Employee PAN Doc'" [value]="uploadedDocuments?.employeePANDoc??'NA'"></app-label-value>
+    <app-label-value [label]="'Employee Aadhar Number'"
+      [value]="uploadedDocuments?.employeeAadharNumber??'NA'"></app-label-value>
+    <app-label-value [label]="'Employee Aadhar Doc'"
+      [value]="uploadedDocuments?.employeeAadhar??'NA'"></app-label-value>
+    <app-label-value [label]="'Employee Passport Number'"
+      [value]="uploadedDocuments?.employeePassportNumber??'NA'"></app-label-value>
+    <app-label-value [label]="'Employee Passport Doc'"
+      [value]="uploadedDocuments?.employeePassportDoc??'NA'"></app-label-value>
+    <app-label-value [label]="'Last 6months Bank Statements Docs'"
+      [value]="uploadedDocuments?.lastSixMonthsBankStatement??'NA'"></app-label-value>
+    <app-label-value [label]="'Last 3months Payslips Docs'"
+      [value]="uploadedDocuments?.lastThreeMonthsPayslip??'NA'"></app-label-value>
+    <app-label-value [label]="'Experience Letter Doc'"
+      [value]="uploadedDocuments?.experienceLetter??'NA'"></app-label-value>
+    <app-label-value [label]="'Relieving Letter Doc'"
+      [value]="uploadedDocuments?.relievingLetter??'NA'"></app-label-value>
+    <app-label-value [label]="'Offer Letter Doc'" [value]="uploadedDocuments?.offerLetter??'NA'"></app-label-value>
+  </div>
 </div>

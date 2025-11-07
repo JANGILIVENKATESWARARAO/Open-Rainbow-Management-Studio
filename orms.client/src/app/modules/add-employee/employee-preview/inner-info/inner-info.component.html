@@ -1,18 +1,23 @@
 <div class="blank-space">
-    <div class="inside">
-      <div class="icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-        </div>
-        <p class="text">Basic Information</p>
+  <div class="inside">
+    <div class="icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-user h-5 w-5" aria-hidden="true">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
     </div>
-    <div class="grid-container">
-      <app-label-value [label]="'Date Of Joining'" [value]="'Not Specified'"></app-label-value>
-      <!-- <div></div> -->
-      <app-label-value [label]="'Employee Name'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Employee ID'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Date Of Birth'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Gender'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Blood Group'" [value]="'Not Specified'"></app-label-value>
-      <app-label-value [label]="'Marital Status'" [value]="'Not Specified'"></app-label-value>
-    </div>
+    <p class="text">Basic Information</p>
+  </div>
+  <div class="grid-container">
+    <app-label-value [label]="'Date Of Joining'" [value]="basicInformation?.dateOfJoining??'NA'"></app-label-value>
+    <!-- <div></div> -->
+    <app-label-value [label]="'Employee Name'" [value]="basicInformation?.employeeName??'NA'"></app-label-value>
+    <app-label-value [label]="'Employee ID'" [value]="basicInformation?.employeeId??'NA'"></app-label-value>
+    <app-label-value [label]="'Date Of Birth'" [value]="basicInformation?.dateOfBirth??'NA'"></app-label-value>
+    <app-label-value [label]="'Gender'" [value]="basicInformation?.gender??'NA'"></app-label-value>
+    <app-label-value [label]="'Blood Group'" [value]="basicInformation?.bloodGroup??'NA'"></app-label-value>
+    <app-label-value [label]="'Marital Status'" [value]="basicInformation?.maritalStatus??'NA'"></app-label-value>
+  </div>
 </div>

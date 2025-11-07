@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonComponent } from '../../../../common-ui/controls/button/button.component';
 import { InnerInfoComponent } from '../inner-info/inner-info.component';
 import { InnerContactComponent } from '../inner-contact/inner-contact.component';
@@ -10,6 +10,7 @@ import { InnerSalaryComponent } from '../inner-salary/inner-salary.component';
 import { InnerDocumentComponent } from '../inner-document/inner-document.component';
 import { InnerInsuranceComponent } from '../inner-insurance/inner-insurance.component';
 import { InnerContentComponent } from "../../inner-content/inner-content.component";
+import { EmployeeDetails } from '../../../../common-ui/assests/view-models/common-view-models';
 @Component({
   selector: 'app-employee-preview-details',
   templateUrl: './employee-preview-details.component.html',
@@ -18,6 +19,8 @@ import { InnerContentComponent } from "../../inner-content/inner-content.compone
   imports: [ButtonComponent, InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerDocumentComponent, InnerInsuranceComponent, InnerContentComponent]
 })
 export class EmployeePreviewDetailsComponent {
+  @Input() employeeDetails?: EmployeeDetails;
+  
   printDetails() {
     window.print();
   }

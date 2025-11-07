@@ -1,11 +1,15 @@
 <div class="grid grid-cols-[1fr] grid-rows-[1fr_1fr] gap-5 p-[40px]">
-  <app-inner-info></app-inner-info>
-  <app-inner-contact></app-inner-contact>
-  <app-inner-job></app-inner-job>
-  <app-inner-education></app-inner-education>
-  <app-inner-work></app-inner-work>
-  <app-inner-other></app-inner-other>
-  <app-inner-salary></app-inner-salary>
-  <app-inner-document></app-inner-document>
-  <app-inner-insurance></app-inner-insurance>
+  <app-inner-info [basicInformation]="employeeDetails?.basicInformation"></app-inner-info>
+  <app-inner-contact [contactInformation]="employeeDetails?.contactInformation"></app-inner-contact>
+  <app-inner-job [jobDetails]="employeeDetails?.jobDetails"
+    [leaveAlloation]="employeeDetails?.jobDetails?.leaveAllocation"></app-inner-job>
+  <app-inner-education [educationDetails]="employeeDetails?.educationDetails"></app-inner-education>
+  <app-inner-work [workExperience]="employeeDetails?.workExperience"></app-inner-work>
+  <app-inner-other [otherDetails]="employeeDetails?.otherDetails"></app-inner-other>
+  <app-inner-salary [bankDetails]="employeeDetails?.payrollInformation?.bankDetails"
+    [currentCTC]="employeeDetails?.payrollInformation?.currentCTC"></app-inner-salary>
+  <app-inner-document [uploadedDocuments]="employeeDetails?.documentsUploaded"></app-inner-document>
+  <app-inner-insurance [fatherDetails]="employeeDetails?.insuranceDetails?.fatherDetails"
+    [motherDetails]="employeeDetails?.insuranceDetails?.motherDetails"
+    [spouseDetails]="employeeDetails?.insuranceDetails?.spouseDetails"></app-inner-insurance>
 </div>

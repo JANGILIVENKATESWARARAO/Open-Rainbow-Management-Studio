@@ -13,41 +13,40 @@
         <p class="text">Insurance Details</p>
     </div>
     <div class="grid-container">
-        <!-- <p class="text">Father Details</p> -->
-
         <div>
             <p class="text">Father Details</p>
             <hr>
 
         </div>
-        <app-label-value [label]="'Father-Name'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Father-Aadhar'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Father-Pan'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Father-DOB'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Father-Occupation'" [value]="'Not Specified'"></app-label-value>
+        <app-label-value [label]="'Father-Name'" [value]="fatherDetails?.fatherName??'NA'"></app-label-value>
+        <app-label-value [label]="'Father-Aadhar'" [value]="fatherDetails?.fatherAadhar??'NA'"></app-label-value>
+        <app-label-value [label]="'Father-Pan'" [value]="fatherDetails?.fatherPan??'NA'"></app-label-value>
+        <app-label-value [label]="'Father-DOB'" [value]="fatherDetails?.fatherDOB??'NA'"></app-label-value>
+        <app-label-value [label]="'Father-Occupation'"
+            [value]="fatherDetails?.fatherOccupation??'NA'"></app-label-value>
     </div>
     <div class="grid-container">
         <div>
             <p class="text">Mother Details</p>
             <hr>
         </div>
-        <!-- <div></div> -->
-        <app-label-value [label]="'Mother-Name'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Mother-Aadhar'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Mother-Pan'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Mother-DOB'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Mother-Occupation'" [value]="'Not Specified'"></app-label-value>
+        <app-label-value [label]="'Mother-Name'" [value]="motherDetails?.motherName??'NA'"></app-label-value>
+        <app-label-value [label]="'Mother-Aadhar'" [value]="motherDetails?.motherAadhar??'NA'"></app-label-value>
+        <app-label-value [label]="'Mother-Pan'" [value]="motherDetails?.motherPan??'NA'"></app-label-value>
+        <app-label-value [label]="'Mother-DOB'" [value]="motherDetails?.motherDOB??'NA'"></app-label-value>
+        <app-label-value [label]="'Mother-Occupation'"
+            [value]="motherDetails?.motherOccupation??'NA'"></app-label-value>
     </div>
     <div class="grid-container">
         <div>
             <p class="text">Spouse Details</p>
             <hr>
         </div>
-        <!-- <div></div> -->
-        <app-label-value [label]="'Spouse-Name'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Spouse-Aadhar'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Spouse-Pan'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Spouse-DOB'" [value]="'Not Specified'"></app-label-value>
-        <app-label-value [label]="'Spouse-Occupation'" [value]="'Not Specified'"></app-label-value>
+        <app-label-value [label]="'Spouse-Name'" [value]="spouseDetails?.spouseName??'NA'"></app-label-value>
+        <app-label-value [label]="'Spouse-Aadhar'" [value]="spouseDetails?.spouseName??'NA'"></app-label-value>
+        <app-label-value [label]="'Spouse-Pan'" [value]="spouseDetails?.spouseDob??'NA'"></app-label-value>
+        <app-label-value [label]="'Spouse-DOB'" [value]="spouseDetails?.spouseDob??'NA'"></app-label-value>
+        <app-label-value [label]="'Spouse-Occupation'"
+            [value]="spouseDetails?.spouseOccupation??'NA'"></app-label-value>
     </div>
 </div>

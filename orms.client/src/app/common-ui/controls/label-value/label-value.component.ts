@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./label-value.component.css']
 })
 export class LabelValueComponent {
-  @Input() label: string = 'Employee ID';
+  @Input() label?: string = 'Employee ID';
   @Input() value: string = 'EMP7185';
   @Input() isRequired: boolean = true;
 }
