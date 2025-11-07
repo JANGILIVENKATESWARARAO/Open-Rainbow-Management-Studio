@@ -1,17 +1,18 @@
-<div class="cell">
+<div class="cell" [ngClass]="{ 'reverse': labelPosition === 'right' }">
   <ng-container *ngIf="label; else onlyDot">
-    <ng-container *ngIf="labelPosition === 'left'; else rightposition">
-      <span class="text text-2xl font-bold inline-block" [style.color]="labelColor">{{ label }}</span>
-      <span class="dot inline-block rounded-full align-middle mx-1 bg-current" [style.color]="dotColor" [ngStyle]="getDotSize(dotSize)"></span>
-    </ng-container>
-  
+    <span class="text" [style.color]="labelColor">{{ label }}</span>
+    <span
+      class="dot"
+      [style.backgroundColor]="dotColor"
+      [ngStyle]="getDotSize(dotSize)"
+    ></span>
+  </ng-container>
 
-  <ng-template #rightposition>
-    <span class="dot inline-block rounded-full align-middle mx-1 bg-current" [style.color]="dotColor" [ngStyle]="getDotSize(dotSize)"></span>
-    <span class="text text-2xl font-bold inline-block" [style.color]="labelColor">{{ label }}</span>
-  </ng-template>
-</ng-container>
   <ng-template #onlyDot>
-    <span class="dot inline-block rounded-full align-middle mx-1 bg-current" [style.color]="dotColor" [ngStyle]="getDotSize(dotSize)"></span>
+    <span
+      class="dot"
+      [style.backgroundColor]="dotColor"
+      [ngStyle]="getDotSize(dotSize)"
+    ></span>
   </ng-template>
 </div>

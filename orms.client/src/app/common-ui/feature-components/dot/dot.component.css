@@ -1,0 +1,24 @@
+.cell {
+  display: flex;
+  align-items: center; /* ✅ Perfect vertical centering */
+  gap: 2px; /* space between text and dot */
+}
+
+.cell.reverse {
+  flex-direction: row-reverse; /* handles right-position */
+}
+
+.text {
+  font-size: 1.5rem; /* same as text-2xl */
+  font-weight: 700; /* bold */
+  line-height: 1; /* removes extra vertical spacing */
+  display: flex;
+  align-items: center; /* ensures label baseline aligns perfectly with dot */
+}
+
+.dot {
+  border-radius: 50%;
+  flex-shrink: 0; /* prevents shrinking when container resizes */
+  display: inline-block;
+  margin-top: 9px;
+}
