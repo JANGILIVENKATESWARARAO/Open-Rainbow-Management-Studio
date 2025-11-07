@@ -9,10 +9,11 @@
   </div>
 
   <!-- Holiday Card -->
-  <div class="flex items-start gap-4 border border-gray-200 rounded-xl p-4 shadow-sm">
+  <div *ngFor="let item of data" class="my-[10px]">
+    <div class="flex items-start gap-4 border border-gray-200 rounded-xl p-4 shadow-sm">
     <!-- Date Block -->
     <div class="w-[60px] h-[60px]">
-      <app-count-widget [label]="'JAN'" [labelColor]="'white'" [valueColor]="'#fff'" [backgroundColor]="'blue'"
+      <app-count-widget [label]="item.holidayMonth" [value]="item.holidayDate" [labelColor]="'white'" [valueColor]="'#fff'" [backgroundColor]="'blue'"
         [showBorder]="false" lebelsize="10px" valuesize="14px"></app-count-widget>
     </div>
 
@@ -22,19 +23,20 @@
     <div class="flex-1">
       <!-- Title and Chips -->
       <div class="flex flex-wrap items-center">
-        <h3 class="text-base font-semibold text-gray-900 mr-2">New Year's Day</h3>
+        <h3 class="text-base font-semibold text-gray-900 mr-2">{{item.holidayName}}</h3>
 
         <div class="flex items-center">
-          <app-chip [text]="'National Holiday'" [bgColor]="'#87CEEB'" [color]="'blue'"
+          <app-chip [text]="item.holidayType" [bgColor]="'#87CEEB'" [color]="'blue'"
             [activeColor]="'#fff'"></app-chip>
 
-          <app-chip [text]="'Paid Leave'" [bgColor]="'#dcfce7'" [color]="'#16a34a'" [activeColor]="'#fff'"
+          <app-chip [text]="item.holidayClassification" [bgColor]="'#dcfce7'" [color]="'#16a34a'" [activeColor]="'#fff'"
             class="ml-0"></app-chip>
         </div>
       </div>
 
       <!-- Date below -->
-      <p class="text-sm text-gray-500 mt-1">Monday, January 1, 2024</p>
+      <p class="text-sm text-gray-500 mt-1">{{item.holidayCalendar}}</p>
     </div>
+  </div>
   </div>
 </div>

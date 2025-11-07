@@ -137,7 +137,8 @@ const buffer = handleHeight + 8;
       const initialHeight = Math.min(244, totalHeight);
       const maxHeight = totalHeight;
 
-      this.renderer.setStyle(list, 'height', `${initialHeight}px`);
+      // this.renderer.setStyle(list, 'height', `${initialHeight}px`);
+      this.renderer.setStyle(list, 'height', 'auto');
       this.renderer.setStyle(list, 'max-height', `${maxHeight}px`);
       this.renderer.setStyle(list, 'overflow-y', 'auto');
       this.renderer.setStyle(list, 'resize', 'none');
@@ -200,7 +201,7 @@ ngAfterViewInit() {
     newHeight = Math.min(newHeight, totalHeight + 10);
     newHeight = Math.max(newHeight, 80);
 
-    list.style.height = `${newHeight}px`;
+    list.style.height = `${newHeight + 13}px`;
     list.style.overflowY = newHeight >= totalHeight ? 'hidden' : 'auto';
   });
 

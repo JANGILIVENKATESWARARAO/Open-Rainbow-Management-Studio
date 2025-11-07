@@ -12,7 +12,7 @@ import { DropdownValues } from '../../assests/view-models/common-view-models';
 export class ValueDropdownComponent implements OnInit {
   @Input() dropdownValues: DropdownValues[] = [];
   @Input() defaultSelected: string | number | null = null;
-  @Input() placeholderText: string = '2024';
+  @Input() placeholderText: string = '2024';                      
   @Input() textColor: string = '#111';
   @Input() backgroundColor: string = 'white';
   @Input() activeBackgroundColor: string = '#eaf0ff';

@@ -1,33 +1,15 @@
 <div class="team-card anycard">
   <h1 class="team-title">Team Members</h1>
 
-  <div class="member">
-    <img [src]='TeamMemberPhoto' alt="sdfvb">
-    <div class="member-info">
-      <h3>{{TeamMemberName}}</h3>
-      <p>{{TeamMemberDesig}}</p>
+  <div *ngFor="let item of data">
+    <div class="member">
+      <img [src]='item.imageUrl' alt="sdfvb">
+      <div class="member-info">
+        <h3>{{item.name}}</h3>
+        <p>{{item.designation}}</p>
+      </div>
     </div>
   </div>
-  <!-- 
-  <div class="member">
-    <img
-      src="https://plus.unsplash.com/premium_photo-1661757403301-ae68e1f1b827?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735"
-      alt="sdfvb">
-    <div class="member-info">
-      <h3>Ayesha Khan</h3>
-      <p>UI/UX Designer</p>
-    </div>
-  </div>
-
-  <div class="member">
-    <img
-      src="https://plus.unsplash.com/premium_photo-1661757403301-ae68e1f1b827?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735"
-      alt="sdfvb">
-    <div class="member-info">
-      <h3>Hamza Ibrahim</h3>
-      <p>UI/UX Designer</p>
-    </div>
-  </div> -->
 
   <div class="btn">
     <app-button [text]="'See all'" [bgColor]="'#f1810d'" [color]="'#560cb4'" [hoverBGColor]="'#f1810d'"

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { Announcement } from '../../../../common-ui/assests/view-models/common-view-models';
+import { Component, input, Input } from '@angular/core';
+import { Announcement, HolidayList } from '../../../../common-ui/assests/view-models/common-view-models';
 import { ButtonComponent } from '../../../../common-ui/controls/button/button.component';
 import { ChipComponent } from '../../../../common-ui/controls/chip/chip.component';
 import { CountWidgetComponent } from '../../../../common-ui/feature-components/count-widget/count-widget.component';
@@ -18,14 +18,15 @@ import { CountWidgetComponent } from '../../../../common-ui/feature-components/c
   ],
 })
 export class HolidayListComponent {
+  @Input() data: HolidayList[] = [];
 
-  showForm = false; 
+  showForm = false;
 
   @Input() announcements: Announcement[] = [
-   
+
   ];
 
- 
+
 
 }
 

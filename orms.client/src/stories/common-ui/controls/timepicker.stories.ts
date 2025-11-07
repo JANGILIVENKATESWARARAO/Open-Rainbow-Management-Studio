@@ -14,9 +14,14 @@ const meta: Meta<TimepickerComponent> = {
       description: 'Toggle between 12-hour and 24-hour format',
       defaultValue: false,
     },
+     showSeconds: {
+      control: 'boolean',
+      description: 'Show seconds column in the time picker',
+    },
   },
   args: {
     use24HourFormat: false, // default (12-hour)
+    showSeconds: false,
   },
 };
 
@@ -26,12 +31,26 @@ type Story = StoryObj<TimepickerComponent>;
 export const Timepicker12Hour: Story = {
   args: {
     use24HourFormat: false,
+    showSeconds: false,
   },
 };
 /** 24-hour timepicker example */
 export const Timepicker24Hour: Story = {
   args: {
     use24HourFormat: true,
+    showSeconds: false,
+  },
+};
+export const TimepickerWithSeconds: Story = {
+  args: {
+    use24HourFormat: false,
+    showSeconds: true,
+  },
+};
+export const Timepicker24HourWithSeconds: Story = {
+  args: {
+    use24HourFormat: true,
+    showSeconds: true,
   },
 };
 export const Timepicker: Story = {};
