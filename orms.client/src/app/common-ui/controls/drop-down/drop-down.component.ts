@@ -31,9 +31,10 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   @Output() selectedChange = new EventEmitter<any>();
   @Input() draggable: boolean = true;
  @Input() isSave: boolean = false;
+   @Input() showCharCount: boolean = true;
   selectedValue: string | null = null;
   isOpenUp: boolean = false;
-
+ @Output() charCountChange = new EventEmitter<number>();
   private startY = 0;
   private startHeight = 0;
   private resizing = false;
@@ -48,6 +49,7 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   selectOption(option: DropDown) {
     this.selectedValue = option.name;
     this.selectedChange.emit(option.value);
+    this.charCountChange.emit(this.selectedValue.length);
     setTimeout(() => this.closeDropdown(), 0);
   }
 

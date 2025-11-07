@@ -26,6 +26,16 @@ import { Announcement } from '../../../../common-ui/assests/view-models/common-v
 export class AddEditAnnouncementComponent {
   showForm = false;
     isSaveClicked: boolean = false;
+    isSaveClicked2: boolean = false;
+
+    isSaveClicked3: boolean = false;
+
+    isSaveClicked4: boolean = false;
+
+    charCount = 0;
+    charCount2 = 0;
+
+      selectedPriority: any = '';
 
   @Input() announcements: Announcement[] = [
     {
@@ -56,9 +66,31 @@ export class AddEditAnnouncementComponent {
       expireDate: '24/12/2024',
     },
   ];
-
+ onCharCountUpdate(length: number) {
+    this.charCount = length;
+    console.log('Character count in parent:', length);
+  }
+  onCharCountUpdate2(length: number) {
+    this.charCount2 = length;
+  
+  }
   onSave() {
-    this.isSaveClicked = true;
+    console.log('Title entered:',  this.selectedPriority);
+    if ( this.charCount==0) {
+      console.log(this.charCount + "" + `zero characters`);
+      
+      this.isSaveClicked = true;
+   
+    }
+     if (this.charCount2==0) {
+        this. isSaveClicked2=true;
+    } 
+    else{
+         console.log(this.charCount + "" + `full characters`);
+      this.isSaveClicked = false;
+     this. isSaveClicked2=false
+
+    }
   }
   toggleForm() {
     this.showForm = !this.showForm;

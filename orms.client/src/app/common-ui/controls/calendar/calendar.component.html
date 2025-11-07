@@ -6,7 +6,7 @@
 
     <div class="input-container "   [ngStyle]="{
     'border': '1px solid',
-    'border-color': isSave ? 'green' : null
+    'border-color': isSave ? 'red' : null,'border-radius': '7px'
   }">
         <input type="text" class="dob-input" [value]="formattedDate" (click)="openDatePicker($event)"
             placeholder="dd-mm-yyyy" readonly required />

@@ -9,7 +9,7 @@
   <div class="blank-space" [class.visible]="showForm">
     <div class="form-grid">
       <div class="form-item title-field">
-        <app-text-box [label]="'Title'" [placeHolder]="'Enter the title'" [isRequired]="true" [isSave]="isSaveClicked">
+        <app-text-box [label]="'Title'"  [(inputText)]="title"   (charCountChange)="onCharCountUpdate($event)" [placeHolder]="'Enter the title'" [isRequired]="true" [isSave]="isSaveClicked">
         </app-text-box>
       </div>
 
@@ -19,19 +19,20 @@
             { value: 1, name: 'high' },
             { value: 2, name: 'medium' },
             { value: 3, name: 'low' }
-          ]" [isSave]="isSaveClicked"></app-drop-down>
+          ]" [isSave]="isSaveClicked2"
+            (charCountChange)="onCharCountUpdate2($event)"></app-drop-down>
       </div>
 
 
       <div class="form-item">
-        <app-calendar [label]="'Expires On'" [isSave]="isSaveClicked"></app-calendar>
+        <app-calendar [label]="'Expires On'" [isSave]="isSaveClicked3"></app-calendar>
         <!-- (dateSelected)="dateSelected($event)"
           (calendarClosed)="calendarClosed($event)" -->
       </div>
 
 
       <div class="form-item desc-field">
-        <app-text-area [label]="'Description'" [isSave]="isSaveClicked" [Placeholder]="'Enter description'" [isRequired]="true"
+        <app-text-area [label]="'Description'" [isSave]="isSaveClicked4" [Placeholder]="'Enter description'" [isRequired]="true"
           [showBorder]="true"></app-text-area>
       </div>
 
