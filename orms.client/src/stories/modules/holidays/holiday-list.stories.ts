@@ -12,7 +12,42 @@ const meta: Meta<HolidayListComponent> = {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {},
+  args: {
+    data:[
+      {
+        holidayMonth: 'JAN',
+        holidayDate: 20,
+        holidayName: `New Year's day`,
+        holidayType: 'Natinal Holiday',
+        holidayClassification: 'Paid Leave',
+        holidayCalendar: 'Monday, January 1, 2024'
+      },
+      {
+        holidayMonth: 'JAN',
+        holidayDate: 21,
+        holidayName: `New Year's day`,
+        holidayType: 'Natinal Holiday',
+        holidayClassification: 'Paid Leave',
+        holidayCalendar: 'Monday, January 1, 2024'
+      },
+      {
+        holidayMonth: 'JAN',
+        holidayDate: 22,
+        holidayName: `New Year's day`,
+        holidayType: 'Natinal Holiday',
+        holidayClassification: 'Paid Leave',
+        holidayCalendar: 'Monday, January 1, 2024'
+      },
+      {
+        holidayMonth: 'JAN 20',
+        holidayDate: 23,
+        holidayName: `New Year's day`,
+        holidayType: 'Natinal Holiday',
+        holidayClassification: 'Paid Leave',
+        holidayCalendar: 'Monday, January 1, 2024'
+      }
+    ]
+  },
 };
 
 export default meta;

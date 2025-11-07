@@ -20,3 +20,12 @@ export interface TeamMembers {
   designation: string;
   imageUrl: string;
 }
+
+export interface HolidayList {
+  holidayMonth: string,
+  holidayDate:number,
+  holidayName: string,
+  holidayType: string;
+  holidayClassification: string,
+  holidayCalendar: string,
+}
