@@ -14,3 +14,9 @@ export interface DropdownValues {
   backgroundColor: string;
   isDisabled: boolean;
 }
+
+export interface TeamMembers {
+  name: string;
+  designation: string;
+  imageUrl: string;
+}
