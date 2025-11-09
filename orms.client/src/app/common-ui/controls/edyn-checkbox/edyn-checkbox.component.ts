@@ -2,7 +2,7 @@
 import { Component,Input } from '@angular/core';
 
 @Component({
-    selector: 'app-edyn-checkbox',
+    selector: 'orms-edyn-checkbox',
     templateUrl: './edyn-checkbox.component.html',
     styleUrl: './edyn-checkbox.component.css',
     imports: []

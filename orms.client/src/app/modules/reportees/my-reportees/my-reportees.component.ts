@@ -13,7 +13,7 @@ interface MyReportees{
 
 }
 @Component({
-    selector: 'app-my-reportees',
+    selector: 'orms-my-reportees',
     templateUrl: './my-reportees.component.html',
     styleUrl: './my-reportees.component.css',
     imports: [ButtonComponent]

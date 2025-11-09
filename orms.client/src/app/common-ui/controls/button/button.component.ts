@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector: 'app-button',
+    selector: 'orms-button',
     templateUrl: './button.component.html',
     styleUrls: ['./button.component.css'],
     imports: [CommonModule],
-    standalone: true,
     encapsulation: ViewEncapsulation.None
 })
 export class ButtonComponent {

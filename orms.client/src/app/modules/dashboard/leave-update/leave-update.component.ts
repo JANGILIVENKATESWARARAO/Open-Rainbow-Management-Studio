@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-leave-update',
+  selector: 'orms-leave-update',
   templateUrl: './leave-update.component.html',
   styleUrl: './leave-update.component.css',
   standalone: true

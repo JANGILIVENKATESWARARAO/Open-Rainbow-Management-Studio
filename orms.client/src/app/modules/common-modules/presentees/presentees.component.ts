@@ -2,7 +2,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-presentees',
+    selector: 'orms-presentees',
     imports: [],
     templateUrl: './presentees.component.html',
     styleUrl: './presentees.component.css'

@@ -3,7 +3,7 @@ import { CalendarComponent } from '../calendar/calendar.component';
 import { TimepickerComponent } from '../timepicker/timepicker.component';
 
 @Component({
-    selector: 'app-calendar-timer',
+    selector: 'orms-calendar-timer',
     templateUrl: './calendar-timer.component.html',
     styleUrl: './calendar-timer.component.css',
     imports: [CalendarComponent, TimepickerComponent]

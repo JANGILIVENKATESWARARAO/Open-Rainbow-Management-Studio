@@ -4,7 +4,7 @@ import { TeamMembers } from '../../../common-ui/assests/view-models/common-view-
 
 
 @Component({
-    selector: 'app-view-team-members',
+    selector: 'orms-view-team-members',
     templateUrl: './view-team-members.component.html',
     styleUrl: './view-team-members.component.css',
     imports: [ButtonComponent]

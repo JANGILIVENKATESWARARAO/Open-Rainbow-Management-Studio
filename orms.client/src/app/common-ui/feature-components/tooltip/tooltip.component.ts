@@ -2,7 +2,7 @@ import { NgStyle } from '@angular/common';
 import { Component, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-tooltip',
+    selector: 'orms-tooltip',
     templateUrl: './tooltip.component.html',
     styleUrl: './tooltip.component.css',
     imports: [NgStyle]

@@ -8,28 +8,28 @@
           <h3>
             {{ leave.type }}
             @if (leave.status === 'Pending') {
-              <app-chip [text]="leave.status" [bgColor]="'#f0dc98'" [color]="'#a42424'" [activeBGColor]="'#f0dc98'"
-              [activeColor]="'#a42424'" [size]="'extrasmall'"></app-chip>
+              <orms-chip [text]="leave.status" [bgColor]="'#f0dc98'" [color]="'#a42424'" [activeBGColor]="'#f0dc98'"
+              [activeColor]="'#a42424'" [size]="'extrasmall'"></orms-chip>
             }
             @if (leave.status === 'Approved') {
-              <app-chip [text]="leave.status" [bgColor]="'#bff3c6'" [color]="'#093c07'" [activeBGColor]="'#bff3c6'"
-              [activeColor]="'#093c07'" [size]="'small'"></app-chip>
+              <orms-chip [text]="leave.status" [bgColor]="'#bff3c6'" [color]="'#093c07'" [activeBGColor]="'#bff3c6'"
+              [activeColor]="'#093c07'" [size]="'small'"></orms-chip>
             }
             @if (leave.status === 'Rejected') {
-              <app-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
-              [activeColor]="'#0b0303'" [size]="'extrasmall'"></app-chip>
+              <orms-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
+              [activeColor]="'#0b0303'" [size]="'extrasmall'"></orms-chip>
             }
             @if (leave.status === 'Rejected') {
-              <app-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
-              [activeColor]="'#0b0303'" [size]="'small'"></app-chip>
+              <orms-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
+              [activeColor]="'#0b0303'" [size]="'small'"></orms-chip>
             }
             @if (leave.status === 'Rejected') {
-              <app-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
-              [activeColor]="'#0b0303'" [size]="'medium'"></app-chip>
+              <orms-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
+              [activeColor]="'#0b0303'" [size]="'medium'"></orms-chip>
             }
             @if (leave.status === 'Rejected') {
-              <app-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
-              [activeColor]="'#0b0303'" [size]="'small'" [usePointerCursor]="false"></app-chip>
+              <orms-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
+              [activeColor]="'#0b0303'" [size]="'small'" [usePointerCursor]="false"></orms-chip>
             }
           </h3>
           <p class="date">
@@ -54,10 +54,10 @@
             }}
           </p>
           @if (leave.status === 'Pending') {
-            <app-button [text]="'Edit'" [bgColor]="'#1880d6'" [color]="'#fff'" [hoverBGColor]="'#1880d6'"
-            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12" style="margin-right: 10px;"></app-button>
-            <app-button [text]="'Cancel'" [bgColor]="'#ee120d'" [color]="'#fff'" [hoverBGColor]="'#ee120d'"
-            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12"></app-button>
+            <orms-button [text]="'Edit'" [bgColor]="'#1880d6'" [color]="'#fff'" [hoverBGColor]="'#1880d6'"
+            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12" style="margin-right: 10px;"></orms-button>
+            <orms-button [text]="'Cancel'" [bgColor]="'#ee120d'" [color]="'#fff'" [hoverBGColor]="'#ee120d'"
+            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12"></orms-button>
           }
         </div>
       </div>

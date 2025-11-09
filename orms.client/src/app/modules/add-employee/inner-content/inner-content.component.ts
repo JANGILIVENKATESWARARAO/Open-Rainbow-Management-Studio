@@ -13,7 +13,7 @@ import { EmployeeDetails } from '../../../common-ui/assests/view-models/common-v
 
 
 @Component({
-    selector: 'app-inner-content',
+    selector: 'orms-inner-content',
     templateUrl: './inner-content.component.html',
     styleUrl: './inner-content.component.css',
     imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerDocumentComponent, InnerInsuranceComponent]

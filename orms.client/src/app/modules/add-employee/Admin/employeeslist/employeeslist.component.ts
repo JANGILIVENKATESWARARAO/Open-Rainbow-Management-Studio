@@ -7,7 +7,7 @@ import { InnerContactComponent } from '../../employee-preview/inner-contact/inne
 import { InnerContentComponent } from '../../inner-content/inner-content.component';
 
 @Component({
-    selector: 'app-employeeslist',
+    selector: 'orms-employeeslist',
     templateUrl: './employeeslist.component.html',
     styleUrl: './employeeslist.component.css',
     imports: [

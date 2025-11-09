@@ -15,7 +15,7 @@ export interface LeaveRequest {
 }
 
 @Component({
-    selector: 'app-inner-recent-leave-request',
+    selector: 'orms-inner-recent-leave-request',
     templateUrl: './inner-recent-leave-request.component.html',
     styleUrl: './inner-recent-leave-request.component.css',
     imports: [

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header">
     <p class="main">Add-Holiday</p>
-    <app-button
+    <orms-button
       [text]="'Add Announcement'"
       [bgColor]="'#c1eb92'"
       [color]="'#323f24'"
@@ -11,18 +11,18 @@
       [borderColor]="'#4c5740'"
       [showBorder]="true"
       (click)="toggleForm()"
-    ></app-button>
+    ></orms-button>
   </div>
 
   <div class="blank-space" [class.visible]="showForm">
-    <app-text-box [label]="'Title'" [placeHolder]="'Enter the title '" [isRequired]="true"></app-text-box>
+    <orms-text-box [label]="'Title'" [placeHolder]="'Enter the title '" [isRequired]="true"></orms-text-box>
     <div class="inside">
-         <app-calendar
+         <orms-calendar
         [label]="'Date'"
         (dateSelected)="dateSelected($event)"
         (calendarClosed)="calendarClosed($event)"
-      ></app-calendar>
-      <app-drop-down
+      ></orms-calendar>
+      <orms-drop-down
         [label]="'Type'"
         [placeHolder]="'Select seviarity type'"
         [isRequired]="true"
@@ -31,19 +31,19 @@
           { value: 2, name: 'medium' },
           { value: 3, name: 'low' }
         ]"
-      ></app-drop-down>
+      ></orms-drop-down>
    
     </div>
 
-    <app-text-area
+    <orms-text-area
       [label]="'Description'"
       [Placeholder]="'Enter description '"
       [isRequired]="true"
       [showBorder]="true"
-    ></app-text-area>
+    ></orms-text-area>
 
     <div class="footer">
-      <app-button
+      <orms-button
         [text]="'Clear'"
         [color]="'red'"
         [hoverBGColor]="'#f2b6b6'"
@@ -51,8 +51,8 @@
         [borderRadius]="8"
         [borderColor]="'red'"
         [showBorder]="true"
-      ></app-button>
-      <app-button
+      ></orms-button>
+      <orms-button
         [text]="'Save'"
         [bgColor]="'green'"
         [color]="'white'"
@@ -60,7 +60,7 @@
         [hoverColor]="'white'"
         [borderRadius]="8"
         [showBorder]="false"
-      ></app-button>
+      ></orms-button>
     </div>
   </div>
 </div>

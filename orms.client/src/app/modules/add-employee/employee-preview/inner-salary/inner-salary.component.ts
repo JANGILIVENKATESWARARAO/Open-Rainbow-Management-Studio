@@ -3,7 +3,7 @@ import { LabelValueComponent } from '../../../../common-ui/controls/label-value/
 import { Bankdetails } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-    selector: 'app-inner-salary',
+    selector: 'orms-inner-salary',
     templateUrl: './inner-salary.component.html',
     styleUrl: './inner-salary.component.css',
     imports: [LabelValueComponent]

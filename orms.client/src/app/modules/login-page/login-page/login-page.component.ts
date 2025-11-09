@@ -4,7 +4,7 @@ import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.
 import { ToggleComponent } from '../../../common-ui/controls/toggle/toggle.component';
 
 @Component({
-    selector: 'app-login-page',
+    selector: 'orms-login-page',
     templateUrl: './login-page.component.html',
     styleUrl: './login-page.component.css',
     imports: [ButtonComponent, TextBoxComponent, ToggleComponent]

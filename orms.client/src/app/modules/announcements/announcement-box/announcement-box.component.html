@@ -7,13 +7,13 @@
         <div class="announcement-item">
           <div class="title-row">
             <h4 class="title">{{ announcement.title }}</h4>
-            <app-chip
+            <orms-chip
               [text]="announcement.priority"
               [color]="announcement.priority === 'medium' ? '#b38742' : (announcement.priority === 'low' ? '#23816c' : '#aa355b')"
               [activeColor]="announcement.priority === 'medium' ? '#b38742' : (announcement.priority === 'low' ? '#23816c' : '#aa355b')"
               [activeBGColor]="announcement.priority === 'medium' ? '#fef9c2' : (announcement.priority === 'low' ? '#dbfce7' : '#ffe2e2')"
               [bgColor]="announcement.priority === 'medium' ? '#fef9c2' : (announcement.priority === 'low' ? '#dbfce7' : '#ffe2e2')">
-            </app-chip>
+            </orms-chip>
           </div>
           <p class="description">{{ announcement.description }}</p>
           <div class="footer-row">
@@ -38,13 +38,13 @@
         <div class="announcement-item">
           <div class="title-row">
             <h4 class="title">{{ announcement.title }}</h4>
-            <app-chip
+            <orms-chip
               [text]="announcement.priority"
               [color]="announcement.priority === 'medium' ? '#b38742' : (announcement.priority === 'low' ? '#23816c' : '#aa355b')"
               [activeColor]="announcement.priority === 'medium' ? '#b38742' : (announcement.priority === 'low' ? '#23816c' : '#aa355b')"
               [activeBGColor]="announcement.priority === 'medium' ? '#fef9c2' : (announcement.priority === 'low' ? '#dbfce7' : '#ffe2e2')"
               [bgColor]="announcement.priority === 'medium' ? '#fef9c2' : (announcement.priority === 'low' ? '#dbfce7' : '#ffe2e2')">
-            </app-chip>
+            </orms-chip>
           </div>
           <p class="description">{{ announcement.description }}</p>
           <div class="footer-row">

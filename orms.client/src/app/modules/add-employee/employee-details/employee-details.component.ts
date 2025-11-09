@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-employee-details',
+  selector: 'orms-employee-details',
   templateUrl: './employee-details.component.html',
   styleUrls: ['./employee-details.component.css'],
-  standalone: true,
 })
 export class EmployeeDetailsComponent {
   employee = {

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-count-widget',
+    selector: 'orms-count-widget',
     templateUrl: './count-widget.component.html',
     styleUrl: './count-widget.component.css',
     imports: [CommonModule]

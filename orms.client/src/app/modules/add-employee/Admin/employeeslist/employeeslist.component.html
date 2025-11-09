@@ -11,10 +11,10 @@
     <div class="details">
       <span class="date">{{Date}}</span>
       <ng-container>
-        <app-chip [text]="status" [bgColor]="status === 'Active' ? '#85f3bc' : '#eb7c7c'"
+        <orms-chip [text]="status" [bgColor]="status === 'Active' ? '#85f3bc' : '#eb7c7c'"
           [color]="status === 'Active' ? '#1e592f' : '#000'"
           [activeBGColor]="status === 'Active' ? '#85f3bc' : '#eb7c7c'"
-        [activeColor]="status === 'Active' ? '#1e592f' : '#000'" [size]="'small'"></app-chip>
+        [activeColor]="status === 'Active' ? '#1e592f' : '#000'" [size]="'small'"></orms-chip>
       </ng-container>
     </div>
   </div>
@@ -23,7 +23,7 @@
 
 @if (showBasicInfo) {
   <div class="basic-info-section">
-    <app-inner-content></app-inner-content>
+    <orms-inner-content></orms-inner-content>
   </div>
 }
 

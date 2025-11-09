@@ -3,7 +3,7 @@
 // import { FormsModule } from '@angular/forms';
 
 // @Component({
-//   selector: 'app-text-area',
+//   selector: 'orms-text-area',
 //   standalone: true,
 //   templateUrl: './text-area.component.html',
 //   styleUrls: ['./text-area.component.css'],
@@ -40,7 +40,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'app-text-area',
+    selector: 'orms-text-area',
     templateUrl: './text-area.component.html',
     styleUrls: ['./text-area.component.css'],
     imports: [CommonModule, FormsModule]

@@ -4,7 +4,7 @@ import { DropDownComponent } from '../../../common-ui/controls/drop-down/drop-do
 import { TextAreaComponent } from '../../../common-ui/controls/text-area/text-area.component';
 
 @Component({
-    selector: 'app-education-details',
+    selector: 'orms-education-details',
     templateUrl: './education-details.component.html',
     styleUrl: './education-details.component.css',
     imports: [TextBoxComponent, DropDownComponent, TextAreaComponent]

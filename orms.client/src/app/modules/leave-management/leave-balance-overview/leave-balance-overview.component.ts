@@ -4,7 +4,7 @@ import { CountWidgetComponent } from '../../../common-ui/feature-components/coun
 import { ProgressBarComponent } from '../../../common-ui/controls/progress-bar/progress-bar.component';
 
 @Component({
-    selector: 'app-leave-balance-overview',
+    selector: 'orms-leave-balance-overview',
     templateUrl: './leave-balance-overview.component.html',
     styleUrl: './leave-balance-overview.component.css',
     imports: [ButtonComponent, CountWidgetComponent, ProgressBarComponent]

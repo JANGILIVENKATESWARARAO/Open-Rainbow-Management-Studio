@@ -11,17 +11,17 @@
         <p class="text">Salary & Payroll Information</p>
     </div>
     <div class="grid-container">
-        <app-label-value [label]="'Current CTC'" [value]="currentCTC??'NA'"></app-label-value>
+        <orms-label-value [label]="'Current CTC'" [value]="currentCTC??'NA'"></orms-label-value>
         <div></div>
     </div>
     <hr class="custom-line">
     <div class="grid-container">
         <p class="text2">Bank Details</p>
         <div></div>
-        <app-label-value [label]="'Bank Name'" [value]="bankDetails?.bankName??'NA'"></app-label-value>
-        <app-label-value [label]="'Branch Name'" [value]="bankDetails?.branchName??'NA'"></app-label-value>
-        <app-label-value [label]="'Account Number'" [value]="bankDetails?.accountNummber??'NA'"></app-label-value>
-        <app-label-value [label]="'IFSC Code'" [value]="bankDetails?.ifscCode??'NA'"></app-label-value>
-        <app-label-value [label]="'PF Account Number'" [value]="bankDetails?.pfAccountNumber??'NA'"></app-label-value>
+        <orms-label-value [label]="'Bank Name'" [value]="bankDetails?.bankName??'NA'"></orms-label-value>
+        <orms-label-value [label]="'Branch Name'" [value]="bankDetails?.branchName??'NA'"></orms-label-value>
+        <orms-label-value [label]="'Account Number'" [value]="bankDetails?.accountNummber??'NA'"></orms-label-value>
+        <orms-label-value [label]="'IFSC Code'" [value]="bankDetails?.ifscCode??'NA'"></orms-label-value>
+        <orms-label-value [label]="'PF Account Number'" [value]="bankDetails?.pfAccountNumber??'NA'"></orms-label-value>
     </div>
 </div>

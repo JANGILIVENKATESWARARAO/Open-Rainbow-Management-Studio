@@ -2,7 +2,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-notice-banner',
+    selector: 'orms-notice-banner',
     imports: [],
     templateUrl: './notice-banner.html',
     styleUrl: './notice-banner.css'

@@ -3,7 +3,7 @@ import { ButtonComponent } from '../../controls/button/button.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-confirm-popup',
+    selector: 'orms-confirm-popup',
     templateUrl: './confirm-popup.component.html',
     styleUrl: './confirm-popup.component.css',
     imports: [ButtonComponent, CommonModule]

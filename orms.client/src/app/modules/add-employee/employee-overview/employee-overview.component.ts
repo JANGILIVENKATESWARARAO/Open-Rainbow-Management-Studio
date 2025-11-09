@@ -3,7 +3,7 @@ import { EmployeeDetailsComponent } from '../employee-details/employee-details.c
 import { EmployeeDetailsInfoComponent } from '../employee-details-info/employee-details-info.component';
 
 @Component({
-    selector: 'app-employee-overview',
+    selector: 'orms-employee-overview',
     templateUrl: './employee-overview.component.html',
     styleUrl: './employee-overview.component.css',
     imports: [EmployeeDetailsComponent, EmployeeDetailsInfoComponent]

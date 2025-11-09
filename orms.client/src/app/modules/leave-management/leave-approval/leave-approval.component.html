@@ -5,14 +5,14 @@
   </p>
 
     <div class="info-icon" >
-        <app-notice-banner [heading]="'Important: '" [content]="'Review each request carefully.Check employee leave balances before approving. Once approved leave balances will be updated automatically.'" [headingColor]="'#1E3A8A'" [contentColor]="'#374151'" [contentInNextLine]="false" [bannerColor]="'#DBEAFE'" [highlighterColor]="'#1E3A8A'" [showIcon]="true" [iconColor]="'#1E3A8A'" [showBorder]="false"></app-notice-banner>
+        <orms-notice-banner [heading]="'Important: '" [content]="'Review each request carefully.Check employee leave balances before approving. Once approved leave balances will be updated automatically.'" [headingColor]="'#1E3A8A'" [contentColor]="'#374151'" [contentInNextLine]="false" [bannerColor]="'#DBEAFE'" [highlighterColor]="'#1E3A8A'" [showIcon]="true" [iconColor]="'#1E3A8A'" [showBorder]="false"></orms-notice-banner>
 
     </div>
     <div class="typesOf-request">
-        <app-chip [text]="'All Requests (3)'" [bgColor]="'#7c3aedff'" [color]="'White'" [activeBGColor]="'#7c3aedff'" [size]="'medium'"></app-chip>
-        <app-chip [text]="'Sick Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'" [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></app-chip>       
-        <app-chip [text]="'Casual Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'" [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></app-chip>        
-        <app-chip [text]="'Earned Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'" [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></app-chip>    
+        <orms-chip [text]="'All Requests (3)'" [bgColor]="'#7c3aedff'" [color]="'White'" [activeBGColor]="'#7c3aedff'" [size]="'medium'"></orms-chip>
+        <orms-chip [text]="'Sick Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'" [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></orms-chip>       
+        <orms-chip [text]="'Casual Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'" [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></orms-chip>        
+        <orms-chip [text]="'Earned Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'" [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></orms-chip>    
     </div>
     <div class="request-header">
         <h3> Pending Leave Requests</h3>
@@ -26,18 +26,18 @@
             </div>
         </div>
     <div class="recent-leave">
-        <app-recent-leave-request></app-recent-leave-request>
+        <orms-recent-leave-request></orms-recent-leave-request>
         <div class="leave-balance-container">
             <h3>Employee Leave Balance - Sick Leave</h3>
             <div class="grid">
-                <app-count-widget [label]="'Total Days'" [value]="25" [valueColor]="'blue'" [showBorder]="true"[borderColor]="'#dcdcdc'" ></app-count-widget>
-                <app-count-widget [label]="'Remaining'" [value]="18" [valueColor]="'green'" [showBorder]="true" [borderColor]="'#dcdcdc'"></app-count-widget>
-                <app-count-widget [label]="'Used'" [value]="7" [valueColor]="'#4c5665'" [showBorder]="true" [borderColor]="'#dcdcdc'"></app-count-widget>
+                <orms-count-widget [label]="'Total Days'" [value]="25" [valueColor]="'blue'" [showBorder]="true"[borderColor]="'#dcdcdc'" ></orms-count-widget>
+                <orms-count-widget [label]="'Remaining'" [value]="18" [valueColor]="'green'" [showBorder]="true" [borderColor]="'#dcdcdc'"></orms-count-widget>
+                <orms-count-widget [label]="'Used'" [value]="7" [valueColor]="'#4c5665'" [showBorder]="true" [borderColor]="'#dcdcdc'"></orms-count-widget>
             </div>
         
             <div class="button-row">
-                <app-button [text]="'Reject'" [color]="'Red'" [bgColor]="'White'" [hoverBGColor]="'Red'" [borderRadius]="10" [borderColor]="'Red'" [hoverColor]="'white'"></app-button>
-                <app-button [text]="'Approve Leave'" [bgColor]="'White'" [color]="'#26c484'" [hoverBGColor]="'#26c484'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'#26c484'" [showBorder]="true"></app-button>
+                <orms-button [text]="'Reject'" [color]="'Red'" [bgColor]="'White'" [hoverBGColor]="'Red'" [borderRadius]="10" [borderColor]="'Red'" [hoverColor]="'white'"></orms-button>
+                <orms-button [text]="'Approve Leave'" [bgColor]="'White'" [color]="'#26c484'" [hoverBGColor]="'#26c484'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'#26c484'" [showBorder]="true"></orms-button>
             </div>
             </div>
         </div>

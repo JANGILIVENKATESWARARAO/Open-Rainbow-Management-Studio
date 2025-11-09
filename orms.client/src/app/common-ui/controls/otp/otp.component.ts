@@ -8,7 +8,7 @@ import {
 
 
 @Component({
-    selector: 'app-otp',
+    selector: 'orms-otp',
     templateUrl: './otp.component.html',
     styleUrls: ['./otp.component.css'],
     imports: []

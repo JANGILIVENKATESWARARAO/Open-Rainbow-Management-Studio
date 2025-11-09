@@ -6,7 +6,7 @@ import { CountWidgetComponent } from '../../../common-ui/feature-components/coun
 
 
 @Component({
-    selector: 'app-job-details',
+    selector: 'orms-job-details',
     imports: [TextBoxComponent, DropDownComponent, CountWidgetComponent],
     templateUrl: './job-details.component.html',
     styleUrl: './job-details.component.css'

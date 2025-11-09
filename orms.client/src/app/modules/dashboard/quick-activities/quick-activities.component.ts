@@ -11,7 +11,7 @@ interface Activity {
 }
 
 @Component({
-    selector: 'app-quick-activities',
+    selector: 'orms-quick-activities',
     templateUrl: './quick-activities.component.html',
     styleUrls: ['./quick-activities.component.css'],
     imports: [FormsModule, DotComponent, DurationPipe]

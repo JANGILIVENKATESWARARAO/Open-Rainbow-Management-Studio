@@ -4,7 +4,7 @@ import { CountWidgetComponent } from '../../../../common-ui/feature-components/c
 import { JobDetails, LeaveAllocation } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-    selector: 'app-inner-job',
+    selector: 'orms-inner-job',
     templateUrl: './inner-job.component.html',
     styleUrl: './inner-job.component.css',
     imports: [LabelValueComponent, CountWidgetComponent]

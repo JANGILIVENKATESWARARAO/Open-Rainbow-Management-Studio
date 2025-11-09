@@ -6,7 +6,7 @@ import { ToggleComponent } from '../../../common-ui/controls/toggle/toggle.compo
 import { TextBoxComponent } from "../../../common-ui/controls/text-box/text-box.component";
 
 @Component({
-    selector: 'app-insurance-details',
+    selector: 'orms-insurance-details',
     templateUrl: './insurance-details.component.html',
     styleUrl: './insurance-details.component.css',
     imports: [FileUploadComponent, TextAreaComponent, CalendarComponent, ToggleComponent, TextBoxComponent]

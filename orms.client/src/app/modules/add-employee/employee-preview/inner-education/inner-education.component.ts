@@ -3,7 +3,7 @@ import { LabelValueComponent } from '../../../../common-ui/controls/label-value/
 import { EducationDetails } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-    selector: 'app-inner-education',
+    selector: 'orms-inner-education',
     templateUrl: './inner-education.component.html',
     styleUrl: './inner-education.component.css',
     imports: [LabelValueComponent]

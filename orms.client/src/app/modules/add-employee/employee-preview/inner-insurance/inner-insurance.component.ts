@@ -3,7 +3,7 @@ import { LabelValueComponent } from '../../../../common-ui/controls/label-value/
 import { FatherDtails, MotherDetails, SpouseDetails } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-    selector: 'app-inner-insurance',
+    selector: 'orms-inner-insurance',
     templateUrl: './inner-insurance.component.html',
     styleUrl: './inner-insurance.component.css',
     imports: [LabelValueComponent]

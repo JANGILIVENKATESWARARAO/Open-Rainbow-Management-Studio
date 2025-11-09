@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-dot',
+    selector: 'orms-dot',
     templateUrl: './dot.component.html',
     styleUrls: ['./dot.component.css'],
     imports: [CommonModule]

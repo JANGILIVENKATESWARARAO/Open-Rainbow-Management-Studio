@@ -3,7 +3,7 @@ import { Component, HostListener, Input, OnInit, ViewChild, ElementRef, Renderer
 import { DropdownValues } from '../../assests/view-models/common-view-models';
 
 @Component({
-    selector: 'app-value-dropdown',
+    selector: 'orms-value-dropdown',
     templateUrl: './value-dropdown.component.html',
     styleUrls: ['./value-dropdown.component.css'],
     imports: [CommonModule]

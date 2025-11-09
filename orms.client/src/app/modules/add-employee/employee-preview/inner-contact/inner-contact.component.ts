@@ -4,7 +4,7 @@ import { ContactInformation } from '../../../../common-ui/assests/view-models/co
 
 
 @Component({
-    selector: 'app-inner-contact',
+    selector: 'orms-inner-contact',
     templateUrl: './inner-contact.component.html',
     styleUrl: './inner-contact.component.css',
     imports: [LabelValueComponent]

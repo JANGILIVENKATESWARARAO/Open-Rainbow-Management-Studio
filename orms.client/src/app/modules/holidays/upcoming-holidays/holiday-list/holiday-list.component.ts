@@ -6,7 +6,7 @@ import { ChipComponent } from '../../../../common-ui/controls/chip/chip.componen
 import { CountWidgetComponent } from '../../../../common-ui/feature-components/count-widget/count-widget.component';
 
 @Component({
-    selector: 'app-holiday-list',
+    selector: 'orms-holiday-list',
     templateUrl: './holiday-list.component.html',
     styleUrl: './holiday-list.component.css',
     imports: [

@@ -4,7 +4,7 @@ import { Announcement } from '../../../common-ui/assests/view-models/common-view
 import { ChipComponent } from "../../../common-ui/controls/chip/chip.component";
 
 @Component({
-    selector: 'app-announcement-box',
+    selector: 'orms-announcement-box',
     templateUrl: './announcement-box.component.html',
     styleUrls: ['./announcement-box.component.css'],
     imports: [ChipComponent]

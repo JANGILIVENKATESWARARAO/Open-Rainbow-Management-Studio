@@ -2,7 +2,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-label-value',
+    selector: 'orms-label-value',
     imports: [],
     templateUrl: './label-value.component.html',
     styleUrls: ['./label-value.component.css']

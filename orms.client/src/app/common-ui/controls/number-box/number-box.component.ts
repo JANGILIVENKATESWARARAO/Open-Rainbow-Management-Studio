@@ -2,7 +2,7 @@ import { Component,Input } from '@angular/core';
 
 
 @Component({
-    selector: 'app-number-box',
+    selector: 'orms-number-box',
     templateUrl: './number-box.component.html',
     styleUrl: './number-box.component.css',
     imports: []

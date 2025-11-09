@@ -9,7 +9,7 @@ import { ChipComponent } from '../../../../common-ui/controls/chip/chip.componen
 import { Announcement } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-    selector: 'app-add-holiday-list',
+    selector: 'orms-add-holiday-list',
     templateUrl: './add-holiday-list.component.html',
     styleUrl: './add-holiday-list.component.css',
     imports: [

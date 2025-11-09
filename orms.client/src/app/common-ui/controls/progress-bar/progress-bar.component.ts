@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
-    selector: 'app-progress-bar',
+    selector: 'orms-progress-bar',
     imports: [CommonModule],
     templateUrl: './progress-bar.component.html',
     styleUrls: ['./progress-bar.component.css']

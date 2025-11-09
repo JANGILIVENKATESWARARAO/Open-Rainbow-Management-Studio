@@ -9,7 +9,7 @@ export interface HolidayLeave {
 }
 
 @Component({
-    selector: 'app-upcoming-holidays',
+    selector: 'orms-upcoming-holidays',
     templateUrl: './upcoming-holidays.component.html',
     styleUrl: './upcoming-holidays.component.css',
     imports: [ChipComponent]

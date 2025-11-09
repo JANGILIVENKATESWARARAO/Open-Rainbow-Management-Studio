@@ -2,7 +2,7 @@
 import { Component, Input , Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'app-password',
+    selector: 'orms-password',
     templateUrl: './password.component.html',
     styleUrl: './password.component.css',
     imports: []

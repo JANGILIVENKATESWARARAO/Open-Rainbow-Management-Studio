@@ -4,7 +4,7 @@ import { TextAreaComponent } from '../../../common-ui/controls/text-area/text-ar
 import { TextBoxComponent } from "../../../common-ui/controls/text-box/text-box.component";
 
 @Component({
-    selector: 'app-documents-upload',
+    selector: 'orms-documents-upload',
     templateUrl: './documents-upload.component.html',
     styleUrl: './documents-upload.component.css',
     imports: [FileUploadComponent, TextAreaComponent, TextBoxComponent]

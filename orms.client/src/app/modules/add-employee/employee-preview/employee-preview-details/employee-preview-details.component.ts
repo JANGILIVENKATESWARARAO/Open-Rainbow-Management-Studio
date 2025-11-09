@@ -12,7 +12,7 @@ import { InnerInsuranceComponent } from '../inner-insurance/inner-insurance.comp
 import { InnerContentComponent } from "../../inner-content/inner-content.component";
 import { EmployeeDetails } from '../../../../common-ui/assests/view-models/common-view-models';
 @Component({
-    selector: 'app-employee-preview-details',
+    selector: 'orms-employee-preview-details',
     templateUrl: './employee-preview-details.component.html',
     styleUrls: ['./employee-preview-details.component.css'],
     imports: [ButtonComponent, InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerDocumentComponent, InnerInsuranceComponent, InnerContentComponent]

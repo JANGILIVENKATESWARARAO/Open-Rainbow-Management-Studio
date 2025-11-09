@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
  
 @Component({
-    selector: 'app-file-upload',
+    selector: 'orms-file-upload',
     imports: [CommonModule],
     templateUrl: './file-upload.component.html',
     styleUrl: './file-upload.component.css'

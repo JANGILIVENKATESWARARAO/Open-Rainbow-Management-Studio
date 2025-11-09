@@ -11,7 +11,7 @@ import { InnerJobComponent } from '../employee-preview/inner-job/inner-job.compo
 
 
 @Component({
-    selector: 'app-employee-details-info',
+    selector: 'orms-employee-details-info',
     templateUrl: './employee-details-info.component.html',
     styleUrl: './employee-details-info.component.css',
     imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerInsuranceComponent]

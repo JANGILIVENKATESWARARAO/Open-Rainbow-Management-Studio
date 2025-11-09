@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 
 @Component({
-    selector: 'app-timepicker',
+    selector: 'orms-timepicker',
     templateUrl: './timepicker.component.html',
     styleUrls: ['./timepicker.component.css'],
     imports: []

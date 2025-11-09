@@ -52,8 +52,8 @@
           </div>
         </div>
         <div class="holiday-right">
-          <app-chip [text]="holiday.holidaylist" [bgColor]="'#eceef2'" [color]="'#323232'" [activeBGColor]="'#eceef2'"
-          [activeColor]="'#323232'" [borderRadius]="'9px'"></app-chip>
+          <orms-chip [text]="holiday.holidaylist" [bgColor]="'#eceef2'" [color]="'#323232'" [activeBGColor]="'#eceef2'"
+          [activeColor]="'#323232'" [borderRadius]="'9px'"></orms-chip>
           <div class="holiday-days">{{ calculateDays(holiday.holidaydate,this.todayDate) }} day{{
           calculateDays(holiday.holidaydate,this.todayDate) > 1 ? 's' : '' }}</div>
         </div>

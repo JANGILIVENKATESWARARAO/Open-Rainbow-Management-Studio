@@ -6,7 +6,7 @@ import { ButtonComponent } from '../../../common-ui/controls/button/button.compo
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
 
 @Component({
-    selector: 'app-leave-approval',
+    selector: 'orms-leave-approval',
     templateUrl: './leave-approval.component.html',
     styleUrl: './leave-approval.component.css',
     imports: [NoticeBannerComponent, RecentLeaveRequestComponent, CountWidgetComponent, ButtonComponent, ChipComponent]

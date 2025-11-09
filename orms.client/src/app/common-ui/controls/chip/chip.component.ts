@@ -1,8 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-chip',
-  standalone: true,
+  selector: 'orms-chip',
   templateUrl: './chip.component.html',
   styleUrls: ['./chip.component.css'],
 })
