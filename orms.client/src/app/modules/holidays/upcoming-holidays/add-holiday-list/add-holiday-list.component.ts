@@ -16,7 +16,8 @@ import { Announcement } from '../../../../common-ui/assests/view-models/common-v
     ButtonComponent,
     CalendarComponent,
     DropDownComponent,
-    TextAreaComponent
+    TextAreaComponent,
+    TextBoxComponent
 ]
 })
 export class AddHolidayListComponent {
