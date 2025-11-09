@@ -9,7 +9,7 @@ import { InnerOtherComponent } from '../employee-preview/inner-other/inner-other
 import { InnerSalaryComponent } from '../employee-preview/inner-salary/inner-salary.component';
 import { InnerWorkComponent } from '../employee-preview/inner-work/inner-work.component';
 import { EmployeeDetails } from '../../../common-ui/assests/view-models/common-view-models';
-import { CommonModule } from '@angular/common';
+
 
 
 @Component({

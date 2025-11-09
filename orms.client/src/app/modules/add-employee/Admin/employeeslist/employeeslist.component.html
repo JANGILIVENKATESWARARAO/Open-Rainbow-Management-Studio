@@ -14,16 +14,18 @@
         <app-chip [text]="status" [bgColor]="status === 'Active' ? '#85f3bc' : '#eb7c7c'"
           [color]="status === 'Active' ? '#1e592f' : '#000'"
           [activeBGColor]="status === 'Active' ? '#85f3bc' : '#eb7c7c'"
-          [activeColor]="status === 'Active' ? '#1e592f' : '#000'" [size]="'small'"></app-chip>
+        [activeColor]="status === 'Active' ? '#1e592f' : '#000'" [size]="'small'"></app-chip>
       </ng-container>
     </div>
   </div>
 </div>
 
 
-<div *ngIf="showBasicInfo" class="basic-info-section">
-  <app-inner-content></app-inner-content>
-</div>
+@if (showBasicInfo) {
+  <div class="basic-info-section">
+    <app-inner-content></app-inner-content>
+  </div>
+}
 
 
 <!-- style="background-color: showBasicInfo ? 'blue' : 'gray';" -->

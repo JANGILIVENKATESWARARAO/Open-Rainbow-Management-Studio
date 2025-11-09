@@ -8,17 +8,17 @@
           { value: 3, name: 'low' }
         ]"></app-drop-down>
       <app-calendar [label]="'Expires On'" (dateSelected)="dateSelected($event)"
-        (calendarClosed)="calendarClosed($event)"></app-calendar>
+      (calendarClosed)="calendarClosed($event)"></app-calendar>
     </div>
 
     <app-text-area [label]="'Description'" [Placeholder]="'Enter description '" [isRequired]="true"
-      [showBorder]="true"></app-text-area>
+    [showBorder]="true"></app-text-area>
 
     <div class="footer">
       <app-button [text]="'Clear'" [color]="'red'" [hoverBGColor]="'#f2b6b6'" [hoverColor]="'Black'" [borderRadius]="8"
-        [borderColor]="'red'" [showBorder]="true"></app-button>
+      [borderColor]="'red'" [showBorder]="true"></app-button>
       <app-button [text]="'Save'" [bgColor]="'green'" [color]="'white'" [hoverBGColor]="'#519c51'"
-        [hoverColor]="'white'" [borderRadius]="8" [showBorder]="false"></app-button>
+      [hoverColor]="'white'" [borderRadius]="8" [showBorder]="false"></app-button>
     </div>
   </div>
 
@@ -26,7 +26,7 @@
   <div class="blank-space-two">
     <h3 class="card-title">Expire Announcements</h3>
 
-    <ng-container *ngFor="let announcement of otherAnnouncements; let last = last">
+    @for (announcement of otherAnnouncements; track announcement; let last = $last) {
       <div class="announcement-item">
         <div class="title-row">
           <h4 class="title">{{ announcement.title }}</h4>
@@ -39,13 +39,11 @@
             [bgColor]="announcement.priority === 'medium' ? '#fef9c2' : announcement.priority === 'low' ? '#dbfce7' : '#ffe2e2'">
           </app-chip>
         </div>
-
         <p class="description" [class.truncated]="isTruncated(announcement.description, 50)"
           [appTooltip]="isTruncated(announcement.description, 50) ? announcement.description : ''" tooltipPosition="top"
           [tooltipbgColor]="'red'" [tooltiptextColor]="'black'" [tooltipMaxWidth]="'60'">
           {{ leaveDescription(announcement.description, 50) }}
         </p>
-
         <div class="footer-row">
           <div class="date">
             <span class="expire-label">Expire on:</span>
@@ -53,14 +51,15 @@
           </div>
           <div class="footer">
             <app-button [text]="'Edit'" [bgColor]="'#3965e9'" [color]="'white'" [hoverBGColor]="'#3965e9'"
-              [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
+            [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
             <app-button [text]="'Delete'" [bgColor]="'red'" [color]="'white'" [hoverBGColor]="'red'"
-              [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
+            [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
           </div>
         </div>
       </div>
-
-      <hr class="custom-line" *ngIf="!last" />
-    </ng-container>
+      @if (!last) {
+        <hr class="custom-line" />
+      }
+    }
   </div>
 </div>

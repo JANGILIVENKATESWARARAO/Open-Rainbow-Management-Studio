@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ChipComponent } from '../../../../common-ui/controls/chip/chip.component';
-import { CommonModule, NgIf, NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { JobDetailsComponent } from '../../job-details/job-details.component';
 import { BasicInfoComponent } from '../../basic-info/basic-info.component';
 import { InnerContactComponent } from '../../employee-preview/inner-contact/inner-contact.component';
@@ -11,13 +11,12 @@ import { InnerContentComponent } from '../../inner-content/inner-content.compone
     templateUrl: './employeeslist.component.html',
     styleUrl: './employeeslist.component.css',
     imports: [
-        ChipComponent,
-        BasicInfoComponent,
-        NgIf,
-        InnerContactComponent,
-        InnerContentComponent,
-        NgClass,
-    ]
+    ChipComponent,
+    BasicInfoComponent,
+    InnerContactComponent,
+    InnerContentComponent,
+    NgClass
+]
 })
 export class EmployeeslistComponent {
   @Input() EmployeeName: string = 'Ganesh';

@@ -1,17 +1,17 @@
 <!-- <div
-  class="toggle-container"
-  [class.label-left]="labelPosition === 'left'"
-  [style.--label-color]="labelColor"   
+class="toggle-container"
+[class.label-left]="labelPosition === 'left'"
+[style.--label-color]="labelColor"
 >
-  <label *ngIf="label" class="upload-label" for="toggle">{{ label }}</label>
+<label *ngIf="label" class="upload-label" for="toggle">{{ label }}</label>
 
-  <div class="switch-wrapper">
-    <input
-      type="checkbox"
-      id="toggle"
-      class="toggle-input"
-      [checked]="checked"
-      (change)="onToggle($event)"
+<div class="switch-wrapper">
+  <input
+    type="checkbox"
+    id="toggle"
+    class="toggle-input"
+    [checked]="checked"
+    (change)="onToggle($event)"
     />
     <label
       for="toggle"
@@ -22,23 +22,23 @@
   </div>
 </div>
 
- -->
+-->
 
 
- <!-- <div
-  class="toggle-container"
-  [class.label-left]="labelPosition === 'left'"
-  [style.--label-color]="labelColor"
+<!-- <div
+class="toggle-container"
+[class.label-left]="labelPosition === 'left'"
+[style.--label-color]="labelColor"
 >
-  <label *ngIf="label" class="upload-label" for="toggle">{{ label }}</label>
+<label *ngIf="label" class="upload-label" for="toggle">{{ label }}</label>
 
-  <div class="switch-wrapper">
-    <input
-      type="checkbox"
-      id="toggle"
-      class="toggle-input"
-      [checked]="checked"
-      (change)="onToggle($event)"
+<div class="switch-wrapper">
+  <input
+    type="checkbox"
+    id="toggle"
+    class="toggle-input"
+    [checked]="checked"
+    (change)="onToggle($event)"
     />
     <label
       for="toggle"
@@ -55,45 +55,46 @@
 </div> -->
 
 
-<div 
+<div
   class="toggle-container"
   [class.label-left]="labelPosition === 'left'"
   [style.--label-color]="labelColor"
->
-  <label *ngIf="label" class="upload-label" for="toggle">{{ label }}</label>
+  >
+  @if (label) {
+    <label class="upload-label" for="toggle">{{ label }}</label>
+  }
   <div class="switch-wrapper">
-    <ng-container *ngIf="!useCheckbox; else checkboxMode">
+    @if (!useCheckbox) {
       <input
         type="checkbox"
         id="toggle"
         class="toggle-input"
         [checked]="checked"
         (change)="onToggle($event)"
-      />
-      <label
-        for="toggle"
-        class="toggle-label"
-        [class.on]="checked"
-        [ngClass]="size"
-        [style.--toggle-color]="color"
-        [style.--toggle-width]="toggleWidth"
-        [style.--toggle-height]="toggleHeight"
-        [style.--knob-size]="knobSize"
-        [style.--knob-translate]="knobTranslate"
-      ></label>
-    </ng-container>
+        />
+        <label
+          for="toggle"
+          class="toggle-label"
+          [class.on]="checked"
+          [ngClass]="size"
+          [style.--toggle-color]="color"
+          [style.--toggle-width]="toggleWidth"
+          [style.--toggle-height]="toggleHeight"
+          [style.--knob-size]="knobSize"
+          [style.--knob-translate]="knobTranslate"
+        ></label>
+      } @else {
+        <input
+          type="checkbox"
+          id="checkboxToggle"
+          [checked]="checked"
+          (change)="onToggle($event)"
+          class="checkbox-input"
+          [style.--checkbox-color]="color"
+          [style.--tick-color]="tickColor"
+          />
+        }
 
-    <ng-template #checkboxMode>
-      <input
-        type="checkbox"
-        id="checkboxToggle"
-        [checked]="checked"
-        (change)="onToggle($event)"
-        class="checkbox-input"
-        [style.--checkbox-color]="color"
-        [style.--tick-color]="tickColor"
-      />
-    </ng-template>
-  </div>
-</div>
+      </div>
+    </div>
 

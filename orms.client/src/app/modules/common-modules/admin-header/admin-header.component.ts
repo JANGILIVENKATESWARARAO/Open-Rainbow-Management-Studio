@@ -1,9 +1,9 @@
 import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-admin-header',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './admin-header.component.html',
     styleUrl: './admin-header.component.css'
 })

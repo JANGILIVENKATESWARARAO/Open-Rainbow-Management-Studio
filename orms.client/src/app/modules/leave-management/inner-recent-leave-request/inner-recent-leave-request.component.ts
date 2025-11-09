@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
@@ -19,12 +19,11 @@ export interface LeaveRequest {
     templateUrl: './inner-recent-leave-request.component.html',
     styleUrl: './inner-recent-leave-request.component.css',
     imports: [
-        CommonModule,
-        ButtonComponent,
-        ChipComponent,
-        TooltipComponent,
-        TooltipDirective,
-    ]
+    ButtonComponent,
+    ChipComponent,
+    TooltipComponent,
+    TooltipDirective
+]
 })
 export class InnerRecentLeaveRequestComponent {
   leaveRequests: LeaveRequest[] = [

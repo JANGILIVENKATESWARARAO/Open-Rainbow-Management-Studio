@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-label-value',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './label-value.component.html',
     styleUrls: ['./label-value.component.css']
 })

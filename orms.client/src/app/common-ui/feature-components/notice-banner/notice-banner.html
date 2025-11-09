@@ -7,31 +7,32 @@
   [style.--heading-color]="headingColor"
   [style.--content-color]="contentColor"
   [style.--icon-color]="iconColor"
->
-<svg
-    *ngIf="showIcon"
-    class="w-6 h-6 mt-0.5 flex-shrink-0"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
   >
-    <circle cx="12" cy="12" r="10" stroke="var(--icon-color)" stroke-width="2" fill="none" />
-    <line x1="12" y1="16" x2="12" y2="12" stroke="var(--icon-color)" stroke-width="2" />
-    <circle cx="12" cy="9" r="1" fill="var(--icon-color)" />
-  </svg>
+  @if (showIcon) {
+    <svg
+      class="w-6 h-6 mt-0.5 flex-shrink-0"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      >
+      <circle cx="12" cy="12" r="10" stroke="var(--icon-color)" stroke-width="2" fill="none" />
+      <line x1="12" y1="16" x2="12" y2="12" stroke="var(--icon-color)" stroke-width="2" />
+      <circle cx="12" cy="9" r="1" fill="var(--icon-color)" />
+    </svg>
+  }
 
   <!-- Text -->
   <div class="ml-3">
     <span class="font-semibold heading">{{ heading }}</span>
 
-    <ng-container *ngIf="!contentInNextLine">
+    @if (!contentInNextLine) {
       <span class="content">{{ content }}</span>
-    </ng-container>
+    }
 
-    <ng-container *ngIf="contentInNextLine">
+    @if (contentInNextLine) {
       <div class="mt-1">
         <span class="content">{{ content }}</span>
       </div>
-    </ng-container>
+    }
   </div>
 </div>

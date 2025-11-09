@@ -1,18 +1,20 @@
 <div class="team-card anycard">
   <h1 class="team-title">Team Members</h1>
 
-  <div *ngFor="let item of data">
-    <div class="member">
-      <img [src]='item.imageUrl' alt="sdfvb">
-      <div class="member-info">
-        <h3>{{item.name}}</h3>
-        <p>{{item.designation}}</p>
+  @for (item of data; track item) {
+    <div>
+      <div class="member">
+        <img [src]='item.imageUrl' alt="sdfvb">
+        <div class="member-info">
+          <h3>{{item.name}}</h3>
+          <p>{{item.designation}}</p>
+        </div>
       </div>
     </div>
-  </div>
+  }
 
   <div class="btn">
     <app-button [text]="'See all'" [bgColor]="'#f1810d'" [color]="'#560cb4'" [hoverBGColor]="'#f1810d'"
-      [hoverColor]="'#560cb4'" [showBorder]="false" [borderRadius]="20"></app-button>
+    [hoverColor]="'#560cb4'" [showBorder]="false" [borderRadius]="20"></app-button>
   </div>
 </div>

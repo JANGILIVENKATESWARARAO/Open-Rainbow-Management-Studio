@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Announcement } from '../../../../common-ui/assests/view-models/common-view-models';
-import { CommonModule } from '@angular/common';
+
 import { ButtonComponent } from '../../../../common-ui/controls/button/button.component';
 import { TextAreaComponent } from '../../../../common-ui/controls/text-area/text-area.component';
 import { TextBoxComponent } from '../../../../common-ui/controls/text-box/text-box.component';
@@ -13,15 +13,14 @@ import { TooltipDirective } from '../../../../common-ui/feature-components/toolt
     templateUrl: './expire-announcement.component.html',
     styleUrl: './expire-announcement.component.css',
     imports: [
-        CommonModule,
-        ButtonComponent,
-        TextAreaComponent,
-        TextBoxComponent,
-        DropDownComponent,
-        CalendarComponent,
-        ChipComponent,
-        TooltipDirective,
-    ]
+    ButtonComponent,
+    TextAreaComponent,
+    TextBoxComponent,
+    DropDownComponent,
+    CalendarComponent,
+    ChipComponent,
+    TooltipDirective
+]
 })
 export class ExpireAnnouncementComponent {
   dateSelected($event: Date | null) {

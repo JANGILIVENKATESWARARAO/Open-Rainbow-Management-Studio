@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input , Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-password',
     templateUrl: './password.component.html',
     styleUrl: './password.component.css',
-    imports: [CommonModule]
+    imports: []
 })
 export class PasswordComponent {
   @Input() label: string = 'Temporary Password';

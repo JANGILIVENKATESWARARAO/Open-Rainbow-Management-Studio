@@ -10,15 +10,17 @@
   </button>
 
   <div class="dropdown-content" [class.show]="isOpen">
-    <div *ngFor="let value of dropdownValues">
-      <button [class.active]="value.value === selectedYear" style="position: relative;"
+    @for (value of dropdownValues; track value) {
+      <div>
+        <button [class.active]="value.value === selectedYear" style="position: relative;"
         (click)="selectYear(value.value, $event)" [ngStyle]="{
         color: value.value === selectedYear ? activeTextColor : value.textColor,
         backgroundColor: value.value === selectedYear ? value.backgroundColor : 'transparent'
       }" 
-      [disabled]="value.isDisabled" [class.disabled-btn]="value.isDisabled" [ngClass]="">
-        {{ value.value }}
-      </button>
-    </div>
+          [disabled]="value.isDisabled" [class.disabled-btn]="value.isDisabled" [ngClass]="">
+          {{ value.value }}
+        </button>
+      </div>
+    }
   </div>
 </div>

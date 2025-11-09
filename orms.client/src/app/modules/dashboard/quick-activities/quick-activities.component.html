@@ -7,11 +7,13 @@
   </div>
 
   <!-- Activities List -->
-  <ul class="activities-list" *ngFor="let activity of activities">
-    <div class="activity-details">
+  @for (activity of activities; track activity) {
+    <ul class="activities-list">
+      <div class="activity-details">
       <li class="name">    <app-dot [label]="'
       '" [dotColor]="'#1e99ae'" [dotSize]="'medium'"></app-dot>{{ activity.name }}</li>
-      <div class="date">{{ activity.date | duration }}</div>
-    </div>
-  </ul>
+        <div class="date">{{ activity.date | duration }}</div>
+      </div>
+    </ul>
+  }
 </div>

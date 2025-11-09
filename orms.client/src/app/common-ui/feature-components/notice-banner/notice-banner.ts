@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-notice-banner',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './notice-banner.html',
     styleUrl: './notice-banner.css'
 })

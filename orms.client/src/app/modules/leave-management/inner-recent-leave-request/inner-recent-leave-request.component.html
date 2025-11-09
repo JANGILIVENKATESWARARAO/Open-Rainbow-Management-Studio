@@ -1,57 +1,49 @@
-<div class="leave-card" *ngFor="let leave of leaveRequests">
+@for (leave of leaveRequests; track leave) {
+  <div class="leave-card">
     <div class="leave-header">
       <div class="left">
         <h3>
           {{ leave.type }}
-          <ng-container *ngIf="leave.status === 'Pending'">
+          @if (leave.status === 'Pending') {
             <app-chip [text]="leave.status" [bgColor]="'#f0dc98'" [color]="'#a42424'" [activeBGColor]="'#f0dc98'"
-              [activeColor]="'#a42424'" [size]="'small'"></app-chip>
-          </ng-container>
-
-          <ng-container *ngIf="leave.status === 'Approved'">
+            [activeColor]="'#a42424'" [size]="'small'"></app-chip>
+          }
+          @if (leave.status === 'Approved') {
             <app-chip [text]="leave.status" [bgColor]="'#bff3c6'" [color]="'#093c07'" [activeBGColor]="'#bff3c6'"
-              [activeColor]="'#093c07'" [size]="'medium'"></app-chip>
-          </ng-container>
-
-
-          
-          <ng-container *ngIf="leave.status === 'Rejected'">
+            [activeColor]="'#093c07'" [size]="'medium'"></app-chip>
+          }
+          @if (leave.status === 'Rejected') {
             <app-chip [text]="leave.status" [bgColor]="'#e80707'" [color]="'#0b0303'" [activeBGColor]="'#e80707'"
-              [activeColor]="'#0b0303'" [size]="'large'"></app-chip>
-          </ng-container>
+            [activeColor]="'#0b0303'" [size]="'large'"></app-chip>
+          }
         </h3>
-
-
         <p class="date">
           <span class="date-text">
             {{ leave.fromDate }}
-            <ng-container *ngIf="leave.toDate"> to {{ leave.toDate }}</ng-container>
+            @if (leave.toDate) {
+              to {{ leave.toDate }}
+            }
           </span>
           <span class="apply-text">Apply on : {{ leave.applyDate }}</span>
         </p>
-
         <p class="desc" [class.truncated]="isTruncated(leave.description, 50)"
           [appTooltip]="isTruncated(leave.description, 50) ? leave.description : ''" tooltipPosition="top" [tooltipbgColor]="'green'" [tooltiptextColor]="'black'" [tooltipMaxWidth]="'80'">
           {{ leaveDescription(leave.description, 50) }}
         </p>
-
-
       </div>
-
       <div class="right">
         <p class="days">
           {{ calculateDays(leave.fromDate, leave.toDate) }} day{{
           calculateDays(leave.fromDate, leave.toDate) > 1 ? 's' : ''
           }}
         </p>
-
-        <ng-container *ngIf="leave.status === 'Pending'">
+        @if (leave.status === 'Pending') {
           <app-button [text]="'Edit'" [bgColor]="'#1880d6'" [color]="'#fff'" [hoverBGColor]="'#1880d6'"
-            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12" style="margin-right: 10px;"></app-button>
-
+          [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12" style="margin-right: 10px;"></app-button>
           <app-button [text]="'Cancel'" [bgColor]="'#ee120d'" [color]="'#fff'" [hoverBGColor]="'#ee120d'"
-            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12"></app-button>
-        </ng-container>
+          [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12"></app-button>
+        }
       </div>
     </div>
   </div>
+}

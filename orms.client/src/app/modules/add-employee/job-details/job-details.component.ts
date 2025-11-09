@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { DropDownComponent } from '../../../common-ui/controls/drop-down/drop-down.component';
 import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.component';
@@ -7,7 +7,7 @@ import { CountWidgetComponent } from '../../../common-ui/feature-components/coun
 
 @Component({
     selector: 'app-job-details',
-    imports: [CommonModule, TextBoxComponent, DropDownComponent, CountWidgetComponent],
+    imports: [TextBoxComponent, DropDownComponent, CountWidgetComponent],
     templateUrl: './job-details.component.html',
     styleUrl: './job-details.component.css'
 })

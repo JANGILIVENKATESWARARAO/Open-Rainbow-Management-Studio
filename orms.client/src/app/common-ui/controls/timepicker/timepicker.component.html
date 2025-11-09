@@ -4,62 +4,66 @@
     tabindex="0"
     (click)="togglePicker()"
     [class.active]="isPickerOpen"
-  >
+    >
     {{ formatDisplayTime() }}
   </div>
 
-  <div class="picker" *ngIf="isPickerOpen">
-    <div class="columns">
-      <div class="column" #hoursCol (scroll)="onScroll('hours')">
-        <div
-          *ngFor="let h of visibleHours"
-          class="item"
-          [class.active]="isActive('hours', h)"
-          (click)="selectValue('hours', h)"
-        >
-          {{ h < 10 ? '0' + h : h }}
+  @if (isPickerOpen) {
+    <div class="picker">
+      <div class="columns">
+        <div class="column" #hoursCol (scroll)="onScroll('hours')">
+          @for (h of visibleHours; track h) {
+            <div
+              class="item"
+              [class.active]="isActive('hours', h)"
+              (click)="selectValue('hours', h)"
+              >
+              {{ h < 10 ? '0' + h : h }}
+            </div>
+          }
         </div>
-      </div>
-
-      <div class="separator">:</div>
-
-      <div class="column" #minutesCol (scroll)="onScroll('minutes')">
-        <div
-          *ngFor="let m of visibleMinutes"
-          class="item"
-          [class.active]="isActive('minutes', m)"
-          (click)="selectValue('minutes', m)"
-        >
-          {{ m < 10 ? '0' + m : m }}
+        <div class="separator">:</div>
+        <div class="column" #minutesCol (scroll)="onScroll('minutes')">
+          @for (m of visibleMinutes; track m) {
+            <div
+              class="item"
+              [class.active]="isActive('minutes', m)"
+              (click)="selectValue('minutes', m)"
+              >
+              {{ m < 10 ? '0' + m : m }}
+            </div>
+          }
         </div>
+        @if (showSeconds) {
+          <div class="separator">:</div>
+          <div class="column" #secondsCol (scroll)="onScroll('seconds')">
+            @for (s of visibleSeconds; track s) {
+              <div
+                class="item"
+                [class.active]="isActive('seconds', s)"
+                (click)="selectValue('seconds', s)"
+                >
+                {{ s < 10 ? '0' + s : s }}
+              </div>
+            }
+          </div>
+        }
+        <!-- Only show AM/PM in 12-hour mode -->
+        @if (!use24HourFormat) {
+          <div class="column ampm-col" #ampmCol (scroll)="onScroll('ampm')">
+            @for (a of visibleAmPm; track a; let i = $index) {
+              <div
+                class="item"
+                [class.active]="ampm === a"
+                (click)="setAmPm(a,i)"
+                >
+                {{ a }}
+              </div>
+            }
+            <div class="highlight-bar"></div>
+          </div>
+        }
       </div>
-
-    <ng-container *ngIf="showSeconds">
-    <div class="separator">:</div>
-    <div class="column" #secondsCol (scroll)="onScroll('seconds')">
-    <div
-      *ngFor="let s of visibleSeconds"
-      class="item"
-      [class.active]="isActive('seconds', s)"
-      (click)="selectValue('seconds', s)"
-    >
-      {{ s < 10 ? '0' + s : s }}
     </div>
-    </div>
-  </ng-container>
-
-      <!-- Only show AM/PM in 12-hour mode -->
-<div *ngIf="!use24HourFormat" class="column ampm-col" #ampmCol (scroll)="onScroll('ampm')">
-  <div
-    *ngFor="let a of visibleAmPm; let i = index"
-    class="item"
-    [class.active]="ampm === a"
-    (click)="setAmPm(a,i)"
-  >
-    {{ a }}
-  </div>
-        <div class="highlight-bar"></div>
-</div>
-    </div>
-  </div>
+  }
 </div>

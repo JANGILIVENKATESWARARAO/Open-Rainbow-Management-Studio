@@ -3,7 +3,7 @@
     <p class="main">Announcement</p>
     <app-button [text]="'Add Announcement'" [bgColor]="'#c1eb92'" [color]="'#323f24'" [hoverBGColor]="'#d4eeb6'"
       [hoverColor]="'#0e0d0d'" [borderRadius]="10" [borderColor]="'#4c5740'" [showBorder]="true"
-      (click)="toggleForm()"></app-button>
+    (click)="toggleForm()"></app-button>
   </div>
   <hr class="custom-line">
   <div class="blank-space" [class.visible]="showForm">
@@ -26,30 +26,30 @@
       <div class="form-item">
         <app-calendar [label]="'Expires On'" [isSave]="isSaveClicked"></app-calendar>
         <!-- (dateSelected)="dateSelected($event)"
-          (calendarClosed)="calendarClosed($event)" -->
+        (calendarClosed)="calendarClosed($event)" -->
       </div>
 
 
       <div class="form-item desc-field">
         <app-text-area [label]="'Description'" [isSave]="isSaveClicked" [Placeholder]="'Enter description'" [isRequired]="true"
-          [showBorder]="true"></app-text-area>
+        [showBorder]="true"></app-text-area>
       </div>
 
 
       <div class="form-footer">
         <app-button [text]="'Clear'" [color]="'red'" [hoverBGColor]="'#f2b6b6'" [hoverColor]="'Black'"
-          [borderRadius]="8" [borderColor]="'red'" [showBorder]="true"></app-button>
+        [borderRadius]="8" [borderColor]="'red'" [showBorder]="true"></app-button>
         <app-button [text]="'Save'" [bgColor]="'green'" [color]="'white'" [hoverBGColor]="'#519c51'"
-          [hoverColor]="'white'" [borderRadius]="8" [showBorder]="false" (click)="onSave()"></app-button>
+        [hoverColor]="'white'" [borderRadius]="8" [showBorder]="false" (click)="onSave()"></app-button>
       </div>
     </div>
   </div>
 
- 
+
   <div class="blank-space-two anycard">
     <h3 class="card-title">Recent Announcements</h3>
 
-    <ng-container *ngFor="let announcement of otherAnnouncements; let last = last">
+    @for (announcement of otherAnnouncements; track announcement; let last = $last) {
       <div class="announcement-item">
         <div class="title-row">
           <h4 class="title">{{ announcement.title }}</h4>
@@ -62,9 +62,7 @@
             [bgColor]="announcement.priority === 'medium' ? '#fef9c2' : announcement.priority === 'low' ? '#dbfce7' : '#ffe2e2'">
           </app-chip>
         </div>
-
         <p class="description">{{ announcement.description }}</p>
-
         <div class="footer-row">
           <div class="date">
             <span class="expire-label">Expire on:</span>
@@ -72,14 +70,15 @@
           </div>
           <div class="footer">
             <app-button [text]="'Edit'" [bgColor]="'#3965e9'" [color]="'white'" [hoverBGColor]="'#3965e9'"
-              [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
+            [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
             <app-button [text]="'Delete'" [bgColor]="'red'" [color]="'white'" [hoverBGColor]="'red'"
-              [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
+            [hoverColor]="'black'" [borderRadius]="8" [showBorder]="false"></app-button>
           </div>
         </div>
       </div>
-
-      <hr class="custom-line" *ngIf="!last" />
-    </ng-container>
+      @if (!last) {
+        <hr class="custom-line" />
+      }
+    }
   </div>
 </div>

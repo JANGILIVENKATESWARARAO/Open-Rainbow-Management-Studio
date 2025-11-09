@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ButtonComponent } from '../../../../common-ui/controls/button/button.component';
 import { TextAreaComponent } from '../../../../common-ui/controls/text-area/text-area.component';
 import { TextBoxComponent } from '../../../../common-ui/controls/text-box/text-box.component';
@@ -13,17 +13,11 @@ import { Announcement } from '../../../../common-ui/assests/view-models/common-v
     templateUrl: './add-holiday-list.component.html',
     styleUrl: './add-holiday-list.component.css',
     imports: [
-        CommonModule,
-        ButtonComponent,
-        CalendarComponent,
-        DropDownComponent,
-        TextAreaComponent,
-        // TextAreaComponent,
-        // TextBoxComponent,
-        // DropDownComponent,
-        // CalendarComponent,
-        // ChipComponent,
-    ]
+    ButtonComponent,
+    CalendarComponent,
+    DropDownComponent,
+    TextAreaComponent
+]
 })
 export class AddHolidayListComponent {
   showForm = false; 

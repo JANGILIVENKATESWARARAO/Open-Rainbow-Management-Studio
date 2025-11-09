@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   AfterViewInit,
   Component,
@@ -15,7 +15,7 @@ import {
     selector: 'app-timepicker',
     templateUrl: './timepicker.component.html',
     styleUrls: ['./timepicker.component.css'],
-    imports: [CommonModule]
+    imports: []
 })
 export class TimepickerComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() use24HourFormat = false; // Controlled via Storybook

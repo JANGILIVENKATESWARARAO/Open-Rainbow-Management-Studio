@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-search-bar',
     templateUrl: './search-bar.component.html',
     styleUrls: ['./search-bar.component.css'],
-    imports: [CommonModule]
+    imports: []
 })
 export class SearchBarComponent {
   @Input() placeholderText: string = 'Search employees by name, email, position, or department...';
