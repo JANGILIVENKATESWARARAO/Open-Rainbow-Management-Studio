@@ -1,5 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Chart, ChartConfiguration, LineController, LineElement, PointElement, LinearScale, Title, CategoryScale } from 'chart.js';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,33 +6,6 @@ import { Chart, ChartConfiguration, LineController, LineElement, PointElement, L
   styleUrls: ['./app.component.css'],
   imports: [],
 })
-export class AppComponent implements OnInit, OnDestroy {
-  @ViewChild('chartCanvas', { static: true }) private chartRef!: ElementRef<HTMLCanvasElement>;
-  private chart!: Chart;
-
-  ngOnInit() {
-    Chart.register(LineController, LineElement, PointElement, LinearScale, Title, CategoryScale);
-
-    const config: ChartConfiguration = {
-      type: 'line',
-      data: {
-        labels: ['chit', 'January', 'February', 'March', 'April'],
-        datasets: [{
-          label: 'My Dataset',
-          data: [50, 10, 20, 30, 40],
-          fill: false,
-          borderColor: 'blue'
-        }]
-      },
-      options: {
-        responsive: true,
-      }
-    };
-
-    this.chart = new Chart(this.chartRef.nativeElement.getContext('2d')!, config);
-  }
-
-  ngOnDestroy() {
-    this.chart.destroy();
-  }
+export class AppComponent {
+  
 }

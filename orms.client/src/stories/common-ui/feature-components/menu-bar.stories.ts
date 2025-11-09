@@ -4,7 +4,7 @@ import { MenuBarComponent } from '../../../app/common-ui/feature-components/menu
 
 
 const meta: Meta<MenuBarComponent> = {
-  title: 'Feature Components/menubar',
+  title: 'Common-UI/Feature Components/menubar',
   component: MenuBarComponent,
   // tags: ['autodocs'],
   parameters: {
