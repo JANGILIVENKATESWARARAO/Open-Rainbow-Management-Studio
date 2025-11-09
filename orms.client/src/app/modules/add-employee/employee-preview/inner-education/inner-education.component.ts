@@ -3,11 +3,10 @@ import { LabelValueComponent } from '../../../../common-ui/controls/label-value/
 import { EducationDetails } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-inner-education',
-  templateUrl: './inner-education.component.html',
-  styleUrl: './inner-education.component.css',
-  standalone: true,
-  imports: [LabelValueComponent]
+    selector: 'app-inner-education',
+    templateUrl: './inner-education.component.html',
+    styleUrl: './inner-education.component.css',
+    imports: [LabelValueComponent]
 })
 export class InnerEducationComponent {
   @Input() educationDetails?: EducationDetails;

@@ -9,20 +9,19 @@ import { CalendarComponent } from '../../../../common-ui/controls/calendar/calen
 import { ChipComponent } from '../../../../common-ui/controls/chip/chip.component';
 import { TooltipDirective } from '../../../../common-ui/feature-components/tooltip/directive/tooltip.directive';
 @Component({
-  selector: 'app-expire-announcement',
-  templateUrl: './expire-announcement.component.html',
-  styleUrl: './expire-announcement.component.css',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ButtonComponent,
-    TextAreaComponent,
-    TextBoxComponent,
-    DropDownComponent,
-    CalendarComponent,
-    ChipComponent,
-    TooltipDirective,
-  ],
+    selector: 'app-expire-announcement',
+    templateUrl: './expire-announcement.component.html',
+    styleUrl: './expire-announcement.component.css',
+    imports: [
+        CommonModule,
+        ButtonComponent,
+        TextAreaComponent,
+        TextBoxComponent,
+        DropDownComponent,
+        CalendarComponent,
+        ChipComponent,
+        TooltipDirective,
+    ]
 })
 export class ExpireAnnouncementComponent {
   dateSelected($event: Date | null) {

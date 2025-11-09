@@ -7,18 +7,17 @@ import { InnerContactComponent } from '../../employee-preview/inner-contact/inne
 import { InnerContentComponent } from '../../inner-content/inner-content.component';
 
 @Component({
-  selector: 'app-employeeslist',
-  templateUrl: './employeeslist.component.html',
-  styleUrl: './employeeslist.component.css',
-  standalone: true,
-  imports: [
-    ChipComponent,
-    BasicInfoComponent,
-    NgIf,
-    InnerContactComponent,
-    InnerContentComponent,
-    NgClass,
-  ],
+    selector: 'app-employeeslist',
+    templateUrl: './employeeslist.component.html',
+    styleUrl: './employeeslist.component.css',
+    imports: [
+        ChipComponent,
+        BasicInfoComponent,
+        NgIf,
+        InnerContactComponent,
+        InnerContentComponent,
+        NgClass,
+    ]
 })
 export class EmployeeslistComponent {
   @Input() EmployeeName: string = 'Ganesh';

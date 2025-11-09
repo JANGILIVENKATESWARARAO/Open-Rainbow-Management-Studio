@@ -6,11 +6,10 @@ import { ButtonComponent } from '../../../common-ui/controls/button/button.compo
 import { DropDownComponent } from '../../../common-ui/controls/drop-down/drop-down.component';
 import { CommonModule } from '@angular/common';
 @Component({
-  selector: 'app-apply-leave',
-  templateUrl: './apply-leave.component.html',
-  styleUrl: './apply-leave.component.css',
-  imports: [NoticeBannerComponent,CalendarComponent,TextAreaComponent,ButtonComponent,DropDownComponent,CommonModule],
-  standalone: true,
+    selector: 'app-apply-leave',
+    templateUrl: './apply-leave.component.html',
+    styleUrl: './apply-leave.component.css',
+    imports: [NoticeBannerComponent, CalendarComponent, TextAreaComponent, ButtonComponent, DropDownComponent, CommonModule]
 })
 export class ApplyLeaveComponent {
     showForm: boolean = false; 

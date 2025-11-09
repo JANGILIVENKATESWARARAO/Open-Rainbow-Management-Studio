@@ -3,11 +3,10 @@ import { LabelValueComponent } from '../../../../common-ui/controls/label-value/
 import { DocumentsUploaded } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-inner-document',
-  templateUrl: './inner-document.component.html',
-  styleUrl: './inner-document.component.css',
-  standalone: true,
-  imports: [LabelValueComponent]
+    selector: 'app-inner-document',
+    templateUrl: './inner-document.component.html',
+    styleUrl: './inner-document.component.css',
+    imports: [LabelValueComponent]
 })
 export class InnerDocumentComponent {
   @Input() uploadedDocuments?: DocumentsUploaded;

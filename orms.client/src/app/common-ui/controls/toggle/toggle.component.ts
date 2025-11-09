@@ -100,11 +100,10 @@ import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-toggle',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './toggle.component.html',
-  styleUrls: ['./toggle.component.css']
+    selector: 'app-toggle',
+    imports: [CommonModule],
+    templateUrl: './toggle.component.html',
+    styleUrls: ['./toggle.component.css']
 })
 export class ToggleComponent implements OnChanges {
   @Input() checked = false;

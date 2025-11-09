@@ -17,11 +17,10 @@ export interface DropDown {
 }
 
 @Component({
-  selector: 'app-drop-down',
-  templateUrl: './drop-down.component.html',
-  styleUrl: './drop-down.component.css',
-  standalone: true,
-  imports: [CommonModule],
+    selector: 'app-drop-down',
+    templateUrl: './drop-down.component.html',
+    styleUrl: './drop-down.component.css',
+    imports: [CommonModule]
 })
 export class DropDownComponent implements AfterViewInit, OnDestroy {
   @Input() label: string = 'Gender';

@@ -9,11 +9,10 @@ import { ButtonNavigationComponent } from "../../common-modules/button-navigatio
 import { BasicCardComponent } from '../../basic-card/basic-card.component';
 
 @Component({
-  selector: 'app-add-new-employee',
-  templateUrl: './add-new-employee.component.html',
-  styleUrl: './add-new-employee.component.css',
-  standalone: true,
-  imports: [BasicInfoComponent, ContactInfoComponent, DocumentsUploadComponent, EducationDetailsComponent, InsuranceDetailsComponent, JobDetailsComponent, ButtonNavigationComponent, BasicCardComponent]
+    selector: 'app-add-new-employee',
+    templateUrl: './add-new-employee.component.html',
+    styleUrl: './add-new-employee.component.css',
+    imports: [BasicInfoComponent, ContactInfoComponent, DocumentsUploadComponent, EducationDetailsComponent, InsuranceDetailsComponent, JobDetailsComponent, ButtonNavigationComponent, BasicCardComponent]
 })
 export class AddNewEmployeeComponent {
 

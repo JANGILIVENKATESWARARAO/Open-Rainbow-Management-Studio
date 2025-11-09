@@ -11,11 +11,10 @@ import { InnerJobComponent } from '../employee-preview/inner-job/inner-job.compo
 
 
 @Component({
-  selector: 'app-employee-details-info',
-  templateUrl: './employee-details-info.component.html',
-  styleUrl: './employee-details-info.component.css',
-  standalone: true,
-  imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerInsuranceComponent, NgIf],
+    selector: 'app-employee-details-info',
+    templateUrl: './employee-details-info.component.html',
+    styleUrl: './employee-details-info.component.css',
+    imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerInsuranceComponent, NgIf]
 })
 
 export class EmployeeDetailsInfoComponent {

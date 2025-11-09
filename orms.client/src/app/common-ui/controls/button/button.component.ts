@@ -2,12 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css'],
-  standalone: true,
-  imports: [CommonModule],
-   encapsulation: ViewEncapsulation.None,
+    selector: 'app-button',
+    templateUrl: './button.component.html',
+    styleUrls: ['./button.component.css'],
+    imports: [CommonModule],
+    encapsulation: ViewEncapsulation.None
 })
 export class ButtonComponent {
   @Input() text: string = 'text';

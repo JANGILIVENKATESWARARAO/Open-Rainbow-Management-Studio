@@ -4,11 +4,10 @@ import { Announcement } from '../../../common-ui/assests/view-models/common-view
 import { ChipComponent } from "../../../common-ui/controls/chip/chip.component";
 
 @Component({
-  selector: 'app-announcement-box',
-  templateUrl: './announcement-box.component.html',
-  styleUrls: ['./announcement-box.component.css'],
-  imports: [CommonModule, ChipComponent],
-  standalone: true
+    selector: 'app-announcement-box',
+    templateUrl: './announcement-box.component.html',
+    styleUrls: ['./announcement-box.component.css'],
+    imports: [CommonModule, ChipComponent]
 })
 export class AnnouncementBoxComponent {
   @Input() announcements: Announcement[] = [

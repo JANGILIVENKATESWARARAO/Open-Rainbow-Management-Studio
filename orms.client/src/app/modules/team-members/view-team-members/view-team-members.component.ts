@@ -4,11 +4,10 @@ import { TeamMembers } from '../../../common-ui/assests/view-models/common-view-
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-view-team-members',
-  templateUrl: './view-team-members.component.html',
-  styleUrl: './view-team-members.component.css',
-  standalone: true,
-  imports: [ButtonComponent, CommonModule],
+    selector: 'app-view-team-members',
+    templateUrl: './view-team-members.component.html',
+    styleUrl: './view-team-members.component.css',
+    imports: [ButtonComponent, CommonModule]
 })
 export class ViewTeamMembersComponent {
   @Input() data: TeamMembers[] = [];

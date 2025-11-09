@@ -9,11 +9,10 @@ export interface HolidayLeave {
 }
 
 @Component({
-  selector: 'app-upcoming-holidays',
-  templateUrl: './upcoming-holidays.component.html',
-  styleUrl: './upcoming-holidays.component.css',
-  standalone: true,
-  imports: [ChipComponent, CommonModule],
+    selector: 'app-upcoming-holidays',
+    templateUrl: './upcoming-holidays.component.html',
+    styleUrl: './upcoming-holidays.component.css',
+    imports: [ChipComponent, CommonModule]
 })
 export class UpcomingHolidaysComponent {
   todayDate: Date = new Date();

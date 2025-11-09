@@ -8,11 +8,10 @@ import {
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-otp',
-  templateUrl: './otp.component.html',
-  styleUrls: ['./otp.component.css'],
-  standalone: true,
-  imports: [CommonModule]
+    selector: 'app-otp',
+    templateUrl: './otp.component.html',
+    styleUrls: ['./otp.component.css'],
+    imports: [CommonModule]
 })
 export class OtpComponent implements AfterViewInit {
   otpArray = Array(6).fill('');

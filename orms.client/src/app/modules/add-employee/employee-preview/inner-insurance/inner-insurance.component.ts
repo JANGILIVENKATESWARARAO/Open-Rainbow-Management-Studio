@@ -3,11 +3,10 @@ import { LabelValueComponent } from '../../../../common-ui/controls/label-value/
 import { FatherDtails, MotherDetails, SpouseDetails } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-inner-insurance',
-  templateUrl: './inner-insurance.component.html',
-  styleUrl: './inner-insurance.component.css',
-  standalone: true,
-  imports: [LabelValueComponent]
+    selector: 'app-inner-insurance',
+    templateUrl: './inner-insurance.component.html',
+    styleUrl: './inner-insurance.component.css',
+    imports: [LabelValueComponent]
 })
 export class InnerInsuranceComponent {
   @Input() fatherDetails?: FatherDtails;

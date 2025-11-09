@@ -6,11 +6,10 @@ import { ButtonComponent } from '../../../common-ui/controls/button/button.compo
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
 
 @Component({
-  selector: 'app-leave-approval',
-  templateUrl: './leave-approval.component.html',
-  styleUrl: './leave-approval.component.css',
-  standalone:true,
-  imports:[NoticeBannerComponent,RecentLeaveRequestComponent,CountWidgetComponent,ButtonComponent,ChipComponent]
+    selector: 'app-leave-approval',
+    templateUrl: './leave-approval.component.html',
+    styleUrl: './leave-approval.component.css',
+    imports: [NoticeBannerComponent, RecentLeaveRequestComponent, CountWidgetComponent, ButtonComponent, ChipComponent]
 })
 export class LeaveApprovalComponent {
 

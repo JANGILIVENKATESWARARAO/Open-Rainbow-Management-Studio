@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-notice-banner',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './notice-banner.html',
-  styleUrl: './notice-banner.css'
+    selector: 'app-notice-banner',
+    imports: [CommonModule],
+    templateUrl: './notice-banner.html',
+    styleUrl: './notice-banner.css'
 })
 export class NoticeBannerComponent {
   @Input() heading: string = 'Important: ';

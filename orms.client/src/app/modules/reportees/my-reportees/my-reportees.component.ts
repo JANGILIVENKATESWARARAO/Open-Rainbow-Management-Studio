@@ -13,11 +13,10 @@ interface MyReportees{
 
 }
 @Component({
-  selector: 'app-my-reportees',
-  templateUrl: './my-reportees.component.html',
-  styleUrl: './my-reportees.component.css',
-  standalone: true,
-  imports: [ButtonComponent,CommonModule],
+    selector: 'app-my-reportees',
+    templateUrl: './my-reportees.component.html',
+    styleUrl: './my-reportees.component.css',
+    imports: [ButtonComponent, CommonModule]
 })
 export class MyReporteesComponent {
 

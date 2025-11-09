@@ -9,19 +9,18 @@ import { ChipComponent } from '../../../../common-ui/controls/chip/chip.componen
 import { Announcement } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-add-edit-announcement',
-  templateUrl: './add-edit-announcement.component.html',
-  styleUrl: './add-edit-announcement.component.css',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ButtonComponent,
-    TextAreaComponent,
-    TextBoxComponent,
-    DropDownComponent,
-    CalendarComponent,
-    ChipComponent,
-  ],
+    selector: 'app-add-edit-announcement',
+    templateUrl: './add-edit-announcement.component.html',
+    styleUrl: './add-edit-announcement.component.css',
+    imports: [
+        CommonModule,
+        ButtonComponent,
+        TextAreaComponent,
+        TextBoxComponent,
+        DropDownComponent,
+        CalendarComponent,
+        ChipComponent,
+    ]
 })
 export class AddEditAnnouncementComponent {
   showForm = false;

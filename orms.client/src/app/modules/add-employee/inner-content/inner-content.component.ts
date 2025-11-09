@@ -13,11 +13,10 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-inner-content',
-  templateUrl: './inner-content.component.html',
-  styleUrl: './inner-content.component.css',
-  standalone: true,
-  imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerDocumentComponent, InnerInsuranceComponent]
+    selector: 'app-inner-content',
+    templateUrl: './inner-content.component.html',
+    styleUrl: './inner-content.component.css',
+    imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerDocumentComponent, InnerInsuranceComponent]
 })
 export class InnerContentComponent {
   @Input() employeeDetails?: EmployeeDetails

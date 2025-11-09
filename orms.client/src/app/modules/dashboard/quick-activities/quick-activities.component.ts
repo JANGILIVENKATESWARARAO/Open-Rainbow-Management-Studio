@@ -11,11 +11,10 @@ interface Activity {
 }
 
 @Component({
-  selector: 'app-quick-activities',
-  templateUrl: './quick-activities.component.html',
-  styleUrls: ['./quick-activities.component.css'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, DotComponent, DurationPipe],
+    selector: 'app-quick-activities',
+    templateUrl: './quick-activities.component.html',
+    styleUrls: ['./quick-activities.component.css'],
+    imports: [CommonModule, FormsModule, DotComponent, DurationPipe]
 })
 export class QuickActivitiesComponent {
   @Input() activities: Activity[] = [

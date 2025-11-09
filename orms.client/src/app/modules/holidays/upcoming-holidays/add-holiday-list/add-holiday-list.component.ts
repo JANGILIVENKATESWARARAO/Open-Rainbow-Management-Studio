@@ -9,23 +9,21 @@ import { ChipComponent } from '../../../../common-ui/controls/chip/chip.componen
 import { Announcement } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-add-holiday-list',
-  templateUrl: './add-holiday-list.component.html',
-  styleUrl: './add-holiday-list.component.css',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ButtonComponent,
-    CalendarComponent,
-    DropDownComponent,
-    TextAreaComponent,
-    // TextAreaComponent,
-    // TextBoxComponent,
-    // DropDownComponent,
-    // CalendarComponent,
-    // ChipComponent,
-  ],
-
+    selector: 'app-add-holiday-list',
+    templateUrl: './add-holiday-list.component.html',
+    styleUrl: './add-holiday-list.component.css',
+    imports: [
+        CommonModule,
+        ButtonComponent,
+        CalendarComponent,
+        DropDownComponent,
+        TextAreaComponent,
+        // TextAreaComponent,
+        // TextBoxComponent,
+        // DropDownComponent,
+        // CalendarComponent,
+        // ChipComponent,
+    ]
 })
 export class AddHolidayListComponent {
   showForm = false; 

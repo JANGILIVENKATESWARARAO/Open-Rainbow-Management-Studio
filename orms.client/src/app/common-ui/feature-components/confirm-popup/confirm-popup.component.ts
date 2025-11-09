@@ -3,11 +3,10 @@ import { ButtonComponent } from '../../controls/button/button.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-confirm-popup',
-  templateUrl: './confirm-popup.component.html',
-  styleUrl: './confirm-popup.component.css',
-  standalone: true,
-  imports: [ButtonComponent,CommonModule],
+    selector: 'app-confirm-popup',
+    templateUrl: './confirm-popup.component.html',
+    styleUrl: './confirm-popup.component.css',
+    imports: [ButtonComponent, CommonModule]
 })
 export class ConfirmPopupComponent {
   @Input() label: string = 'You are about to permanently delete the employee: Sohan kumar. This action cannot be undone';

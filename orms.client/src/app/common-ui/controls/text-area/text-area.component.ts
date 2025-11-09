@@ -40,11 +40,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-text-area',
-  standalone: true,
-  templateUrl: './text-area.component.html',
-  styleUrls: ['./text-area.component.css'],
-  imports: [CommonModule, FormsModule],
+    selector: 'app-text-area',
+    templateUrl: './text-area.component.html',
+    styleUrls: ['./text-area.component.css'],
+    imports: [CommonModule, FormsModule]
 })
 export class TextAreaComponent implements OnChanges {
   @Input() label: string = 'Address';

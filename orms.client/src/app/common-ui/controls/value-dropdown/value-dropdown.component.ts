@@ -3,11 +3,10 @@ import { Component, HostListener, Input, OnInit, ViewChild, ElementRef, Renderer
 import { DropdownValues } from '../../assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-value-dropdown',
-  templateUrl: './value-dropdown.component.html',
-  styleUrls: ['./value-dropdown.component.css'],
-  standalone: true,
-  imports:[CommonModule]
+    selector: 'app-value-dropdown',
+    templateUrl: './value-dropdown.component.html',
+    styleUrls: ['./value-dropdown.component.css'],
+    imports: [CommonModule]
 })
 export class ValueDropdownComponent implements OnInit {
   @Input() dropdownValues: DropdownValues[] = [];

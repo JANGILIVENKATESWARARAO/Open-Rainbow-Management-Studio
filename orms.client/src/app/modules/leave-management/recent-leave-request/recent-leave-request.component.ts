@@ -15,17 +15,16 @@ export interface LeaveRequest {
 }
 
 @Component({
-  selector: 'app-recent-leave-request',
-  templateUrl: './recent-leave-request.component.html',
-  styleUrl: './recent-leave-request.component.css',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ButtonComponent,
-    ChipComponent,
-    TooltipComponent,
-    TooltipDirective,
-  ],
+    selector: 'app-recent-leave-request',
+    templateUrl: './recent-leave-request.component.html',
+    styleUrl: './recent-leave-request.component.css',
+    imports: [
+        CommonModule,
+        ButtonComponent,
+        ChipComponent,
+        TooltipComponent,
+        TooltipDirective,
+    ]
 })
 export class RecentLeaveRequestComponent {
   leaveRequests: LeaveRequest[] = [

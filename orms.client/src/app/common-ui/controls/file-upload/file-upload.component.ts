@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
  
 @Component({
-  selector: 'app-file-upload',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './file-upload.component.html',
-  styleUrl: './file-upload.component.css'
+    selector: 'app-file-upload',
+    imports: [CommonModule],
+    templateUrl: './file-upload.component.html',
+    styleUrl: './file-upload.component.css'
 })
 export class FileUploadComponent {
   @Input() label: string = 'Government ID';
