@@ -8,8 +8,8 @@ describe('LabelValueComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LabelValueComponent]
-    })
+    imports: [LabelValueComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(LabelValueComponent);

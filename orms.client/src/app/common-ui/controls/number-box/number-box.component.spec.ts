@@ -8,8 +8,8 @@ describe('NumberBoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NumberBoxComponent]
-    })
+    imports: [NumberBoxComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(NumberBoxComponent);

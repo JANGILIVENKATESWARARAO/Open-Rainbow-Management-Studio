@@ -8,8 +8,8 @@ describe('AddHolidayListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AddHolidayListComponent]
-    })
+    imports: [AddHolidayListComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(AddHolidayListComponent);

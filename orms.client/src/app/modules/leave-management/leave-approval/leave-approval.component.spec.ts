@@ -8,8 +8,8 @@ describe('LeaveApprovalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LeaveApprovalComponent]
-    })
+    imports: [LeaveApprovalComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(LeaveApprovalComponent);

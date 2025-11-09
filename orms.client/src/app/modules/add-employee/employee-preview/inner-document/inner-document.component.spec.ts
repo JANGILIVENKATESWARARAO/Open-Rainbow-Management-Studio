@@ -8,8 +8,8 @@ describe('InnerDocumentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InnerDocumentComponent]
-    })
+    imports: [InnerDocumentComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(InnerDocumentComponent);

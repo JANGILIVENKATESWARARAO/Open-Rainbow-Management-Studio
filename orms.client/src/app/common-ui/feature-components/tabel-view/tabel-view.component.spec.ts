@@ -8,8 +8,8 @@ describe('TabelViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TabelViewComponent]
-    })
+    imports: [TabelViewComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(TabelViewComponent);

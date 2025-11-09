@@ -11,3 +11,4 @@ export class NumberBoxComponent {
  @Input() label: string = 'Casual';
  @Input() isRequired: boolean = true;
 }
+
