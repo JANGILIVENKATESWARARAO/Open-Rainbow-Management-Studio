@@ -1,0 +1,17 @@
+import type { Meta, StoryObj } from '@storybook/angular';
+import { DoughnutChartComponent } from '../../../app/common-ui/charts/doughnut-chart/doughnut-chart.component';
+
+const meta: Meta<DoughnutChartComponent> = {
+  title: 'Common-UI/Charts/Doughnut Chart',
+  component: DoughnutChartComponent,
+  // tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {},
+};
+
+export default meta;
+type Story = StoryObj<DoughnutChartComponent>;
+
+export const DoughnutChart: Story = {};
