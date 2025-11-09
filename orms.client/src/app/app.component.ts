@@ -1,37 +1,39 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Chart, ChartConfiguration, LineController, LineElement, PointElement, LinearScale, Title, CategoryScale } from 'chart.js';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [],
 })
-export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
-
-  constructor(private http: HttpClient) {}
+export class AppComponent implements OnInit, OnDestroy {
+  @ViewChild('chartCanvas', { static: true }) private chartRef!: ElementRef<HTMLCanvasElement>;
+  private chart!: Chart;
 
   ngOnInit() {
-    this.getForecasts();
-  }
+    Chart.register(LineController, LineElement, PointElement, LinearScale, Title, CategoryScale);
 
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
+    const config: ChartConfiguration = {
+      type: 'line',
+      data: {
+        labels: ['chit', 'January', 'February', 'March', 'April'],
+        datasets: [{
+          label: 'My Dataset',
+          data: [50, 10, 20, 30, 40],
+          fill: false,
+          borderColor: 'blue'
+        }]
       },
-      (error) => {
-        console.error(error);
+      options: {
+        responsive: true,
       }
-    );
+    };
+
+    this.chart = new Chart(this.chartRef.nativeElement.getContext('2d')!, config);
   }
 
-  title = 'orms.client';
+  ngOnDestroy() {
+    this.chart.destroy();
+  }
 }
