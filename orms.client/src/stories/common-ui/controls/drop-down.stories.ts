@@ -5,12 +5,12 @@ import { DropDownComponent } from '../../../app/common-ui/controls/drop-down/dro
 const meta: Meta<DropDownComponent> = {
   title: 'Common-UI/Dropdown',
   component: DropDownComponent,
-   tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen', 
+    layout: 'fullscreen',
   },
   args: {
-      draggable: true,
+    draggable: true,
     options: [
       {
         value: 1,
@@ -24,26 +24,26 @@ const meta: Meta<DropDownComponent> = {
         value: 3,
         name: 'Other',
       },
-       {
+      {
         value: 4,
         name: 'Other1',
       },
-         {
+      {
         value: 5,
         name: 'Other2',
       },
-        {
+      {
         value: 6,
         name: 'Other3',
-      },  {
+      }, {
         value: 7,
         name: 'Other4',
-      },  
+      },
       {
         value: 8,
         name: 'Other5',
-      }, 
-      
+      },
+
       //  {
       //   value: 9,
       //   name: 'Other6',
@@ -57,20 +57,23 @@ const meta: Meta<DropDownComponent> = {
       // },  {
       //   value: 12,
       //   name: 'Other9',
-      // },  {
+      // }, 
+      //  {
       //   value: 13,
       //   name: 'Other10',
-      // },  {
+      // },
+      //   {
       //   value: 14,
       //   name: 'Other11',
-      // },  {
+      // },
+      //   {
       //   value: 15,
       //   name: 'Other12',
       // },
-      
+
     ],
 
-    
+
   },
 };
 

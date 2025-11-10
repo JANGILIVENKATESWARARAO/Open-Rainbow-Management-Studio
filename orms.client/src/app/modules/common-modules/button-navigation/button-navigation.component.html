@@ -2,14 +2,39 @@
   <div class="flex justify-between items-center">
   
     <div>
-      <app-button [text]="'< Previous'" [bgColor]="'#fafbfc'" [color]="'#334155'" [hoverBGColor]="'#e2e8f0'" [hoverColor]="'black'" [borderRadius]="5" [borderColor]="'#e2e8f0'"></app-button>
+      <app-button 
+        [text]="'< Previous'" 
+        [bgColor]="'#fafbfc'" 
+        [color]="'#334155'" 
+        [hoverBGColor]="'#e2e8f0'" 
+        [hoverColor]="'black'" 
+        [borderRadius]="5" 
+        [borderColor]="'#e2e8f0'"
+        [disabled] = "disabled"
+        (click)="goPrevious()">
+      </app-button>
     </div>
 
-    
-    <div class="flex items-center gap-5">
-      <app-button [text]="'Cancel'"[bgColor]="'#fafbfc'"[hoverBGColor]="'#fbe9e9'"[hoverColor]="'black'"[borderColor]="'red'"></app-button>
 
-      <app-button [text]="'Next >'"[bgColor]="'#2563eb'"[color]="'white'"[hoverBGColor]="'#3a72ec'"[hoverColor]="'white'"[showBorder]="false"></app-button>
+    <div class="flex items-center gap-5">
+      <app-button 
+        [text]="'Cancel'"
+        [bgColor]="'#fafbfc'"
+        [hoverBGColor]="'#fbe9e9'"
+        [hoverColor]="'black'"
+        [borderColor]="'red'"
+        (click)="cancel()">
+      </app-button>
+
+      <app-button 
+        [text]="'Next >'"
+        [bgColor]="'#2563eb'"
+        [color]="'white'"
+        [hoverBGColor]="'#3a72ec'"
+        [hoverColor]="'white'"
+        [showBorder]="false"
+        (click)="goNext()">
+      </app-button>
     </div>
   </div>
 </div>

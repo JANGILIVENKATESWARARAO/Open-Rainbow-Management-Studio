@@ -1,0 +1,40 @@
+<div class="sidebar">
+  <h3 class="sidebar-title">Add New Employee</h3>
+
+  <div class="progress-section">
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="progressPercent"></div>
+    </div>
+    <p>{{ completedSteps }} of {{ totalSteps }} steps completed</p>
+  </div>
+
+  <ul class="step-list">
+    <li *ngFor="let step of steps; let i = index"
+        (click)="onStepClick(step, i)"
+        [ngClass]="{
+          'completed': step.status === 'completed',
+          'active': step.status === 'active'
+        }">
+      
+      <div class="step-item">
+        <div class="step-icon">
+          <span *ngIf="step.status === 'completed'" class="icon check-icon">
+            <i class="fa fa-check"></i>
+          </span>
+          <span *ngIf="step.status === 'active'" class="icon active-icon">
+            <i class="fa fa-circle"></i>
+          </span>
+          <span *ngIf="step.status === 'pending'" class="icon pending-icon">
+            <i class="fa fa-circle"></i>
+          </span>
+        </div>
+
+        <div class="step-text">
+          <span class="step-title">{{ step.title }}</span>
+          <small *ngIf="step.status === 'active'">Current step</small>
+          <small *ngIf="step.status === 'completed'">Completed</small>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

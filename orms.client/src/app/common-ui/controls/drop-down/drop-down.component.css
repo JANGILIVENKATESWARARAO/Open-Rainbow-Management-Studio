@@ -76,6 +76,7 @@
   overflow-y: auto;
   cursor: default;
     box-sizing: border-box !important;
+    scrollbar-width: none;
 }
 
 
@@ -89,6 +90,7 @@
   background-color: #9ca3af;
   border: none;
   border-radius: 4px;
+  margin: 6px auto;
   /* margin: 4px auto 6px auto; */
   cursor: ns-resize;
   transition: all 0.2s ease;  
