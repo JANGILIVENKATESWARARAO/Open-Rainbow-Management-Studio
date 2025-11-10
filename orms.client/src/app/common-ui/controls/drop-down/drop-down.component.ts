@@ -17,7 +17,7 @@ export interface DropDown {
 }
 
 @Component({
-  selector: 'app-drop-down',
+  selector: 'orms-drop-down',
   templateUrl: './drop-down.component.html',
   styleUrl: './drop-down.component.css',
   standalone: true,

@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { ApplyLeave } from '../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-apply-leave',
+  selector: 'orms-apply-leave',
   templateUrl: './apply-leave.component.html',
   styleUrl: './apply-leave.component.css',
   imports: [
