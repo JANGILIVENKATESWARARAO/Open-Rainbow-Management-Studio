@@ -132,3 +132,16 @@
 .expire-date {
   color: #C0171A;
 }
+
+::ng-deep .cdk-overlay-container,
+::ng-deep .cdk-overlay-pane,
+::ng-deep .mat-datepicker-content {
+  z-index: 9999 !important;
+}
+
+.blank-space,
+.blank-space-two,
+.inside {
+  overflow: visible !important;
+  position: relative; 
+}
