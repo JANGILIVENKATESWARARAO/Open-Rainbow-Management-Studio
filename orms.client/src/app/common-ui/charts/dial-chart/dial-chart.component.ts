@@ -1,5 +1,20 @@
-import { Component, AfterViewInit, ElementRef, ViewChild, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Chart, ArcElement, DoughnutController, Tooltip, Legend } from 'chart.js';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  ViewChild,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
+import {
+  Chart,
+  ArcElement,
+  DoughnutController,
+  Tooltip,
+  Legend,
+  ChartEvent,
+} from 'chart.js';
 
 Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
 
@@ -15,9 +30,9 @@ export class DialChartComponent implements AfterViewInit, OnChanges {
   @Input() lastMonthChange = 5;
   @Input() isRounded = false;
 
-  dialColor = '#ff7a00'; // normal orange
-  hoverColor = '#1d4ed8'; // blue-700 for hover (choose any color you like)
-
+  dialColor = '#ff7a00'; // orange
+  hoverColor = '#1d4ed8'; // blue
+  bgColor = '#f5f5f5'; // gray background
   private chart!: Chart;
 
   ngAfterViewInit() {
@@ -25,22 +40,18 @@ export class DialChartComponent implements AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['isRounded'] && !changes['isRounded'].firstChange) {
+    // update chart dynamically if inputs change
+    if (this.chart && (changes['isRounded'] || changes['percentage'])) {
+      const dataset = this.chart.data.datasets[0];
+      dataset.data = [this.percentage, 100 - this.percentage];
+      (dataset as any).borderRadius = this.isRounded ? 40 : 0;
+      this.chart.update();
+    } else if (this.dialCanvas) {
       this.drawChart();
     }
   }
 
-  onDialEnter() {
-    this.dialColor = this.hoverColor;
-    this.drawChart();
-  }
-
-  onDialLeave() {
-    this.dialColor = '#ff7a00';
-    this.drawChart();
-  }
-
-  drawChart() {
+  private drawChart() {
     const ctx = this.dialCanvas.nativeElement.getContext('2d');
     if (!ctx) return;
     if (this.chart) this.chart.destroy();
@@ -48,13 +59,14 @@ export class DialChartComponent implements AfterViewInit, OnChanges {
     this.chart = new Chart(ctx, {
       type: 'doughnut',
       data: {
-        labels: [],
-        datasets: [{
-          data: [this.percentage, 100 - this.percentage],
-          backgroundColor: [this.dialColor, '#f5f5f5'],
-          borderWidth: 0,
-          borderRadius: this.isRounded ? 40 : 0
-        }],
+        datasets: [
+          {
+            data: [this.percentage, 100 - this.percentage],
+            backgroundColor: [this.dialColor, this.bgColor],
+            borderWidth: 0,
+            borderRadius: this.isRounded ? 40 : 0,
+          },
+        ],
       },
       options: {
         responsive: true,
@@ -63,9 +75,29 @@ export class DialChartComponent implements AfterViewInit, OnChanges {
         cutout: '80%',
         plugins: {
           legend: { display: false },
-          tooltip: { enabled: false }
-        }
-      }
+          tooltip: { enabled: false },
+        },
+        onHover: (event: ChartEvent, elements) => {
+          const canvas = this.dialCanvas.nativeElement;
+          const dataset = this.chart.data.datasets[0];
+
+          // If hovering over the orange arc
+          const hovered =
+            elements && elements.length > 0 && (elements[0] as any).index === 0;
+
+          canvas.style.cursor = hovered ? 'pointer' : 'default';
+
+          // Change color only when hovered
+          if (hovered) {
+            (dataset as any).backgroundColor = [this.hoverColor, this.bgColor];
+          } else {
+            (dataset as any).backgroundColor = [this.dialColor, this.bgColor];
+          }
+
+          // Update immediately without flicker
+          this.chart.update('none');
+        },
+      },
     });
   }
 }
