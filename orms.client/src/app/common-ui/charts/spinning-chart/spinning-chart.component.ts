@@ -36,10 +36,10 @@ export class SpinningChartComponent
   @Input() value?: number;
   @Input() total?: number;
   @Input() showData: boolean = true;
-  @Input() COMPLETED_COLOR_BLUE: string = 'rgb(0, 150, 255)';
-  @Input() REMAINING_COLOR_PALE_BLUE: string = 'rgb(220, 240, 255)';
-  @Input() TEXT_COLOR: string = 'rgb(1, 19, 41)';
-
+  @Input() completedColor: string = 'rgb(0, 150, 255)';
+  @Input() remainingColor: string = 'rgb(220, 240, 255)';
+  @Input() textColor: string = 'rgb(1, 19, 41)';
+  @Input() hoverCompletedColor: string = 'rgba(8, 116, 194, 1)';
   public chartData: number[] = [0, 100];
 
   ngAfterViewInit(): void {
@@ -104,7 +104,7 @@ export class SpinningChartComponent
         const fontSize = (height / 100).toFixed(2);
         ctx.font = `bold ${fontSize}em sans-serif`;
         ctx.textBaseline = 'middle';
-        ctx.fillStyle = this.TEXT_COLOR;
+        ctx.fillStyle = this.textColor;
 
         const text =
           this.value != null && this.total != null
@@ -144,7 +144,7 @@ export class SpinningChartComponent
       ctx.beginPath();
       ctx.arc(centerX, centerY, outerRadius, 0, 2 * Math.PI);
       ctx.arc(centerX, centerY, innerRadius, 2 * Math.PI, 0, true);
-      ctx.fillStyle = this.REMAINING_COLOR_PALE_BLUE;
+      ctx.fillStyle = this.remainingColor;
       ctx.fill();
       ctx.restore();
     },
@@ -170,8 +170,8 @@ export class SpinningChartComponent
       datasets: [
         {
           data: this.chartData,
-          backgroundColor: [this.COMPLETED_COLOR_BLUE, 'transparent'],
-          hoverBackgroundColor: [this.COMPLETED_COLOR_BLUE, 'transparent'],
+          backgroundColor: [this.completedColor, 'transparent'],
+          hoverBackgroundColor: [this.hoverCompletedColor, 'transparent'],
           hoverBorderWidth: 0,
           hoverOffset: 0,
           spacing: 0,
