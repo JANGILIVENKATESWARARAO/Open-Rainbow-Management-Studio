@@ -4,9 +4,9 @@ import { DoughnutChartComponent } from '../../../app/common-ui/charts/doughnut-c
 const meta: Meta<DoughnutChartComponent> = {
   title: 'Common-UI/Charts/Doughnut Chart',
   component: DoughnutChartComponent,
-  // tags: ['autodocs'],
+  tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
   },
   args: {},
 };
