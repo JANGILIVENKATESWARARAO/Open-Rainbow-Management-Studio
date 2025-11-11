@@ -24,14 +24,14 @@
                 (dateSelected)="applyLeave.endDate = formatDate($event)"></orms-calendar>
             <!-- (dateSelected)="dateSelected($event)" (calendarClosed)="calendarClosed($event)" -->
         </div>
-        <app-drop-down [label]="'Leave Type'" [placeHolder]="'Select Leave'"
+        <orms-drop-down [label]="'Leave Type'" [placeHolder]="'Select Leave'"
             [options]="[{value: 1, name: 'Casual Leave'}, {value: 2, name: 'Earned Leave'}, {value: 3, name: 'Maternity Leave'}, {value: 4, name: 'Paternity Leave'}, {value: 4, name: 'Comp-Off'}, {value: 5, name: 'Unpaid Leave'}]"
             (selectedChange)="applyLeave.leaveType = $event.name">
-        </app-drop-down><br>
+        </orms-drop-down><br>
         <!-- (selectedChange)="selectedChange($event)" -->
-        <app-text-area [label]="'Reason for Leave'"
+        <orms-text-area [label]="'Reason for Leave'"
             [Placeholder]="'Please provide a detailed reason for your leave request'"
-            (textValueChange)="applyLeave.reason = $event"></app-text-area><br>
+            (textValueChange)="applyLeave.reason = $event"></orms-text-area><br>
         <div class="close">
             <orms-button [text]="'Close'" [bgColor]="'white'" [color]="'black'" [hoverBGColor]="'#d3d3d3'"
                 [hoverColor]="'black'" [borderColor]="'black'" (click)="CloseApplication()"></orms-button>
