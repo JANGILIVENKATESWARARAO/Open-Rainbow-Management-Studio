@@ -17,6 +17,7 @@ type Story = StoryObj<LineChartComponent>;
 export const LineChart: Story = {
 args: {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    yAxisLabels: ['0', '100k', '200k', '300k', '400k', '500k'],
     seriesLabels: ['Revenue', 'Expenses', 'Profit'],
     data: [
       [300, 200, 100, 250, 300, 350, 500],
@@ -27,7 +28,7 @@ args: {
     lineStyles: ['solid', 'dotted', 'dashed'],
     visible: [true, true, true],
     lineThickness: [2, 2, 2],
-    legendShapes: ['circle', 'circle', 'rectRounded'],
+    legendShapes: ['rectRounded', 'rectRounded', 'rectRounded'],
   },
 };
 

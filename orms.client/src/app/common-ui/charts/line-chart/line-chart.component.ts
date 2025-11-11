@@ -21,7 +21,7 @@ import {
   ChartConfiguration,
 } from 'chart.js';
 
-type LegendShape = 'circle' | 'square' | 'rectRounded';
+type LegendShape = 'circle' | 'rectRounded' | 'rect';
 
 @Component({
   selector: 'orms-line-chart',
@@ -43,6 +43,7 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
   @Input() seriesLabels: string[] = []; // Label per line
   @Input() lineThickness: number[] = []; // Line thickness per line
   @Input() legendShapes: LegendShape[] = []; // Legend shape per series
+  @Input() yAxisLabels: (string | number)[] = []; // 👈 NEW: dynamic Y-axis tick labels
 
   ngOnInit() {
     Chart.register(
@@ -67,7 +68,8 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
         changes['lineStyles'] ||
         changes['visible'] ||
         changes['lineThickness'] ||
-        changes['legendShapes'])
+        changes['legendShapes'] ||
+        changes['yAxisLabels'])
     ) {
       this.updateChart();
     }
@@ -98,25 +100,43 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
             borderWidth: 0,
             cornerRadius: 6,
           },
-          legend: ({} as any) /* cast to any to allow generateLabels */ as any,
+          legend: ({} as any),
         },
         scales: {
           x: { grid: { display: false } },
-          y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.1)' } },
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(0,0,0,0.1)' },
+            ticks: {
+              color: '#374151',
+              font: {
+                size: 12,
+                family: 'Poppins, sans-serif',
+              },
+              // 👇 Dynamic Y-axis label support
+              callback: (value: any, index: number) => {
+                if (
+                  this.yAxisLabels.length > 0 &&
+                  this.yAxisLabels[index] !== undefined
+                ) {
+                  return this.yAxisLabels[index];
+                }
+                return value; // default numeric tick
+              },
+            },
+          },
         },
       },
     };
 
-    // now assign legend with generateLabels at runtime (so we can reference `this`)
+    // 👇 Custom legend rendering
     (config.options!.plugins as any).legend = {
       display: true,
       position: 'bottom',
       labels: {
         usePointStyle: true,
-        // default static pointStyle (won't be used for per-item override)
-        pointStyle: 'rectRounded',
         boxWidth: 18,
-        boxHeight: 10,
+        boxHeight: 20,
         color: '#374151',
         padding: 14,
         font: {
@@ -124,27 +144,40 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
           family: 'Poppins, sans-serif',
           weight: '500',
         },
-      },
-      // place generateLabels on legend (typed as any to avoid TS errors)
-      generateLabels: (chart: Chart) => {
-        const datasets = chart.data.datasets || [];
-        return datasets
-          .map((dataset: any, i: number) => {
-            const isVisible = this.visible[i] === undefined ? true : this.visible[i];
-            if (!isVisible) return null;
+        generateLabels: (chart: Chart) => {
+          const datasets = chart.data.datasets || [];
+          return datasets
+            .map((dataset: any, i: number) => {
+              const isVisible =
+                this.visible[i] === undefined ? true : this.visible[i];
+              if (!isVisible) return null;
 
-            return {
-              text: dataset.label ?? `Series ${i + 1}`,
-              fillStyle: dataset.borderColor ?? dataset.backgroundColor ?? '#999',
-              strokeStyle: dataset.borderColor ?? dataset.backgroundColor ?? '#999',
-              lineWidth: 0,
-              hidden: !chart.isDatasetVisible(i),
-              datasetIndex: i,
-              // set per-item shape from legendShapes input (fallback to rectRounded)
-              pointStyle: this.legendShapes[i] ?? 'rectRounded',
-            };
-          })
-          .filter((d): d is NonNullable<typeof d> => d !== null);
+              return {
+                text: dataset.label ?? `Series ${i + 1}`,
+                fillStyle: this.colors[i] ?? '#999',
+                strokeStyle: this.colors[i] ?? '#999',
+                datasetIndex: i,
+                hidden: !chart.isDatasetVisible(i),
+                lineWidth: 0,
+                pointStyle: this.legendShapes[i] ?? 'rectRounded',
+              };
+            })
+            .filter((d): d is NonNullable<typeof d> => d !== null);
+        },
+        pointStyle: (context: any) => {
+          const index = context.datasetIndex;
+          const shape = this.legendShapes[index] ?? 'rectRounded';
+          switch (shape) {
+            case 'circle':
+              return 'circle';
+            case 'rectRounded':
+              return 'rectRounded';
+            case 'rect':
+              return 'rect';
+            default:
+              return 'rectRounded';
+          }
+        },
       },
     } as any;
 
@@ -186,7 +219,6 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
     if (!this.chart) return;
     this.chart.data.labels = this.labels;
     this.chart.data.datasets = this.buildDatasets();
-    // chart legend is regenerated on update()
     this.chart.update();
   }
 
