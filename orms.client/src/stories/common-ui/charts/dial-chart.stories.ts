@@ -3,7 +3,7 @@ import { DialChartComponent } from '../../../app/common-ui/charts/dial-chart/dia
 
 
 const meta: Meta<DialChartComponent> = {
-  title: 'Components/Dial Chart',
+  title: 'Common-UI/Charts/Dial Chart',
   component: DialChartComponent,
   tags: ['autodocs'],
   argTypes: {
