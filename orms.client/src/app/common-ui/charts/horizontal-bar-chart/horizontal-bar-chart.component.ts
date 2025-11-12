@@ -9,6 +9,7 @@ import {
   Tooltip,
   ChartConfiguration
 } from 'chart.js';
+type LegendShape = 'circle' | 'rectRounded' | 'rect';
 
 @Component({
   selector: 'orms-horizontal-bar-chart',
@@ -18,7 +19,6 @@ import {
 })
 export class HorizontalBarChartComponent {
   @ViewChild('chartCanvas', { static: true }) chartRef!: ElementRef<HTMLCanvasElement>;
-
   @Input() horizontal: boolean = false;
   @Input() showLegend: boolean = true;
   @Input() singleLine: boolean = false;
@@ -27,6 +27,8 @@ export class HorizontalBarChartComponent {
   @Input() backgroundcolor1: string = '#FF8800';
   @Input() backgroundcolor2: string = '#13C9E4';
   @Input() backgroundcolor: string = '#2166E1';
+
+  @Input() legendShapes: LegendShape[] = []; 
 
   private chart!: Chart;
 
@@ -44,7 +46,8 @@ export class HorizontalBarChartComponent {
         changes['showData'] ||
         changes['backgroundcolor'] ||
         changes['backgroundcolor1'] ||
-        changes['backgroundcolor2']) &&
+        changes['backgroundcolor2'] ||
+        changes['legendShapes']) && 
       this.chart
     ) {
       this.createChart();
@@ -103,6 +106,22 @@ export class HorizontalBarChartComponent {
               padding: 8,
               color: '#555',
               font: { size: 13 },
+              usePointStyle: true,
+              generateLabels: (chart: Chart) => {
+                const datasets = chart.data.datasets || [];
+                return datasets.map((dataset: any, i: number) => {
+                  const pointStyle = this.getLegendShape(i);
+                  return {
+                    text: dataset.label ?? `Series ${i + 1}`,
+                    fillStyle: dataset.backgroundColor ?? '#999',
+                    strokeStyle: dataset.backgroundColor ?? '#999',
+                    datasetIndex: i,
+                    hidden: !chart.isDatasetVisible(i),
+                    lineWidth: 0,
+                    pointStyle: pointStyle,
+                  };
+                });
+              },
             },
           },
           tooltip: { enabled: this.showData },
@@ -142,7 +161,6 @@ export class HorizontalBarChartComponent {
         animation: false,
         datasets: {
           bar: {
-            // borderRadius: 8,
             categoryPercentage: this.singleLine ? 0.9 : 0.8,
             barPercentage: this.singleLine ? 0.25 : 0.8,
           },
@@ -155,6 +173,12 @@ export class HorizontalBarChartComponent {
     }
 
     this.chart = new Chart(this.chartRef.nativeElement.getContext('2d')!, config);
+  }
+  private getLegendShape(index: number): LegendShape {
+    if (this.legendShapes && this.legendShapes[index] !== undefined) {
+      return this.legendShapes[index];
+    }
+    return 'rectRounded'; 
   }
 
   ngOnDestroy() {
