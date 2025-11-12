@@ -51,7 +51,7 @@ const meta: Meta<LeaveApprovalComponent> = {
     ]
   },
 };
-
+ 
 export default meta;
 type Story = StoryObj<LeaveApprovalComponent>;
 

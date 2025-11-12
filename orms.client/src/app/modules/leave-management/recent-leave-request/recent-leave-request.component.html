@@ -1,7 +1,7 @@
 <div class="leave-container anycard">
   <div class="headding">Recent Leave Requests</div>
 
-  @for (leave of leaveRequests; track leave) {
+  @for (leave of data; track leave) {
     <div class="leave-card anycard">
       <div class="leave-header">
         <div class="left">
@@ -39,7 +39,7 @@
                 to {{ leave.toDate }}
               }
             </span>
-            <span class="apply-text">Apply on : {{ leave.applyDate }}</span>
+            <span class="apply-text">Apply on : {{ leave.applyOn }}</span>
           </p>
           <p class="desc" [class.truncated]="isTruncated(leave.description, 50)"
             [appTooltip]="isTruncated(leave.description, 50) ? leave.description : ''" tooltipPosition="top"
@@ -54,10 +54,8 @@
             }}
           </p>
           @if (leave.status === 'Pending') {
-            <orms-button [text]="'Edit'" [bgColor]="'#1880d6'" [color]="'#fff'" [hoverBGColor]="'#1880d6'"
-            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12" style="margin-right: 10px;"></orms-button>
-            <orms-button [text]="'Cancel'" [bgColor]="'#ee120d'" [color]="'#fff'" [hoverBGColor]="'#ee120d'"
-            [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12"></orms-button>
+            <orms-button [text]="'Edit'" [bgColor]="'#1880d6'" [color]="'#fff'" [hoverBGColor]="'#1880d6'" [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12" style="margin-right: 10px;"></orms-button>
+            <orms-button [text]="'Cancel'" [bgColor]="'#ee120d'" [color]="'#fff'" [hoverBGColor]="'#ee120d'" [hoverColor]="'#fff'" [showBorder]="false" [borderRadius]="12"></orms-button>
           }
         </div>
       </div>

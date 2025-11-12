@@ -26,13 +26,13 @@
             </div>
         </div>
     <div class="recent-leave">
-        <orms-recent-leave-request></orms-recent-leave-request>
+        <orms-recent-leave-request [data]="item.leaves"></orms-recent-leave-request>
         <div class="leave-balance-container">
-            <h3>Employee Leave Balance - Sick Leave</h3>
+            <h3>Employee Leave Balance - {{ item.leaves[0]?.type || 'Leave' }}</h3>
             <div class="grid">
-                <orms-count-widget [label]="'Total Days'" [value]="25" [valueColor]="'blue'" [showBorder]="true"[borderColor]="'#dcdcdc'" ></orms-count-widget>
-                <orms-count-widget [label]="'Remaining'" [value]="18" [valueColor]="'green'" [showBorder]="true" [borderColor]="'#dcdcdc'"></orms-count-widget>
-                <orms-count-widget [label]="'Used'" [value]="7" [valueColor]="'#4c5665'" [showBorder]="true" [borderColor]="'#dcdcdc'"></orms-count-widget>
+                <orms-count-widget [label]="'Total Days'" [value]="item.totalDays" [valueColor]="'blue'" [showBorder]="true"[borderColor]="'#dcdcdc'" ></orms-count-widget>
+                <orms-count-widget [label]="'Remaining'" [value]="item.remaining" [valueColor]="'green'" [showBorder]="true" [borderColor]="'#dcdcdc'"></orms-count-widget>
+                <orms-count-widget [label]="'Used'" [value]="item.used" [valueColor]="'#4c5665'" [showBorder]="true" [borderColor]="'#dcdcdc'"></orms-count-widget>
             </div>
         
             <div class="button-row">

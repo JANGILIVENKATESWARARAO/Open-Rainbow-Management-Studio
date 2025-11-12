@@ -4,13 +4,14 @@ import { ButtonComponent } from '../../../common-ui/controls/button/button.compo
 
 import { TooltipComponent } from '../../../common-ui/feature-components/tooltip/tooltip.component';
 import { TooltipDirective } from '../../../common-ui/feature-components/tooltip/directive/tooltip.directive';
+import { CommonModule } from '@angular/common';
 
 export interface LeaveRequest {
   type: string;
   status: 'Pending' | 'Approved' | 'Rejected';
   fromDate: string;
   toDate: string;
-  applyDate: string;
+  applyOn: string;
   description: string;
   
 }
@@ -23,7 +24,8 @@ export interface LeaveRequest {
     ButtonComponent,
     ChipComponent,
     TooltipComponent,
-    TooltipDirective
+    TooltipDirective,
+    CommonModule
 ]
 })
 export class RecentLeaveRequestComponent { 
@@ -35,7 +37,7 @@ export class RecentLeaveRequestComponent {
       status: 'Pending',
       fromDate: '15 Jan 2025',
       toDate: '17 Jan 2025',
-      applyDate: '12 Jan 2025',
+      applyOn: '12 Jan 2025',
       description:
         'At the end of last year, my father announced that we will be having a family meeting to discuss our summer vacation plans. Not this again I thought.  Every year, when my father announced a family meeting regarding our vacation plans, he just explains how we',
     },
@@ -44,7 +46,7 @@ export class RecentLeaveRequestComponent {
       status: 'Approved',
       fromDate: '8 Jan 2025',
       toDate: '8 Jan 2025',
-      applyDate: '12 Jan 2025',
+      applyOn: '12 Jan 2025',
       description: 'Medical appointment',
     },
     {
@@ -52,7 +54,7 @@ export class RecentLeaveRequestComponent {
       status: 'Rejected',
       fromDate: '20 Dec 2024',
       toDate: '23 Dec 2024',
-      applyDate: '12 Jan 2025',
+      applyOn: '12 Jan 2025',
       description: 'Personal matters',
     },
   ];
@@ -83,4 +85,4 @@ export class RecentLeaveRequestComponent {
 
     return trimmed + '...';
   }
-}
+} 
