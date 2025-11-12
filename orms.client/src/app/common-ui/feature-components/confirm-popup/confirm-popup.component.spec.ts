@@ -8,8 +8,8 @@ describe('ConfirmPopupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ConfirmPopupComponent]
-    })
+    imports: [ConfirmPopupComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ConfirmPopupComponent);

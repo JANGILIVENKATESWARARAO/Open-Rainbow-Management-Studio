@@ -3,11 +3,10 @@ import { LabelValueComponent } from '../../../../common-ui/controls/label-value/
 import { Bankdetails } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-inner-salary',
-  templateUrl: './inner-salary.component.html',
-  styleUrl: './inner-salary.component.css',
-  standalone: true,
-  imports: [LabelValueComponent]
+    selector: 'orms-inner-salary',
+    templateUrl: './inner-salary.component.html',
+    styleUrl: './inner-salary.component.css',
+    imports: [LabelValueComponent]
 })
 export class InnerSalaryComponent {
   @Input() currentCTC?: string;

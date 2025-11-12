@@ -13,14 +13,14 @@
 
    
     <div class="flex items-center gap-[12px]">
-    <app-button [text]= "'Print'" [bgColor]="'#3b73ed'" [color]="'White'" [hoverBGColor]="'#3b73ed'" [hoverColor]="'Black'" [borderRadius]="12" [borderColor]="'whitesmoke'" [showBorder]="true"></app-button>
-    <app-button [text]="'Export'" [bgColor]="'#3b73ed'" [color]="'White'" [hoverBGColor]="'#3b73ed'" [hoverColor]="'Black'" [borderRadius]="12" [borderColor]="'whitesmoke'" [showBorder]="true"></app-button>
+    <orms-button [text]= "'Print'" [bgColor]="'#3b73ed'" [color]="'White'" [hoverBGColor]="'#3b73ed'" [hoverColor]="'Black'" [borderRadius]="12" [borderColor]="'whitesmoke'" [showBorder]="true"></orms-button>
+    <orms-button [text]="'Export'" [bgColor]="'#3b73ed'" [color]="'White'" [hoverBGColor]="'#3b73ed'" [hoverColor]="'Black'" [borderRadius]="12" [borderColor]="'whitesmoke'" [showBorder]="true"></orms-button>
     <button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 text-white hover:bg-white/20"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x h-5 w-5" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
 
     </div>
   </div>
 </div>
 
-<app-inner-content [employeeDetails]="employeeDetails"></app-inner-content>
+<orms-inner-content [employeeDetails]="employeeDetails"></orms-inner-content>
 
 

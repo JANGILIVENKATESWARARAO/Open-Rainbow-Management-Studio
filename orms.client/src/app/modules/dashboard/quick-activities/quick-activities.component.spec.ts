@@ -8,8 +8,8 @@ describe('QuickActivitiesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [QuickActivitiesComponent]
-    })
+    imports: [QuickActivitiesComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(QuickActivitiesComponent);

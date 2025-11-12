@@ -8,8 +8,8 @@ describe('ApplyLeaveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ApplyLeaveComponent]
-    })
+    imports: [ApplyLeaveComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ApplyLeaveComponent);

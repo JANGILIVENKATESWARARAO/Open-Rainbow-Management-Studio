@@ -9,15 +9,14 @@ import { InnerOtherComponent } from '../employee-preview/inner-other/inner-other
 import { InnerSalaryComponent } from '../employee-preview/inner-salary/inner-salary.component';
 import { InnerWorkComponent } from '../employee-preview/inner-work/inner-work.component';
 import { EmployeeDetails } from '../../../common-ui/assests/view-models/common-view-models';
-import { CommonModule } from '@angular/common';
+
 
 
 @Component({
-  selector: 'app-inner-content',
-  templateUrl: './inner-content.component.html',
-  styleUrl: './inner-content.component.css',
-  standalone: true,
-  imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerDocumentComponent, InnerInsuranceComponent]
+    selector: 'orms-inner-content',
+    templateUrl: './inner-content.component.html',
+    styleUrl: './inner-content.component.css',
+    imports: [InnerInfoComponent, InnerContactComponent, InnerJobComponent, InnerEducationComponent, InnerWorkComponent, InnerOtherComponent, InnerSalaryComponent, InnerDocumentComponent, InnerInsuranceComponent]
 })
 export class InnerContentComponent {
   @Input() employeeDetails?: EmployeeDetails

@@ -2,7 +2,7 @@
 // import { CommonModule } from '@angular/common';
 // import { FormsModule } from '@angular/forms';
 // @Component({
-//   selector: 'app-text-box',
+//   selector: 'orms-text-box',
 //   standalone: true,
 //   templateUrl: './text-box.component.html',
 //   styleUrl: './text-box.component.css',
@@ -38,11 +38,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-text-box',
-  standalone: true,
-  templateUrl: './text-box.component.html',
-  styleUrls: ['./text-box.component.css'],
-  imports: [CommonModule, FormsModule]
+    selector: 'orms-text-box',
+    templateUrl: './text-box.component.html',
+    styleUrls: ['./text-box.component.css'],
+    imports: [CommonModule, FormsModule]
 })
 export class TextBoxComponent implements OnInit, OnChanges {
   @Input() label: string = 'Full Name';

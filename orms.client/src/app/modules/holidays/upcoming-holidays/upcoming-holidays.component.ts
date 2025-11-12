@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
-import { CommonModule } from '@angular/common';
+
 
 export interface HolidayLeave {
   holidayname: string;
@@ -9,11 +9,10 @@ export interface HolidayLeave {
 }
 
 @Component({
-  selector: 'app-upcoming-holidays',
-  templateUrl: './upcoming-holidays.component.html',
-  styleUrl: './upcoming-holidays.component.css',
-  standalone: true,
-  imports: [ChipComponent, CommonModule],
+    selector: 'orms-upcoming-holidays',
+    templateUrl: './upcoming-holidays.component.html',
+    styleUrl: './upcoming-holidays.component.css',
+    imports: [ChipComponent]
 })
 export class UpcomingHolidaysComponent {
   todayDate: Date = new Date();

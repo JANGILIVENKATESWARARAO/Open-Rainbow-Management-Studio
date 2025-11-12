@@ -10,28 +10,7 @@ const meta: Meta<RecentLeaveRequestComponent> = {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {
-    data: [
-          {
-          type: 'Sick Leave',
-          fromDate: '12-Nov-2025',
-          toDate: '13-Nov-2025',
-          applyOn: '11-Nov-2025',
-          title: 'health Issue',
-          description: 'Need to join in hospital, Medical appointment',
-          status: 'Pending',
-        },
-        {
-          type: 'Maternaty leave',
-          fromDate: '12-Nov-2025',
-          toDate: '13-Nov-2025',
-          applyOn: '11-Nov-2025',
-          title: 'health Issue',
-          description: 'Need to join in hospital, Medical appointment',
-          status: 'Pending',
-        }
-      ]
-  },
+  args: {},
 };
 
 export default meta;

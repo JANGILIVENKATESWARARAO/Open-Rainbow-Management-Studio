@@ -162,3 +162,13 @@ export interface EmployeeDetails {
   documentsUploaded: DocumentsUploaded,
   insuranceDetails: InsuranceDetails
 }
+
+
+
+
+export class ApplyLeave {
+  startDate!: string;
+  endDate!: string;
+  leaveType!: string;
+  reason!: string;
+}

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
-import { CommonModule } from '@angular/common';
+
 
 interface MyReportees{
   EmployeePhoto:string;
@@ -13,11 +13,10 @@ interface MyReportees{
 
 }
 @Component({
-  selector: 'app-my-reportees',
-  templateUrl: './my-reportees.component.html',
-  styleUrl: './my-reportees.component.css',
-  standalone: true,
-  imports: [ButtonComponent,CommonModule],
+    selector: 'orms-my-reportees',
+    templateUrl: './my-reportees.component.html',
+    styleUrl: './my-reportees.component.css',
+    imports: [ButtonComponent]
 })
 export class MyReporteesComponent {
 

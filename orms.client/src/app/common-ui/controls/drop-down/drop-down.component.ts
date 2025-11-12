@@ -17,7 +17,7 @@ export interface DropDown {
 }
 
 @Component({
-  selector: 'app-drop-down',
+  selector: 'orms-drop-down',
   templateUrl: './drop-down.component.html',
   styleUrl: './drop-down.component.css',
   standalone: true,
@@ -30,7 +30,7 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   @Input() options: DropDown[] = [];
   @Output() selectedChange = new EventEmitter<any>();
   @Input() draggable: boolean = true;
- @Input() isSave: boolean = false;
+  @Input() isSave: boolean = false;
   selectedValue: string | null = null;
   isOpenUp: boolean = false;
 
@@ -41,20 +41,19 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   private mouseUpListener?: (event: MouseEvent) => void;
   private clickTimeout: any = null;
   private clickCount: number = 0;
-  
 
   constructor(private eRef: ElementRef, private renderer: Renderer2) {}
 
-  selectOption(option: DropDown) {
+  selectOption(option: any) {
     this.selectedValue = option.name;
-    this.selectedChange.emit(option.value);
+    this.selectedChange.emit(option);
     setTimeout(() => this.closeDropdown(), 0);
   }
 
   // @HostListener('document:click', ['$event'])
   // handleClickOutside(event: MouseEvent) {
   //   if (this.resizing) return;
-    
+
   //   if (!this.eRef.nativeElement.contains(event.target)) {
   //     this.closeDropdown();
   //   }
@@ -76,7 +75,6 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-
   @HostListener('change', ['$event'])
   onToggle(event: Event) {
     const checkbox = event.target as HTMLInputElement;
@@ -86,13 +84,12 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-private getZoomLevel(): number {
-  if (window.visualViewport) {
-    return window.visualViewport.scale;
+  private getZoomLevel(): number {
+    if (window.visualViewport) {
+      return window.visualViewport.scale;
+    }
+    return window.devicePixelRatio || 1;
   }
-  return window.devicePixelRatio || 1;
-}
-
 
   private decideDropdownDirection() {
     const dropdown = this.eRef.nativeElement.querySelector(
@@ -131,14 +128,13 @@ private getZoomLevel(): number {
     if (list) {
       const optionHeight = 38;
       const handleHeight = 28; // Height of .resize-hr bar
-const buffer = handleHeight + 8;
+      const buffer = handleHeight + 8;
       // const totalHeight = this.options.length * optionHeight;
-      const totalHeight = (this.options.length * optionHeight) + buffer;
+      const totalHeight = this.options.length * optionHeight + buffer;
       const initialHeight = Math.min(244, totalHeight);
       const maxHeight = totalHeight;
 
-      // this.renderer.setStyle(list, 'height', `${initialHeight}px`);
-      this.renderer.setStyle(list, 'height', 'auto');
+      this.renderer.setStyle(list, 'height', `${initialHeight}px`);
       this.renderer.setStyle(list, 'max-height', `${maxHeight}px`);
       this.renderer.setStyle(list, 'overflow-y', 'auto');
       this.renderer.setStyle(list, 'resize', 'none');
@@ -172,173 +168,179 @@ const buffer = handleHeight + 8;
     if (checkbox) checkbox.checked = false;
   }
 
-ngAfterViewInit() {
-  if (!this.draggable) return; // don't set up dragging if not enabled
+  ngAfterViewInit() {
+    if (!this.draggable) return; // don't set up dragging if not enabled
 
-  const list = this.eRef.nativeElement.querySelector('.custom-dropdown-list') as HTMLElement;
-  const handle = this.eRef.nativeElement.querySelector('.resize-hr') as HTMLElement;
+    const list = this.eRef.nativeElement.querySelector(
+      '.custom-dropdown-list'
+    ) as HTMLElement;
+    const handle = this.eRef.nativeElement.querySelector(
+      '.resize-hr'
+    ) as HTMLElement;
 
-  if (!list || !handle) return;
+    if (!list || !handle) return;
 
-  handle.addEventListener('mousedown', (event: MouseEvent) => {
-    this.startY = event.clientY;
-    this.startHeight = list.offsetHeight;
-    this.resizing = true;
-    handle.classList.add('dragging'); // shrink handle when drag starts
-    document.body.style.cursor = 'ns-resize';
-    document.body.style.userSelect = 'none';
-    event.preventDefault();
-    event.stopPropagation();
-  });
+    handle.addEventListener('mousedown', (event: MouseEvent) => {
+      this.startY = event.clientY;
+      this.startHeight = list.offsetHeight;
+      this.resizing = true;
+      handle.classList.add('dragging'); // shrink handle when drag starts
+      document.body.style.cursor = 'ns-resize';
+      document.body.style.userSelect = 'none';
+      event.preventDefault();
+      event.stopPropagation();
+    });
 
-  document.addEventListener('mousemove', (event: MouseEvent) => {
-    if (!this.resizing) return;
+    document.addEventListener('mousemove', (event: MouseEvent) => {
+      if (!this.resizing) return;
 
-    const diff = event.clientY - this.startY;
-    let newHeight = this.startHeight + diff;
+      const diff = event.clientY - this.startY;
+      let newHeight = this.startHeight + diff;
 
-    const totalHeight = this.options.length * 38;
-    newHeight = Math.min(newHeight, totalHeight + 10);
-    newHeight = Math.max(newHeight, 80);
+      const totalHeight = this.options.length * 38;
+      newHeight = Math.min(newHeight, totalHeight + 10);
+      newHeight = Math.max(newHeight, 80);
 
-    list.style.height = `${newHeight + 13}px`;
-    list.style.overflowY = newHeight >= totalHeight ? 'hidden' : 'auto';
-  });
+      list.style.height = `${newHeight}px`;
+      list.style.overflowY = newHeight >= totalHeight ? 'hidden' : 'auto';
+    });
 
-  document.addEventListener('mouseup', () => {
-    if (this.resizing) {
-      this.resizing = false;
-      handle.classList.remove('dragging'); // back to normal width
-      document.body.style.cursor = 'default';
-      document.body.style.userSelect = '';
-    }
-  });
-}
-
-
-
+    document.addEventListener('mouseup', () => {
+      if (this.resizing) {
+        this.resizing = false;
+        handle.classList.remove('dragging'); // back to normal width
+        document.body.style.cursor = 'default';
+        document.body.style.userSelect = '';
+      }
+    });
+  }
 
   private startResize(event: MouseEvent, list: HTMLElement) {
     this.startY = event.clientY;
     this.startHeight = list.offsetHeight;
     this.resizing = true;
-    
+
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
-    
+
     document.body.style.cursor = 'ns-resize';
     document.body.style.userSelect = 'none';
     document.body.style.webkitUserSelect = 'none';
-    
-    document.addEventListener('mousemove', this.mouseMoveListener!, { passive: false });
-    document.addEventListener('mouseup', this.mouseUpListener!, { passive: false });
-    
-    document.addEventListener('contextmenu', this.preventContextMenu, { passive: false });
+
+    document.addEventListener('mousemove', this.mouseMoveListener!, {
+      passive: false,
+    });
+    document.addEventListener('mouseup', this.mouseUpListener!, {
+      passive: false,
+    });
+
+    document.addEventListener('contextmenu', this.preventContextMenu, {
+      passive: false,
+    });
   }
 
   private preventContextMenu = (event: Event) => {
     event.preventDefault();
   };
-// private handleMouseMove(event: MouseEvent) {
-//   if (!this.resizing) return;
+  // private handleMouseMove(event: MouseEvent) {
+  //   if (!this.resizing) return;
 
-//   event.preventDefault();
-//   event.stopPropagation();
+  //   event.preventDefault();
+  //   event.stopPropagation();
 
-//   const list = this.eRef.nativeElement.querySelector(
-//     '.custom-dropdown-list'
-//   ) as HTMLElement;
+  //   const list = this.eRef.nativeElement.querySelector(
+  //     '.custom-dropdown-list'
+  //   ) as HTMLElement;
 
-//   if (!list) return;
+  //   if (!list) return;
 
-//   const diff = event.clientY - this.startY;
-//   let newHeight = this.startHeight + diff;
+  //   const diff = event.clientY - this.startY;
+  //   let newHeight = this.startHeight + diff;
 
-//   const totalHeight = this.options.length * 38;
-//   const minHeight = 80;
-  
-//   newHeight = Math.min(newHeight, totalHeight + 20);
-//   newHeight = Math.max(newHeight, minHeight);
+  //   const totalHeight = this.options.length * 38;
+  //   const minHeight = 80;
 
-//   list.style.height = `${newHeight}px`;
-//   list.style.minHeight = `${newHeight}px`;
-//   list.style.maxHeight = `${Math.max(newHeight, totalHeight)}px`;
-  
-//   this.adjustDropdownPosition(list);
+  //   newHeight = Math.min(newHeight, totalHeight + 20);
+  //   newHeight = Math.max(newHeight, minHeight);
 
-//   console.log('📏 Resize values:', { 
-//     'Start Y': this.startY,
-//     'Current Y': event.clientY,
-//     'Difference': diff,
-//     'Start Height': this.startHeight,
-//     'New Height': newHeight,
-//     'Applied Height': list.style.height,
-//     'Actual Height': list.offsetHeight
-//   });
-// }
+  //   list.style.height = `${newHeight}px`;
+  //   list.style.minHeight = `${newHeight}px`;
+  //   list.style.maxHeight = `${Math.max(newHeight, totalHeight)}px`;
 
-private handleMouseMove(event: MouseEvent) {
-  if (!this.resizing) return;
+  //   this.adjustDropdownPosition(list);
 
-  event.preventDefault();
-  event.stopPropagation();
+  //   console.log('📏 Resize values:', {
+  //     'Start Y': this.startY,
+  //     'Current Y': event.clientY,
+  //     'Difference': diff,
+  //     'Start Height': this.startHeight,
+  //     'New Height': newHeight,
+  //     'Applied Height': list.style.height,
+  //     'Actual Height': list.offsetHeight
+  //   });
+  // }
 
-  const list = this.eRef.nativeElement.querySelector(
-    '.custom-dropdown-list'
-  ) as HTMLElement;
+  private handleMouseMove(event: MouseEvent) {
+    if (!this.resizing) return;
 
-  if (!list) return;
+    event.preventDefault();
+    event.stopPropagation();
 
-  const diff = event.clientY - this.startY;
-  let newHeight = this.startHeight + diff;
+    const list = this.eRef.nativeElement.querySelector(
+      '.custom-dropdown-list'
+    ) as HTMLElement;
 
-  const totalHeight = this.options.length * 38; // height of all options
-  const minHeight = 80;
+    if (!list) return;
 
-  // Apply constraints
-  newHeight = Math.min(newHeight, totalHeight); // Don't allow height to exceed total needed
+    const diff = event.clientY - this.startY;
+    let newHeight = this.startHeight + diff;
 
-  // newHeight = Math.min(newHeight, totalHeight + 20);
-  newHeight = Math.max(newHeight, minHeight);
+    const totalHeight = this.options.length * 38; // height of all options
+    const minHeight = 80;
 
-  // Apply height dynamically
-  list.style.height = `${newHeight}px`;
-  list.style.minHeight = `${newHeight}px`;
-  list.style.maxHeight = `${Math.max(newHeight, totalHeight)}px`;
+    // Apply constraints
+    newHeight = Math.min(newHeight, totalHeight); // Don't allow height to exceed total needed
 
-  // ✅ Hide scrollbar if all items visible
-  if (newHeight >= totalHeight) {
-    this.renderer.setStyle(list, 'overflow-y', 'hidden');
-  } else {
-    this.renderer.setStyle(list, 'overflow-y', 'auto');
+    // newHeight = Math.min(newHeight, totalHeight + 20);
+    newHeight = Math.max(newHeight, minHeight);
+
+    // Apply height dynamically
+    list.style.height = `${newHeight}px`;
+    list.style.minHeight = `${newHeight}px`;
+    list.style.maxHeight = `${Math.max(newHeight, totalHeight)}px`;
+
+    // ✅ Hide scrollbar if all items visible
+    if (newHeight >= totalHeight) {
+      this.renderer.setStyle(list, 'overflow-y', 'hidden');
+    } else {
+      this.renderer.setStyle(list, 'overflow-y', 'auto');
+    }
+
+    // Adjust position if stretched upward/downward
+    this.adjustDropdownPosition(list);
+
+    console.log('📏 Resize values:', {
+      'Start Y': this.startY,
+      'Current Y': event.clientY,
+      Difference: diff,
+      'Start Height': this.startHeight,
+      'New Height': newHeight,
+      'Total Height': totalHeight,
+      'Scrollbar Hidden': newHeight >= totalHeight,
+    });
   }
-
-  // Adjust position if stretched upward/downward
-  this.adjustDropdownPosition(list);
-
-  console.log('📏 Resize values:', { 
-    'Start Y': this.startY,
-    'Current Y': event.clientY,
-    'Difference': diff,
-    'Start Height': this.startHeight,
-    'New Height': newHeight,
-    'Total Height': totalHeight,
-    'Scrollbar Hidden': newHeight >= totalHeight
-  });
-}
-
 
   private handleMouseUp(event: MouseEvent) {
     if (!this.resizing) return;
 
     console.log('Ending resize...');
-    
+
     event.preventDefault();
     event.stopPropagation();
 
     this.resizing = false;
-    
+
     document.body.style.cursor = 'default';
     document.body.style.userSelect = '';
     document.body.style.webkitUserSelect = '';
@@ -350,7 +352,7 @@ private handleMouseMove(event: MouseEvent) {
     if (list) {
       const currentHeight = list.offsetHeight;
       list.style.height = `${currentHeight}px`;
-      list.style.transition = 'none'; 
+      list.style.transition = 'none';
       list.style.cursor = 'default';
     }
 
@@ -368,10 +370,7 @@ private handleMouseMove(event: MouseEvent) {
     }
     document.removeEventListener('contextmenu', this.preventContextMenu);
   }
-
-  
 }
-
 
 // import { CommonModule } from '@angular/common';
 // import {
@@ -438,7 +437,6 @@ private handleMouseMove(event: MouseEvent) {
 //       }
 //     }
 //   }
-
 
 //   @HostListener('change', ['$event'])
 //   onToggle(event: Event) {

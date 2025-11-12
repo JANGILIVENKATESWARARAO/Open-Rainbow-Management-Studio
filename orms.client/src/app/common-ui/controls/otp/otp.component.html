@@ -1,11 +1,13 @@
 <label class="otp-label">Enter OTP here</label>
 <div class="otp-inputs">
-  <input *ngFor="let digit of otpArray; let i = index"
-         type="text"
-         maxlength="1"
-         [attr.maxlength]="i === 0 ? '6' : '1'"
-         (paste)="i === 0 ? handlePaste($event) : null"
-         (input)="handleInput($event, i)"
-         (keydown)="handleKeyDown($event, i)"
-         #otpInput />
+  @for (digit of otpArray; track digit; let i = $index) {
+    <input
+      type="text"
+      maxlength="1"
+      [attr.maxlength]="i === 0 ? '6' : '1'"
+      (paste)="i === 0 ? handlePaste($event) : null"
+      (input)="handleInput($event, i)"
+      (keydown)="handleKeyDown($event, i)"
+      #otpInput />
+  }
 </div>

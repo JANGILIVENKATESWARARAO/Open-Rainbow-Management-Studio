@@ -8,8 +8,8 @@ describe('LeaveBalanceOverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LeaveBalanceOverviewComponent]
-    })
+    imports: [LeaveBalanceOverviewComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(LeaveBalanceOverviewComponent);

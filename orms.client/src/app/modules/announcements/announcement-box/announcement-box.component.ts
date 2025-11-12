@@ -1,14 +1,13 @@
-import { CommonModule, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Announcement } from '../../../common-ui/assests/view-models/common-view-models';
 import { ChipComponent } from "../../../common-ui/controls/chip/chip.component";
 
 @Component({
-  selector: 'app-announcement-box',
-  templateUrl: './announcement-box.component.html',
-  styleUrls: ['./announcement-box.component.css'],
-  imports: [CommonModule, ChipComponent],
-  standalone: true
+    selector: 'orms-announcement-box',
+    templateUrl: './announcement-box.component.html',
+    styleUrls: ['./announcement-box.component.css'],
+    imports: [ChipComponent]
 })
 export class AnnouncementBoxComponent {
   @Input() announcements: Announcement[] = [

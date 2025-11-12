@@ -8,8 +8,8 @@ describe('InnerInsuranceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InnerInsuranceComponent]
-    })
+    imports: [InnerInsuranceComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(InnerInsuranceComponent);

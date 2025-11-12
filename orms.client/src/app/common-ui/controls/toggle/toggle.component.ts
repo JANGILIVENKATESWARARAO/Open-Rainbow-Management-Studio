@@ -2,7 +2,7 @@
 // import { CommonModule } from '@angular/common';
 
 // @Component({
-//   selector: 'app-toggle',
+//   selector: 'orms-toggle',
 //   standalone: true,
 //   imports: [CommonModule],               
 //   templateUrl: './toggle.component.html',
@@ -33,7 +33,7 @@
 // import { CommonModule } from '@angular/common';
 
 // @Component({
-//   selector: 'app-toggle',
+//   selector: 'orms-toggle',
 //   standalone: true,
 //   imports: [CommonModule],
 //   templateUrl: './toggle.component.html',
@@ -100,11 +100,10 @@ import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-toggle',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './toggle.component.html',
-  styleUrls: ['./toggle.component.css']
+    selector: 'orms-toggle',
+    imports: [CommonModule],
+    templateUrl: './toggle.component.html',
+    styleUrls: ['./toggle.component.css']
 })
 export class ToggleComponent implements OnChanges {
   @Input() checked = false;

@@ -1,31 +1,31 @@
 <div class="parent">
   <div class="single-upload">
     <div class="upload-label-wrapper w-full font-inherit flex items-center gap-1">
-<div class="upload-label-wrapper w-full font-inherit flex items-center gap-1">
-  <label
-    class="block font-semibold text-gray-800 mb-1.5 text-[14px]"
-    (click)="$event.stopPropagation()"
-  >
-    {{ label }}
-  </label>
-  <ng-container *ngIf="isRequired">
-    <span class="required-star text-red-600 text-base font-semibold -mt-3">*</span>
-  </ng-container>
-</div>
-      <ng-container *ngIf="isRequired">
+      <div class="upload-label-wrapper w-full font-inherit flex items-center gap-1">
+        <label
+          class="block font-semibold text-gray-800 mb-1.5 text-[14px]"
+          (click)="$event.stopPropagation()"
+          >
+          {{ label }}
+        </label>
+        @if (isRequired) {
+          <span class="required-star text-red-600 text-base font-semibold -mt-3">*</span>
+        }
+      </div>
+      <!-- @if (isRequired) {
         <span class="required-star text-red-600 text-base font-semibold -mt-3">*</span>
-      </ng-container>
+      } -->
     </div>
- 
+
     <div class="file-upload-field border border-dashed border-gray-300 bg-white rounded-lg
          py-[0] px-5 flex items-center gap-3  h-[36px]
          transition duration-200 ease-in-out relative hover:border-dashed hover:border-blue-500 cursor-pointer "
-          tabindex="0"
-           (click)="onAreaClick($event)"
-          (mouseenter)="onHoverStart($event)"
-  (mouseleave)="onHoverEnd($event)">
- 
-         
+      tabindex="0"
+      (click)="onAreaClick($event)"
+      (mouseenter)="onHoverStart($event)"
+      (mouseleave)="onHoverEnd($event)">
+
+
       <div class="icon flex items-center flex-shrink-0 text-gray-400" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 block object-contain" width="24" height="24"
           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -36,7 +36,7 @@
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
         </svg>
       </div>
-<div class="mt-[3px] ">
+      <div class="mt-[3px] ">
       <label class=" choose-btn bg-sky-100 border border-sky-200 text-blue-700
          px-4 pt-[4px] pb-[5px] rounded-lg cursor-pointer
          font-medium text-sm leading-4
@@ -45,31 +45,30 @@
          active:bg-[#d4e9ff] active:border-[#a3caf5] active:translate-y-[1px]
          focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#dbeafe] focus-visible:ring-offset-[2px] focus-visible:ring-offset-[#3b82f6]
          choose-btn-inline  relative overflow-hidden"
-         [ngClass]="{ 'bg-blue-200 ': isFocused }"  (click)="$event.stopPropagation()">
-         <input
-  #fileInput
-  id="fileInput"
-  type="file"
-  class="w-0 h-0 opacity-0 cursor-pointer text-[0px]"
-  (change)="onFileSelected($event)"
-  (click)="$event.stopPropagation()"
-/>
+          [ngClass]="{ 'bg-blue-200 ': isFocused }"  (click)="$event.stopPropagation()">
+          <input
+            #fileInput
+            id="fileInput"
+            type="file"
+            class="w-0 h-0 opacity-0 cursor-pointer text-[0px]"
+            (change)="onFileSelected($event)"
+            (click)="$event.stopPropagation()"
+            />
 
-<div
-  class="ml-[-10px] text-[11px] transition-all duration-200"
- 
->
-  {{ buttonLabel }}
-</div>
-      </label>
-</div>
-      <div class="file-status" class="text-[12px] text-[#4b5563] leading-none">No file chosen</div>
-       
+            <div
+              class="ml-[-10px] text-[11px] transition-all duration-200"
+
+              >
+              {{ buttonLabel }}
+            </div>
+          </label>
+        </div>
+        <div class="file-status" class="text-[12px] text-[#4b5563] leading-none">No file chosen</div>
+
+      </div>
+      <span class="text-red-500 text-xs mt-1 text-left transition-colors">
+        {{ errorNote }}
+      </span>
     </div>
-    <span class="text-red-500 text-xs mt-1 text-left transition-colors">
-      {{ errorNote }}
-    </span>
+
   </div>
- 
-</div>
- 

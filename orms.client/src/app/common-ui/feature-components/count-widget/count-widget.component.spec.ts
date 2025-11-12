@@ -8,8 +8,8 @@ describe('CountWidgetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CountWidgetComponent]
-    })
+    imports: [CountWidgetComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(CountWidgetComponent);

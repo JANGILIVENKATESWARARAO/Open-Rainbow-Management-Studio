@@ -1,0 +1,21 @@
+<!-- <canvas #chartCanvas width="140" height="140"></canvas> -->
+<!-- <div class="chart-container">
+  <canvas #chartCanvas width="216" height="216"></canvas>
+</div> -->
+<div class="chart-wrapper">
+  <div class="chart-container">
+    <canvas #chartCanvas width="216" height="216"></canvas>
+  </div>
+
+  <div class="chart-legend" *ngIf="showLegends">
+    <div *ngFor="let item of legendData" class="legend-item">
+      <span class="legend-color" [style.background]="item.color"></span>
+      <span class="legend-text">
+        <b>{{ getDisplayValue(item) }}</b> {{ item.label }}
+      </span>
+    </div>
+  </div>
+</div>
+
+
+

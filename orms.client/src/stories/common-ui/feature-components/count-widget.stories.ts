@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { CountWidgetComponent } from '../../../app/common-ui/feature-components/count-widget/count-widget.component';
 
 const meta: Meta<CountWidgetComponent> = {
-  title: 'Feature Components/CountWidget',
+  title: 'Common-UI/Feature Components/CountWidget',
   component: CountWidgetComponent,
   // tags: ['autodocs'],
   parameters: {

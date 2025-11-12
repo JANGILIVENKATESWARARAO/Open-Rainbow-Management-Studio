@@ -1,7 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
-import { CommonModule } from '@angular/common';
+
 import { TooltipComponent } from '../../../common-ui/feature-components/tooltip/tooltip.component';
 import { TooltipDirective } from '../../../common-ui/feature-components/tooltip/directive/tooltip.directive';
 
@@ -10,29 +10,24 @@ export interface LeaveRequest {
   status: 'Pending' | 'Approved' | 'Rejected';
   fromDate: string;
   toDate: string;
-  applyOn: string;
+  applyDate: string;
   description: string;
   
 }
 
 @Component({
-  selector: 'app-recent-leave-request',
-  templateUrl: './recent-leave-request.component.html',
-  styleUrl: './recent-leave-request.component.css',
-  standalone: true,
-  imports: [
-    CommonModule,
+    selector: 'orms-recent-leave-request',
+    templateUrl: './recent-leave-request.component.html',
+    styleUrl: './recent-leave-request.component.css',
+    imports: [
     ButtonComponent,
     ChipComponent,
     TooltipComponent,
-    TooltipDirective,
-  ],
+    TooltipDirective
+]
 })
 export class RecentLeaveRequestComponent { 
   @Input() data: any [] = []; 
-  ngOnChanges() {
-  console.log('Received data:', this.data);
-}
 
   leaveRequest: LeaveRequest[] = [
     {
@@ -40,7 +35,7 @@ export class RecentLeaveRequestComponent {
       status: 'Pending',
       fromDate: '15 Jan 2025',
       toDate: '17 Jan 2025',
-      applyOn: '12 Jan 2025',
+      applyDate: '12 Jan 2025',
       description:
         'At the end of last year, my father announced that we will be having a family meeting to discuss our summer vacation plans. Not this again I thought.  Every year, when my father announced a family meeting regarding our vacation plans, he just explains how we',
     },
@@ -49,7 +44,7 @@ export class RecentLeaveRequestComponent {
       status: 'Approved',
       fromDate: '8 Jan 2025',
       toDate: '8 Jan 2025',
-      applyOn: '12 Jan 2025',
+      applyDate: '12 Jan 2025',
       description: 'Medical appointment',
     },
     {
@@ -57,7 +52,7 @@ export class RecentLeaveRequestComponent {
       status: 'Rejected',
       fromDate: '20 Dec 2024',
       toDate: '23 Dec 2024',
-      applyOn: '12 Jan 2025',
+      applyDate: '12 Jan 2025',
       description: 'Personal matters',
     },
   ];

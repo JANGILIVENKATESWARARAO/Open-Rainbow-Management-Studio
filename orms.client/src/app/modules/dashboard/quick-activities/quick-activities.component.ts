@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DotComponent } from '../../../common-ui/feature-components/dot/dot.component';
@@ -11,11 +11,10 @@ interface Activity {
 }
 
 @Component({
-  selector: 'app-quick-activities',
-  templateUrl: './quick-activities.component.html',
-  styleUrls: ['./quick-activities.component.css'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, DotComponent, DurationPipe],
+    selector: 'orms-quick-activities',
+    templateUrl: './quick-activities.component.html',
+    styleUrls: ['./quick-activities.component.css'],
+    imports: [FormsModule, DotComponent, DurationPipe]
 })
 export class QuickActivitiesComponent {
   @Input() activities: Activity[] = [

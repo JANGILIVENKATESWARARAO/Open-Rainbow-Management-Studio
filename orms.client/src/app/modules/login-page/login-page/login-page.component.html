@@ -11,19 +11,19 @@
     <hr>
 
     <div class="input-group">
-      <app-text-box [label]="''" [placeHolder]="'Username'" [isRequired]="false" [showBorder]="true"  [showCharCount]="false"></app-text-box>
+      <orms-text-box [label]="''" [placeHolder]="'Username'" [isRequired]="false" [showBorder]="true"  [showCharCount]="false"></orms-text-box>
     </div>
 
     <div class="input-group">
-      <app-text-box [label]="''" [placeHolder]="'Password'" [isRequired]="false" [showBorder]="true" [showCharCount]="false"></app-text-box>
+      <orms-text-box [label]="''" [placeHolder]="'Password'" [isRequired]="false" [showBorder]="true" [showCharCount]="false"></orms-text-box>
     </div>
 
     <div class="options">
-      <app-toggle [checked]="false" [color]="'#4CAF50'" [tickColor]="'#fff'" [label]="'Remember'" [labelPosition]="'right'" [labelColor]="'#999'" [size]="'small'" [useCheckbox]="false" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></app-toggle>
+      <orms-toggle [checked]="false" [color]="'#4CAF50'" [tickColor]="'#fff'" [label]="'Remember'" [labelPosition]="'right'" [labelColor]="'#999'" [size]="'small'" [useCheckbox]="false" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></orms-toggle>
       <a href="#">Forgot password?</a>
     </div>
 
-    <app-button [text]="'Login'" [bgColor]="'rgba(161, 3, 246, 1)'" [color]="'White'" [hoverBGColor]="'#f787c9'" [hoverColor]="'white'" [borderRadius]="10" [showBorder]="false"></app-button>
+    <orms-button [text]="'Login'" [bgColor]="'rgba(161, 3, 246, 1)'" [color]="'White'" [hoverBGColor]="'#f787c9'" [hoverColor]="'white'" [borderRadius]="10" [showBorder]="false"></orms-button>
   </div>
 </div>
 

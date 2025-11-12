@@ -5,11 +5,10 @@ import { ToggleComponent } from "../../../common-ui/controls/toggle/toggle.compo
 import { DropDownComponent } from "../../../common-ui/controls/drop-down/drop-down.component";
 
 @Component({
-  selector: 'app-contact-info',
-  templateUrl: './contact-info.component.html',
-  styleUrl: './contact-info.component.css',
-  standalone: true,
-  imports: [TextAreaComponent, TextBoxComponent, ToggleComponent, DropDownComponent]
+    selector: 'orms-contact-info',
+    templateUrl: './contact-info.component.html',
+    styleUrl: './contact-info.component.css',
+    imports: [TextAreaComponent, TextBoxComponent, ToggleComponent, DropDownComponent]
 })
 export class ContactInfoComponent {
 selectedChange($event: any) {

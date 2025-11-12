@@ -1,7 +1,7 @@
 import { Component, Input, input } from '@angular/core';
 
 @Component({
-  selector: 'app-basic-card',
+  selector: 'orms-basic-card',
   templateUrl: './basic-card.component.html',
   styleUrl: './basic-card.component.css',
   standalone: true

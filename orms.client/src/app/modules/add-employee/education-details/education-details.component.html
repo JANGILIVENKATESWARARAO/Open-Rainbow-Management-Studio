@@ -3,13 +3,13 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap h-5 w-5 text-orange-600" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg> Education Details
 </div>
 <div class="content">
-<app-text-box [label]="'Higher Qualification'" [placeHolder]="'eg, Bachelors, Masters, PhD'" [isRequired]="false"></app-text-box>
-<app-text-box [label]="'Specialization'" [placeHolder]="'eg, Computer Science'" [isRequired]="false"></app-text-box>
-<app-drop-down  [label]="'Year of Passing'" [placeHolder]="'Select year'" [options]="[{value: 1, name: '2024'}, {value: 2, name: '2023'}, {value: 3, name: '2022'},{value: 4, name: '2021'},{value: 5, name: '2020'},{value: 6, name: '2019'},{value: 7, name: '2018'},{value: 8, name: '2017'},{value: 9, name: '2016'},{value: 10, name: '2015'},{value: 11, name: '2014'},{value: 12, name: '2013'},{value: 13, name: '2012'},{value: 14, name: '2011'},{value: 15, name: '2010'},{value: 16, name: '2009'},{value: 17, name: '2008'},{value: 18, name: '2007'},{value: 19, name: '2006'},{value: 20, name: '2005'},{value: 21, name: '2004'},{value: 22, name: '2003'},{value: 23, name: '2002'},{value: 24, name: '2002'},{value: 25, name: '2001'},{value: 26, name: '2000'},{value: 27, name: '1999'},{value: 28, name: '1998'},{value: 29, name: '1997'},{value: 30, name: '1996'}]" (selectedChange)="selectedChange($event)"></app-drop-down>
-<app-text-box [label]="'University/College Name'" [placeHolder]="'Enter University/College Name'" [isRequired]="false"></app-text-box>
+<orms-text-box [label]="'Higher Qualification'" [placeHolder]="'eg, Bachelors, Masters, PhD'" [isRequired]="false"></orms-text-box>
+<orms-text-box [label]="'Specialization'" [placeHolder]="'eg, Computer Science'" [isRequired]="false"></orms-text-box>
+<orms-drop-down  [label]="'Year of Passing'" [placeHolder]="'Select year'" [options]="[{value: 1, name: '2024'}, {value: 2, name: '2023'}, {value: 3, name: '2022'},{value: 4, name: '2021'},{value: 5, name: '2020'},{value: 6, name: '2019'},{value: 7, name: '2018'},{value: 8, name: '2017'},{value: 9, name: '2016'},{value: 10, name: '2015'},{value: 11, name: '2014'},{value: 12, name: '2013'},{value: 13, name: '2012'},{value: 14, name: '2011'},{value: 15, name: '2010'},{value: 16, name: '2009'},{value: 17, name: '2008'},{value: 18, name: '2007'},{value: 19, name: '2006'},{value: 20, name: '2005'},{value: 21, name: '2004'},{value: 22, name: '2003'},{value: 23, name: '2002'},{value: 24, name: '2002'},{value: 25, name: '2001'},{value: 26, name: '2000'},{value: 27, name: '1999'},{value: 28, name: '1998'},{value: 29, name: '1997'},{value: 30, name: '1996'}]" (selectedChange)="selectedChange($event)"></orms-drop-down>
+<orms-text-box [label]="'University/College Name'" [placeHolder]="'Enter University/College Name'" [isRequired]="false"></orms-text-box>
 <div></div>
 <div></div>
 </div>
 <div class="grid-container">
-    <app-text-area [label]="'Certifications'" [Placeholder]="'List any certifications'" [isRequired]="false"></app-text-area>
+    <orms-text-area [label]="'Certifications'" [Placeholder]="'List any certifications'" [isRequired]="false"></orms-text-area>
 </div>

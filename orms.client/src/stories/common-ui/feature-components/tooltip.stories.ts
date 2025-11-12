@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-
 import { TooltipComponent } from '../../../app/common-ui/feature-components/tooltip/tooltip.component';
 
 const meta: Meta<TooltipComponent> = {
-  title: 'Feature Components/ToolTip',
+  title: 'Common-UI/Feature Components/ToolTip',
   component: TooltipComponent,
   tags: ['autodocs'],
   parameters: {

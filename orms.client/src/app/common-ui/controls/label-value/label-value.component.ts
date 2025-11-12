@@ -1,12 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-label-value',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './label-value.component.html',
-  styleUrls: ['./label-value.component.css']
+    selector: 'orms-label-value',
+    imports: [],
+    templateUrl: './label-value.component.html',
+    styleUrls: ['./label-value.component.css']
 })
 export class LabelValueComponent {
   @Input() label?: string = 'Employee ID';

@@ -3,11 +3,10 @@ import { Component, Input, Output, EventEmitter, OnInit, HostListener } from '@a
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-calendar',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+    selector: 'orms-calendar',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './calendar.component.html',
+    styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
   @Input() label: string = 'Date of Birth';
