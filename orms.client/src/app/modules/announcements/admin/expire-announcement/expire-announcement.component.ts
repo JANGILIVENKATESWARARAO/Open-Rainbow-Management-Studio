@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Announcement } from '../../../../common-ui/assests/view-models/common-view-models';
-import { CommonModule } from '@angular/common';
+
 import { ButtonComponent } from '../../../../common-ui/controls/button/button.component';
 import { TextAreaComponent } from '../../../../common-ui/controls/text-area/text-area.component';
 import { TextBoxComponent } from '../../../../common-ui/controls/text-box/text-box.component';
@@ -9,20 +9,18 @@ import { CalendarComponent } from '../../../../common-ui/controls/calendar/calen
 import { ChipComponent } from '../../../../common-ui/controls/chip/chip.component';
 import { TooltipDirective } from '../../../../common-ui/feature-components/tooltip/directive/tooltip.directive';
 @Component({
-  selector: 'app-expire-announcement',
-  templateUrl: './expire-announcement.component.html',
-  styleUrl: './expire-announcement.component.css',
-  standalone: true,
-  imports: [
-    CommonModule,
+    selector: 'orms-expire-announcement',
+    templateUrl: './expire-announcement.component.html',
+    styleUrl: './expire-announcement.component.css',
+    imports: [
     ButtonComponent,
     TextAreaComponent,
     TextBoxComponent,
     DropDownComponent,
     CalendarComponent,
     ChipComponent,
-    TooltipDirective,
-  ],
+    TooltipDirective
+]
 })
 export class ExpireAnnouncementComponent {
   dateSelected($event: Date | null) {

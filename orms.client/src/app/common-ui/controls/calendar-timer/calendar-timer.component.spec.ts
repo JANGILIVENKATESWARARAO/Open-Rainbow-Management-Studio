@@ -8,8 +8,8 @@ describe('CalendarTimerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CalendarTimerComponent]
-    })
+    imports: [CalendarTimerComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(CalendarTimerComponent);

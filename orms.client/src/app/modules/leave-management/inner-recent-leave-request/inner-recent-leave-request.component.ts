@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
@@ -15,17 +15,15 @@ export interface LeaveRequest {
 }
 
 @Component({
-  selector: 'app-inner-recent-leave-request',
-  templateUrl: './inner-recent-leave-request.component.html',
-  styleUrl: './inner-recent-leave-request.component.css',
-  standalone: true,
-  imports: [
-      CommonModule,
-      ButtonComponent,
-      ChipComponent,
-      TooltipComponent,
-      TooltipDirective,
-    ],
+    selector: 'orms-inner-recent-leave-request',
+    templateUrl: './inner-recent-leave-request.component.html',
+    styleUrl: './inner-recent-leave-request.component.css',
+    imports: [
+    ButtonComponent,
+    ChipComponent,
+    TooltipComponent,
+    TooltipDirective
+]
 })
 export class InnerRecentLeaveRequestComponent {
   leaveRequests: LeaveRequest[] = [

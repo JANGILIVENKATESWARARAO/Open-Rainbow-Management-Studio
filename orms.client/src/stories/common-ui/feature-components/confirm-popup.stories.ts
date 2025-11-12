@@ -9,7 +9,12 @@ const meta: Meta<ConfirmPopupComponent> = {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {},
+  args: {
+    label: 'You are about to permanently delete the employee: <span style="color:red; font-weight:bold;">Sohan Kumar</span>. This action cannot be undone.',
+    borderColor: 'red',
+    changeIcon: ''
+
+  },
 };
 
 export default meta;

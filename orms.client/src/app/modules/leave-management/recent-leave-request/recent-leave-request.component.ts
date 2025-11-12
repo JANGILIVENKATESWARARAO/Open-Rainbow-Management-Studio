@@ -1,7 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
-import { CommonModule } from '@angular/common';
+
 import { TooltipComponent } from '../../../common-ui/feature-components/tooltip/tooltip.component';
 import { TooltipDirective } from '../../../common-ui/feature-components/tooltip/directive/tooltip.directive';
 
@@ -16,17 +16,15 @@ export interface LeaveRequest {
 }
 
 @Component({
-  selector: 'app-recent-leave-request',
-  templateUrl: './recent-leave-request.component.html',
-  styleUrl: './recent-leave-request.component.css',
-  standalone: true,
-  imports: [
-    CommonModule,
+    selector: 'orms-recent-leave-request',
+    templateUrl: './recent-leave-request.component.html',
+    styleUrl: './recent-leave-request.component.css',
+    imports: [
     ButtonComponent,
     ChipComponent,
     TooltipComponent,
-    TooltipDirective,
-  ],
+    TooltipDirective
+]
 })
 export class RecentLeaveRequestComponent { 
   @Input() data: any [] = []; 

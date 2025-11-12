@@ -8,8 +8,8 @@ describe('EdynCheckboxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EdynCheckboxComponent]
-    })
+    imports: [EdynCheckboxComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(EdynCheckboxComponent);

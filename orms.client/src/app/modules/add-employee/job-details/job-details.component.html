@@ -11,32 +11,32 @@
     <div class="m-0">Job Details</div>
   </div>
       <div class="grid-container">
-        <app-text-box label="Office Email" placeholder="Enter office email" [isRequired]="true" type="email"></app-text-box>
-        <app-drop-down label="Department" placeHolder="Select department" [isRequired]="true" [options]="departmentOptions"
-          (selectedChange)="onDepartmentChange($event)"></app-drop-down>
-        <app-text-box label="Designation" placeholder="Enter your job title" [isRequired]="true"></app-text-box>
-        <app-drop-down label="Employee Type" placeHolder="Select designation" [options]="designationOptions"
-          (selectedChange)="onDesignationChange($event)"></app-drop-down>
-        <app-drop-down label="Work Location" placeHolder="Select work location" [options]="workLocationOptions"
-          [isRequired]="true" (selectedChange)="onWorkLocationChange($event)"></app-drop-down>
-        <app-drop-down label="Shift Timings" placeHolder="Select shift" [options]="shiftTimingOptions" [isRequired]="true"
-          (selectedChange)="onShiftTimingChange($event)"></app-drop-down>
-        <app-drop-down label="Pay Level / Grade" placeHolder="Select pay level" [isRequired]="true"
-          [options]="payLevelOptions" (selectedChange)="onPayLevelChange($event)"></app-drop-down>
-        <app-drop-down label="Reporting Manager" placeHolder="Select manager" [options]="reportingManagerOptions"
-          [isRequired]="true" (selectedChange)="onReportingManagerChange($event)"></app-drop-down>
+        <orms-text-box label="Office Email" placeholder="Enter office email" [isRequired]="true" type="email"></orms-text-box>
+        <orms-drop-down label="Department" placeHolder="Select department" [isRequired]="true" [options]="departmentOptions"
+          (selectedChange)="onDepartmentChange($event)"></orms-drop-down>
+        <orms-text-box label="Designation" placeholder="Enter your job title" [isRequired]="true"></orms-text-box>
+        <orms-drop-down label="Employee Type" placeHolder="Select designation" [options]="designationOptions"
+          (selectedChange)="onDesignationChange($event)"></orms-drop-down>
+        <orms-drop-down label="Work Location" placeHolder="Select work location" [options]="workLocationOptions"
+          [isRequired]="true" (selectedChange)="onWorkLocationChange($event)"></orms-drop-down>
+        <orms-drop-down label="Shift Timings" placeHolder="Select shift" [options]="shiftTimingOptions" [isRequired]="true"
+          (selectedChange)="onShiftTimingChange($event)"></orms-drop-down>
+        <orms-drop-down label="Pay Level / Grade" placeHolder="Select pay level" [isRequired]="true"
+          [options]="payLevelOptions" (selectedChange)="onPayLevelChange($event)"></orms-drop-down>
+        <orms-drop-down label="Reporting Manager" placeHolder="Select manager" [options]="reportingManagerOptions"
+          [isRequired]="true" (selectedChange)="onReportingManagerChange($event)"></orms-drop-down>
       </div>
   <!-- <div class="grid-contsiner-wrspper"> -->
 <div class="grid grid-cols-1 my-[10px] text">Leave Allocation</div>
     <div class="grid-container2">
-      <app-count-widget [label]="'Casual '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'"
-        [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
-      <app-count-widget [label]="'Festive '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'"
-        [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
-      <app-count-widget [label]="'Earned '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'"
-        [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
-      <app-count-widget [label]="'Optional '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'"
-        [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
+      <orms-count-widget [label]="'Casual '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'"
+        [backgroundColor]="'#f8fafc'" [showBorder]="false"></orms-count-widget>
+      <orms-count-widget [label]="'Festive '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'"
+        [backgroundColor]="'#f8fafc'" [showBorder]="false"></orms-count-widget>
+      <orms-count-widget [label]="'Earned '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'"
+        [backgroundColor]="'#f8fafc'" [showBorder]="false"></orms-count-widget>
+      <orms-count-widget [label]="'Optional '" [labelColor]="'#64748b'" [value]="12" [valueColor]="'black'"
+        [backgroundColor]="'#f8fafc'" [showBorder]="false"></orms-count-widget>
     </div>
   <!-- </div> -->
 </div>

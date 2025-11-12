@@ -1,15 +1,15 @@
 <div class="grid grid-cols-[1fr] grid-rows-[1fr_1fr] gap-5 p-[40px]">
-  <app-inner-info [basicInformation]="employeeDetails?.basicInformation"></app-inner-info>
-  <app-inner-contact [contactInformation]="employeeDetails?.contactInformation"></app-inner-contact>
-  <app-inner-job [jobDetails]="employeeDetails?.jobDetails"
-    [leaveAlloation]="employeeDetails?.jobDetails?.leaveAllocation"></app-inner-job>
-  <app-inner-education [educationDetails]="employeeDetails?.educationDetails"></app-inner-education>
-  <app-inner-work [workExperience]="employeeDetails?.workExperience"></app-inner-work>
-  <app-inner-other [otherDetails]="employeeDetails?.otherDetails"></app-inner-other>
-  <app-inner-salary [bankDetails]="employeeDetails?.payrollInformation?.bankDetails"
-    [currentCTC]="employeeDetails?.payrollInformation?.currentCTC"></app-inner-salary>
-  <app-inner-document [uploadedDocuments]="employeeDetails?.documentsUploaded"></app-inner-document>
-  <app-inner-insurance [fatherDetails]="employeeDetails?.insuranceDetails?.fatherDetails"
+  <orms-inner-info [basicInformation]="employeeDetails?.basicInformation"></orms-inner-info>
+  <orms-inner-contact [contactInformation]="employeeDetails?.contactInformation"></orms-inner-contact>
+  <orms-inner-job [jobDetails]="employeeDetails?.jobDetails"
+    [leaveAlloation]="employeeDetails?.jobDetails?.leaveAllocation"></orms-inner-job>
+  <orms-inner-education [educationDetails]="employeeDetails?.educationDetails"></orms-inner-education>
+  <orms-inner-work [workExperience]="employeeDetails?.workExperience"></orms-inner-work>
+  <orms-inner-other [otherDetails]="employeeDetails?.otherDetails"></orms-inner-other>
+  <orms-inner-salary [bankDetails]="employeeDetails?.payrollInformation?.bankDetails"
+    [currentCTC]="employeeDetails?.payrollInformation?.currentCTC"></orms-inner-salary>
+  <orms-inner-document [uploadedDocuments]="employeeDetails?.documentsUploaded"></orms-inner-document>
+  <orms-inner-insurance [fatherDetails]="employeeDetails?.insuranceDetails?.fatherDetails"
     [motherDetails]="employeeDetails?.insuranceDetails?.motherDetails"
-    [spouseDetails]="employeeDetails?.insuranceDetails?.spouseDetails"></app-inner-insurance>
+    [spouseDetails]="employeeDetails?.insuranceDetails?.spouseDetails"></orms-inner-insurance>
 </div>

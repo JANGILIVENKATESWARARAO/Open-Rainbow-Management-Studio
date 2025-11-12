@@ -9,11 +9,10 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-leave-approval',
-  templateUrl: './leave-approval.component.html',
-  styleUrl: './leave-approval.component.css',
-  standalone:true,
-  imports:[NoticeBannerComponent,RecentLeaveRequestComponent,CountWidgetComponent,ButtonComponent,ChipComponent,CommonModule]
+    selector: 'orms-leave-approval',
+    templateUrl: './leave-approval.component.html',
+    styleUrl: './leave-approval.component.css',
+    imports: [NoticeBannerComponent, RecentLeaveRequestComponent, CountWidgetComponent, ButtonComponent, ChipComponent]
 })
 export class LeaveApprovalComponent {
 

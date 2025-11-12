@@ -5,8 +5,10 @@
       [class.show-border]="showBorder"
       [style.--border-color]="borderColor"
       [class.icon-right]="iconPosition === 'right'"
-    >
-      <span *ngIf="showIcon" class="search-icon" [class.icon-left-margin]="iconPosition === 'left'" [class.icon-right-margin]="iconPosition === 'right'">🔍</span>
+      >
+      @if (showIcon) {
+        <span class="search-icon" [class.icon-left-margin]="iconPosition === 'left'" [class.icon-right-margin]="iconPosition === 'right'">🔍</span>
+      }
       <input type="text" [placeholder]="placeholderText" />
     </div>
   </div>

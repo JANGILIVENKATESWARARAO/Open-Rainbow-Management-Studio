@@ -8,8 +8,8 @@ describe('InnerRecentLeaveRequestComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InnerRecentLeaveRequestComponent]
-    })
+    imports: [InnerRecentLeaveRequestComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(InnerRecentLeaveRequestComponent);

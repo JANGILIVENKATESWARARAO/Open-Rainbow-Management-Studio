@@ -9,11 +9,10 @@ import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.
 
 
 @Component({
-  selector: 'app-temp-login-credentials',
-  templateUrl: './temp-login-credentials.component.html',
-  styleUrl: './temp-login-credentials.component.css',
-  standalone:true,
-   imports: [PasswordComponent, ButtonComponent,NoticeBannerComponent,TextBoxComponent,CommonModule]
+    selector: 'orms-temp-login-credentials',
+    templateUrl: './temp-login-credentials.component.html',
+    styleUrl: './temp-login-credentials.component.css',
+    imports: [PasswordComponent, ButtonComponent, NoticeBannerComponent, TextBoxComponent, CommonModule]
 })
 export class TempLoginCredentialsComponent {
   

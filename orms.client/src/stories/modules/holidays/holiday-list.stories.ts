@@ -1,50 +1,46 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
-import { UpcomingHolidaysComponent } from '../../../app/modules/holidays/upcoming-holidays/upcoming-holidays.component';
-import { AddHolidayListComponent } from '../../../app/modules/holidays/upcoming-holidays/add-holiday-list/add-holiday-list.component';
 import { HolidayListComponent } from '../../../app/modules/holidays/upcoming-holidays/holiday-list/holiday-list.component';
 
-
 const meta: Meta<HolidayListComponent> = {
-   title: 'Modules/Holidays/HolidayList',
+  title: 'Modules/Holidays/HolidayList',
   component: HolidayListComponent,
-  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
   args: {
-    data:[
+    data: [
       {
-        holidayMonth: 'JAN',
-        holidayDate: 20,
-        holidayName: `New Year's day`,
-        holidayType: 'Natinal Holiday',
+        holidayName: `New Year's Day`,
+        holidayType: 'National Holiday',
         holidayClassification: 'Paid Leave',
-        holidayCalendar: 'Monday, January 1, 2024'
+        holidayCalendar: 'January 1, 2024',
+        holidayMonth: '',
+        holidayDate: 0
       },
       {
-        holidayMonth: 'JAN',
-        holidayDate: 21,
-        holidayName: `New Year's day`,
-        holidayType: 'Natinal Holiday',
+        holidayName: `Republic Day`,
+        holidayType: 'National Holiday',
         holidayClassification: 'Paid Leave',
-        holidayCalendar: 'Monday, January 1, 2024'
+        holidayCalendar: 'January 26, 2024',
+        holidayMonth: '',
+        holidayDate: 0
       },
       {
-        holidayMonth: 'JAN',
-        holidayDate: 22,
-        holidayName: `New Year's day`,
-        holidayType: 'Natinal Holiday',
+        holidayName: `Good Friday`,
+        holidayType: 'Religious Holiday',
         holidayClassification: 'Paid Leave',
-        holidayCalendar: 'Monday, January 1, 2024'
+        holidayCalendar: 'March 29, 2024',
+        holidayMonth: '',
+        holidayDate: 0
       },
       {
-        holidayMonth: 'JAN 20',
-        holidayDate: 23,
-        holidayName: `New Year's day`,
-        holidayType: 'Natinal Holiday',
+        holidayName: `Labour Day`,
+        holidayType: 'National Holiday',
         holidayClassification: 'Paid Leave',
-        holidayCalendar: 'Monday, January 1, 2024'
+        holidayCalendar: 'May 1, 2024',
+        holidayMonth: '',
+        holidayDate: 0
       }
     ]
   },

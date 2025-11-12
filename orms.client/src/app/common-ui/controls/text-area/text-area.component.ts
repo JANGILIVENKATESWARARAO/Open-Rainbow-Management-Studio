@@ -32,15 +32,19 @@
 //   }
 // }
 
-
-
-
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-text-area',
+  selector: 'orms-text-area',
   standalone: true,
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.css'],
@@ -53,9 +57,11 @@ export class TextAreaComponent implements OnChanges {
   @Input() showBorder: boolean = true;
   @Input() maxChars: number = 20; // ✅ Change this freely — both sides will reflect correctly
   @Input() showCharCount: boolean = true;
-   @Input() isSave: boolean = false;
+  @Input() isSave: boolean = false;
   inputText: string = '';
   currentCharCount: number = this.maxChars;
+
+  @Output() textValueChange = new EventEmitter<any>();
 
   ngOnChanges(changes: SimpleChanges) {
     // ✅ When maxChars input changes, update both sides instantly
@@ -70,5 +76,7 @@ export class TextAreaComponent implements OnChanges {
       this.inputText = this.inputText.slice(0, this.maxChars);
     }
     this.currentCharCount = this.maxChars - this.inputText.length;
+
+    this.textValueChange.emit(this.inputText);
   }
 }

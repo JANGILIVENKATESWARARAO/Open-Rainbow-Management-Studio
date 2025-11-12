@@ -5,7 +5,7 @@
 // import { NumberBoxComponent } from '../../../common-ui/controls/number-box/number-box.component';
 
 // @Component({
-//   selector: 'app-leave-management',
+//   selector: 'orms-leave-management',
 //   templateUrl: './leave-management.component.html',
 //   styleUrl: './leave-management.component.css',
 //   standalone: true,
@@ -34,11 +34,10 @@ import { NumberBoxComponent } from '../../../common-ui/controls/number-box/numbe
 import { TextAreaComponent } from '../../../common-ui/controls/text-area/text-area.component';
  
 @Component({
-  selector: 'app-leave-management',
-  templateUrl: './leave-management.component.html',
-  styleUrl: './leave-management.component.css',
-   standalone: true,
-    imports:[NoticeBannerComponent,DropDownComponent,ToggleComponent,NumberBoxComponent,TextAreaComponent]
+    selector: 'orms-leave-management',
+    templateUrl: './leave-management.component.html',
+    styleUrl: './leave-management.component.css',
+    imports: [NoticeBannerComponent, DropDownComponent, ToggleComponent, NumberBoxComponent, TextAreaComponent]
 })
 export class LeaveManagementComponent {
    designationOptions = [

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { TabelViewComponent } from '../../../app/common-ui/feature-components/tabel-view/tabel-view.component';
 
 const meta: Meta<TabelViewComponent> = {
-  title: 'Feature Components/TabelViewComponent',
+  title: 'Common-UI/Feature Components/TabelViewComponent',
   component: TabelViewComponent,
   tags: ['autodocs'],
   parameters: {

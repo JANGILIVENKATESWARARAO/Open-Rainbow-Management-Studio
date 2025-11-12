@@ -1,9 +1,9 @@
 <div class="reportees-container anycard">
   <div class="header">
     <h3>My Reportees</h3>
-    <app-button [text]="'View All Reportees'" [bgColor]="'#fff'" [color]="'#1887e2'" [hoverBGColor]="'#ececec'"
+    <orms-button [text]="'View All Reportees'" [bgColor]="'#fff'" [color]="'#1887e2'" [hoverBGColor]="'#ececec'"
       [hoverColor]="'#1887e2'" [showBorder]="false">
-    </app-button>
+    </orms-button>
   </div>
   <div class="table">
     <div class="table-header">
@@ -12,17 +12,19 @@
       <div class="col">Department</div>
       <div class="col">Work Location</div>
     </div>
-    <div class="table-row" *ngFor="let item of myReportees">
-      <div class="col employee">
-        <img [src]="EmployeePhoto" alt="profile">
-        <div>
-          <div class="emp-name">{{item.employeeName}} - {{ item.employeeId }}</div>
-          <div class="emp-email">{{item.employeeEmail}}</div>
+    @for (item of myReportees; track item) {
+      <div class="table-row">
+        <div class="col employee">
+          <img [src]="EmployeePhoto" alt="profile">
+          <div>
+            <div class="emp-name">{{item.employeeName}} - {{ item.employeeId }}</div>
+            <div class="emp-email">{{item.employeeEmail}}</div>
+          </div>
         </div>
+        <div class="col">{{item.designation}}</div>
+        <div class="col">{{item.department}}</div>
+        <div class="col">{{item.workLocation}}</div>
       </div>
-      <div class="col">{{item.designation}}</div>
-      <div class="col">{{item.department}}</div>
-      <div class="col">{{item.workLocation}}</div>
-    </div>
+    }
   </div>
 </div>

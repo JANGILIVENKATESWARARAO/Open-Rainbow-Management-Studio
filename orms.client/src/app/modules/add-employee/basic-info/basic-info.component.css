@@ -29,11 +29,11 @@
 }
 
 .grid {
-  height: 100%;
+  height: max-content;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 20% 20% 20%;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+  gap: 10px;
 }
 
 @media (max-width: 768px) {

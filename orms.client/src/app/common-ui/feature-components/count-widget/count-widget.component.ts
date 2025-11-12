@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-count-widget',
-  templateUrl: './count-widget.component.html',
-  styleUrl: './count-widget.component.css',
-  standalone: true,
-  imports: [CommonModule],
+    selector: 'orms-count-widget',
+    templateUrl: './count-widget.component.html',
+    styleUrl: './count-widget.component.css',
+    imports: [CommonModule]
 })
 export class CountWidgetComponent {
   @Input() label: string = 'Total';

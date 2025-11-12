@@ -8,8 +8,8 @@ describe('InnerSalaryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InnerSalaryComponent]
-    })
+    imports: [InnerSalaryComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(InnerSalaryComponent);

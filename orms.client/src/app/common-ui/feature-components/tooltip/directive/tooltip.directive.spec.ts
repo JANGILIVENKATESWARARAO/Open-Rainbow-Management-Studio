@@ -3,9 +3,10 @@ import {
   Injector,
   ApplicationRef,
   ElementRef,
+  DOCUMENT
 } from '@angular/core';
 import { TooltipDirective } from './tooltip.directive';
-import { DOCUMENT } from '@angular/common';
+
 
 describe('TooltipDirective', () => {
   let elementRefMock: ElementRef;

@@ -3,11 +3,10 @@ import { LabelValueComponent } from '../../../../common-ui/controls/label-value/
 import { WorkExperience } from '../../../../common-ui/assests/view-models/common-view-models';
 
 @Component({
-  selector: 'app-inner-work',
-  templateUrl: './inner-work.component.html',
-  styleUrl: './inner-work.component.css',
-  standalone: true,
-  imports: [LabelValueComponent]
+    selector: 'orms-inner-work',
+    templateUrl: './inner-work.component.html',
+    styleUrl: './inner-work.component.css',
+    imports: [LabelValueComponent]
 })
 export class InnerWorkComponent {
   @Input() workExperience?: WorkExperience

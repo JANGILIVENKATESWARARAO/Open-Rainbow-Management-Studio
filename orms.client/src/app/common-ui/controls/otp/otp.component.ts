@@ -5,14 +5,13 @@ import {
   ElementRef,
   AfterViewInit
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
-  selector: 'app-otp',
-  templateUrl: './otp.component.html',
-  styleUrls: ['./otp.component.css'],
-  standalone: true,
-  imports: [CommonModule]
+    selector: 'orms-otp',
+    templateUrl: './otp.component.html',
+    styleUrls: ['./otp.component.css'],
+    imports: []
 })
 export class OtpComponent implements AfterViewInit {
   otpArray = Array(6).fill('');

@@ -8,8 +8,8 @@ describe('RecentLeaveRequestComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RecentLeaveRequestComponent]
-    })
+    imports: [RecentLeaveRequestComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(RecentLeaveRequestComponent);

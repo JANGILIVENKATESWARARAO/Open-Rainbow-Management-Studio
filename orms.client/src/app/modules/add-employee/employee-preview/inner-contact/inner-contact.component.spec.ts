@@ -8,8 +8,8 @@ describe('InnerContactComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InnerContactComponent]
-    })
+    imports: [InnerContactComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(InnerContactComponent);

@@ -3,7 +3,7 @@ import { DotComponent } from '../../../app/common-ui/feature-components/dot/dot.
 
 
 const meta: Meta<DotComponent> = {
-  title: 'Feature Components/Dot',
+  title: 'Common-UI/Feature Components/Dot',
   component: DotComponent,
   // tags: ['autodocs'],
   parameters: {

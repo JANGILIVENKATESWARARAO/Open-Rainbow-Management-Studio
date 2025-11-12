@@ -11,27 +11,27 @@
         <p class="text">Job Details</p>
     </div>
     <div class="grid-container">
-        <app-label-value [label]="'Office Mail'" [value]="jobDetails?.officeEmail??'NA'"></app-label-value>
-        <app-label-value [label]="'Department'" [value]="jobDetails?.department??'NA'"></app-label-value>
-        <app-label-value [label]="'Current Designation'"
-            [value]="jobDetails?.currentDesignation??'NA'"></app-label-value>
-        <app-label-value [label]="'Employment Type'" [value]="jobDetails?.employmentType??'NA'"></app-label-value>
-        <app-label-value [label]="'PayLevel/Grade'" [value]="jobDetails?.payLevel??'NA'"></app-label-value>
-        <app-label-value [label]="'Reporting Manager'" [value]="jobDetails?.reportingManager??'NA'"></app-label-value>
-        <app-label-value [label]="'Work Location/Branch'" [value]="jobDetails?.workLocation??'NA'"></app-label-value>
-        <app-label-value [label]="'Shift Timings'" [value]="jobDetails?.shiftTimings??'NA'"></app-label-value>
+        <orms-label-value [label]="'Office Mail'" [value]="jobDetails?.officeEmail??'NA'"></orms-label-value>
+        <orms-label-value [label]="'Department'" [value]="jobDetails?.department??'NA'"></orms-label-value>
+        <orms-label-value [label]="'Current Designation'"
+            [value]="jobDetails?.currentDesignation??'NA'"></orms-label-value>
+        <orms-label-value [label]="'Employment Type'" [value]="jobDetails?.employmentType??'NA'"></orms-label-value>
+        <orms-label-value [label]="'PayLevel/Grade'" [value]="jobDetails?.payLevel??'NA'"></orms-label-value>
+        <orms-label-value [label]="'Reporting Manager'" [value]="jobDetails?.reportingManager??'NA'"></orms-label-value>
+        <orms-label-value [label]="'Work Location/Branch'" [value]="jobDetails?.workLocation??'NA'"></orms-label-value>
+        <orms-label-value [label]="'Shift Timings'" [value]="jobDetails?.shiftTimings??'NA'"></orms-label-value>
         <div></div>
     </div>
     <div class="grid grid-cols-1 my-[10px] text">Leave Allocation</div>
 
     <div class="grid-container2">
-        <app-count-widget [label]="'Casual '" [labelColor]="'#64748b'" [value]="leaveAlloation?.casual??12"
-            [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
-        <app-count-widget [label]="'Festive '" [labelColor]="'#64748b'" [value]="leaveAlloation?.festival??12"
-            [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
-        <app-count-widget [label]="'Earned '" [labelColor]="'#64748b'" [value]="leaveAlloation?.earned??12"
-            [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
-        <app-count-widget [label]="'Optional '" [labelColor]="'#64748b'" [value]="leaveAlloation?.optional??12"
-            [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></app-count-widget>
+        <orms-count-widget [label]="'Casual '" [labelColor]="'#64748b'" [value]="leaveAlloation?.casual??12"
+            [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></orms-count-widget>
+        <orms-count-widget [label]="'Festive '" [labelColor]="'#64748b'" [value]="leaveAlloation?.festival??12"
+            [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></orms-count-widget>
+        <orms-count-widget [label]="'Earned '" [labelColor]="'#64748b'" [value]="leaveAlloation?.earned??12"
+            [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></orms-count-widget>
+        <orms-count-widget [label]="'Optional '" [labelColor]="'#64748b'" [value]="leaveAlloation?.optional??12"
+            [valueColor]="'black'" [backgroundColor]="'#f8fafc'" [showBorder]="false"></orms-count-widget>
     </div>
 </div>

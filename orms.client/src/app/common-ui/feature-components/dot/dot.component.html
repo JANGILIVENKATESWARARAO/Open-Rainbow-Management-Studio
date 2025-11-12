@@ -1,18 +1,17 @@
 <div class="cell" [ngClass]="{ 'reverse': labelPosition === 'right' }">
-  <ng-container *ngIf="label; else onlyDot">
+  @if (label) {
     <span class="text" [style.color]="labelColor">{{ label }}</span>
     <span
       class="dot"
       [style.backgroundColor]="dotColor"
       [ngStyle]="getDotSize(dotSize)"
     ></span>
-  </ng-container>
-
-  <ng-template #onlyDot>
+  } @else {
     <span
       class="dot"
       [style.backgroundColor]="dotColor"
       [ngStyle]="getDotSize(dotSize)"
     ></span>
-  </ng-template>
+  }
+
 </div>

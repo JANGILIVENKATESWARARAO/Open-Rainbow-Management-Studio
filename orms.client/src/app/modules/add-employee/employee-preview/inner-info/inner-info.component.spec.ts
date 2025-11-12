@@ -8,8 +8,8 @@ describe('InnerInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InnerInfoComponent]
-    })
+    imports: [InnerInfoComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(InnerInfoComponent);

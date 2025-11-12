@@ -1,108 +1,116 @@
 <div class="profile-section">
 
   <!-- Basic Info -->
- <button
-  class="section-btn"
-  (click)="openExpansion('basic')"
-  [class.active]="(autoCloseExpansion && openDivId === 'basic') || (!autoCloseExpansion && openDivIdList.has('basic'))">
-  Basic Information
-</button>
-  <div
-    *ngIf="(autoCloseExpansion && openDivId === 'basic') || (!autoCloseExpansion && openDivIdList.has('basic'))"
-    class="section-content"
-  >
-    <app-inner-info></app-inner-info>
-  </div>
+  <button
+    class="section-btn"
+    (click)="openExpansion('basic')"
+    [class.active]="(autoCloseExpansion && openDivId === 'basic') || (!autoCloseExpansion && openDivIdList.has('basic'))">
+    Basic Information
+  </button>
+  @if ((autoCloseExpansion && openDivId === 'basic') || (!autoCloseExpansion && openDivIdList.has('basic'))) {
+    <div
+      class="section-content"
+      >
+      <orms-inner-info></orms-inner-info>
+    </div>
+  }
 
   <!-- Contact Info -->
-  <button class="section-btn" 
-  (click)="openExpansion('contact')"
-  [class.active]="(autoCloseExpansion && openDivId === 'contact') || (!autoCloseExpansion && openDivIdList.has('contact'))">
+  <button class="section-btn"
+    (click)="openExpansion('contact')"
+    [class.active]="(autoCloseExpansion && openDivId === 'contact') || (!autoCloseExpansion && openDivIdList.has('contact'))">
     Contact Information
   </button>
-  <div
-    *ngIf="(autoCloseExpansion && openDivId === 'contact') || (!autoCloseExpansion && openDivIdList.has('contact'))"
-    class="section-content"
-  >
-    <app-inner-contact></app-inner-contact>
-  </div>
+  @if ((autoCloseExpansion && openDivId === 'contact') || (!autoCloseExpansion && openDivIdList.has('contact'))) {
+    <div
+      class="section-content"
+      >
+      <orms-inner-contact></orms-inner-contact>
+    </div>
+  }
 
   <!-- Job Details -->
-  <button class="section-btn" 
-  (click)="openExpansion('job')"
-  [class.active]="(autoCloseExpansion && openDivId === 'job') || (!autoCloseExpansion && openDivIdList.has('job'))">
+  <button class="section-btn"
+    (click)="openExpansion('job')"
+    [class.active]="(autoCloseExpansion && openDivId === 'job') || (!autoCloseExpansion && openDivIdList.has('job'))">
     Job Details
   </button>
-  <div
-    *ngIf="(autoCloseExpansion && openDivId === 'job') || (!autoCloseExpansion && openDivIdList.has('job'))"
-    class="section-content"
-  >
-    <app-inner-job></app-inner-job>
-  </div>
+  @if ((autoCloseExpansion && openDivId === 'job') || (!autoCloseExpansion && openDivIdList.has('job'))) {
+    <div
+      class="section-content"
+      >
+      <orms-inner-job></orms-inner-job>
+    </div>
+  }
 
   <!-- Education -->
-  <button class="section-btn" 
-  (click)="openExpansion('education')"
-  [class.active]="(autoCloseExpansion && openDivId === 'education') || (!autoCloseExpansion && openDivIdList.has('education'))">
+  <button class="section-btn"
+    (click)="openExpansion('education')"
+    [class.active]="(autoCloseExpansion && openDivId === 'education') || (!autoCloseExpansion && openDivIdList.has('education'))">
     Education Details
   </button>
-  <div
-    *ngIf="(autoCloseExpansion && openDivId === 'education') || (!autoCloseExpansion && openDivIdList.has('education'))"
-    class="section-content"
-  >
-    <app-inner-education></app-inner-education>
-  </div>
+  @if ((autoCloseExpansion && openDivId === 'education') || (!autoCloseExpansion && openDivIdList.has('education'))) {
+    <div
+      class="section-content"
+      >
+      <orms-inner-education></orms-inner-education>
+    </div>
+  }
 
   <!-- Work -->
-  <button class="section-btn" 
-  (click)="openExpansion('work')"
-  [class.active]="(autoCloseExpansion && openDivId === 'work') || (!autoCloseExpansion && openDivIdList.has('work'))">
+  <button class="section-btn"
+    (click)="openExpansion('work')"
+    [class.active]="(autoCloseExpansion && openDivId === 'work') || (!autoCloseExpansion && openDivIdList.has('work'))">
     Work Experience
   </button>
-  <div
-    *ngIf="(autoCloseExpansion && openDivId === 'work') || (!autoCloseExpansion && openDivIdList.has('work'))"
-    class="section-content"
-  >
-    <app-inner-work></app-inner-work>
-  </div>
+  @if ((autoCloseExpansion && openDivId === 'work') || (!autoCloseExpansion && openDivIdList.has('work'))) {
+    <div
+      class="section-content"
+      >
+      <orms-inner-work></orms-inner-work>
+    </div>
+  }
 
   <!-- Other -->
-  <button class="section-btn" 
-  (click)="openExpansion('other')"
-  [class.active]="(autoCloseExpansion && openDivId === 'other') || (!autoCloseExpansion && openDivIdList.has('other'))">
+  <button class="section-btn"
+    (click)="openExpansion('other')"
+    [class.active]="(autoCloseExpansion && openDivId === 'other') || (!autoCloseExpansion && openDivIdList.has('other'))">
     Other Details
   </button>
-  <div
-    *ngIf="(autoCloseExpansion && openDivId === 'other') || (!autoCloseExpansion && openDivIdList.has('other'))"
-    class="section-content"
-  >
-    <app-inner-other></app-inner-other>
-  </div>
+  @if ((autoCloseExpansion && openDivId === 'other') || (!autoCloseExpansion && openDivIdList.has('other'))) {
+    <div
+      class="section-content"
+      >
+      <orms-inner-other></orms-inner-other>
+    </div>
+  }
 
   <!-- Salary -->
-  <button class="section-btn" 
-  (click)="openExpansion('salary')"
-  [class.active]="(autoCloseExpansion && openDivId === 'salary') || (!autoCloseExpansion && openDivIdList.has('salary'))">
+  <button class="section-btn"
+    (click)="openExpansion('salary')"
+    [class.active]="(autoCloseExpansion && openDivId === 'salary') || (!autoCloseExpansion && openDivIdList.has('salary'))">
     Salary & Payroll Information
   </button>
-  <div
-    *ngIf="(autoCloseExpansion && openDivId === 'salary') || (!autoCloseExpansion && openDivIdList.has('salary'))"
-    class="section-content"
-  >
-    <app-inner-salary></app-inner-salary>
-  </div>
+  @if ((autoCloseExpansion && openDivId === 'salary') || (!autoCloseExpansion && openDivIdList.has('salary'))) {
+    <div
+      class="section-content"
+      >
+      <orms-inner-salary></orms-inner-salary>
+    </div>
+  }
 
   <!-- Insurance -->
-  <button class="section-btn" 
-  (click)="openExpansion('insurance')"
-  [class.active]="(autoCloseExpansion && openDivId === 'insurance') || (!autoCloseExpansion && openDivIdList.has('insurance'))">
+  <button class="section-btn"
+    (click)="openExpansion('insurance')"
+    [class.active]="(autoCloseExpansion && openDivId === 'insurance') || (!autoCloseExpansion && openDivIdList.has('insurance'))">
     Insurance Details
   </button>
-  <div
-    *ngIf="(autoCloseExpansion && openDivId === 'insurance') || (!autoCloseExpansion && openDivIdList.has('insurance'))"
-    class="section-content"
-  >
-    <app-inner-insurance></app-inner-insurance>
-  </div>
+  @if ((autoCloseExpansion && openDivId === 'insurance') || (!autoCloseExpansion && openDivIdList.has('insurance'))) {
+    <div
+      class="section-content"
+      >
+      <orms-inner-insurance></orms-inner-insurance>
+    </div>
+  }
 
 </div>

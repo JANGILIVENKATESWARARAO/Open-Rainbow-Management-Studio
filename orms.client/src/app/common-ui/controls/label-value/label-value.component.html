@@ -1,11 +1,11 @@
 <div class="parent">
-<div class="label-value-container">
+  <div class="label-value-container">
     <div class="upload-label-wrapper">
-  <div class="label">{{ label }}</div>
-  <ng-container *ngIf="isRequired">
-    <span class="required-star">*</span>
-  </ng-container>
+      <div class="label">{{ label }}</div>
+      @if (isRequired) {
+        <span class="required-star">*</span>
+      }
+    </div>
+    <div class="value">{{ value }}</div>
   </div>
-  <div class="value">{{ value }}</div>
-</div>
 </div>

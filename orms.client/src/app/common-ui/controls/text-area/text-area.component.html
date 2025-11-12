@@ -1,7 +1,9 @@
 <div class="form-group">
   <label for="address">
     {{ label }}
-    <span *ngIf="isRequired" class="required-star">*</span>
+    @if (isRequired) {
+      <span class="required-star">*</span>
+    }
   </label>
 
   <textarea
@@ -17,14 +19,15 @@
   }"
   ></textarea>
 
-  <p
-    *ngIf="showCharCount"
+  @if (showCharCount) {
+    <p
     [ngStyle]="{
       color: isRequired ? '#dc2626' : '#000000',
       
     }"
-    class="text-[11px] font-medium text-xs mt-1 text-left"
-  >
-    {{ currentCharCount }} of {{ maxChars }} characters left
-  </p>
+      class="text-[11px] font-medium text-xs mt-1 text-left"
+      >
+      {{ currentCharCount }} of {{ maxChars }} characters left
+    </p>
+  }
 </div>
