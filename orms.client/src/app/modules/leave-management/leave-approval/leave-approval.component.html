@@ -4,23 +4,15 @@
         Review and manage leave requests from your employees
     </p>
 
-    <div class="info-icon">
-        <app-notice-banner [heading]="'Important: '"
-            [content]="'Review each request carefully.Check employee leave balances before approving. Once approved leave balances will be updated automatically.'"
-            [headingColor]="'#1E3A8A'" [contentColor]="'#374151'" [contentInNextLine]="false" [bannerColor]="'#DBEAFE'"
-            [highlighterColor]="'#1E3A8A'" [showIcon]="true" [iconColor]="'#1E3A8A'"
-            [showBorder]="false"></app-notice-banner>
+    <div class="info-icon" >
+        <app-notice-banner [heading]="'Important: '" [content]="'Review each request carefully.Check employee leave balances before approving. Once approved leave balances will be updated automatically.'" [headingColor]="'#1E3A8A'" [contentColor]="'#374151'" [contentInNextLine]="false" [bannerColor]="'#DBEAFE'" [highlighterColor]="'#1E3A8A'" [showIcon]="true" [iconColor]="'#1E3A8A'" [showBorder]="false"></app-notice-banner>
 
     </div>
     <div class="typesOf-request">
-        <app-chip [text]="'All Requests (3)'" [bgColor]="'#7c3aedff'" [color]="'White'" [activeBGColor]="'#7c3aedff'"
-            [size]="'medium'"></app-chip>
-        <app-chip [text]="'Sick Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'"
-            [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></app-chip>
-        <app-chip [text]="'Casual Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'"
-            [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></app-chip>
-        <app-chip [text]="'Earned Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'"
-            [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></app-chip>
+          <app-chip [text]="'All Requests (3)'" [bgColor]="'#7c3aedff'" [color]="'White'" [activeBGColor]="'#7c3aedff'" [size]="'medium'"></app-chip>
+          <app-chip [text]="'All Requests (3)'" [bgColor]="'#7c3aedff'" [color]="'White'" [activeBGColor]="'#7c3aedff'" [size]="'medium'"></app-chip>
+          <app-chip [text]="'Casual Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'" [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></app-chip>  
+          <app-chip [text]="'Earned Leave(1)'" [bgColor]="'White'" [color]="'grey'" [activeBGColor]="'#7c3aedff'" [activeColor]="'White'" [borderRadius]="'9999px'" [size]="'medium'" [usePointerCursor]="true"></app-chip>  
     </div>
     <div class="request-header">
         <h3> Pending Leave Requests</h3>
@@ -38,20 +30,14 @@
             <div class="leave-balance-container">
                 <h3>Employee Leave Balance - {{ item.leaves[0]?.type || 'Leave' }}</h3>
                 <div class="grid">
-                    <app-count-widget [label]="'Total Days'" [value]="item.totalDays" [valueColor]="'blue'" [showBorder]="true"
-                        [borderColor]="'#dcdcdc'"></app-count-widget>
-                    <app-count-widget [label]="'Remaining'" [value]="item.remaining" [valueColor]="'green'" [showBorder]="true"
-                        [borderColor]="'#dcdcdc'"></app-count-widget>
-                    <app-count-widget [label]="'Used'" [value]="item.used" [valueColor]="'#4c5665'" [showBorder]="true"
-                        [borderColor]="'#dcdcdc'"></app-count-widget>
+                    <app-count-widget [label]="'Total Days'" [value]="item.totalDays" [valueColor]="'blue'" [showBorder]="true" [borderColor]="'#dcdcdc'"></app-count-widget>
+                    <app-count-widget [label]="'Remaining'" [value]="item.remaining" [valueColor]="'green'" [showBorder]="true" [borderColor]="'#dcdcdc'"></app-count-widget>
+                    <app-count-widget [label]="'Used'" [value]="item.used" [valueColor]="'#4c5665'" [showBorder]="true" [borderColor]="'#dcdcdc'"></app-count-widget>
                 </div>
 
                 <div class="button-row">
-                    <app-button [text]="'Reject'" [color]="'Red'" [bgColor]="'White'" [hoverBGColor]="'Red'"
-                        [borderRadius]="10" [borderColor]="'Red'" [hoverColor]="'white'"></app-button>
-                    <app-button [text]="'Approve Leave'" [bgColor]="'White'" [color]="'#26c484'"
-                        [hoverBGColor]="'#26c484'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'#26c484'"
-                        [showBorder]="true"></app-button>
+                    <app-button [text]="'Reject'" [color]="'Red'" [bgColor]="'White'" [hoverBGColor]="'Red'" [borderRadius]="10" [borderColor]="'Red'" [hoverColor]="'white'"></app-button>
+                    <app-button [text]="'Approve Leave'" [bgColor]="'White'" [color]="'#26c484'"[hoverBGColor]="'#26c484'" [hoverColor]="'white'" [borderRadius]="10" [borderColor]="'#26c484'"[showBorder]="true"></app-button>
                 </div>
             </div>
         </div>
