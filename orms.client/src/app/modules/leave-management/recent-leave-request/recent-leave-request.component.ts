@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { ChipComponent } from '../../../common-ui/controls/chip/chip.component';
 import { ButtonComponent } from '../../../common-ui/controls/button/button.component';
 import { CommonModule } from '@angular/common';
@@ -9,9 +9,10 @@ export interface LeaveRequest {
   type: string;
   status: 'Pending' | 'Approved' | 'Rejected';
   fromDate: string;
-  toDate?: string;
+  toDate: string;
   applyDate: string;
   description: string;
+  
 }
 
 @Component({
@@ -27,8 +28,10 @@ export interface LeaveRequest {
     TooltipDirective,
   ],
 })
-export class RecentLeaveRequestComponent {
-  leaveRequests: LeaveRequest[] = [
+export class RecentLeaveRequestComponent { 
+  @Input() data: any [] = []; 
+
+  leaveRequest: LeaveRequest[] = [
     {
       type: 'Vacation',
       status: 'Pending',
@@ -42,6 +45,7 @@ export class RecentLeaveRequestComponent {
       type: 'Sick Leave',
       status: 'Approved',
       fromDate: '8 Jan 2025',
+      toDate: '8 Jan 2025',
       applyDate: '12 Jan 2025',
       description: 'Medical appointment',
     },

@@ -1,7 +1,7 @@
 <div class="leave-container anycard">
   <div class="headding">Recent Leave Requests</div>
 
-  <div class="leave-card anycard" *ngFor="let leave of leaveRequests">
+  <div class="leave-card anycard" *ngFor="let leave of data">
     <div class="leave-header">
       <div class="left">
         <h3>
@@ -41,7 +41,7 @@
             {{ leave.fromDate }}
             <ng-container *ngIf="leave.toDate"> to {{ leave.toDate }}</ng-container>
           </span>
-          <span class="apply-text">Apply on : {{ leave.applyDate }}</span>
+          <span class="apply-text">Apply on : {{ leave.applyOn }}</span>
         </p>
 
         <p class="desc" [class.truncated]="isTruncated(leave.description, 50)"
