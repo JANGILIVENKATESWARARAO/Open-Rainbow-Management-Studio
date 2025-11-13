@@ -40,7 +40,7 @@ body {
 
 .summary {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   background-color: #fafafa;
   border-radius: 10px;
@@ -51,6 +51,7 @@ body {
 
 .summary-details {
   text-align: left;
+  margin-left: 25px;
 }
 
 .summary-details h3 {
@@ -68,11 +69,16 @@ body {
 
 .salary-summary {
   display: flex;
+  flex-direction: row;
   gap: 20px;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 
 }
-
+.outside{
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+}
 
 
 
@@ -103,3 +109,4 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
