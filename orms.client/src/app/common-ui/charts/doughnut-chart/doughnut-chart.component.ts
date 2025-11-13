@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild, OnInit, OnDestroy, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  OnInit,
+  OnDestroy,
+  Input,
+} from '@angular/core';
 import {
   Chart,
   DoughnutController,
@@ -7,37 +14,37 @@ import {
   Tooltip,
   Legend,
   ChartConfiguration,
-  Plugin
+  Plugin,
 } from 'chart.js';
 
 @Component({
   selector: 'orms-doughnut-chart',
   templateUrl: './doughnut-chart.component.html',
   styleUrls: ['./doughnut-chart.component.css'],
-  imports:[CommonModule]
+  imports: [CommonModule],
 })
 export class DoughnutChartComponent implements OnInit, OnDestroy {
-  @ViewChild('chartCanvas', { static: true }) chartRef!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('chartCanvas', { static: true })
+  chartRef!: ElementRef<HTMLCanvasElement>;
   private chart!: Chart;
 
   @Input() showLegends: boolean = true;
   @Input() centerText: boolean = true;
-  @Input() showAsValue: boolean = false; 
+  @Input() showAsValue: boolean = false;
 
-  activeLabel: string = 'Total Data';
-  activeValue: string = '7433';
+  @Input() legendData: { color: string; value: number; label: string }[] = [];
 
-  legendData = [
-    { color: '#FF4C4C', value: 15, label: 'Salary' },
-    { color: '#27AE60', value: 8, label: 'Bonus' },
-    { color: '#29B6F6', value: 20, label: 'Commission' },
-    { color: '#FF9800', value: 11, label: 'Overtime' },
-    { color: '#1217AB', value: 28, label: 'Reimbursement' },
-    { color: '#FFD600', value: 18, label: 'Benefits' }
-  ];
+  @Input() activeLabel: string = 'Total Data';
+  activeValue: string = '0';
+  total: number = 0;
+  defaultLabel: string = '';
 
   ngOnInit() {
     Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
+
+    this.total = this.legendData.reduce((sum, item) => sum + item.value, 0);
+    this.activeValue = this.total.toString();
+    this.defaultLabel = this.activeLabel;
 
     const centerTextPlugin: Plugin<'doughnut'> = {
       id: 'centerText',
@@ -52,14 +59,18 @@ export class DoughnutChartComponent implements OnInit, OnDestroy {
         ctx.textAlign = 'center';
 
         if (this.centerText) {
-          ctx.fillText(this.activeValue, width / 2, height / 2 - 10);
-          ctx.font = `${(+fontSizeMain / 2.0).toFixed(0)}px Arial`;
-          ctx.fillStyle = '#9CA3AF';
-          ctx.fillText(this.activeLabel, width / 2, height / 2 + 18);
+          if (this.activeLabel && this.activeLabel.trim() !== '') {
+            ctx.fillText(this.activeValue, width / 2, height / 2 - 10);
+            ctx.font = `${(+fontSizeMain / 2.0).toFixed(0)}px Arial`;
+            ctx.fillStyle = '#9CA3AF';
+            ctx.fillText(this.activeLabel, width / 2, height / 2 + 18);
+          } else {
+            ctx.fillText(this.activeValue, width / 2, height / 2);
+          }
         }
 
         ctx.restore();
-      }
+      },
     };
 
     const config: ChartConfiguration<'doughnut'> = {
@@ -67,20 +78,13 @@ export class DoughnutChartComponent implements OnInit, OnDestroy {
       data: {
         datasets: [
           {
-            data: [15, 8, 20, 11, 28, 18],
-            backgroundColor: [
-              '#FF4C4C',
-              '#27AE60',
-              '#29B6F6',
-              '#FF9800',
-              '#1217AB',
-              '#FFD600',
-            ],
+            data: this.legendData.map((d) => d.value),
+            backgroundColor: this.legendData.map((d) => d.color),
             borderWidth: 0,
             borderRadius: 25,
-            spacing: 5
-          }
-        ]
+            spacing: 5,
+          },
+        ],
       },
       options: {
         cutout: '85%',
@@ -94,43 +98,43 @@ export class DoughnutChartComponent implements OnInit, OnDestroy {
               label: (context) => {
                 const index = context.dataIndex;
                 const item = this.legendData[index];
-                const total = 7433;
-                const actualValue = Math.round((item.value / 100) * total);
+                const percentage = ((item.value / this.total) * 100).toFixed(1);
 
                 return this.showAsValue
-                  ? `${item.label}: ${actualValue}`
-                  : `${item.label}: ${item.value}%`;
-              }
-            }
-          }
+                  ? `${item.label}: ${item.value}`
+                  : `${item.label}: ${percentage}%`;
+              },
+            },
+          },
         },
 
         onHover: (event, elements) => {
           if (elements.length > 0) {
             const index = elements[0].index;
             const item = this.legendData[index];
-            const total = 7433; 
-            const actualValue = Math.round((item.value / 100) * total);
+            const percentage = ((item.value / this.total) * 100).toFixed(1);
 
             if (this.showAsValue) {
-              this.activeValue = `${item.value}%`;
+              this.activeValue = `${item.value}`;
             } else {
-              this.activeValue = `${actualValue}`;
+              this.activeValue = `${percentage}%`;
             }
             this.activeLabel = item.label;
           } else {
-            this.activeValue = '7433';
-            this.activeLabel = 'Total Data';
+            this.activeValue = this.total.toString();
+            this.activeLabel = this.defaultLabel;
           }
 
           this.chart.draw();
         },
-
       },
-      plugins: [centerTextPlugin]
+      plugins: [centerTextPlugin],
     };
 
-    this.chart = new Chart(this.chartRef.nativeElement.getContext('2d')!, config);
+    this.chart = new Chart(
+      this.chartRef.nativeElement.getContext('2d')!,
+      config
+    );
   }
 
   ngOnDestroy() {
@@ -138,8 +142,8 @@ export class DoughnutChartComponent implements OnInit, OnDestroy {
   }
 
   getDisplayValue(item: any): string {
-    const total = 7433;
-    const actualValue = Math.round((item.value / 100) * total);
-    return this.showAsValue ? `${actualValue}` : `${item.value}%`;
+    const percentage = ((item.value / this.total) * 100).toFixed(1);
+    console.log(this.total);
+    return this.showAsValue ? `${item.value}` : `${percentage}%`;
   }
 }

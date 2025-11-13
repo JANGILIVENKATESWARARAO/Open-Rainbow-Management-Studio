@@ -14,4 +14,32 @@ const meta: Meta<DoughnutChartComponent> = {
 export default meta;
 type Story = StoryObj<DoughnutChartComponent>;
 
-export const DoughnutChart: Story = {};
+export const DoughnutChart: Story = {
+  args: {
+    showLegends: true,
+    centerText: true,
+    showAsValue: false,
+    legendData: [
+      {
+        color: 'gray',
+        value: 30,
+        label: 'Earing',
+      },
+      {
+        color: 'blue',
+        value: 40,
+        label: 'deduction',
+      },
+      {
+        color: 'yellow',
+        value: 20,
+        label: 'food',
+      },
+      {
+        color: 'black',
+        value: 20,
+        label: 'PF',
+      },
+    ],
+  },
+};
