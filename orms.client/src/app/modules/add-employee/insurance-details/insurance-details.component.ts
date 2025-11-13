@@ -4,12 +4,14 @@ import { TextAreaComponent } from '../../../common-ui/controls/text-area/text-ar
 import { CalendarComponent } from '../../../common-ui/controls/calendar/calendar.component';
 import { ToggleComponent } from '../../../common-ui/controls/toggle/toggle.component';
 import { TextBoxComponent } from "../../../common-ui/controls/text-box/text-box.component";
+import { IconComponent } from '../../../common-ui/feature-components/icon/icon.component';
+
 
 @Component({
     selector: 'orms-insurance-details',
     templateUrl: './insurance-details.component.html',
     styleUrl: './insurance-details.component.css',
-    imports: [FileUploadComponent, TextAreaComponent, CalendarComponent, ToggleComponent, TextBoxComponent]
+    imports: [FileUploadComponent, TextAreaComponent, CalendarComponent, ToggleComponent, TextBoxComponent,IconComponent]
 })
 export class InsuranceDetailsComponent {
 

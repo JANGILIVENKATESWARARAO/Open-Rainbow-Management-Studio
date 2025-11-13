@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { IconComponent } from '../../feature-components/icon/icon.component';
+
 
 @Component({
     selector: 'orms-calendar',
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule,IconComponent],
     templateUrl: './calendar.component.html',
     styleUrls: ['./calendar.component.css']
 })

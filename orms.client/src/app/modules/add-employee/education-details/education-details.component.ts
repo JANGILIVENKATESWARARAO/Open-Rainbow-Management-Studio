@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.component';
 import { DropDownComponent } from '../../../common-ui/controls/drop-down/drop-down.component';
 import { TextAreaComponent } from '../../../common-ui/controls/text-area/text-area.component';
+import { IconComponent } from '../../../common-ui/feature-components/icon/icon.component';
+
 
 @Component({
     selector: 'orms-education-details',
     templateUrl: './education-details.component.html',
     styleUrl: './education-details.component.css',
-    imports: [TextBoxComponent, DropDownComponent, TextAreaComponent]
+    imports: [TextBoxComponent, DropDownComponent, TextAreaComponent,IconComponent]
 })
 export class EducationDetailsComponent {
 

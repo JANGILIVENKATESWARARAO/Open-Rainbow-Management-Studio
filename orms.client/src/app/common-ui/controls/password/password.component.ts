@@ -1,11 +1,13 @@
 
 import { Component, Input , Output, EventEmitter } from '@angular/core';
+import { IconComponent } from '../../feature-components/icon/icon.component';
+
 
 @Component({
     selector: 'orms-password',
     templateUrl: './password.component.html',
     styleUrl: './password.component.css',
-    imports: []
+    imports: [IconComponent]
 })
 export class PasswordComponent {
   @Input() label: string = 'Temporary Password';

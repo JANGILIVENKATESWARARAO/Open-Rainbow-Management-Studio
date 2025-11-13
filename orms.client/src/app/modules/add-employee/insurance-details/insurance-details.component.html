@@ -1,15 +1,16 @@
-
 <div class="blank-space">
- 
+
     <div class="inside">
         <div class="icon" aria-hidden="true">
-         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" 
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
                 class="lucide lucide-shield-check h-4 w-4" aria-hidden="true">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             <path d="M9 12l2 2 4-4"></path>
-        </svg>
+        </svg> -->
+            <orms-icon [name]="'home'"></orms-icon>
+
 
         </div>
         <h5>Insurance Details</h5>
@@ -22,42 +23,52 @@
         <orms-text-box [label]="'Father Name'" [placeHolder]="'Enter Father Name'" [isRequired]="true"></orms-text-box>
         <!-- <div></div> -->
         <!-- <orms-file-upload [label]="'Employee PAN'" [buttonLabel]="'Choose File'"></orms-file-upload> -->
-        <orms-text-box [label]="'Father Aadhar Number'" [placeHolder]="'Enter Aadhar Number'" [isRequired]="true"></orms-text-box>
+        <orms-text-box [label]="'Father Aadhar Number'" [placeHolder]="'Enter Aadhar Number'"
+            [isRequired]="true"></orms-text-box>
         <orms-file-upload [label]="'Aadhar Upload'" [buttonLabel]="'Choose File'"></orms-file-upload>
-        <orms-text-box [label]="'Father PAN Number'" [placeHolder]="'Enter PAN Number'" [isRequired]="true"></orms-text-box>
+        <orms-text-box [label]="'Father PAN Number'" [placeHolder]="'Enter PAN Number'"
+            [isRequired]="true"></orms-text-box>
         <orms-file-upload [label]="'PAN Upload'" [buttonLabel]="'Choose File'"></orms-file-upload>
         <orms-calendar [label]="'DOB'"></orms-calendar>
-        <orms-text-box [label]="'Occupation'" [placeHolder]="'Enter Father Occupation'" [isRequired]="true"></orms-text-box>     
+        <orms-text-box [label]="'Occupation'" [placeHolder]="'Enter Father Occupation'"
+            [isRequired]="true"></orms-text-box>
     </div>
 
     <p>Mother Details</p>
     <hr class="custom-line">
     <div class="grid-container">
-        
+
         <orms-text-box [label]="'Mother Name'" [placeHolder]="'Enter Mother Name'" [isRequired]="true"></orms-text-box>
         <!-- <div></div> -->
-        <orms-text-box [label]="'Mother Aadhar Number'" [placeHolder]="'Enter Aadhar Number'" [isRequired]="true"></orms-text-box>
+        <orms-text-box [label]="'Mother Aadhar Number'" [placeHolder]="'Enter Aadhar Number'"
+            [isRequired]="true"></orms-text-box>
         <orms-file-upload [label]="'Aadhar Upload'" [buttonLabel]="'Choose File'"></orms-file-upload>
-        <orms-text-box [label]="'Mother PAN Number'" [placeHolder]="'Enter PAN Number'" [isRequired]="true"></orms-text-box>
+        <orms-text-box [label]="'Mother PAN Number'" [placeHolder]="'Enter PAN Number'"
+            [isRequired]="true"></orms-text-box>
         <orms-file-upload [label]="'PAN Upload'" [buttonLabel]="'Choose File'"></orms-file-upload>
         <orms-calendar [label]="'Date of Birth'"></orms-calendar>
-        <orms-text-box [label]="'Occupation'" [placeHolder]="'Enter Mother Occupation'" [isRequired]="true"></orms-text-box>
-           
+        <orms-text-box [label]="'Occupation'" [placeHolder]="'Enter Mother Occupation'"
+            [isRequired]="true"></orms-text-box>
+
         <!-- <orms-toggle [checked]="false" [color]="'#4CAF50'" [label]="'If your Father have any pre existing details, please enable  '" [labelPosition]="'left'" [labelColor]="'#333'" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></orms-toggle>   -->
     </div>
 
     <p>Spouse Details</p>
     <hr class="custom-line">
     <div class="grid-container">
-       
+
         <orms-text-box [label]="'Spouse Name'" [placeHolder]="'Enter Spouse Name'" [isRequired]="true"></orms-text-box>
         <!-- <div></div> -->
         <!-- <orms-file-upload [label]="'Employee PAN'" [buttonLabel]="'Choose File'"></orms-file-upload> -->
-        <orms-text-box [label]="'Spouse Aadhar Number'" [placeHolder]="'Enter Spouse Number'" [isRequired]="true"></orms-text-box>
-        <orms-file-upload [label]="'Aadhar Upload'" [buttonLabel]="'Choose File'" [isRequired]="false"></orms-file-upload>
-        <orms-text-box [label]="'Spouse PAN Number'" [placeHolder]="'Enter PAN Number'" [isRequired]="true"></orms-text-box>
+        <orms-text-box [label]="'Spouse Aadhar Number'" [placeHolder]="'Enter Spouse Number'"
+            [isRequired]="true"></orms-text-box>
+        <orms-file-upload [label]="'Aadhar Upload'" [buttonLabel]="'Choose File'"
+            [isRequired]="false"></orms-file-upload>
+        <orms-text-box [label]="'Spouse PAN Number'" [placeHolder]="'Enter PAN Number'"
+            [isRequired]="true"></orms-text-box>
         <orms-file-upload [label]="'PAN Upload'" [buttonLabel]="'Choose File'" [isRequired]="false"></orms-file-upload>
         <orms-calendar [label]="'DOB'" [isRequired]="false"></orms-calendar>
-        <orms-text-box [label]="'Occupation'" [placeHolder]="'Enter Spouse Occupation'" [isRequired]="true"></orms-text-box>       
+        <orms-text-box [label]="'Occupation'" [placeHolder]="'Enter Spouse Occupation'"
+            [isRequired]="true"></orms-text-box>
     </div>
 </div>

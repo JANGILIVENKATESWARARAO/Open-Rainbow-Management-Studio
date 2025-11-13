@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { IconComponent } from '../../feature-components/icon/icon.component';
+
  
 @Component({
     selector: 'orms-file-upload',
-    imports: [CommonModule],
+    imports: [CommonModule,IconComponent],
     templateUrl: './file-upload.component.html',
     styleUrl: './file-upload.component.css'
 })

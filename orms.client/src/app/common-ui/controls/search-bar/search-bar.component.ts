@@ -1,11 +1,13 @@
 
 import { Component, Input } from '@angular/core';
+import { IconComponent } from '../../feature-components/icon/icon.component';
+
 
 @Component({
     selector: 'orms-search-bar',
     templateUrl: './search-bar.component.html',
     styleUrls: ['./search-bar.component.css'],
-    imports: []
+    imports: [IconComponent]
 })
 export class SearchBarComponent {
   @Input() placeholderText: string = 'Search employees by name, email, position, or department...';

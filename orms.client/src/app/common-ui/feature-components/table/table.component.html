@@ -1,0 +1,71 @@
+<div class="p-5 bg-white rounded-xl shadow-md">
+  <div class="flex justify-between items-center mb-4">
+    <!-- <div class="text-xl font-semibold">Employee Attendance</div>
+    <div class="flex gap-2 items-center">
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Search"
+        class="border px-3 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+      />
+      <button class="bg-white text-black border px-4 py-1 rounded-md hover:bg-blue-700">
+        Download Report
+      </button>
+      <select class="border px-2 py-1 rounded-md">
+        <option>2024</option>
+        <option>2025</option>
+      </select>
+    </div>
+  </div> -->
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full border-collapse">
+      <thead class="bg-blue-100 rounded-[50px]">
+        <tr>
+          <th class="p-2 text-left">Employee Name</th>
+          <th *ngFor="let day of [].constructor(31); let i = index">
+            {{ i + 1 }}
+          </th>
+          <th class="pr-3">Leave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of filteredEmployees">
+          <td class="flex items-center p-2 ">
+            {{ emp.name }}
+          </td>
+
+          <td
+            *ngFor="let status of emp.attendance"
+            class="text-center px-[5px] "
+          >
+            <ng-container [ngSwitch]="status">
+              <span *ngSwitchCase="'P'" class="text-blue-600">✔️</span>
+              <span *ngSwitchCase="'A'" class="text-red-500">❌</span>
+              <span *ngSwitchCase="'L'" class="text-gray-400">⭕</span>
+              <span *ngSwitchDefault>–</span>
+            </ng-container>
+          </td>
+
+          <td class="text-right p-[2px] font-semibold text-red-600">
+            {{ calculateLeave(emp.attendance) }} Days
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <!-- <div class="flex justify-end items-center mt-3 gap-1">
+    <button (click)="changePage(currentPage - 1)" class="px-3 py-1 border rounded-md" [disabled]="currentPage === 1">«</button>
+    <button *ngFor="let p of [].constructor(totalPages); let i = index"
+      (click)="changePage(i + 1)"
+      [class.bg-blue-600]="currentPage === i + 1"
+      [class.text-white]="currentPage === i + 1"
+      class="px-3 py-1 border rounded-md hover:bg-blue-100">
+      {{ i + 1 }}
+    </button>
+    <button (click)="changePage(currentPage + 1)" class="px-3 py-1 border rounded-md" [disabled]="currentPage === totalPages">»</button>
+  </div> -->
+</div>
+

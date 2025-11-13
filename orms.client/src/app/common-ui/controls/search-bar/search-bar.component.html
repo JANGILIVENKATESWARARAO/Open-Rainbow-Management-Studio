@@ -6,9 +6,10 @@
       [style.--border-color]="borderColor"
       [class.icon-right]="iconPosition === 'right'"
       >
-      @if (showIcon) {
+      <!-- @if (showIcon) {
         <span class="search-icon" [class.icon-left-margin]="iconPosition === 'left'" [class.icon-right-margin]="iconPosition === 'right'">🔍</span>
-      }
+      } -->
+      <orms-icon [name]="'home'"></orms-icon>
       <input type="text" [placeholder]="placeholderText" />
     </div>
   </div>

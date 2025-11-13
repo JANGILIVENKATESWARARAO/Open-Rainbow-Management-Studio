@@ -7,12 +7,13 @@ import { JobDetailsComponent } from '../job-details/job-details.component';
 import { ContactInfoComponent } from '../contact-info/contact-info.component';
 import { ButtonNavigationComponent } from "../../common-modules/button-navigation/button-navigation.component";
 import { BasicCardComponent } from '../../basic-card/basic-card.component';
+import { IconComponent } from '../../../common-ui/feature-components/icon/icon.component';
 
 @Component({
     selector: 'orms-add-new-employee',
     templateUrl: './add-new-employee.component.html',
     styleUrl: './add-new-employee.component.css',
-    imports: [BasicInfoComponent, ContactInfoComponent, DocumentsUploadComponent, EducationDetailsComponent, InsuranceDetailsComponent, JobDetailsComponent, ButtonNavigationComponent, BasicCardComponent]
+    imports: [BasicInfoComponent, ContactInfoComponent, DocumentsUploadComponent, EducationDetailsComponent, InsuranceDetailsComponent, JobDetailsComponent, ButtonNavigationComponent, BasicCardComponent,IconComponent]
 })
 export class AddNewEmployeeComponent {
 

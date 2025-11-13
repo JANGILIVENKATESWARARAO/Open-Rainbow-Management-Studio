@@ -3,11 +3,13 @@ import { Component } from '@angular/core';
 import { DropDownComponent } from '../../../common-ui/controls/drop-down/drop-down.component';
 import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.component';
 import { CountWidgetComponent } from '../../../common-ui/feature-components/count-widget/count-widget.component';
+import { IconComponent } from '../../../common-ui/feature-components/icon/icon.component';
+
 
 
 @Component({
     selector: 'orms-job-details',
-    imports: [TextBoxComponent, DropDownComponent, CountWidgetComponent],
+    imports: [TextBoxComponent, DropDownComponent, CountWidgetComponent,IconComponent],
     templateUrl: './job-details.component.html',
     styleUrl: './job-details.component.css'
 })
