@@ -4,7 +4,6 @@ import { HorizontalBarChartComponent } from '../../../app/common-ui/charts/horiz
 const meta: Meta<HorizontalBarChartComponent> = {
   title: 'Common-UI/Charts/HorizontalBar Chart',
   component: HorizontalBarChartComponent,
-  // tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
@@ -80,6 +79,37 @@ const meta: Meta<HorizontalBarChartComponent> = {
       description: 'Array of legend shapes (circle, rectRounded, rect)',
       defaultValue: ['rectRounded', 'rectRounded', 'rectRounded']
     },
+    gridDisplay: {
+      control: { 
+        type: 'select',
+        options: ['both', 'horizontal', 'vertical', 'none']
+      },
+      description: 'Which grid lines to display',
+      defaultValue: 'both'
+    },
+    gridLineStyle: {
+      control: { 
+        type: 'select',
+        options: ['solid', 'dashed', 'dotted', 'none']
+      },
+      description: 'Style of grid lines',
+      defaultValue: 'solid'
+    },
+    gridLineColor: {
+      control: { type: 'color' },
+      description: 'Color of grid lines',
+      defaultValue: '#F0F4FA'
+    },
+    gridLineWidth: {
+      control: { type: 'number', min: 1, max: 5, step: 1 },
+      description: 'Width of grid lines in pixels',
+      defaultValue: 1
+    },
+    whiteTheme: {
+      control: { type: 'boolean' },
+      description: 'Enable white theme with hover colors',
+      defaultValue: false
+    },
   },
   args: {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
@@ -99,6 +129,11 @@ const meta: Meta<HorizontalBarChartComponent> = {
     backgroundcolor1: '#FF8800',
     backgroundcolor2: '#13C9E4',
     legendShapes: ['rectRounded', 'rectRounded', 'rectRounded'],
+    gridDisplay: 'both',
+    gridLineStyle: 'solid',
+    gridLineColor: '#F0F4FA',
+    gridLineWidth: 1,
+    whiteTheme: false,
   },
 };
 
@@ -124,55 +159,54 @@ export const HorizontalBarChart: Story = {
           [backgroundcolor1]="backgroundcolor1"
           [backgroundcolor2]="backgroundcolor2"
           [legendShapes]="legendShapes"
+          [gridDisplay]="gridDisplay"
+          [gridLineStyle]="gridLineStyle"
+          [gridLineColor]="gridLineColor"
+          [gridLineWidth]="gridLineWidth"
+          [whiteTheme]="whiteTheme"
         ></orms-horizontal-bar-chart>
       </div>
     `,
   }),
 };
-export const SmallScaleData: Story = {
-  ...HorizontalBarChart,
+
+// NEW STORY: White Theme with Hover Colors
+export const WhiteThemeWithHover: Story = {
   args: {
-    ...HorizontalBarChart.args,
-    data: [
-      [15, 25, 35, 20, 30, 10],
-      [20, 15, 25, 30, 10, 35]
-    ],
-    yAxisTicks: [0, 5, 10, 15, 20, 25, 30, 35, 40],
-    datasetLabels: ['Small Values A', 'Small Values B'],
+    whiteTheme: true,
+    backgroundcolor: '#FFFFFF',
+    backgroundcolor1: '#FFFFFF', 
+    backgroundcolor2: '#FFFFFF',
+    gridLineColor: '#E5E7EB',
+    showData: true,
   },
+  render: (args) => ({
+    props: args,
+    template: `
+      <div style="padding: 20px; height: 500px; background: #1F2937;">
+        <orms-horizontal-bar-chart
+          [labels]="labels"
+          [data]="data"
+          [datasetLabels]="datasetLabels"
+          [yAxisTicks]="yAxisTicks"
+          [horizontal]="horizontal"
+          [showLegend]="showLegend"
+          [singleLine]="singleLine"
+          [showLabels]="showLabels"
+          [showData]="showData"
+          [backgroundcolor]="backgroundcolor"
+          [backgroundcolor1]="backgroundcolor1"
+          [backgroundcolor2]="backgroundcolor2"
+          [legendShapes]="legendShapes"
+          [gridDisplay]="gridDisplay"
+          [gridLineStyle]="gridLineStyle"
+          [gridLineColor]="gridLineColor"
+          [gridLineWidth]="gridLineWidth"
+          [whiteTheme]="whiteTheme"
+        ></orms-horizontal-bar-chart>
+      </div>
+    `,
+  }),
 };
 
-export const LargeScaleData: Story = {
-  ...HorizontalBarChart,
-  args: {
-    ...HorizontalBarChart.args,
-    data: [
-      [5000, 7500, 6000, 9000, 8000],
-      [3000, 4500, 3500, 5500, 5000]
-    ],
-    yAxisTicks: [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],
-    datasetLabels: ['Revenue (K)', 'Profit (K)'],
-  },
-};
-
-export const PercentageScale: Story = {
-  ...HorizontalBarChart,
-  args: {
-    ...HorizontalBarChart.args,
-    labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-    data: [
-      [85, 92, 78, 88],
-      [65, 75, 70, 80]
-    ],
-    yAxisTicks: [0, 20, 40, 60, 80, 100],
-    datasetLabels: ['Success Rate %', 'Completion Rate %'],
-  },
-};
-
-export const CustomStepSize: Story = {
-  ...HorizontalBarChart,
-  args: {
-    ...HorizontalBarChart.args,
-    yAxisTicks: [0, 25, 50, 75, 100, 125, 150],
-  },
-};
+// Additional story variations

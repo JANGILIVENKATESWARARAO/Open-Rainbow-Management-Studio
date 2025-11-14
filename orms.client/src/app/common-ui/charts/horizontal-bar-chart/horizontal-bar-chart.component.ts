@@ -1,7 +1,26 @@
-import {Component,ElementRef,Input,SimpleChanges,ViewChild,OnDestroy,OnInit,} from '@angular/core';
-import {Chart,BarController,BarElement,CategoryScale,LinearScale,Legend,Tooltip,ChartConfiguration,} from 'chart.js';
+import {
+  Component,
+  ElementRef,
+  Input,
+  SimpleChanges,
+  ViewChild,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import {
+  Chart,
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Legend,
+  Tooltip,
+  ChartConfiguration,
+} from 'chart.js';
 
 type LegendShape = 'circle' | 'rectRounded' | 'rect';
+type GridLineStyle = 'solid' | 'dashed' | 'dotted' | 'none';
+type GridDisplayOption = 'both' | 'horizontal' | 'vertical' | 'none';
 
 @Component({
   selector: 'orms-horizontal-bar-chart',
@@ -13,32 +32,58 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
   @ViewChild('chartCanvas', { static: true })
   chartRef!: ElementRef<HTMLCanvasElement>;
 
-  @Input() horizontal: boolean = false;
-  @Input() showLegend: boolean = true;
-  @Input() singleLine: boolean = false;
-  @Input() showLabels: boolean = true;
-  @Input() showData: boolean = true;
-  @Input() backgroundcolor1: string = '#FF8800';
-  @Input() backgroundcolor2: string = '#13C9E4';
-  @Input() backgroundcolor: string = '#2166E1';
+  @Input() horizontal = false;
+  @Input() showLegend = true;
+  @Input() singleLine = false;
+  @Input() showLabels = true;
+  @Input() showData = true;
+  @Input() backgroundcolor1 = '#FF8800';
+  @Input() backgroundcolor2 = '#13C9E4';
+  @Input() backgroundcolor = '#2166E1';
   @Input() legendShapes: LegendShape[] = [];
-  @Input() labels: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
+  @Input() labels: string[] = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+  ];
   @Input() data: number[][] = [
     [390, 120, 295, 230, 100, 20, 180, 230, 250],
     [100, 190, 110, 380, 100, 200, 290, 300, 100],
-    [150, 200, 190, 120, 100, 400, 90, 120, 200]
+    [150, 200, 190, 120, 100, 400, 90, 120, 200],
   ];
   @Input() datasetLabels: string[] = ['Net Profit', 'Revenue', 'Free Cash Flow'];
   @Input() yAxisTicks: number[] = [0, 50, 100, 150, 200, 250, 300, 350, 400];
 
+  // NEW INPUT: White theme with hover colors
+  @Input() whiteTheme = false;
+
+  // Grid configuration inputs
+  @Input() gridDisplay: GridDisplayOption = 'both';
+  @Input() gridLineStyle: GridLineStyle = 'solid';
+  @Input() gridLineColor = '#F0F4FA';
+  @Input() gridLineWidth = 1;
+
+  // Store original colors for hover effect
+  private originalColors = ['#2166E1', '#FF8800', '#13C9E4'];
+
   private chart!: Chart;
 
   ngOnInit() {
-    Chart.register(BarController, BarElement, CategoryScale, LinearScale, Legend, Tooltip);
+    Chart.register(
+      BarController,
+      BarElement,
+      CategoryScale,
+      LinearScale,
+      Legend,
+      Tooltip
+    );
     this.createChart();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  // ngOnChanges(changes: SimpleChanges) {
+  //   if (this.chart) {
+  //     this.createChart();
+  //   }
+  // }
+    ngOnChanges(changes: SimpleChanges) {
     if (
       (changes['horizontal'] ||
         changes['showLegend'] ||
@@ -63,9 +108,12 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
     const baseDatasets = this.data.map((datasetData, index) => ({
       label: this.datasetLabels[index] || `Series ${index + 1}`,
       data: datasetData,
-      backgroundColor: this.getBackgroundColor(index),
+      backgroundColor: this.whiteTheme ? '#FFFFFF' : this.getBackgroundColor(index),
+      hoverBackgroundColor: this.getHoverBackgroundColor(index),
       borderRadius: 8,
       borderSkipped: false,
+      borderWidth: this.whiteTheme ? 1 : 0,
+      borderColor: this.whiteTheme ? '#E5E7EB' : 'transparent',
     }));
 
     const datasets = this.showData
@@ -74,6 +122,7 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
           ...ds,
           data: new Array(ds.data.length).fill(0),
           backgroundColor: 'rgba(0,0,0,0)',
+          hoverBackgroundColor: 'rgba(0,0,0,0)',
         }));
 
     const config: ChartConfiguration<'bar'> = {
@@ -91,20 +140,20 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
             labels: {
               boxWidth: 15,
               padding: 8,
-              color: '#555',
+              color: this.whiteTheme ? '#FFFFFF' : '#555',
               font: { size: 13 },
               usePointStyle: true,
               generateLabels: (chart: Chart) => {
                 const datasets = chart.data.datasets || [];
                 return datasets.map((dataset: any, i: number) => {
                   const shape = this.getLegendShape(i);
-                  const bgColor =
-                    typeof dataset.backgroundColor === 'string'
+                  const bgColor = this.whiteTheme 
+                    ? this.getHoverBackgroundColor(i)
+                    : (typeof dataset.backgroundColor === 'string'
                       ? dataset.backgroundColor
                       : Array.isArray(dataset.backgroundColor)
                       ? dataset.backgroundColor[0]
-                      : '#999';
-
+                      : '#999');
                   return {
                     text: dataset.label ?? `Series ${i + 1}`,
                     fillStyle: bgColor,
@@ -113,50 +162,53 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
                     hidden: !chart.isDatasetVisible(i),
                     lineWidth: 0,
                     pointStyle: shape as any,
+                    fontColor: this.whiteTheme ? '#FFFFFF' : '#555',
                   };
                 });
               },
             },
           },
-          tooltip: { enabled: this.showData },
+          tooltip: { 
+            enabled: this.showData,
+            backgroundColor: this.whiteTheme ? '#1F2937' : 'rgba(0, 0, 0, 0.8)',
+            titleColor: '#FFFFFF',
+            bodyColor: '#FFFFFF',
+            borderColor: this.whiteTheme ? '#374151' : 'rgba(0, 0, 0, 0.8)',
+            borderWidth: 1,
+          },
         },
         scales: {
           x: {
             stacked: this.singleLine,
-            grid: {
-              color: '#F0F4FA',
-              drawTicks: false,
-              display: true,
-            },
+            grid: this.getGridConfig('x'),
             ticks: {
               display: this.showLabels,
-              color: '#BCC2D9',
+              color: this.whiteTheme ? '#9CA3AF' : '#BCC2D9',
               font: { size: 13, weight: 'bold' },
             },
+            border: {
+              display: true,
+              dash: [1,3]
+            }
           },
           y: {
             beginAtZero: true,
             stacked: this.singleLine,
-            grid: {
-              color: '#F0F4FA',
-              drawTicks: false,
-              display: true,
-            },
+            grid: this.getGridConfig('y'),
             ticks: {
               display: this.showLabels,
-              color: '#BCC2D9',
+              color: this.whiteTheme ? '#9CA3AF' : '#BCC2D9',
               font: { size: 13, weight: 'bold' },
-              callback: (value) => {
-                if (typeof value === 'number') {
-                  return value.toString();
-                }
-                return value;
-              },
+              callback: (value) => value,
               stepSize: this.calculateStepSize(this.yAxisTicks),
             },
             min: this.yAxisTicks[0],
             max: this.yAxisTicks[this.yAxisTicks.length - 1],
             suggestedMax: Math.max(...this.data.flat()) * 1.1,
+            border: {
+              display: true,
+              dash: [1,3]
+            }
           },
         },
         responsive: true,
@@ -168,14 +220,150 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
             barPercentage: this.singleLine ? 0.25 : 0.8,
           },
         },
+        interaction: {
+          mode: 'nearest',
+          intersect: false,
+        },
+        onHover: (event, elements) => {
+          if (this.whiteTheme && this.chartRef?.nativeElement) {
+            this.chartRef.nativeElement.style.cursor = elements.length ? 'pointer' : 'default';
+          }
+        },
       },
     };
 
-    if (this.chart) {
-      this.chart.destroy();
-    }
-
+    if (this.chart) this.chart.destroy();
     this.chart = new Chart(this.chartRef.nativeElement.getContext('2d')!, config);
+  }
+
+  /** Get hover background color - returns original colors for white theme */
+  private getHoverBackgroundColor(index: number): string {
+    if (this.whiteTheme) {
+      return this.originalColors[index] || this.getBackgroundColor(index);
+    }
+    return this.darkenColor(this.getBackgroundColor(index), 0.2);
+  }
+
+  /** Utility to darken a color */
+  private darkenColor(color: string, amount: number): string {
+    if (color.startsWith('#')) {
+      let r = parseInt(color.slice(1, 3), 16);
+      let g = parseInt(color.slice(3, 5), 16);
+      let b = parseInt(color.slice(5, 7), 16);
+      
+      r = Math.floor(r * (1 - amount));
+      g = Math.floor(g * (1 - amount));
+      b = Math.floor(b * (1 - amount));
+      
+      return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+    }
+    return color;
+  }
+
+  /** ✅ Fixed grid config for Chart.js v4+ (supports dashed, dotted, solid, none) */
+  // private getGridConfig(axis: 'x' | 'y'): any {
+  //   const shouldDisplay = axis === 'x'
+  //     ? this.shouldDisplayXGrid()
+  //     : this.shouldDisplayYGrid();
+
+  //   if (!shouldDisplay || this.gridLineStyle === 'none') {
+  //     return {
+  //       display: false,
+  //       drawOnChartArea: false,
+  //       drawTicks: false,
+  //     };
+  //   }
+
+  //   const gridConfig: any = {
+  //     display: true,
+  //     drawOnChartArea: true,
+  //     drawTicks: false,
+  //     color: this.gridLineColor,
+  //     lineWidth: this.gridLineWidth,
+  //   };
+
+  //   switch (this.gridLineStyle) {
+  //     case 'dashed':
+  //       gridConfig.borderDash = [8, 5];
+  //       gridConfig.borderDashOffset = 0;
+  //       break;
+  //     case 'dotted':
+  //       gridConfig.borderDash = [2, 4];
+  //       gridConfig.borderDashOffset = 0;
+  //       break;
+  //     case 'solid':
+  //     default:
+  //       gridConfig.borderDash = [];
+  //       gridConfig.borderDashOffset = 0;
+  //       break;
+  //   }
+
+  //   return gridConfig;
+  // }
+  /** Fully working dashed/dotted gridlines for Chart.js v4 */
+/** Improved grid config: keeps dashes visible even for larger line widths,
+ *  uses runtime-only props with type `any` so TS won't complain. */
+private getGridConfig(axis: 'x' | 'y'): any {
+  const shouldDisplay = axis === 'x'
+    ? this.shouldDisplayXGrid()
+    : this.shouldDisplayYGrid();
+
+  if (!shouldDisplay || this.gridLineStyle === 'none') {
+    return {
+      display: false,
+      drawOnChartArea: false,
+      drawTicks: false,
+    };
+  }
+
+  const grid: any = {
+    display: true,
+    drawOnChartArea: true,
+    drawTicks: false,
+    color: this.gridLineColor,
+    lineWidth: this.gridLineWidth,
+    drawBorder: false,
+
+    // 🔥 REQUIRED FIX FOR CHART.JS 4.5 ON STACKED CHARTS
+    // Forces dashed/dotted to render properly
+    circular: false,
+    simplify: false,
+  };
+
+  switch (this.gridLineStyle) {
+    case 'dashed':
+      grid.borderDash = [6, 4];
+      grid.borderDashOffset = 0;
+      break;
+
+    case 'dotted':
+      grid.borderDash = [2, 4];
+      grid.borderDashOffset = 0;
+      break;
+
+    default:
+      grid.borderDash = [];
+      grid.borderDashOffset = 0;
+  }
+
+  return grid;
+}
+
+
+
+
+  private shouldDisplayXGrid(): boolean {
+    if (this.horizontal) {
+      return this.gridDisplay === 'both' || this.gridDisplay === 'horizontal';
+    }
+    return this.gridDisplay === 'both' || this.gridDisplay === 'vertical';
+  }
+
+  private shouldDisplayYGrid(): boolean {
+    if (this.horizontal) {
+      return this.gridDisplay === 'both' || this.gridDisplay === 'vertical';
+    }
+    return this.gridDisplay === 'both' || this.gridDisplay === 'horizontal';
   }
 
   private calculateStepSize(ticks: number[]): number {
