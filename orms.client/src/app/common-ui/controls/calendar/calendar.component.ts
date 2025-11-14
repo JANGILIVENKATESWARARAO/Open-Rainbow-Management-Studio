@@ -16,20 +16,25 @@ export class CalendarComponent implements OnInit {
   @Input() defaultDate: Date | null = null;
   @Output() dateSelected = new EventEmitter<Date | null>();
   @Output() calendarClosed = new EventEmitter<void>();
- @Input() isSave: boolean = false;
-  clickedInside = false;
+  @Input() isSave: boolean = false;
+
+  showMonthDropdown: boolean = false;
+  showYearDropdown: boolean = false;
+  clickedInside: boolean = false;
+
   @HostListener('document:click')
   handleOutsideClick() {
-  if (this.clickedInside) {
-    this.clickedInside = false;
-    return;
-  }
+    this.showMonthDropdown = false;
+    if (this.clickedInside) {
+      this.clickedInside = false;
+      return;
+    }
 
-  this.showCalendar = false;
-  this.showMonthDropdown = false;
-  this.showYearDropdown = false;
-  this.calendarClosed.emit();
-}
+    this.showCalendar = false;
+    this.showMonthDropdown = false;
+    this.showYearDropdown = false;
+    this.calendarClosed.emit();
+  }
 
   showCalendar = false;
   currentDate = new Date();
@@ -61,26 +66,26 @@ export class CalendarComponent implements OnInit {
     if (!this.defaultDate) return '';
     return this.defaultDate
       .toLocaleDateString('en-GB')
-      .replace(/\//g, '-'); 
+      .replace(/\//g, '-');
   }
 
-openDatePicker(event: Event) {
-  event.preventDefault();
-  this.clickedInside = true;
+  openDatePicker(event: Event) {
+    event.preventDefault();
+    this.clickedInside = true;
 
-  this.showCalendar = !this.showCalendar;
+    this.showCalendar = !this.showCalendar;
 
-  if (!this.showCalendar) {
-    this.showMonthDropdown = false;
-    this.showYearDropdown = false;
-    this.calendarClosed.emit();
+    if (!this.showCalendar) {
+      this.showMonthDropdown = false;
+      this.showYearDropdown = false;
+      this.calendarClosed.emit();
+    }
   }
-}
 
-startingYear:number = 1950;
-endingYear: number = 2050;
+  startingYear: number = 1950;
+  endingYear: number = 2050;
   generateYears() {
- 
+
     this.years = [];
     for (let i = this.startingYear; i <= this.endingYear; i++) {
       this.years.push(i);
@@ -149,20 +154,19 @@ endingYear: number = 2050;
   }
 
   onMonthChange() {
-  this.currentMonth = Number(this.currentMonth);
-  this.defaultDate = new Date(this.currentYear, this.currentMonth, 1); // default to 1st of month
-  this.generateCalendar();
-  this.dateSelected.emit(this.defaultDate);
-}
+    this.currentMonth = Number(this.currentMonth);
+    this.defaultDate = new Date(this.currentYear, this.currentMonth, 1); // default to 1st of month
+    this.generateCalendar();
+    this.dateSelected.emit(this.defaultDate);
+  }
 
-onYearChange() {
-  this.currentYear = Number(this.currentYear);
-  this.defaultDate = new Date(this.currentYear, this.currentMonth, 1);
-  this.generateCalendar();
-  this.dateSelected.emit(this.defaultDate);
-}
- selectDate(day: any) {
-    debugger;
+  onYearChange() {
+    this.currentYear = Number(this.currentYear);
+    this.defaultDate = new Date(this.currentYear, this.currentMonth, 1);
+    this.generateCalendar();
+    this.dateSelected.emit(this.defaultDate);
+  }
+  selectDate(day: any) {
     this.defaultDate = new Date(day.date);
     this.currentMonth = this.defaultDate.getMonth();
     this.currentYear = this.defaultDate.getFullYear();
@@ -190,68 +194,73 @@ onYearChange() {
     this.showCalendar = false;
     this.calendarClosed.emit();
   }
-
-showMonthDropdown = false;
-showYearDropdown = false;
-
-toggleMonthDropdown() {
-  this.showMonthDropdown = !this.showMonthDropdown;
-  this.showYearDropdown = false;
-
-  if (this.showMonthDropdown) {
-    setTimeout(() => {
-      const dropdowns = Array.from(document.querySelectorAll('.dropdown'));
-      const monthDropdown = dropdowns[0] as HTMLElement | undefined;
-      if (!monthDropdown) return;
-      const list = monthDropdown.querySelector('.dropdown-list') as HTMLElement | null;
-      if (!list) return;
-      const selected = list.querySelector('li.selected') as HTMLElement | null;
-      if (!selected) return;
-
-      list.scrollTop = selected.offsetTop;
-    }, 0);
-  }
-}
-
-toggleYearDropdown() {
-  this.showYearDropdown = !this.showYearDropdown;
+closeMonthDropdown(){
   this.showMonthDropdown = false;
-
-  if (this.showYearDropdown) {
-    setTimeout(() => {
-      const dropdowns = Array.from(document.querySelectorAll('.dropdown'));
-      const yearDropdown = dropdowns[1] as HTMLElement | undefined;
-      if (!yearDropdown) return;
-      const list = yearDropdown.querySelector('.dropdown-list') as HTMLElement | null;
-      if (!list) return;
-      const selected = list.querySelector('li.selected') as HTMLElement | null;
-      if (!selected) return;
-      list.scrollTop = selected.offsetTop;
-    }, 0);
-  }
 }
 
-
-selectMonth(index: number) {
-  this.currentMonth = index;
-  this.showMonthDropdown = false;
-  this.onMonthChange();
-}
-
-selectYear(year: number) {
-  this.currentYear = year;
+closeYearDropdown(){
   this.showYearDropdown = false;
-  this.onYearChange();
 }
 
-scrollSelectedIntoView(selector: string) {
-  setTimeout(() => {
-    const selectedElement = document.querySelector(selector);
-    if (selectedElement) {
-      selectedElement.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+
+  toggleMonthDropdown() {
+    this.showMonthDropdown = !this.showMonthDropdown;
+    this.showYearDropdown = false;
+
+    if (this.showMonthDropdown) {
+      setTimeout(() => {
+        const dropdowns = Array.from(document.querySelectorAll('.dropdown'));
+        const monthDropdown = dropdowns[0] as HTMLElement | undefined;
+        if (!monthDropdown) return;
+        const list = monthDropdown.querySelector('.dropdown-list') as HTMLElement | null;
+        if (!list) return;
+        const selected = list.querySelector('li.selected') as HTMLElement | null;
+        if (!selected) return;
+
+        list.scrollTop = selected.offsetTop;
+      }, 0);
     }
-  }, 0);
-}
+  }
+
+  toggleYearDropdown() {
+    this.showYearDropdown = !this.showYearDropdown;
+    this.showMonthDropdown = false;
+
+    if (this.showYearDropdown) {
+      setTimeout(() => {
+        const dropdowns = Array.from(document.querySelectorAll('.dropdown'));
+        const yearDropdown = dropdowns[1] as HTMLElement | undefined;
+        if (!yearDropdown) return;
+        const list = yearDropdown.querySelector('.dropdown-list') as HTMLElement | null;
+        if (!list) return;
+        const selected = list.querySelector('li.selected') as HTMLElement | null;
+        if (!selected) return;
+        list.scrollTop = selected.offsetTop;
+      }, 0);
+    }
+  }
+
+
+  selectMonth(index: number) {
+    this.currentMonth = index;
+    this.showMonthDropdown = false;
+    this.onMonthChange();
+  }
+
+  selectYear(year: number) {
+    this.currentYear = year;
+    this.showYearDropdown = false;
+    this.onYearChange();
+  }
+
+  scrollSelectedIntoView(selector: string) {
+    setTimeout(() => {
+      const selectedElement = document.querySelector(selector);
+      if (selectedElement) {
+        selectedElement.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    }, 0);
+  }
 
 
 }

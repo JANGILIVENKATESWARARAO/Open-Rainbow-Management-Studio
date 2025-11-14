@@ -10,6 +10,8 @@
     'border': '1px solid',
     'border-color': isSave ? 'green' : null
   }">
+      <orms-icon [name]="'home'" class="calendar-icon1" width="20" height="20" viewBox="0 0 24 24"></orms-icon>
+ 
     <input type="text" class="dob-input" [value]="formattedDate" (click)="openDatePicker($event)"
       placeholder="dd-mm-yyyy" readonly required />
 
@@ -27,7 +29,7 @@
 
     @if (showCalendar) {
     <div class="calendar-overlay" (click)="closeCalendar()">
-      <div class="calendar-container" (click)="$event.stopPropagation()">
+      <div class="calendar-container" (click)="$event.stopPropagation()" (click)="closeMonthDropdown()" (click)="closeYearDropdown()">
         <div class="calendar-header">
           <div class="month-year-selectors">
             <!-- Month Dropdown -->
