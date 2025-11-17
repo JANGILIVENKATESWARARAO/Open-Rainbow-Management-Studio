@@ -21,36 +21,32 @@
   <label class="label-name">
     {{ label }}
     @if (isRequired) {
-      <span class="required">*</span>
+    <span class="required">*</span>
     }
   </label>
 
-  <div class="custom-dropdown "     [ngStyle]="{
+  <!-- <div class="custom-dropdown "     [ngStyle]="{
     'border': '1px solid',
+    'border-color': isSave ? 'green' : null
+  }"> -->
+  <div class="custom-dropdown" [ngStyle]="{
     'border-color': isSave ? 'green' : null
   }">
     <input type="checkbox" [id]="label + '_toggle'" class="dropdown-toggle" hidden>
-    <label
-      [for]="label + '_toggle'"
-      class="custom-dropdown-selected"
-      [class.placeholder]="!selectedValue"
-      >
+    <label [for]="label + '_toggle'" class="custom-dropdown-selected" [class.placeholder]="!selectedValue">
       {{ selectedValue || placeHolder }}
     </label>
 
     <ul class="custom-dropdown-list">
       @for (option of options; track option) {
-        <li
-          (click)="selectOption(option)"
-          [class.selected]="selectedValue === option.value"
-          >
-          <label [for]="label + '_toggle'">{{ option.name }}</label>
-        </li>
+      <li (click)="selectOption(option)" [class.selected]="selectedValue === option.value">
+        <label [for]="label + '_toggle'">{{ option.name }}</label>
+      </li>
       }
 
       <!-- 👇 bottom-centered draggable HR -->
       @if (draggable) {
-        <hr class="resize-hr" />
+      <hr class="resize-hr" />
       }
     </ul>
   </div>
