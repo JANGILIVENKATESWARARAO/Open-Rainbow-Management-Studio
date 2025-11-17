@@ -1,22 +1,5 @@
-import {
-  Component,
-  ElementRef,
-  Input,
-  SimpleChanges,
-  ViewChild,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import {
-  Chart,
-  BarController,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Legend,
-  Tooltip,
-  ChartConfiguration,
-} from 'chart.js';
+import { Component, ElementRef, Input, SimpleChanges, ViewChild, OnDestroy, OnInit,} from '@angular/core';
+import { Chart, BarController, BarElement, CategoryScale, LinearScale, Legend, Tooltip, ChartConfiguration, } from 'chart.js';
 
 type LegendShape = 'circle' | 'rectRounded' | 'rect';
 type GridLineStyle = 'solid' | 'dashed' | 'dotted' | 'none';
@@ -31,7 +14,6 @@ type GridDisplayOption = 'both' | 'horizontal' | 'vertical' | 'none';
 export class HorizontalBarChartComponent implements OnInit, OnDestroy {
   @ViewChild('chartCanvas', { static: true })
   chartRef!: ElementRef<HTMLCanvasElement>;
-
   @Input() horizontal = false;
   @Input() showLegend = true;
   @Input() singleLine = false;
@@ -41,9 +23,7 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
   @Input() backgroundcolor2 = '#13C9E4';
   @Input() backgroundcolor = '#2166E1';
   @Input() legendShapes: LegendShape[] = [];
-  @Input() labels: string[] = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-  ];
+  @Input() labels: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',];
   @Input() data: number[][] = [
     [390, 120, 295, 230, 100, 20, 180, 230, 250],
     [100, 190, 110, 380, 100, 200, 290, 300, 100],
@@ -51,80 +31,54 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
   ];
   @Input() datasetLabels: string[] = ['Net Profit', 'Revenue', 'Free Cash Flow'];
   @Input() yAxisTicks: number[] = [0, 50, 100, 150, 200, 250, 300, 350, 400];
-
-  // NEW INPUT: White theme with hover colors
   @Input() whiteTheme = false;
-
-  // Grid configuration inputs
   @Input() gridDisplay: GridDisplayOption = 'both';
-  @Input() gridLineStyle: GridLineStyle = 'solid';
-  @Input() gridLineColor = '#F0F4FA';
+  @Input() gridLineStyle: GridLineStyle = 'dashed';
+  @Input() gridLineColor = '#030303ff';
   @Input() gridLineWidth = 1;
 
-  // Store original colors for hover effect
   private originalColors = ['#2166E1', '#FF8800', '#13C9E4'];
-
   private chart!: Chart;
 
   ngOnInit() {
-    Chart.register(
-      BarController,
-      BarElement,
-      CategoryScale,
-      LinearScale,
-      Legend,
-      Tooltip
-    );
+    Chart.register(BarController, BarElement, CategoryScale, LinearScale, Legend, Tooltip);
     this.createChart();
   }
 
-  // ngOnChanges(changes: SimpleChanges) {
-  //   if (this.chart) {
-  //     this.createChart();
-  //   }
-  // }
-    ngOnChanges(changes: SimpleChanges) {
-    if (
-      (changes['horizontal'] ||
-        changes['showLegend'] ||
-        changes['singleLine'] ||
-        changes['showLabels'] ||
-        changes['showData'] ||
-        changes['backgroundcolor'] ||
-        changes['backgroundcolor1'] ||
-        changes['backgroundcolor2'] ||
-        changes['legendShapes'] ||
-        changes['labels'] ||
-        changes['data'] ||
-        changes['datasetLabels'] ||
-        changes['yAxisTicks']) &&
-      this.chart
-    ) {
+  ngOnChanges(changes: SimpleChanges) {
+    if ((changes['horizontal'] || changes['showLegend'] || changes['singleLine'] ||
+      changes['showLabels'] || changes['showData'] || changes['gridLineColor'] ||
+      changes['backgroundcolor'] || changes['backgroundcolor1'] || changes['backgroundcolor2'] ||
+      changes['legendShapes'] || changes['gridLineWidth'] || changes['labels'] ||
+      changes['data'] || changes['datasetLabels'] || changes['gridLineStyle'] ||
+      changes['yAxisTicks'] || changes['gridDisplay'] || changes['whiteTheme']) && this.chart) {
       this.createChart();
     }
   }
 
   createChart() {
+    // const dashArray = this.gridLineStyle === 'dashed' ? [1, 8] : this.gridLineStyle === 'dotted' ? [1, 3] : [];
+    const dashArray = this.gridLineStyle === 'dashed' ? [6, 4] : this.gridLineStyle === 'dotted' ? [1, 3] : [];
     const baseDatasets = this.data.map((datasetData, index) => ({
       label: this.datasetLabels[index] || `Series ${index + 1}`,
       data: datasetData,
       backgroundColor: this.whiteTheme ? '#FFFFFF' : this.getBackgroundColor(index),
       hoverBackgroundColor: this.getHoverBackgroundColor(index),
-      borderRadius: 8,
+      borderRadius: { topLeft: 8, topRight: 8, bottomLeft: 8, bottomRight: 8 },
       borderSkipped: false,
-      borderWidth: this.whiteTheme ? 1 : 0,
-      borderColor: this.whiteTheme ? '#E5E7EB' : 'transparent',
+      borderWidth: 1,
+      borderColor: 'transparent',
+      // borderWidth: this.whiteTheme ? 1 : 1,
+      // borderColor: this.whiteTheme ? 'transparent' : 'transparent',
     }));
-
     const datasets = this.showData
       ? baseDatasets
       : baseDatasets.map((ds) => ({
-          ...ds,
-          data: new Array(ds.data.length).fill(0),
-          backgroundColor: 'rgba(0,0,0,0)',
-          hoverBackgroundColor: 'rgba(0,0,0,0)',
-        }));
-
+        ...ds,
+        data: new Array(ds.data.length).fill(0),
+        backgroundColor: 'rgba(0,0,0,0)',
+        hoverBackgroundColor: 'rgba(0,0,0,0)',
+      }));
     const config: ChartConfiguration<'bar'> = {
       type: 'bar',
       data: {
@@ -147,13 +101,13 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
                 const datasets = chart.data.datasets || [];
                 return datasets.map((dataset: any, i: number) => {
                   const shape = this.getLegendShape(i);
-                  const bgColor = this.whiteTheme 
+                  const bgColor = this.whiteTheme
                     ? this.getHoverBackgroundColor(i)
                     : (typeof dataset.backgroundColor === 'string'
                       ? dataset.backgroundColor
                       : Array.isArray(dataset.backgroundColor)
-                      ? dataset.backgroundColor[0]
-                      : '#999');
+                        ? dataset.backgroundColor[0]
+                        : '#999');
                   return {
                     text: dataset.label ?? `Series ${i + 1}`,
                     fillStyle: bgColor,
@@ -168,7 +122,7 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
               },
             },
           },
-          tooltip: { 
+          tooltip: {
             enabled: this.showData,
             backgroundColor: this.whiteTheme ? '#1F2937' : 'rgba(0, 0, 0, 0.8)',
             titleColor: '#FFFFFF',
@@ -181,14 +135,19 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
           x: {
             stacked: this.singleLine,
             grid: this.getGridConfig('x'),
+
             ticks: {
               display: this.showLabels,
               color: this.whiteTheme ? '#9CA3AF' : '#BCC2D9',
-              font: { size: 13, weight: 'bold' },
+              font: {
+                size: 13,
+                weight: 'bold'
+              },
             },
             border: {
               display: true,
-              dash: [1,3]
+              dash: dashArray,
+              dashOffset: 0
             }
           },
           y: {
@@ -205,9 +164,9 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
             min: this.yAxisTicks[0],
             max: this.yAxisTicks[this.yAxisTicks.length - 1],
             suggestedMax: Math.max(...this.data.flat()) * 1.1,
-            border: {
-              display: true,
-              dash: [1,3]
+            border: { display: true,
+              dash: dashArray, 
+              dashOffset: 0 
             }
           },
         },
@@ -231,12 +190,10 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
         },
       },
     };
-
     if (this.chart) this.chart.destroy();
     this.chart = new Chart(this.chartRef.nativeElement.getContext('2d')!, config);
   }
 
-  /** Get hover background color - returns original colors for white theme */
   private getHoverBackgroundColor(index: number): string {
     if (this.whiteTheme) {
       return this.originalColors[index] || this.getBackgroundColor(index);
@@ -244,113 +201,50 @@ export class HorizontalBarChartComponent implements OnInit, OnDestroy {
     return this.darkenColor(this.getBackgroundColor(index), 0.2);
   }
 
-  /** Utility to darken a color */
   private darkenColor(color: string, amount: number): string {
     if (color.startsWith('#')) {
       let r = parseInt(color.slice(1, 3), 16);
       let g = parseInt(color.slice(3, 5), 16);
       let b = parseInt(color.slice(5, 7), 16);
-      
       r = Math.floor(r * (1 - amount));
       g = Math.floor(g * (1 - amount));
       b = Math.floor(b * (1 - amount));
-      
       return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
     }
     return color;
   }
 
-  /** ✅ Fixed grid config for Chart.js v4+ (supports dashed, dotted, solid, none) */
-  // private getGridConfig(axis: 'x' | 'y'): any {
-  //   const shouldDisplay = axis === 'x'
-  //     ? this.shouldDisplayXGrid()
-  //     : this.shouldDisplayYGrid();
+  private getGridConfig(axis: 'x' | 'y'): any {
+    const shouldDisplay = axis === 'x'
+      ? this.shouldDisplayXGrid()
+      : this.shouldDisplayYGrid();
 
-  //   if (!shouldDisplay || this.gridLineStyle === 'none') {
-  //     return {
-  //       display: false,
-  //       drawOnChartArea: false,
-  //       drawTicks: false,
-  //     };
-  //   }
+    if (!shouldDisplay || this.gridLineStyle === 'none') {
+      return {
+        display: true,
+        drawOnChartArea: false,
+        drawTicks: false
+      };
+    }
 
-  //   const gridConfig: any = {
-  //     display: true,
-  //     drawOnChartArea: true,
-  //     drawTicks: false,
-  //     color: this.gridLineColor,
-  //     lineWidth: this.gridLineWidth,
-  //   };
+    const dashMap: Record<GridLineStyle, number[]> = {
+      solid: [],
+      dashed: [6, 4],
+      dotted: [2, 6],
+      none: []
+    };
 
-  //   switch (this.gridLineStyle) {
-  //     case 'dashed':
-  //       gridConfig.borderDash = [8, 5];
-  //       gridConfig.borderDashOffset = 0;
-  //       break;
-  //     case 'dotted':
-  //       gridConfig.borderDash = [2, 4];
-  //       gridConfig.borderDashOffset = 0;
-  //       break;
-  //     case 'solid':
-  //     default:
-  //       gridConfig.borderDash = [];
-  //       gridConfig.borderDashOffset = 0;
-  //       break;
-  //   }
-
-  //   return gridConfig;
-  // }
-  /** Fully working dashed/dotted gridlines for Chart.js v4 */
-/** Improved grid config: keeps dashes visible even for larger line widths,
- *  uses runtime-only props with type `any` so TS won't complain. */
-private getGridConfig(axis: 'x' | 'y'): any {
-  const shouldDisplay = axis === 'x'
-    ? this.shouldDisplayXGrid()
-    : this.shouldDisplayYGrid();
-
-  if (!shouldDisplay || this.gridLineStyle === 'none') {
     return {
-      display: false,
-      drawOnChartArea: false,
+      display: true,
+      drawOnChartArea: true,
       drawTicks: false,
+      color: this.gridLineColor,
+      lineWidth: this.gridLineWidth,
+      drawBorder: false,
+      borderDash: dashMap[this.gridLineStyle],
+      borderDashOffset: 0,
     };
   }
-
-  const grid: any = {
-    display: true,
-    drawOnChartArea: true,
-    drawTicks: false,
-    color: this.gridLineColor,
-    lineWidth: this.gridLineWidth,
-    drawBorder: false,
-
-    // 🔥 REQUIRED FIX FOR CHART.JS 4.5 ON STACKED CHARTS
-    // Forces dashed/dotted to render properly
-    circular: false,
-    simplify: false,
-  };
-
-  switch (this.gridLineStyle) {
-    case 'dashed':
-      grid.borderDash = [6, 4];
-      grid.borderDashOffset = 0;
-      break;
-
-    case 'dotted':
-      grid.borderDash = [2, 4];
-      grid.borderDashOffset = 0;
-      break;
-
-    default:
-      grid.borderDash = [];
-      grid.borderDashOffset = 0;
-  }
-
-  return grid;
-}
-
-
-
 
   private shouldDisplayXGrid(): boolean {
     if (this.horizontal) {
