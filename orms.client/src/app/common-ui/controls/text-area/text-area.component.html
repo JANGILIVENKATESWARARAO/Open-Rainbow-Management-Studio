@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label for="address">
+  <label>
     {{ label }}
     @if (isRequired) {
       <span class="required-star">*</span>
@@ -7,27 +7,29 @@
   </label>
 
   <textarea
-    id="address"
-    name="address"
-    [(ngModel)]="inputText"
+    [(ngModel)]="textValue"
     (input)="updateCharCount()"
+    (blur)="onTouched()"
     [placeholder]="Placeholder"
     [attr.maxlength]="maxChars"
     [ngStyle]="{
-    'border': showBorder || isSave ? '1px solid' : 'none',
-    'border-color': isSave ? 'green' : (showBorder ? '#cbd5e1' : 'transparent')
-  }"
+      'border': showBorder ? '1px solid' : 'none',
+      'border-color': showError
+        ? '#dc2626'
+        : isSave
+          ? 'green'
+          : showBorder
+            ? '#cbd5e1'
+            : 'transparent',
+      'background-color': showError ? '#fffafa' : '#fafafa'
+    }"
   ></textarea>
 
   @if (showCharCount) {
-    <p
-    [ngStyle]="{
-      color: isRequired ? '#dc2626' : '#000000',
-      
-    }"
-      class="text-[11px] font-medium text-xs mt-1 text-left"
-      >
-      {{ currentCharCount }} of {{ maxChars }} characters left
-    </p>
+    <p class="char-count">{{ remainingChars }} characters left</p>
+  }
+
+  @if (showError) {
+    <p class="error-text">This field is required</p>
   }
 </div>

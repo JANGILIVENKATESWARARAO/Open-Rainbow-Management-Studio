@@ -1,17 +1,15 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 label {
   margin-bottom: 6px;
   font-size: 14px;
   font-weight: 500;
-  color:  #1E293B !important;
-  margin-right: 14rem;
+  color: #1e293b !important;
 }
 
 textarea {
@@ -19,11 +17,17 @@ textarea {
   border-radius: 6px;
   font-size: 14px;
   transition: all 0.25s ease;
-  background-color: #fafafa;
   resize: none;
   width: 100%;
-  height: 100%;
-  font-size: 12px;
+  min-height: 80px;
+  background-color: #fafafa;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  background-color: #fff;
 }
 
 .required-star {
@@ -31,9 +35,14 @@ textarea {
   font-weight: 600;
 }
 
-textarea:focus {
-  outline: none;
-  border-color: #2563eb !important;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
-  background-color: #fff;
+.char-count {
+  font-size: 11px;
+  margin-top: 4px;
+  color: #475569;
+}
+
+.error-text {
+  font-size: 12px;
+  color: #dc2626;
+  margin-top: 4px;
 }

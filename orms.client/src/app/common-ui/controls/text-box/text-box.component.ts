@@ -1,90 +1,91 @@
-// import { Component, Input } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { FormsModule } from '@angular/forms';
-// @Component({
-//   selector: 'orms-text-box',
-//   standalone: true,
-//   templateUrl: './text-box.component.html',
-//   styleUrl: './text-box.component.css',
-//   imports: [CommonModule, FormsModule]
-// })
-// export class TextBoxComponent {
-//   @Input() label: string = 'Full Name';
-//   @Input() placeHolder: string = 'Enter full name';
-//   @Input() isRequired: boolean = true;
-//   @Input() showBorder: boolean = true;
-//   @Input() maxChars: number = 5;
-//   @Input() showCharCount: boolean = true;
-//   inputText: string = '';
-//   currentCharCount: number = this.maxChars;
-
-//   updateCharCount() {
-//     if (!this.inputText) {
-//       this.currentCharCount = this.maxChars;
-//       return;
-//     }
-//     this.currentCharCount = this.inputText.length;
-//     if (this.currentCharCount > this.maxChars) {
-//       this.inputText = this.inputText.slice(0, this.maxChars);
-//       this.currentCharCount = this.maxChars;
-//     }
-//   }
-// }
-
-
-
-import { Component, Input, Output,OnInit,EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  forwardRef,
+  OnInit,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+  ControlValueAccessor
+} from '@angular/forms';
 
 @Component({
-    selector: 'orms-text-box',
-    templateUrl: './text-box.component.html',
-    styleUrls: ['./text-box.component.css'],
-    imports: [CommonModule, FormsModule]
+  selector: 'orms-text-box',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './text-box.component.html',
+  styleUrls: ['./text-box.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TextBoxComponent),
+      multi: true
+    }
+  ]
 })
-export class TextBoxComponent implements OnInit, OnChanges {
+export class TextBoxComponent implements ControlValueAccessor, OnInit, OnChanges {
   @Input() label: string = 'Full Name';
   @Input() placeHolder: string = 'Enter full name';
-  @Input() isRequired: boolean = true;
+  @Input() isRequired: boolean = false;
+  @Input() isSave: boolean = false; // ✅ Added for consistency with TextArea
   @Input() showBorder: boolean = true;
-  @Input() maxChars: number = 20; // ✅ Change this value — it will reflect automatically
-  @Input() showCharCount: boolean = true;
-   @Input() isSave: boolean = false;
- @Output() valueChange = new EventEmitter<string>();
- @Input() value: string = '';
- 
-  inputText: string = '';
- 
-  currentCharCount: number = 0;
+  @Input() maxChars: number = 50;
+  @Input() showCharCount: boolean = false;
 
-  // Initialize with correct value
+  value: string = '';
+  currentCharCount: number = 0;
+  disabled = false;
+
+  // ControlValueAccessor callbacks
+  onChange = (_: any) => {};
+  onTouched = () => {};
+
   ngOnInit() {
-    this.resetCharCount();
-  }
- onInputChange(newValue: string) {
-    this.value = newValue;
-    this.valueChange.emit(this.value);
     this.updateCharCount();
   }
-  // Triggered whenever @Input() maxChars changes
+
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['maxChars']) {
-      this.resetCharCount();
-    }
+    if (changes['maxChars']) this.updateCharCount();
   }
 
-  // Called every time user types
+  onInputChange(newValue: string) {
+    if (this.maxChars && newValue.length > this.maxChars) {
+      newValue = newValue.slice(0, this.maxChars);
+    }
+    this.value = newValue;
+    this.updateCharCount();
+    this.onChange(this.value);
+    this.onTouched();
+  }
+
   updateCharCount() {
-    if (this.inputText.length > this.maxChars) {
-      this.inputText = this.inputText.slice(0, this.maxChars);
-    }
-    this.currentCharCount = this.maxChars - this.inputText.length;
+    this.currentCharCount = this.maxChars - (this.value?.length || 0);
   }
 
-  // Helper to reset count correctly when maxChars changes
-  private resetCharCount() {
-    this.inputText = ''; // reset text
-    this.currentCharCount = this.maxChars; // reset count to new max
+  // ✅ Angular form control interface
+  writeValue(value: string): void {
+    this.value = value || '';
+    this.updateCharCount();
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  // ✅ showError logic (for red border)
+  get showError(): boolean {
+    return this.isRequired && this.isSave && !this.value;
   }
 }

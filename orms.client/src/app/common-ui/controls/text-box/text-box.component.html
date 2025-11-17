@@ -1,48 +1,39 @@
-
 <div class="text-left">
-  <!-- Label -->
-  <label class="block font-semibold !text-slate-800 mb-1.5 text-[14px]">
+  <label class="block font-semibold text-slate-800 mb-1.5 text-[14px]">
     {{ label }}
     @if (isRequired) {
       <span class="text-rose-600">*</span>
     }
   </label>
 
-  <!-- Input Field -->
   <input
     type="text"
-    id="fullname"
-    name="fullname"
-    [value]="value"
-    [ngModel]="value"
-    (ngModelChange)="onInputChange($event)"
-    (input)="updateCharCount()"
-
+    class="h-[36px] w-full px-3 py-2 text-[12px] text-gray-800 rounded-md bg-white
+           border outline-none transition
+           focus:border-blue-600 focus:ring-4 focus:ring-[rgba(37,99,235,0.5)]"
     [placeholder]="placeHolder"
-    [attr.maxlength]="maxChars"
-    [ngClass]="{
-      'border border-slate-300': showBorder,
-      'border-transparent': !showBorder
-    }"
-      [ngStyle]="{
-    'border': '1px solid',
-    'border-color': isSave ? 'green' : null
-  }"
-    class="h-[36px] w-full px-3 py-2 text-[12px] text-gray-800 rounded-md outline-none transition
-           focus:border-blue-600 focus:ring-4 focus:outline-none focus:border-[#2563eb]
-           focus:ring-[3px] focus:ring-[rgba(37,99,235,0.5)] focus:ring-blue-300
-           placeholder:text-gray-400 bg-white"
-    />
-
-    <!-- Character Counter -->
-    @if (showCharCount) {
-      <p
+    [disabled]="disabled"
+    [value]="value"
+    (input)="onInputChange($event.target.value)"
     [ngStyle]="{
-      color: isRequired ? '#dc2626' : '#000000',
+      'border-color': showError
+        ? '#dc2626'
+        : isSave
+          ? 'green'
+          : showBorder
+            ? '#cbd5e1'
+            : 'transparent',
+      'background-color': showError ? '#fffafa' : '#ffffff'
     }"
-        class="text-[11px] font-medium text-xs  text-left"
-        >
-        {{ currentCharCount }} of {{ maxChars }} characters left
-      </p>
-    }
-  </div>
+  />
+
+  @if (showCharCount) {
+    <p class="text-[11px] font-medium text-xs mt-1 text-left">
+      {{ currentCharCount }} of {{ maxChars }} characters left
+    </p>
+  }
+
+  @if (showError) {
+    <p class="text-[12px] text-rose-600 mt-1">This field is required</p>
+  }
+</div>

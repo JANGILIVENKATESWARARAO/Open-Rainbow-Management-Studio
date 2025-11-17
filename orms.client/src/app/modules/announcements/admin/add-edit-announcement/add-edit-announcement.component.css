@@ -198,3 +198,7 @@
   position: relative; 
 }
 
+.error-border {
+  border: 1px solid #dc2626 !important;
+  border-radius: 6px;
+}

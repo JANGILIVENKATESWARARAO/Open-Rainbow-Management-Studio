@@ -1,54 +1,108 @@
 <div class="container">
   <div class="header">
     <p class="main">Announcement</p>
-    <orms-button [text]="'Add Announcement'" [bgColor]="'#c1eb92'" [color]="'#323f24'" [hoverBGColor]="'#d4eeb6'"
-      [hoverColor]="'#0e0d0d'" [borderRadius]="10" [borderColor]="'#4c5740'" [showBorder]="true"
-    (click)="toggleForm()"></orms-button>
+    <orms-button
+      [text]="'Add Announcement'"
+      [bgColor]="'#c1eb92'"
+      [color]="'#323f24'"
+      [hoverBGColor]="'#d4eeb6'"
+      [hoverColor]="'#0e0d0d'"
+      [borderRadius]="10"
+      [borderColor]="'#4c5740'"
+      [showBorder]="true"
+      (click)="toggleForm()"
+    ></orms-button>
   </div>
-  <hr class="custom-line">
+
+  <hr class="custom-line" />
+
+  <!-- 👇 Form Section -->
   <div class="blank-space" [class.visible]="showForm">
-    <div class="form-grid">
+    <form [formGroup]="announcementForm" class="form-grid" novalidate>
+      
+      <!-- 🟩 Title Field -->
       <div class="form-item title-field">
-        <orms-text-box [label]="'Title'" [placeHolder]="'Enter the title'" [isRequired]="true" [isSave]="isSaveClicked">
-        </orms-text-box>
+        <orms-text-box
+          [label]="'Title'"
+          [placeHolder]="'Enter the title'"
+          [isRequired]="true"
+          [isSave]="isSaveClicked"
+          formControlName="title"
+          [ngClass]="{ 'error-border': isSaveClicked && f['title'].invalid }"
+        ></orms-text-box>
       </div>
 
-
+      <!-- 🟩 Priority Dropdown -->
       <div class="form-item">
-        <orms-drop-down [label]="'Priority'" [placeHolder]="'Select severity type'" [isRequired]="true" [options]="[
-            { value: 1, name: 'high' },
-            { value: 2, name: 'medium' },
-            { value: 3, name: 'low' }
-          ]" [isSave]="isSaveClicked"></orms-drop-down>
+        <orms-drop-down
+          [label]="'Priority'"
+          [placeHolder]="'Select severity type'"
+          [isRequired]="true"
+          [options]="[
+            { value: 'high', name: 'High' },
+            { value: 'medium', name: 'Medium' },
+            { value: 'low', name: 'Low' }
+          ]"
+          [isSave]="isSaveClicked"
+          formControlName="priority"
+          [ngClass]="{ 'error-border': isSaveClicked && f['priority'].invalid }"
+        ></orms-drop-down>
       </div>
 
-
+      <!-- 🟩 Expire Date -->
       <div class="form-item">
-        <orms-calendar [label]="'Expires On'" [isSave]="isSaveClicked"></orms-calendar>
-        <!-- (dateSelected)="dateSelected($event)"
-        (calendarClosed)="calendarClosed($event)" -->
+     <orms-calendar
+        [label]="'Expires On'"
+        [isRequired]="true"
+        [isSave]="isSaveClicked"
+        formControlName="expireDate"
+        ></orms-calendar>
       </div>
 
-
+      <!-- 🟩 Description -->
       <div class="form-item desc-field">
-        <orms-text-area [label]="'Description'" [isSave]="isSaveClicked" [Placeholder]="'Enter description'" [isRequired]="true"
-        [showBorder]="true"></orms-text-area>
+        <orms-text-area
+          [label]="'Description'"
+          [Placeholder]="'Enter description'"
+          [isRequired]="true"
+          [isSave]="isSaveClicked"
+          [showBorder]="true"
+          formControlName="description"
+          [ngClass]="{ 'error-border': isSaveClicked && f['description'].invalid }"
+        ></orms-text-area>
       </div>
 
-
+      <!-- 🟩 Footer Buttons -->
       <div class="form-footer">
-        <orms-button [text]="'Clear'" [color]="'red'" [hoverBGColor]="'#f2b6b6'" [hoverColor]="'Black'"
-        [borderRadius]="8" [borderColor]="'red'" [showBorder]="true"></orms-button>
-        <orms-button [text]="'Save'" [bgColor]="'green'" [color]="'white'" [hoverBGColor]="'#519c51'"
-        [hoverColor]="'white'" [borderRadius]="8" [showBorder]="false" (click)="onSave()"></orms-button>
+        <orms-button
+          [text]="'Clear'"
+          [color]="'red'"
+          [hoverBGColor]="'#f2b6b6'"
+          [hoverColor]="'Black'"
+          [borderRadius]="8"
+          [borderColor]="'red'"
+          [showBorder]="true"
+          (click)="announcementForm.reset()"
+        ></orms-button>
+
+        <orms-button
+          [text]="'Save'"
+          [bgColor]="'green'"
+          [color]="'white'"
+          [hoverBGColor]="'#519c51'"
+          [hoverColor]="'white'"
+          [borderRadius]="8"
+          [showBorder]="false"
+          (click)="onSave()"
+        ></orms-button>
       </div>
-    </div>
+    </form>
   </div>
 
-
-  <div class="blank-space-two anycard">
+  <!-- 👇 Existing Announcement Cards -->
+ <div class="blank-space-two anycard">
     <h3 class="card-title">Recent Announcements</h3>
-
+ 
     @for (announcement of otherAnnouncements; track announcement; let last = $last) {
       <div class="announcement-item">
         <div class="title-row">
@@ -81,4 +135,15 @@
       }
     }
   </div>
+  <!-- 🔔 Error Popup -->
+<app-confirm-popup
+  *ngIf="showErrorPopup"
+  [title]="''"
+  [changeIcon]="''"
+  [borderColor]="'red'"
+  [label]="'You must fill all the fields'"
+  (close)="handlePopupClose($event)">
+</app-confirm-popup>
+
+
 </div>

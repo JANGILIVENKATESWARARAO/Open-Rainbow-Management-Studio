@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '../../../../common-ui/controls/button/button.component';
 import { TextAreaComponent } from '../../../../common-ui/controls/text-area/text-area.component';
 import { TextBoxComponent } from '../../../../common-ui/controls/text-box/text-box.component';
@@ -7,44 +7,51 @@ import { DropDownComponent } from '../../../../common-ui/controls/drop-down/drop
 import { CalendarComponent } from '../../../../common-ui/controls/calendar/calendar.component';
 import { ChipComponent } from '../../../../common-ui/controls/chip/chip.component';
 import { Announcement } from '../../../../common-ui/assests/view-models/common-view-models';
+import { ConfirmPopupComponent } from '../../../../common-ui/feature-components/confirm-popup/confirm-popup.component';
 
 @Component({
-    selector: 'orms-add-edit-announcement',
-    templateUrl: './add-edit-announcement.component.html',
-    styleUrl: './add-edit-announcement.component.css',
-    imports: [
+  selector: 'orms-add-edit-announcement',
+  standalone: true,
+  templateUrl: './add-edit-announcement.component.html',
+  styleUrls: ['./add-edit-announcement.component.css'],
+  imports: [
+    ReactiveFormsModule,
     ButtonComponent,
     TextAreaComponent,
     TextBoxComponent,
     DropDownComponent,
     CalendarComponent,
-    ChipComponent
-]
+    ChipComponent,
+    ConfirmPopupComponent
+  ]
 })
 export class AddEditAnnouncementComponent {
   showForm = false;
-    isSaveClicked: boolean = false;
+  isSaveClicked = false;
+  announcementForm!: FormGroup;
+  showErrorPopup = false;
+
 
   @Input() announcements: Announcement[] = [
     {
       title: 'Holiday Schedule Update',
-      priority: 'medium' as const,
+      priority: 'medium',
       description:
         'Please note that the office will be closed from December 24th to January 2nd. Emergency contacts will be available during this period.',
       postedDate: '30/12/2024',
       postedBy: 'HR Department',
-      expireDate: '24/12/2024',
+      expireDate: '24/12/2024'
     },
     {
       title: 'New Security Policy',
-      priority: 'low' as const,
+      priority: 'low',
       description:
         'All employees must update their passwords by end of week following the new security guidelines.',
       postedDate: '25/12/2024',
       postedBy: 'IT Security',
-      expireDate: '24/12/2024',
+      expireDate: '24/12/2024'
     },
-    {
+        {
       title: 'Holiday Schedule Update1',
       priority: 'high' as const,
       description:
@@ -55,18 +62,60 @@ export class AddEditAnnouncementComponent {
     },
   ];
 
-  onSave() {
-    this.isSaveClicked = true;
-  }
-  toggleForm() {
-    this.showForm = !this.showForm;
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.announcementForm = this.fb.group({
+      title: ['', Validators.required],
+      priority: ['', Validators.required],
+      expireDate: ['', Validators.required],
+      description: ['', [Validators.required, Validators.minLength(10)]],
+    });
   }
 
-  //   get highPriorityAnnouncements(): Announcement[] {
-  //   return this.announcements
-  //     .filter(a => a.priority === 'high')
-  //     .sort((a, b) => this.parseDate(b.postedDate) - this.parseDate(a.postedDate));
-  // }
+  get f() {
+    return this.announcementForm.controls;
+  }
+
+  toggleForm() {
+    this.showForm = !this.showForm;
+    if (this.showForm) {
+      this.announcementForm.reset();
+      this.isSaveClicked = false;
+    }
+  }
+
+onSave() {
+  this.isSaveClicked = true;
+
+  if (this.announcementForm.invalid) {
+    // ✋ Show popup FIRST
+    this.showErrorPopup = true;
+    return;
+  }
+
+  // ✅ If valid → save normally
+  const newAnnouncement: Announcement = {
+    ...this.announcementForm.value,
+    postedDate: new Date().toLocaleDateString('en-GB'),
+    postedBy: 'Admin',
+  };
+
+  this.announcements.unshift(newAnnouncement);
+  this.showForm = false;
+  this.announcementForm.reset();
+  this.isSaveClicked = false;
+}
+handlePopupClose(action: 'yes' | 'no') {
+  this.showErrorPopup = false;
+
+  // When closing popup — highlight fields
+  this.announcementForm.markAllAsTouched();
+  this.isSaveClicked = true;
+}
+
+
+
 
   get otherAnnouncements(): Announcement[] {
     return this.announcements.sort(
@@ -74,46 +123,18 @@ export class AddEditAnnouncementComponent {
     );
   }
 
-  formatDate(value: string): string {
-    const parts = value.split('/');
-    if (parts.length === 3) {
-      const [day, month, year] = parts.map(Number);
-      const date = new Date(year, month - 1, day);
-      const options: Intl.DateTimeFormatOptions = {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
-      };
-      return date.toLocaleDateString('en-GB', options).replace(/ /g, '-');
-    }
-    return value;
-  }
-
   private parseDate(value: string): number {
-    const parts = value.split('/');
-    if (parts.length === 3) {
-      const [day, month, year] = parts.map(Number);
-      return new Date(year, month - 1, day).getTime();
-    }
-    return 0;
+    const [day, month, year] = value.split('/').map(Number);
+    return new Date(year, month - 1, day).getTime();
   }
 
-  isTruncated(text: string, limit: number): boolean {
-    return !!text && text.length > limit;
-  }
-
-  leaveDescription(text: string, limit: number): string {
-    if (!text) return '';
-    if (text.length <= limit) return text;
-
-    let trimmed = text.substring(0, limit);
-
-    if (text.charAt(limit) !== ' ' && trimmed.lastIndexOf(' ') !== -1) {
-      trimmed = trimmed.substring(0, trimmed.lastIndexOf(' '));
-    }
-
-    trimmed = trimmed.trim();
-
-    return trimmed + '...';
+  formatDate(value: string): string {
+    const [day, month, year] = value.split('/').map(Number);
+    const date = new Date(year, month - 1, day);
+    return date.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    }).replace(/ /g, '-');
   }
 }

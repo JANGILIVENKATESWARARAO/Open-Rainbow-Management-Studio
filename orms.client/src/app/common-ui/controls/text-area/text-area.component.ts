@@ -1,47 +1,12 @@
-// import { CommonModule } from '@angular/common';
-// import { Component, Input } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
-
-// @Component({
-//   selector: 'app-text-area',
-//   standalone: true,
-//   templateUrl: './text-area.component.html',
-//   styleUrls: ['./text-area.component.css'],
-//   imports: [CommonModule, FormsModule]
-// })
-// export class TextAreaComponent {
-//   @Input() label: string = 'Address';
-//   @Input() Placeholder: string = 'Enter your address';
-//   @Input() isRequired: boolean = true;
-//   @Input() showBorder: boolean = true;
-//   @Input() maxChars: number = 5;
-//   @Input() showCharCount: boolean = true;
-//   inputText: string = '';
-//   currentCharCount: number = this.maxChars;
-
-//   updateCharCount() {
-//     if (!this.inputText) {
-//       this.currentCharCount = this.maxChars;
-//       return;
-//     }
-//     this.currentCharCount = this.inputText.length;
-//     if (this.currentCharCount > this.maxChars) {
-//       this.inputText = this.inputText.slice(0, this.maxChars);
-//       this.currentCharCount = this.maxChars;
-//     }
-//   }
-// }
-
 import {
   Component,
-  EventEmitter,
   Input,
+  forwardRef,
   OnChanges,
-  Output,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'orms-text-area',
@@ -49,34 +14,68 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.css'],
   imports: [CommonModule, FormsModule],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TextAreaComponent),
+      multi: true,
+    },
+  ],
 })
-export class TextAreaComponent implements OnChanges {
+export class TextAreaComponent implements ControlValueAccessor, OnChanges {
   @Input() label: string = 'Address';
   @Input() Placeholder: string = 'Enter your address';
-  @Input() isRequired: boolean = true;
+  @Input() isRequired: boolean = false;
   @Input() showBorder: boolean = true;
-  @Input() maxChars: number = 20; // ✅ Change this freely — both sides will reflect correctly
-  @Input() showCharCount: boolean = true;
+  @Input() maxChars: number = 200;
+  @Input() showCharCount: boolean = false;
   @Input() isSave: boolean = false;
-  inputText: string = '';
-  currentCharCount: number = this.maxChars;
 
-  @Output() textValueChange = new EventEmitter<any>();
+  textValue: string = '';
+  currentCharCount: number = 0;
 
+  // ---- ControlValueAccessor Callbacks ----
+  onChange = (_: any) => {};
+  onTouched = () => {};
+
+  writeValue(value: any): void {
+    this.textValue = value || '';
+    this.currentCharCount = this.textValue.length;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    // Optionally handle disabled state
+  }
+
+  // ---- Local Logic ----
   ngOnChanges(changes: SimpleChanges) {
-    // ✅ When maxChars input changes, update both sides instantly
-    if (changes['maxChars']) {
-      this.currentCharCount = this.maxChars - this.inputText.length;
-      if (this.currentCharCount < 0) this.currentCharCount = 0;
+    if (changes['textValue'] || changes['maxChars']) {
+      this.currentCharCount = this.textValue?.length || 0;
     }
   }
 
   updateCharCount() {
-    if (this.inputText.length > this.maxChars) {
-      this.inputText = this.inputText.slice(0, this.maxChars);
+    if (this.textValue.length > this.maxChars) {
+      this.textValue = this.textValue.slice(0, this.maxChars);
     }
-    this.currentCharCount = this.maxChars - this.inputText.length;
+    this.currentCharCount = this.textValue.length;
+    this.onChange(this.textValue); // <-- notify parent form
+    this.onTouched();
+  }
 
-    this.textValueChange.emit(this.inputText);
+  get remainingChars(): number {
+    return this.maxChars - this.currentCharCount;
+  }
+
+  get showError(): boolean {
+    return this.isRequired && this.isSave && !this.textValue;
   }
 }
