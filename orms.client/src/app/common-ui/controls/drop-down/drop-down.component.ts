@@ -10,6 +10,7 @@ import {
   AfterViewInit,
   OnDestroy,
 } from '@angular/core';
+import { IconComponent } from '../../feature-components/icon/icon.component';
 
 export interface DropDown {
   name: string;
@@ -21,7 +22,7 @@ export interface DropDown {
   templateUrl: './drop-down.component.html',
   styleUrl: './drop-down.component.css',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,IconComponent],
 })
 export class DropDownComponent implements AfterViewInit, OnDestroy {
   @Input() label: string = 'Gender';
@@ -33,6 +34,7 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   @Input() isSave: boolean = false;
   selectedValue: string | null = null;
   isOpenUp: boolean = false;
+  currentIcon: string = 'home';
 
   private startY = 0;
   private startHeight = 0;
@@ -46,7 +48,7 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
 
   selectOption(option: any) {
     this.selectedValue = option.name;
-    this.selectedChange.emit(option.value);
+    this.selectedChange.emit(option);
     setTimeout(() => this.closeDropdown(), 0);
   }
 
@@ -79,9 +81,12 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
   onToggle(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     if (checkbox.checked) {
+       this.currentIcon = 'calendar';
       this.decideDropdownDirection();
       this.setInitialHeight();
-    }
+    } else {
+    this.currentIcon = 'home'; // dropdown closed
+  }
   }
 
   private getZoomLevel(): number {
