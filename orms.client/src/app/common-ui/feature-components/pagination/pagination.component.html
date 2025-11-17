@@ -1,0 +1,77 @@
+<div class="pagination-container">
+  <div class="left" *ngIf="isShowingentries">
+    <p>Showing {{(currentPage - 1) * pageSize + 1}}
+      to {{(currentPage * pageSize) > totalItems ? totalItems : (currentPage * pageSize) }}
+      of {{ totalItems }} entries
+    </p>
+  </div>
+
+
+
+  <div class="dropcount" *ngIf="isdropcount">
+    <p>Items per page : </p>
+    <div class="dropdown">
+      <orms-drop-down [label]="''" [placeHolder]="this.pageSize.toString()" [isRequired]="false" [options]="[{value: 5, name: '5'},
+    {value: 10, name: '10'},
+    {value: 15, name: '15'},
+    {value: 20, name: '20'},
+    {value: 25, name: '25'}]" [draggable]="true" [isSave]="false" (selectedChange)="onPageSizeChange($event)">
+      </orms-drop-down>
+    </div>
+  </div>
+
+
+  <div class="goto" *ngIf="isgoto">
+    <p>Go to :</p>
+    <!-- <input type="number" (input)="onGoToInput($event)" (keyup.enter)="goToPage(goToNumber)" [(ngModel)]="goToNumber"
+      min="1" [max]="totalPages"> -->
+    <orms-number-box class="num-box" [label]="''" [isRequired]="false" [Placeholder]="'0'" (input)="onGoToInput($event)"
+      (keyup.enter)="goToPage(goToNumber)" [(ngModel)]="goToNumber" min="1" max="totalPages"></orms-number-box>
+    <p>page</p>
+  </div>
+
+
+
+
+  <div class=" right" *ngIf="ispagination">
+    <ul class="paginate">
+      <!-- <li class="prev" [ngClass]="{'disabled-btn': currentPage === 1}"><a (click)="firstpage()"
+          [appTooltip]="'first Page'" tooltipPosition="top" [tooltipbgColor]="'red'"
+          [tooltiptextColor]="'black'">fir</a>
+      </li> 
+       <li class="prev" [ngClass]="{'disabled-btn': currentPage === 1}"><a (click)="prev()" [appTooltip]="'Previous'"
+          tooltipPosition="top" [tooltipbgColor]="'red'" [tooltiptextColor]="'black'">pr</a>
+      </li>
+      <li class="active">
+        <a>{{ currentPage }}</a>
+      </li>
+      <li class="next" [ngClass]="{'disabled-btn': currentPage === totalPages}"><a (click)="next()"
+          [appTooltip]="'Next'" tooltipPosition="top" [tooltipbgColor]="'red'" [tooltiptextColor]="'black'">ne</a>
+      </li>
+      <li class="next" [ngClass]="{'disabled-btn': currentPage === totalPages}"><a (click)="lastpage()"
+          [appTooltip]="'Last Page'" tooltipPosition="top" [tooltipbgColor]="'red'"
+          [tooltiptextColor]="'black'">last</a>
+      </li>-->
+
+      <li class="prev" [ngClass]="{'disabled-btn': currentPage === 1}"><orms-icon [name]="'home'" (click)="firstpage()"
+          [appTooltip]="'first Page'" tooltipPosition="top" [tooltipbgColor]="'red'"
+          [tooltiptextColor]="'black'"></orms-icon>
+      </li>
+      <li class="prev" [ngClass]="{'disabled-btn': currentPage === 1}">
+        <orms-icon [name]="'home'" (click)="prev()" [appTooltip]="'Previous'" tooltipPosition="top"
+          [tooltipbgColor]="'red'" [tooltiptextColor]="'black'"></orms-icon>
+      </li>
+      <li class="active">
+        <a>{{ currentPage }}</a>
+      </li>
+      <li class="next" [ngClass]="{'disabled-btn': currentPage === totalPages}"><orms-icon [name]="'home'"
+          (click)="next()" [appTooltip]="'Next'" tooltipPosition="top" [tooltipbgColor]="'red'"
+          [tooltiptextColor]="'black'"></orms-icon>
+      </li>
+      <li class="next" [ngClass]="{'disabled-btn': currentPage === totalPages}"><orms-icon [name]="'home'"
+          (click)="lastpage()" [appTooltip]="'Last Page'" tooltipPosition="top" [tooltipbgColor]="'red'"
+          [tooltiptextColor]="'black'"></orms-icon>
+      </li>
+    </ul>
+  </div>
+</div>

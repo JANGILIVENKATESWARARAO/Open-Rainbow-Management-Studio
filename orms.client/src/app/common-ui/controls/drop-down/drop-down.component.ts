@@ -46,7 +46,7 @@ export class DropDownComponent implements AfterViewInit, OnDestroy {
 
   selectOption(option: any) {
     this.selectedValue = option.name;
-    this.selectedChange.emit(option);
+    this.selectedChange.emit(option.value);
     setTimeout(() => this.closeDropdown(), 0);
   }
 

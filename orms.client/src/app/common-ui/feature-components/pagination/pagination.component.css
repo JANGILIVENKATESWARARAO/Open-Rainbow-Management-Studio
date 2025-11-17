@@ -1,0 +1,89 @@
+body{
+font-size: 15px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.paginate {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+}
+
+.prev, .active, .next
+{
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: rgb(67, 66, 66);
+  background-color: rgb(209, 214, 219);
+  width: 25px;
+  cursor: pointer;
+}
+
+.prev:active, .active, .next:active
+{
+  background-color: aqua;
+}
+
+.disabled-btn {
+  background-color: #e0e0e0 !important;
+  border-color: #cccccc !important;
+  color: #9b9b9b !important;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+
+.dropcount{
+  display: flex;
+  width: 15%;
+  align-items: center;
+  gap:10px;
+}
+
+.dropdown{
+  width: 30%;
+}
+
+.goto{
+    display: flex;
+    width: 25%;
+  align-items: center;
+  gap:10px;
+}
+/* .goto input{
+   text-align: center;
+       border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+     height: 36px;
+     border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 12px;
+  width: 20%;
+  cursor: pointer;      
+  background-color: white;   
+  outline: none !important;  
+  box-shadow: none !important;
+} */
+
+.num-box{
+  text-align: center;
+    border-image: initial;
+     height: 42px;
+     /* border: 1px solid #d1d5db; */
+  /* border-radius: 6px; */
+  font-size: 12px;
+  width: 20%;
+  cursor: pointer;      
+  /* background-color: white;   
+  outline: none !important;  
+  box-shadow: none !important; */
+}
