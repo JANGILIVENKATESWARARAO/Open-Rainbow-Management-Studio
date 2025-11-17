@@ -1,0 +1,33 @@
+<div class="quick-Announcements-container">
+  <div class="quick-Announcements-header">
+    <h6 class="Announcements-title">Quick Announcements</h6>
+    <div class="button-row">
+      <button class="view-btn">View All</button>
+    </div>
+  </div>
+
+  <!-- Announcements List -->
+<ul class="Announcements-ul">
+  @for (Announcement of Announcements; track Announcement) {
+    <li class="Announcements-list">
+
+      <!-- LEFT SIDE: Name + Date -->
+      <div class="left-section">
+        <span class="name">{{ Announcement.name }}</span>
+        <span class="date">{{ Announcement.date | date:'dd/MM/yyyy' }}</span>
+      </div>
+
+      <!-- RIGHT SIDE: Home Icon -->
+      <orms-icon 
+        [name]="'home'" 
+        class="icon1" 
+        width="20" 
+        height="20" 
+        viewBox="0 0 24 24">
+      </orms-icon>
+
+    </li>
+  }
+</ul>
+
+
