@@ -21,6 +21,7 @@ export class CalendarComponent implements OnInit {
   showMonthDropdown: boolean = false;
   showYearDropdown: boolean = false;
   clickedInside: boolean = false;
+  calendarIcon: string = 'home';
 
   @HostListener('document:click')
   handleOutsideClick() {
@@ -31,6 +32,7 @@ export class CalendarComponent implements OnInit {
     }
 
     this.showCalendar = false;
+    this.calendarIcon = 'home';
     this.showMonthDropdown = false;
     this.showYearDropdown = false;
     this.calendarClosed.emit();
@@ -74,6 +76,7 @@ export class CalendarComponent implements OnInit {
     this.clickedInside = true;
 
     this.showCalendar = !this.showCalendar;
+    this.calendarIcon = this.showCalendar ? 'save' : 'home';
 
     if (!this.showCalendar) {
       this.showMonthDropdown = false;
@@ -81,7 +84,7 @@ export class CalendarComponent implements OnInit {
       this.calendarClosed.emit();
     }
   }
-
+  
   startingYear: number = 1950;
   endingYear: number = 2050;
   generateYears() {
@@ -192,6 +195,7 @@ export class CalendarComponent implements OnInit {
 
   closeCalendar() {
     this.showCalendar = false;
+    this.calendarIcon = 'home';
     this.calendarClosed.emit();
   }
 closeMonthDropdown(){
