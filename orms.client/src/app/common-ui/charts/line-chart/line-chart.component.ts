@@ -19,6 +19,7 @@ import {
   Tooltip,
   Legend,
   ChartConfiguration,
+  TooltipModel,
 } from 'chart.js';
 
 type LegendShape = 'circle' | 'rectRounded' | 'rect';
@@ -34,16 +35,15 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
   private chartRef!: ElementRef<HTMLCanvasElement>;
   private chart!: Chart;
 
-  // Dynamic Inputs
   @Input() labels: string[] = [];
-  @Input() data: number[][] = []; // Each array = one line
-  @Input() colors: string[] = []; // Color per line
-  @Input() lineStyles: ('solid' | 'dotted' | 'dashed')[] = []; // Line style per line
-  @Input() visible: boolean[] = []; // Visibility per line
-  @Input() seriesLabels: string[] = []; // Label per line
-  @Input() lineThickness: number[] = []; // Line thickness per line
-  @Input() legendShapes: LegendShape[] = []; // Legend shape per series
-  @Input() yAxisLabels: (string | number)[] = []; // 👈 NEW: dynamic Y-axis tick labels
+  @Input() data: number[][] = []; 
+  @Input() colors: string[] = [];
+  @Input() lineStyles: ('solid' | 'dotted' | 'dashed')[] = [];
+  @Input() visible: boolean[] = []; 
+  @Input() seriesLabels: string[] = []; 
+  @Input() lineThickness: number[] = []; 
+  @Input() legendShapes: LegendShape[] = []; 
+  @Input() yAxisLabels: (string | number)[] = []; 
 
   ngOnInit() {
     Chart.register(
@@ -79,12 +79,36 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
     const ctx = this.chartRef.nativeElement.getContext('2d');
     if (!ctx) return;
 
+    const dashedLinePlugin = {
+      id: 'dashedLinePlugin',
+      afterDatasetsDraw: (chart: Chart) => {
+        const activeElements = chart.getActiveElements();
+        if (activeElements.length > 0) {
+          const ctx = chart.ctx;
+          const x = activeElements[0].element.x;
+          const topY = chart.scales['y'].top;
+          const bottomY = chart.scales['y'].bottom;
+
+          ctx.save();
+          ctx.beginPath();
+          ctx.setLineDash([4, 4]); // Dotted pattern
+          ctx.moveTo(x, topY);
+          ctx.lineTo(x, bottomY);
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = '#9ca3af'; // Gray line color
+          ctx.stroke();
+          ctx.restore();
+        }
+      },
+    };
+
     const config: ChartConfiguration<'line'> = {
       type: 'line',
       data: {
         labels: this.labels,
         datasets: this.buildDatasets(),
       },
+      plugins: [dashedLinePlugin],
       options: {
         responsive: true,
         maintainAspectRatio: true,
@@ -92,15 +116,32 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
         interaction: { mode: 'index', intersect: false },
         plugins: {
           tooltip: {
-            enabled: true,
-            backgroundColor: 'rgba(79, 79, 79, 0.85)',
-            titleColor: '#fff',
-            bodyColor: '#fff',
-            padding: 10,
-            borderWidth: 0,
-            cornerRadius: 6,
+            enabled: false, // Disable default canvas tooltip
+            external: (context) => this.externalTooltipHandler(context),
           },
-          legend: ({} as any),
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+              usePointStyle: true,
+              boxWidth: 18,
+              boxHeight: 20,
+              color: '#374151',
+              padding: 14,
+              font: {
+                size: 13,
+                family: 'Poppins, sans-serif',
+                weight: '500',
+              },
+              generateLabels: (chart: Chart) =>
+                this.generateCustomLegendLabels(chart),
+            },
+            pointStyle: (context: any) => {
+              const index = context.datasetIndex;
+              const shape = this.legendShapes[index] ?? 'rectRounded';
+              return shape;
+            },
+          } as any,
         },
         scales: {
           x: { grid: { display: false } },
@@ -113,7 +154,6 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
                 size: 12,
                 family: 'Poppins, sans-serif',
               },
-              // 👇 Dynamic Y-axis label support
               callback: (value: any, index: number) => {
                 if (
                   this.yAxisLabels.length > 0 &&
@@ -121,7 +161,7 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
                 ) {
                   return this.yAxisLabels[index];
                 }
-                return value; // default numeric tick
+                return value;
               },
             },
           },
@@ -129,59 +169,84 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
       },
     };
 
-    // 👇 Custom legend rendering
-    (config.options!.plugins as any).legend = {
-      display: true,
-      position: 'bottom',
-      labels: {
-        usePointStyle: true,
-        boxWidth: 18,
-        boxHeight: 20,
-        color: '#374151',
-        padding: 14,
-        font: {
-          size: 13,
-          family: 'Poppins, sans-serif',
-          weight: '500',
-        },
-        generateLabels: (chart: Chart) => {
-          const datasets = chart.data.datasets || [];
-          return datasets
-            .map((dataset: any, i: number) => {
-              const isVisible =
-                this.visible[i] === undefined ? true : this.visible[i];
-              if (!isVisible) return null;
-
-              return {
-                text: dataset.label ?? `Series ${i + 1}`,
-                fillStyle: this.colors[i] ?? '#999',
-                strokeStyle: this.colors[i] ?? '#999',
-                datasetIndex: i,
-                hidden: !chart.isDatasetVisible(i),
-                lineWidth: 0,
-                pointStyle: this.legendShapes[i] ?? 'rectRounded',
-              };
-            })
-            .filter((d): d is NonNullable<typeof d> => d !== null);
-        },
-        pointStyle: (context: any) => {
-          const index = context.datasetIndex;
-          const shape = this.legendShapes[index] ?? 'rectRounded';
-          switch (shape) {
-            case 'circle':
-              return 'circle';
-            case 'rectRounded':
-              return 'rectRounded';
-            case 'rect':
-              return 'rect';
-            default:
-              return 'rectRounded';
-          }
-        },
-      },
-    } as any;
-
     this.chart = new Chart(ctx, config);
+  }
+
+  private externalTooltipHandler(context: {
+    chart: Chart;
+    tooltip: TooltipModel<'line'>;
+  }) {
+    const { chart, tooltip } = context;
+    
+    let tooltipEl = document.getElementById('chartjs-tooltip');
+
+    if (!tooltipEl) {
+      tooltipEl = document.createElement('div');
+      tooltipEl.id = 'chartjs-tooltip';
+      chart.canvas.parentNode?.appendChild(tooltipEl);
+    }
+
+    if (tooltip.opacity === 0) {
+      tooltipEl.style.opacity = '0';
+      return;
+    }
+
+    if (tooltip.body) {
+      const titleLines = tooltip.title || [];
+      const bodyLines = tooltip.body.map((b) => b.lines);
+
+      let innerHtml = '';
+
+      titleLines.forEach((title) => {
+        innerHtml += `<div class="tooltip-header">${title}</div>`;
+      });
+
+      innerHtml += `<div class="tooltip-body">`;
+      bodyLines.forEach((body: any, i) => {
+        const colors = tooltip.labelColors[i];
+        const style = `background:${colors.backgroundColor}; border-color:${colors.borderColor}`;
+        
+        const text = body[0];
+        const parts = text.split(':');
+        const seriesName = parts[0];
+        const value = parts.length > 1 ? parts[1] : '';
+
+        innerHtml += `
+        <div class="tooltip-row">
+          <span class="color-dot" style="${style}"></span>
+          <span class="series-name">${seriesName}: </span>
+          <span class="tooltip-value">${value}</span>
+        </div>
+        `;
+      });
+      innerHtml += `</div>`;
+
+      tooltipEl.innerHTML = innerHtml;
+    }
+
+    const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+    const tooltipWidth = tooltipEl.offsetWidth;
+    const chartWidth = chart.width;
+    const caretX = tooltip.caretX;
+    const caretY = tooltip.caretY;
+
+    const isRightSide = caretX > chartWidth / 2;
+    const gap = 15; 
+
+    let left = 0;
+    if (isRightSide) {
+      left = positionX + caretX - tooltipWidth - gap;
+    } else {
+      left = positionX + caretX + gap;
+    }
+
+    const top = positionY + caretY;
+
+    tooltipEl.style.opacity = '1';
+    tooltipEl.style.left = `${left}px`;
+    tooltipEl.style.top = `${top}px`;
+    tooltipEl.style.transform = 'translateY(-50%)'; 
+    tooltipEl.style.pointerEvents = 'none';
   }
 
   private buildDatasets() {
@@ -193,11 +258,15 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
           label: this.seriesLabels[i] || `Series ${i + 1}`,
           data: dataset,
           borderColor: this.colors[i] || 'gray',
+          backgroundColor: this.colors[i] || 'gray', 
           borderDash: this.getLineDash(this.lineStyles[i]),
           fill: false,
           tension: 0.3,
           pointRadius: 4,
           pointHoverRadius: 6,
+          pointHoverBackgroundColor: this.colors[i],
+          pointHoverBorderColor: '#fff',
+          pointHoverBorderWidth: 2,
           borderWidth: this.lineThickness[i] ?? 2,
         };
       })
@@ -215,6 +284,27 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  private generateCustomLegendLabels(chart: Chart) {
+    const datasets = chart.data.datasets || [];
+    return datasets
+      .map((dataset: any, i: number) => {
+        const isVisible =
+          this.visible[i] === undefined ? true : this.visible[i];
+        if (!isVisible) return null;
+
+        return {
+          text: dataset.label ?? `Series ${i + 1}`,
+          fillStyle: this.colors[i] ?? '#999',
+          strokeStyle: this.colors[i] ?? '#999',
+          datasetIndex: i,
+          hidden: !chart.isDatasetVisible(i),
+          lineWidth: 0,
+          pointStyle: this.legendShapes[i] ?? 'rectRounded',
+        };
+      })
+      .filter((d): d is NonNullable<typeof d> => d !== null);
+  }
+
   private updateChart() {
     if (!this.chart) return;
     this.chart.data.labels = this.labels;
@@ -223,6 +313,10 @@ export class LineChartComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
+    const tooltipEl = document.getElementById('chartjs-tooltip');
+    if (tooltipEl) {
+      tooltipEl.remove();
+    }
     this.chart?.destroy();
   }
 }
