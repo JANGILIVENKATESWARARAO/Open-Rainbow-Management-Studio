@@ -1,1 +1,18 @@
-<p>search-drop-down works!</p>
+<div class="container">
+  <div class="search-container">
+    <div class="search-box" [class.show-border]="showBorder" [style.--border-color]="borderColor"
+      [class.icon-right]="iconPosition === 'right'">
+      <!-- @if (showIcon) {
+        <span class="search-icon" [class.icon-left-margin]="iconPosition === 'left'" [class.icon-right-margin]="iconPosition === 'right'">🔍</span>
+      } -->
+      <orms-icon [name]="'home'"></orms-icon>
+      <input type="text" [placeholder]="placeholderText" [(ngModel)]="searchText" (input)="filterList()" />
+
+    </div>
+    <ul class="suggestion-list" *ngIf="filteredList.length > 0">
+      <li *ngFor="let emp of filteredList">
+        {{ emp.name }} - {{emp.email}}<hr>
+      </li>
+    </ul>
+  </div>
+</div>
