@@ -1,0 +1,152 @@
+     <div class="container">
+      <div class="calendar-header">
+        <!-- LEFT SECTION -->
+        <div class="header-left">
+          <div class="nav-btns">
+            <button class="nav-btn" (click)="goToPrevious()">
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
+                <path d="M7 1L1 6L7 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <button class="nav-btn" (click)="goToNext()">
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
+                <path d="M1 1L7 6L1 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <button class="right-btn today-btn" (click)="goToToday()">Today</button>
+          </div>
+        </div>
+
+        <!-- CENTER SECTION -->
+        <div class="header-center">
+          <div class="month-year-selectors">
+            <!-- Month -->
+            <div class="dropdown" (click)="$event.stopPropagation()">
+              <div class="dropdown-display">
+            {{ viewMode === 'month' ? monthHeader : displayMonth }}
+
+              <!-- @if (showMonthDropdown) {
+                <ul class="dropdown-list">
+                  @for (month of months; track month; let i = $index) {
+                    <li [class.selected]="i === currentMonth" (click)="selectMonth(i)">
+                      {{ month }}
+                    </li>
+                  }
+                </ul>
+              } -->
+              </div>
+            </div>
+
+            <!-- Year -->
+            <div class="dropdown" (click)="$event.stopPropagation()">
+              <!-- <div class="dropdown-display" (click)="toggleYearDropdown()">
+                {{ currentYear }}
+              </div> -->
+
+              <!-- @if (showYearDropdown) {
+                <ul class="dropdown-list">
+                  @for (year of years; track year) {
+                    <li [class.selected]="year === currentYear" (click)="selectYear(year)">
+                      {{ year }}
+                    </li>
+                  }
+                </ul>
+              } -->
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SECTION -->
+        <div class="header-right">
+          <div class="view-toggle">
+            <button 
+              class="toggle-btn" 
+              [class.active]="viewMode === 'month'"
+              (click)="switchToMonth()">Month</button>
+
+            <button 
+              class="toggle-btn" 
+              [class.active]="viewMode === 'week'"
+              (click)="switchToWeek()">Week</button>
+
+            <button 
+              class="toggle-btn" 
+              [class.active]="viewMode === 'day'"
+              (click)="switchToDay()">Day</button>
+          </div>
+        </div>
+
+      </div> <!-- calendar-header -->
+
+      <!-- MONTH VIEW -->
+      @if (viewMode === 'month') {
+        <div class="calendar-body">
+          <div class="calendar-weekdays">
+            @for (weekday of weekdays; track weekday) {
+              <div class="weekday">
+                {{weekday}}
+              </div>
+            }
+          </div>
+
+          <div class="calendar-grid">
+            @for (day of calendarDays; track day) {
+              <div class="calendar-day"
+                   [class.current-month]="day.isCurrentMonth"
+                   [class.other-month]="!day.isCurrentMonth"
+                   [class.today]="day.isToday"
+                   [class.selected]="day.isSelected"
+                   (click)="selectDate(day)">
+                {{day.day}}
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      <!-- WEEK VIEW -->
+      @if (viewMode === 'week' || viewMode === 'day')  {
+        <div class="week-view-container">
+
+          <!-- Top Row: Empty box + 7 days -->
+          <div class="week-header">
+
+            @if (viewMode === 'week') {
+              <div class="empty-cell"></div>
+            }
+
+            @for (day of weekDays; track day) {
+              <div class="week-day-header single-day" [class.full-width]="viewMode === 'day'">
+                <div class="day-name">{{day.dayName}}</div>
+                <div class="day-date">{{day.date.getDate()}}</div>
+              </div>
+            }
+
+          </div>
+
+          
+          <div class="week-grid">
+            
+            <div class="time-column">
+              @for (hour of hours; track hour) {
+                <div class="time-label">{{hour}}</div>
+              }
+            </div>
+
+            <!-- Calendar Grid -->
+            <div class="week-columns" [class.single-column]="viewMode === 'day'">
+
+              @for (day of weekDays; track day) {
+                <div class="week-column" [class.single]="viewMode === 'day'">
+                  @for (hour of hours; track hour) {
+                  <div class="week-cell" [class.week-selected]="isWeekCellSelected(day.date, hour)"></div>
+                  }
+                </div>
+              }
+            </div>
+          </div> <!-- week-grid -->
+        </div> <!-- week-view-container -->
+      }
+</div>
