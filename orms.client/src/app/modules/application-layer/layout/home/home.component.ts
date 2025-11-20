@@ -7,7 +7,7 @@ import { ButtonNavigationComponent } from '../../../common-modules/button-naviga
 
 @Component({
   selector: 'orms-home',
-  imports: [MenuBarComponent,AdminHeaderComponent,BasicCardComponent, RouterOutlet, ButtonNavigationComponent],
+  imports: [MenuBarComponent,AdminHeaderComponent, RouterOutlet],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
