@@ -2,7 +2,8 @@
   <div class="welcome-section">
     <h1>Welcome to website</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+      dolore magna aliquam erat volutpat.
     </p>
   </div>
 
@@ -11,19 +12,23 @@
     <hr>
 
     <div class="input-group">
-      <orms-text-box [label]="''" [placeHolder]="'Username'" [isRequired]="false" [showBorder]="true"  [showCharCount]="false"></orms-text-box>
+      <orms-text-box [label]="''" [placeHolder]="'Username'" [isRequired]="false" [showBorder]="true"
+        [showCharCount]="false"></orms-text-box>
     </div>
 
     <div class="input-group">
-      <orms-text-box [label]="''" [placeHolder]="'Password'" [isRequired]="false" [showBorder]="true" [showCharCount]="false"></orms-text-box>
+      <orms-text-box [label]="''" [placeHolder]="'Password'" [isRequired]="false" [showBorder]="true"
+        [showCharCount]="false"></orms-text-box>
     </div>
 
     <div class="options">
-      <orms-toggle [checked]="false" [color]="'#4CAF50'" [tickColor]="'#fff'" [label]="'Remember'" [labelPosition]="'right'" [labelColor]="'#999'" [size]="'small'" [useCheckbox]="false" (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)"></orms-toggle>
+      <orms-toggle [checked]="false" [color]="'#4CAF50'" [tickColor]="'#fff'" [label]="'Remember'"
+        [labelPosition]="'right'" [labelColor]="'#999'" [size]="'small'" [useCheckbox]="false"></orms-toggle>
+      <!-- (checkedChange)="checkedChange($event)" (toggleChange)="toggleChange($event)" -->
       <a href="#">Forgot password?</a>
     </div>
 
-    <orms-button [text]="'Login'" [bgColor]="'rgba(161, 3, 246, 1)'" [color]="'White'" [hoverBGColor]="'#f787c9'" [hoverColor]="'white'" [borderRadius]="10" [showBorder]="false"></orms-button>
+    <orms-button [text]="'Login'" [bgColor]="'rgba(161, 3, 246, 1)'" [color]="'White'" [hoverBGColor]="'#f787c9'"
+      [hoverColor]="'white'" [borderRadius]="10" [showBorder]="false"></orms-button>
   </div>
 </div>
-
