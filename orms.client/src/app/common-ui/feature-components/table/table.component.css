@@ -1,8 +1,18 @@
-table th, table td {
+table th,
+table td {
   border-bottom: 2px solid #e5e7eb;
 }
 
 th {
   font-weight: normal;
- 
+}
+
+.popup-box {
+  position: fixed;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: opacity 0.3s ease;
 }
