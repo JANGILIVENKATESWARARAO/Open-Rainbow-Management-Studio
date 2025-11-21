@@ -4,11 +4,13 @@ import { TextBoxComponent } from '../../../common-ui/controls/text-box/text-box.
 import { ToggleComponent } from '../../../common-ui/controls/toggle/toggle.component';
 
 @Component({
-    selector: 'orms-login-page',
-    templateUrl: './login-page.component.html',
-    styleUrl: './login-page.component.css',
-    imports: [ButtonComponent, TextBoxComponent, ToggleComponent]
+  selector: 'orms-login-page',
+  templateUrl: './login-page.component.html',
+  styleUrl: './login-page.component.css',
+  imports: [ButtonComponent, TextBoxComponent, ToggleComponent],
 })
 export class LoginPageComponent {
-
+  constructor() {
+    localStorage.setItem('userRole', 'employee');
+  }
 }
