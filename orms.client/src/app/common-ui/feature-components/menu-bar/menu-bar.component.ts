@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { AppRoutingModule } from '../../../app-routing.module';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { MenuService } from '../../../services/menu.service';
 
 @Component({
   selector: 'orms-menu-bar',
@@ -12,55 +13,57 @@ import { Router } from '@angular/router';
   imports: [CommonModule, RouterLink, RouterModule],
 })
 export class MenuBarComponent {
-  constructor(private router: Router) {
-    this.router.navigate([this.menuItems[0].route]);
-  }
-
   activeIndex: number = 0;
   isSidebarVisible: boolean = true;
 
-  menuItems = [
-    {
-      label: 'Dashboard',
-      icon: 'fa fa-home',
-      route: 'doc-info',
-    },
-    {
-      label: 'Payslip Access',
-      icon: 'fa fa-file-text-o',
-      route: 'salary-info',
-    },
-    {
-      label: 'Leave Management',
-      icon: 'fa fa-clock-o',
-      badge: 2,
-      route: 'job-info',
-    },
-    {
-      label: 'Announcements',
-      icon: 'fa fa-bell-o',
-      badge: 5,
-      route: 'contact-info',
-    },
-    {
-      label: 'Calendar',
-      icon: 'fa fa-calender',
-      route: 'other-info',
-    },
-    { label: 'FAQ & Help', icon: '', route: 'education-info' },
-  ];
+  // menuItems = [
+  //   {
+  //     label: 'Dashboard',
+  //     icon: 'fa fa-home',
+  //     route: 'doc-info',
+  //   },
+  //   {
+  //     label: 'Payslip Access',
+  //     icon: 'fa fa-file-text-o',
+  //     route: 'salary-info',
+  //   },
+  //   {
+  //     label: 'Leave Management',
+  //     icon: 'fa fa-clock-o',
+  //     badge: 2,
+  //     route: 'job-info',
+  //   },
+  //   {
+  //     label: 'Announcements',
+  //     icon: 'fa fa-bell-o',
+  //     badge: 5,
+  //     route: 'contact-info',
+  //   },
+  //   {
+  //     label: 'Calendar',
+  //     icon: 'fa fa-calender',
+  //     route: 'other-info',
+  //   },
+  //   { label: 'FAQ & Help', icon: '', route: 'education-info' },
+  // ];
+
+  menuItems: any[] = [];
+
+  constructor(private router: Router, private menuService: MenuService) {
+    const role = localStorage.getItem('userRole') as 'employee' | 'admin' | 'hr'
+
+    this.menuItems = this.menuService.getMenuByRole(role);
+
+    if (this.menuItems.length > 0) {
+      this.router.navigate([this.menuItems[0].route]);
+    }
+  }
 
   onClick(index: number) {
-    console.log(this.menuItems);
-    console.log(this.menuItems[0].route);
-
     this.activeIndex = index;
   }
 
   toggleSidebar() {
-    console.log(this.isSidebarVisible);
-
     this.isSidebarVisible = !this.isSidebarVisible;
-    console.log(this.isSidebarVisible);
   }
 }
