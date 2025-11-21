@@ -1,0 +1,42 @@
+<div class="card-header">
+  <orms-admin-header></orms-admin-header>
+</div>
+<div class="card">
+  <div class="doughnut">
+    <label class="text">{{doughnut}}</label>
+  <orms-doughnut-chart [showLegends]="true" [centerText]="true" [showAsValue]="false"
+    [legendData]="[{color: 'gray', value: 30, label: 'Earing'}, {color: 'blue', value: 40, label: 'deduction'}, {color: 'yellow', value: 20, label: 'food'}, {color: 'black', value: 20, label: 'PF'}]"></orms-doughnut-chart>
+  </div>
+  <div class="spinning">
+    <label class = "text-1">{{spinning}}</label>
+  <orms-spinning-chart></orms-spinning-chart>
+  </div>
+</div>
+  <div class="horizontal">
+    <label class ="text-2">{{horizontalText}}</label>
+  <div style="padding: 20px; height: 500px;">
+    <orms-horizontal-bar-chart [labels]="labels" [data]="data" [datasetLabels]="datasetLabels" [yAxisTicks]="yAxisTicks"
+      [horizontal]="horizontal" [showLegend]="showLegend" [singleLine]="singleLine" [showLabels]="showLabels"
+      [showData]="showData" [backgroundcolor]="backgroundcolor" [backgroundcolor1]="backgroundcolor1"
+      [backgroundcolor2]="backgroundcolor2" [legendShapes]="legendShapes" [gridDisplay]="gridDisplay"
+      [gridLineStyle]="gridLineStyle" [gridLineColor]="gridLineColor" [gridLineWidth]="gridLineWidth"
+      [whiteTheme]="whiteTheme"></orms-horizontal-bar-chart>
+  </div>
+  </div>
+<div class="announcements">
+  <orms-quick-announcements
+    [Announcements]="[{name: 'Prepare monthly financial report', date: '2025-11-07T15:53:30'}, {name: 'Develop new marketing strategy', date: '2025-11-07T10:12:43'}, {name: 'Update website content', date: '2025-10-31T10:12:43'}, {name: 'Reply to customer emails', date: '2025-10-31T10:12:43'}, {name: 'Review employee performance', date: '2025-10-31T10:12:43'}]"></orms-quick-announcements>
+  <orms-quick-activities></orms-quick-activities>
+</div>
+<div class="recentpayslips">
+  <orms-recent-payslips></orms-recent-payslips>
+</div>
+<div class="leaves">
+  <orms-view-team-members
+    [data]="[{name: 'Ganesh', designation: 'UI/UX Designer', imageUrl: 'https://plus.unsplash.com/premium_photo-1661757403301-ae68e1f1b827?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735'}, {name: 'Venkat', designation: 'Senior Software Engineer Lead', imageUrl: 'https://plus.unsplash.com/premium_photo-1661757403301-ae68e1f1b827?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735'}, {name: 'Vidhatha', designation: 'CECO', imageUrl: 'https://plus.unsplash.com/premium_photo-1661757403301-ae68e1f1b827?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735'}, {name: 'Chitranjan', designation: 'Web Developer', imageUrl: 'https://plus.unsplash.com/premium_photo-1661757403301-ae68e1f1b827?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735'}]"></orms-view-team-members>
+  <orms-my-reportees
+    [myReportees]="[{EmployeePhoto: 'https://plus.unsplash.com/premium_photo-1661757403301-ae68e1f1b827?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=735', employeeName: 'Arjuna Sivam Chandhran', employeeId: '9203', employeeEmail: 'arjunasiv@gmail.com', designation: 'Software Engineer', department: 'Development', workLocation: 'Head Office'}, {EmployeePhoto: 'https://randomuser.me/api/portraits/men/75.jpg', employeeName: 'Ravi Kumar', employeeId: '9321', employeeEmail: 'ravi.kumar@example.com', designation: 'Senior Developer', department: 'Engineering', workLocation: 'Branch Office'}, {EmployeePhoto: 'https://randomuser.me/api/portraits/women/65.jpg', employeeName: 'Priya Sharma', employeeId: '9452', employeeEmail: 'priya.sharma@example.com', designation: 'Project Manager', department: 'Operations', workLocation: 'Remote'}]"></orms-my-reportees>
+</div>
+<div class="teammembers">
+  <orms-leave-balance-overview></orms-leave-balance-overview>
+</div>

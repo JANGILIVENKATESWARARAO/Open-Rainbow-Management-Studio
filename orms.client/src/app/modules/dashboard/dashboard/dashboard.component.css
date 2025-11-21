@@ -1,0 +1,62 @@
+.card{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+  margin-top: 20px;
+}
+.card-header{
+    width: 100%;
+}
+.announcements{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.leaves{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+  margin-top: 20px;  
+  margin-bottom: 20px;
+}
+.teammembers{
+    display: grid;
+    grid-template-columns: auto;
+} 
+.doughnut{
+  padding: 20px 25px;
+  background: #fff;
+  border-radius: 14px;
+  /* margin-bottom: 20px; */
+  border: 1px solid rgb(183, 183, 183);
+}
+.horizontal{
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 14px;
+  margin-top: 20px;
+  border: 1px solid rgb(183, 183, 183);
+}
+.spinning{
+  padding: 20px 25px;
+  background: #fff;
+  border-radius: 14px;
+  /* margin-top: 10px; */
+  border: 1px solid rgb(183, 183, 183);
+  
+}
+.text, .text-1, .text-2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2B2B2B;
+  display: block;
+  text-align: left;   
+  margin-bottom: 12px;
+  padding-left: 8px;  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.horizontal .text-2 {
+  margin-bottom: 16px;
+}
