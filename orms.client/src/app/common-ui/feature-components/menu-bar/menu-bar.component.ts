@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component,Input ,Output,EventEmitter } from '@angular/core';
 import { AppRoutingModule } from '../../../app-routing.module';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
@@ -13,8 +13,11 @@ import { MenuService } from '../../../services/menu.service';
   imports: [CommonModule, RouterLink, RouterModule],
 })
 export class MenuBarComponent {
+  @Input() isSidebarVisible: boolean = true;
+  @Output() sidebarChange = new EventEmitter<boolean>();
+
   activeIndex: number = 0;
-  isSidebarVisible: boolean = true;
+  // isSidebarVisible: boolean = true;
 
   // menuItems = [
   //   {
@@ -63,7 +66,11 @@ export class MenuBarComponent {
     this.activeIndex = index;
   }
 
+  // toggleSidebar() {
+  //   this.isSidebarVisible = !this.isSidebarVisible;
+  // }
   toggleSidebar() {
-    this.isSidebarVisible = !this.isSidebarVisible;
-  }
+  this.isSidebarVisible = !this.isSidebarVisible;
+  this.sidebarChange.emit(this.isSidebarVisible);
+}
 }
